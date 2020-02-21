@@ -8,9 +8,7 @@ comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ move()
 comment4.params=
-<<<<<<< Updated upstream
 comment4.target=void\ jump()
-=======
-comment4.target=void\ animarMove()
->>>>>>> Stashed changes
-numComments=5
+comment5.params=
+comment5.target=void\ animarMove()
+numComments=6

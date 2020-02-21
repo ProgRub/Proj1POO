@@ -54,13 +54,11 @@ public class Player1 extends Players
         }
     }
     
-<<<<<<< Updated upstream
     public void jump(){
         for (int i=10;i>0;i--){            
         setLocation(getX(),getY()-i);
     }
     }
-=======
     public void animarMove(){
         contador++;
         if (contador==4){
@@ -85,5 +83,4 @@ public class Player1 extends Players
         contador=0;
     }
 }
->>>>>>> Stashed changes
 }
