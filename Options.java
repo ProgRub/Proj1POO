@@ -15,7 +15,7 @@ public class Options extends Buttons
          clickMouse();
     }
     
-    private void moveMouse(){
+    public void moveMouse(){
 
         if(Greenfoot.mouseMoved(this)){
             setImage("OptionsComBrilho.png");
@@ -25,7 +25,7 @@ public class Options extends Buttons
         }
     }
     
-    private void clickMouse(){
+    public void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
             Greenfoot.delay(10);
             Greenfoot.setWorld(new Opções());

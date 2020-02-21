@@ -14,7 +14,7 @@ public class Player1 extends Players
     private String down = "s";
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador=0;
-    private boolean paEsquerda=false;
+    private boolean andandoParaEsquerda=false;
     
     public Player1(){
         image1 = new GreenfootImage("1.png");
@@ -37,7 +37,7 @@ public class Player1 extends Players
             jump();
         }
         else if (Greenfoot.isKeyDown(left)){
-            if (!paEsquerda){
+            if (!andandoParaEsquerda){
                 image1.mirrorHorizontally();
                 image2.mirrorHorizontally();
                 image3.mirrorHorizontally();
@@ -47,10 +47,10 @@ public class Player1 extends Players
         }
              setLocation(getX()-2, getY());
              animarMove();
-             paEsquerda=true;
+             andandoParaEsquerda=true;
         }
         else if (Greenfoot.isKeyDown(right)){
-            if (paEsquerda){
+            if (andandoParaEsquerda){
                 image1.mirrorHorizontally();
                 image2.mirrorHorizontally();
                 image3.mirrorHorizontally();
@@ -59,7 +59,7 @@ public class Player1 extends Players
                 image6.mirrorHorizontally();
         }
             setLocation(getX()+2, getY());
-            paEsquerda=false;
+            andandoParaEsquerda=false;
             animarMove();
         }
         else if (Greenfoot.isKeyDown(down)){

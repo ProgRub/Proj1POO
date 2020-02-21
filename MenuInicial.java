@@ -29,11 +29,8 @@ public class MenuInicial extends World
      */
     private void prepare()
     {
-        Play play = new Play();
-        addObject(play,656,349);
-        Options options = new Options();
-        addObject(options,650,420);
-        Exit exit = new Exit();
-        addObject(exit,652,462);
+        addObject(new Play(),656,349);
+        addObject(new Options(),650,420);
+        addObject(new Exit(),652,462);
     }
 }
