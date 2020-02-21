@@ -15,8 +15,15 @@ public class Máquina extends Actor
     public void act() 
     {
         // Add your action code here.
+        libertGas();
     }   
     
     public void libertGas(){
+        if (Greenfoot.getRandomNumber(100)>97){
+        Gas gas = new Gas();
+        World mundo= getWorld();
+        Máquina maq = mundo.getObjects(Máquina.class).get(0);
+        mundo.addObject(gas,maq.getX()+Greenfoot.getRandomNumber(40)-10, maq.getY() - 80);
+    }
     }  
 }
