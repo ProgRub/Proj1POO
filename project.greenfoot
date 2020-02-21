@@ -44,10 +44,10 @@ package.numDependencies=9
 package.numTargets=15
 =======
 class.MyWorld.image=Earth.jpeg
-editor.fx.0.height=652
-editor.fx.0.width=814
-editor.fx.0.x=504
-editor.fx.0.y=104
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
 height=838
 package.numDependencies=0
 package.numTargets=2
