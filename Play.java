@@ -27,7 +27,6 @@ public class Play extends Buttons
     private void clickMouse(){
 
         if (Greenfoot.mouseClicked(this)){
-            Greenfoot.delay(10);
             Greenfoot.setWorld(new Jogo1());
         }
     }
