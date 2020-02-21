@@ -1,9 +1,5 @@
 #Greenfoot project file
-<<<<<<< Updated upstream
-class.Exit.image=EXITsem.png
-=======
 class.Exit.image=sair1.png
->>>>>>> Stashed changes
 class.Gas.image=123123132.png
 class.Jogo1.image=fundoFINAL.png
 class.MenuInicial.image=Earth.png
@@ -15,22 +11,11 @@ class.Player2.image=ppl2.png
 dependency1.from=Jogo1
 dependency1.to=M\u00E1quina
 dependency1.type=UsesDependency
-<<<<<<< Updated upstream
 dependency2.from=MenuInicial
 dependency2.to=Play
 dependency2.type=UsesDependency
 dependency3.from=MenuInicial
 dependency3.to=Options
-=======
-dependency10.from=Play
-dependency10.to=Jogo1
-dependency10.type=UsesDependency
-dependency2.from=Jogo1
-dependency2.to=Player1
-dependency2.type=UsesDependency
-dependency3.from=Jogo1
-dependency3.to=Player2
->>>>>>> Stashed changes
 dependency3.type=UsesDependency
 dependency4.from=M\u00E1quina
 dependency4.to=Gas
@@ -41,30 +26,12 @@ dependency5.type=UsesDependency
 dependency6.from=Play
 dependency6.to=Jogo1
 dependency6.type=UsesDependency
-<<<<<<< Updated upstream
-editor.fx.0.height=652
-editor.fx.0.width=814
-editor.fx.0.x=504
-editor.fx.0.y=104
-height=838
-package.numDependencies=6
-=======
-dependency7.from=MenuInicial
-dependency7.to=Rel\u00E2mpago
-dependency7.type=UsesDependency
-dependency8.from=M\u00E1quina
-dependency8.to=Gas
-dependency8.type=UsesDependency
-dependency9.from=Options
-dependency9.to=Op\u00E7\u00F5es
-dependency9.type=UsesDependency
 editor.fx.0.height=737
 editor.fx.0.width=814
 editor.fx.0.x=360
 editor.fx.0.y=28
-height=838
-package.numDependencies=10
->>>>>>> Stashed changes
+height=27
+package.numDependencies=6
 package.numTargets=15
 project.charset=UTF-8
 publish.hasSource=false
@@ -186,7 +153,7 @@ target9.width=80
 target9.x=0
 target9.y=0
 version=3.0.0
-width=1550
+width=159
 world.lastInstantiated=MenuInicial
 xPosition=0
 yPosition=0
