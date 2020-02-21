@@ -33,5 +33,7 @@ public class MenuInicial extends World
         addObject(play,656,349);
         Options options = new Options();
         addObject(options,650,420);
+        Exit exit = new Exit();
+        addObject(exit,652,462);
     }
 }
