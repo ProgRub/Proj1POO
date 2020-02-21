@@ -9,11 +9,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Exit extends Buttons
 {
     private GreenfootImage imagemAtual = getImage();
+    private GreenfootImage semBrilho, comBrilho;
     boolean control;
     
     public Exit(){
         control = false;
-        imagemAtual.setTransparency(200);
+        semBrilho = new GreenfootImage("EXITsem.png");
+        comBrilho = new GreenfootImage("EXITcom.png");
     }
     public void act() 
     {
@@ -24,11 +26,11 @@ public class Exit extends Buttons
     private void moveMouse(){
 
         if(!control && Greenfoot.mouseMoved(this)){
-            imagemAtual.setTransparency(250);
+            setImage("EXITcom.png");
             control = true;
         }
         if (control && Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)){
-            imagemAtual.setTransparency(200);
+            setImage("EXITsem.png");
             control = false;
         }
     }

@@ -31,12 +31,7 @@ public class MenuInicial extends World
     {
         Play play = new Play();
         addObject(play,656,349);
-        Exit exit = new Exit();
-        addObject(exit,1268,666);
         Options options = new Options();
-        addObject(options,1216,667);
-        Relâmpago relâmpago = new Relâmpago();
-        addObject(relâmpago,1054,299);
-        removeObject(relâmpago);
+        addObject(options,650,420);
     }
 }
