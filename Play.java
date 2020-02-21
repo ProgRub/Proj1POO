@@ -8,14 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Play extends Buttons
 {
-    private GreenfootImage semBrilho, comBrilho;
-    protected boolean control;
-    
-    public Play(){
-        semBrilho = new GreenfootImage("Play1.png");
-        comBrilho = new GreenfootImage("Play2.png");
-        control = false;
-    }
     
     public void act() 
     {
@@ -24,13 +16,11 @@ public class Play extends Buttons
     }   
     
     public void moveMouse(){
-        if(!control && Greenfoot.mouseMoved(this)){
-            setImage(comBrilho);
-            control = true;
+        if(Greenfoot.mouseMoved(this)){
+            setImage("Play2.png");
         }
-        if (control && Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)){
-            setImage(semBrilho);
-            control = false;
+        if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)){
+            setImage("Play1.png");
         }
     }
     

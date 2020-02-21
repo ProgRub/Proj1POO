@@ -9,15 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Options extends Buttons
 {
     
-    private GreenfootImage imagemAtual = getImage();
-    private GreenfootImage semBrilho, comBrilho;
-    boolean control;
-    
-    public Options(){
-        control = false;
-        semBrilho = new GreenfootImage("OptionsComBrilho.png");
-        comBrilho = new GreenfootImage("Options2.png");
-    }
     public void act() 
     {
          moveMouse();
@@ -26,13 +17,11 @@ public class Options extends Buttons
     
     private void moveMouse(){
 
-        if(!control && Greenfoot.mouseMoved(this)){
+        if(Greenfoot.mouseMoved(this)){
             setImage("OptionsComBrilho.png");
-            control = true;
         }
-        if (control && Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)){
+        if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)){
             setImage("Options2.png");
-            control = false;
         }
     }
     

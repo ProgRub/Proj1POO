@@ -10,9 +10,7 @@ public class Gas extends Actor
 {
     final int dano = 10;
     int direcaoGas;
-    public Gas(){
-        //
-    }
+    
     public void act() 
     {
         movimentoGas();
