@@ -25,7 +25,7 @@ public class Player1 extends Players
     
     public void move(){
         if (Greenfoot.isKeyDown(up)){
-            setLocation(getX(), getY()-2);
+            jump();
         }
         else if (Greenfoot.isKeyDown(left)){
             setLocation(getX()-2, getY());
@@ -36,5 +36,11 @@ public class Player1 extends Players
         else if (Greenfoot.isKeyDown(down)){
             setLocation(getX(), getY()+2);
         }
+    }
+    
+    public void jump(){
+        for (int i=10;i>0;i--){            
+        setLocation(getX(),getY()-i);
+    }
     }
 }
