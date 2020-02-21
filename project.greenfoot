@@ -36,17 +36,10 @@ dependency8.type=UsesDependency
 dependency9.from=Play
 dependency9.to=Jogo1
 dependency9.type=UsesDependency
-<<<<<<< Updated upstream
-editor.fx.0.height=737
-editor.fx.0.width=814
-editor.fx.0.x=360
-editor.fx.0.y=28
-=======
 editor.fx.0.height=830
 editor.fx.0.width=736
-editor.fx.0.x=805
+editor.fx.0.x=804
 editor.fx.0.y=0
->>>>>>> Stashed changes
 height=838
 package.numDependencies=9
 package.numTargets=15
