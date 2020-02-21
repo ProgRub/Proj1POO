@@ -24,6 +24,9 @@ public class Gas extends Actor
     }
     
     public void movimentoGas(){
-        setLocation(getX()+ Greenfoot.getRandomNumber(11)-5, getY() - 1);
+        if (Greenfoot.getRandomNumber(100)<5){
+          setLocation(getX()+ Greenfoot.getRandomNumber(11)-5, getY());
     }
-}
+          setLocation(getX(), getY() - 1);
+        }
+    }
