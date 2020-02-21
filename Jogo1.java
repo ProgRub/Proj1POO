@@ -28,6 +28,6 @@ public class Jogo1 extends World
     {
         Máquina máquina = new Máquina();
         addObject(máquina,591,496);
-        Player
+        
     }
 }
