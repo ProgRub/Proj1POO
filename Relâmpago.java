@@ -18,17 +18,17 @@ public class Relâmpago extends Actor
     }
     public void act() 
     {
-        Greenfoot.delay(1);
+        Greenfoot.delay(3);
         setImage("thunder2.png");
-        Greenfoot.delay(1);
+        Greenfoot.delay(3);
         setImage("thunder3.png");
-        Greenfoot.delay(1);
+        Greenfoot.delay(3);
         setImage("thunder4.png");
-        Greenfoot.delay(1);
+        Greenfoot.delay(3);
         setImage("thunder5.png");
-        Greenfoot.delay(1);
+        Greenfoot.delay(3);
         setImage("thunder6.png");
-        Greenfoot.delay(1);
+        Greenfoot.delay(3);
         getWorld().removeObject(this);
         
     }

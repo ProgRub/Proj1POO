@@ -1,5 +1,4 @@
 #Greenfoot project file
-<<<<<<< HEAD
 class.Exit.image=sair1.png
 class.Gas.image=123123132.png
 class.Jogo1.image=fundoFINAL.png
@@ -35,6 +34,7 @@ dependency8.type=UsesDependency
 dependency9.from=Play
 dependency9.to=Jogo1
 dependency9.type=UsesDependency
+<<<<<<< Updated upstream
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
@@ -48,10 +48,15 @@ editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
 editor.fx.0.y=0
+=======
+editor.fx.0.height=652
+editor.fx.0.width=814
+editor.fx.0.x=504
+editor.fx.0.y=104
+>>>>>>> Stashed changes
 height=838
-package.numDependencies=0
-package.numTargets=2
->>>>>>> 963f115685fd52b58f7305cafc47a8d230f85145
+package.numDependencies=9
+package.numTargets=15
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -67,17 +72,12 @@ readme.x=10
 readme.y=10
 simulation.speed=50
 target1.height=50
-<<<<<<< HEAD
 target1.name=Options
-=======
-target1.name=Buttons
->>>>>>> 963f115685fd52b58f7305cafc47a8d230f85145
 target1.showInterface=false
 target1.type=ClassTarget
 target1.width=80
 target1.x=0
 target1.y=0
-<<<<<<< HEAD
 target10.height=50
 target10.name=Op\u00E7\u00F5es
 target10.showInterface=false
@@ -122,16 +122,11 @@ target15.x=0
 target15.y=0
 target2.height=50
 target2.name=Jogo1
-=======
-target2.height=50
-target2.name=MyWorld
->>>>>>> 963f115685fd52b58f7305cafc47a8d230f85145
 target2.showInterface=false
 target2.type=ClassTarget
 target2.width=80
 target2.x=0
 target2.y=0
-<<<<<<< HEAD
 target3.height=50
 target3.name=Jogo2
 target3.showInterface=false
@@ -181,10 +176,8 @@ target9.type=ClassTarget
 target9.width=80
 target9.x=0
 target9.y=0
-=======
->>>>>>> 963f115685fd52b58f7305cafc47a8d230f85145
 version=3.0.0
-width=159
+width=1550
 world.lastInstantiated=MenuInicial
 xPosition=0
 yPosition=0
