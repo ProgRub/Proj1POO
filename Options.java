@@ -10,11 +10,13 @@ public class Options extends Buttons
 {
     
     private GreenfootImage imagemAtual = getImage();
+    private GreenfootImage semBrilho, comBrilho;
     boolean control;
     
     public Options(){
         control = false;
-        imagemAtual.setTransparency(200);
+        semBrilho = new GreenfootImage("OptionsComBrilho.png");
+        comBrilho = new GreenfootImage("Options2.png");
     }
     public void act() 
     {
@@ -25,11 +27,11 @@ public class Options extends Buttons
     private void moveMouse(){
 
         if(!control && Greenfoot.mouseMoved(this)){
-            imagemAtual.setTransparency(250);
+            setImage("OptionsComBrilho.png");
             control = true;
         }
         if (control && Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)){
-            imagemAtual.setTransparency(200);
+            setImage("Options2.png");
             control = false;
         }
     }
