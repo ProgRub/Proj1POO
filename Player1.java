@@ -65,6 +65,9 @@ public class Player1 extends Players
         else if (Greenfoot.isKeyDown(down)){
             setLocation(getX(), getY()+2);
         }
+        if (!Greenfoot.isKeyDown(right) && !Greenfoot.isKeyDown(up) && !Greenfoot.isKeyDown(left) && !Greenfoot.isKeyDown(down)){
+            setImage(image4);
+        }
     }
     
     public void jump(){
