@@ -27,8 +27,7 @@ public class Options extends Buttons
 
     public void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
-            Greenfoot.delay(10);
-            Greenfoot.setWorld(new Opções(getWorld()));
+            Greenfoot.setWorld(new Opções());
         }
     }
 }
