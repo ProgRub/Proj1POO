@@ -20,9 +20,8 @@ public class Máquina extends Actor
     
     public void libertGas(){
         if (Greenfoot.getRandomNumber(100)>97){
-        Gas gas = new Gas();
         Máquina maq = getWorld().getObjects(Máquina.class).get(0);
-        getWorld().addObject(gas,maq.getX()+Greenfoot.getRandomNumber(40)-10, maq.getY() - 80);
+        getWorld().addObject(new Gas(),maq.getX()+Greenfoot.getRandomNumber(40)-10, maq.getY() - maq.getImage().getHeight()/2);
     }
     }  
 }

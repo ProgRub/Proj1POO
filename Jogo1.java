@@ -27,7 +27,7 @@ public class Jogo1 extends World
     private void prepare()
     {
         Máquina máquina = new Máquina();
-        addObject(máquina,getWidth()/2,getHeight()-100);
+        addObject(máquina,getWidth()/2,getHeight()-150);
         Player1 P1 = new Player1();
         addObject(P1,getWidth()/10,getHeight()-100);
         Player2 P2 = new Player2();
