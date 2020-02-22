@@ -14,8 +14,9 @@ public class Player1 extends Players
     private String down = "s";
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador=0;
-    private boolean andandoParaEsquerda=false;
-    
+    public static boolean andandoParaEsquerda;
+    private Bala bullet;
+    private int controlBala=0;
     public Player1(){
         image1 = new GreenfootImage("1.png");
         image2 = new GreenfootImage("2.png");
@@ -24,11 +25,13 @@ public class Player1 extends Players
         image5 = new GreenfootImage("5.png");
         image6 = new GreenfootImage("6.png");
         setImage(image1);
+        andandoParaEsquerda = false;
     }
     
     public void act() 
     {
         move();
+        disparar();
         
     }    
     
@@ -99,4 +102,14 @@ public class Player1 extends Players
         contador=0;
     }
 }
+    public void disparar(){
+        controlBala++;
+        if (controlBala >20){
+        if (Greenfoot.isKeyDown("f")){
+            bullet = new Bala();
+            getWorld().addObject(bullet, getX(),getY()-5);
+            controlBala = 0;
+        }
+    }
+    }
 }

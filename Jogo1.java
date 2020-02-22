@@ -9,10 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Jogo1 extends World
 {
 
-    /**
-     * Constructor for objects of class Jogo1.
-     * 
-     */
+    public Máquina máquina;
     public Jogo1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -26,11 +23,19 @@ public class Jogo1 extends World
      */
     private void prepare()
     {
-        Máquina máquina = new Máquina();
+        máquina = new Máquina();
         addObject(máquina,getWidth()/2,getHeight()-150);
         Player1 P1 = new Player1();
         addObject(P1,getWidth()/10,getHeight()-100);
         Player2 P2 = new Player2();
         addObject(P2,(9*getWidth())/10,getHeight()-100);
+    }
+    
+    public void act(){
+        atualizaVida(máquina.vida);
+    }
+    
+    private void atualizaVida(int vidaAtualizada){
+        showText("" + vidaAtualizada + "%", getWidth()/2,getHeight()-190);
     }
 }

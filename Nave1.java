@@ -29,7 +29,6 @@ public class Nave1 extends Naves
         if (isTouching (Gas.class))
             {
              removeTouching (Gas.class);
-             
             }
     }
 }

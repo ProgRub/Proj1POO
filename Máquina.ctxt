@@ -2,8 +2,13 @@
 comment0.target=M\u00E1quina
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ M\u00E1quina\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ M\u00E1quina\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.target=M\u00E1quina()
 comment2.params=
-comment2.target=void\ libertGas()
-numComments=3
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ libertGas()
+comment4.params=
+comment4.target=void\ perdeVida()
+comment5.params=
+comment5.target=void\ maquinaDestruida()
+numComments=6

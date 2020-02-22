@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+;import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Máquina here.
@@ -7,15 +7,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Máquina extends Actor
-{
-    /**
-     * Act - do whatever the Máquina wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+{           
+    public int vida,score;
+    public Máquina(){
+        vida=100;
+        score=0;
+    }
+    
     public void act() 
     {
         // Add your action code here.
         libertGas();
+        perdeVida();
+        maquinaDestruida();
     }   
     
     public void libertGas(){
@@ -23,5 +27,18 @@ public class Máquina extends Actor
         Máquina maq = getWorld().getObjects(Máquina.class).get(0);
         getWorld().addObject(new Gas(),maq.getX()+Greenfoot.getRandomNumber(40)-10, maq.getY() - maq.getImage().getHeight()/2);
     }
-    }  
+}
+
+    public void perdeVida(){
+        if (isTouching(Bala.class)){
+            removeTouching(Bala.class);
+            vida--;
+        }
+    }
+    
+    public void maquinaDestruida(){
+       if (vida == 0){
+           getWorld().removeObject(this);
+        }
+    }
 }
