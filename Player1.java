@@ -18,23 +18,23 @@ public class Player1 extends Players
     private Bala bullet;
     private int controlBala=0;
     public Player1(){
-        image1 = new GreenfootImage("1.png");
-        image2 = new GreenfootImage("2.png");
-        image3 = new GreenfootImage("3.png");
-        image4 = new GreenfootImage("4.png");
-        image5 = new GreenfootImage("5.png");
-        image6 = new GreenfootImage("6.png");
+        image1 = new GreenfootImage("Red/1.png");
+        image2 = new GreenfootImage("Red/2.png");
+        image3 = new GreenfootImage("Red/3.png");
+        image4 = new GreenfootImage("Red/4.png");
+        image5 = new GreenfootImage("Red/5.png");
+        image6 = new GreenfootImage("Red/6.png");
         setImage(image1);
         andandoParaEsquerda = false;
     }
-    
+
     public void act() 
     {
         move();
         disparar();
-        
+
     }    
-    
+
     public void move(){
         if (Greenfoot.isKeyDown(up)){
             jump();
@@ -47,10 +47,10 @@ public class Player1 extends Players
                 image4.mirrorHorizontally();
                 image5.mirrorHorizontally();
                 image6.mirrorHorizontally();
-        }
-             setLocation(getX()-2, getY());
-             animarMove();
-             andandoParaEsquerda=true;
+            }
+            setLocation(getX()-2, getY());
+            animarMove();
+            andandoParaEsquerda=true;
         }
         else if (Greenfoot.isKeyDown(right)){
             if (andandoParaEsquerda){
@@ -60,7 +60,7 @@ public class Player1 extends Players
                 image4.mirrorHorizontally();
                 image5.mirrorHorizontally();
                 image6.mirrorHorizontally();
-        }
+            }
             setLocation(getX()+2, getY());
             andandoParaEsquerda=false;
             animarMove();
@@ -72,12 +72,13 @@ public class Player1 extends Players
             setImage(image4);
         }
     }
-    
+
     public void jump(){
         for (int i=10;i>0;i--){            
-        setLocation(getX(),getY()-1);
+            setLocation(getX(),getY()-1);
+        }
     }
-    }
+
     public void animarMove(){
         contador++;
         if (contador==4){
@@ -87,7 +88,7 @@ public class Player1 extends Players
             else if (getImage()==image2){
                 setImage(image3);
             }
-             else if(getImage()==image3){
+            else if(getImage()==image3){
                 setImage(image4);
             }
             else if (getImage()==image4){
@@ -98,18 +99,19 @@ public class Player1 extends Players
             }
             else if (getImage()==image6){
                 setImage(image1);
+            }
+            contador=0;
         }
-        contador=0;
     }
-}
+
     public void disparar(){
         controlBala++;
         if (controlBala >20){
-        if (Greenfoot.isKeyDown("f")){
-            bullet = new Bala();
-            getWorld().addObject(bullet, getX(),getY()-5);
-            controlBala = 0;
+            if (Greenfoot.isKeyDown("f")){
+                bullet = new Bala();
+                getWorld().addObject(bullet, getX(),getY()-5);
+                controlBala = 0;
+            }
         }
-    }
     }
 }
