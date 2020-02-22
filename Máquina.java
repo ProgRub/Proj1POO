@@ -8,7 +8,7 @@
  */
 public class Máquina extends Actor
 {           
-    public int vida,score;
+    public static int vida,score;
     GreenfootImage explosion1,explosion2,explosion3,explosion4,explosion5,explosion6,explosion7,explosion8,explosion9,explosion10,explosion11,explosion12,explosion13;
     public Máquina(){
         vida=100;
