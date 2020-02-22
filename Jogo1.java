@@ -30,11 +30,11 @@ public class Jogo1 extends World
         Player2 P2 = new Player2();
         addObject(P2,(9*getWidth())/10,getHeight()-100);
     }
-    
+
     public void act(){
         atualizaVida(máquina.vida);
     }
-    
+
     private void atualizaVida(int vidaAtualizada){
         showText("" + vidaAtualizada + "%", getWidth()/2,getHeight()-190);
     }

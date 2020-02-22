@@ -15,13 +15,13 @@ public class Bala extends Actor
         setImage(original);
         moveEsquerda= Player1.andandoParaEsquerda;
     }
-    
+
     public void act() 
     {
         disparo();
         desapareceLimite();
     } 
-    
+
     public void disparo(){
         if (Player1.andandoParaEsquerda == true){
             imagem = getImage();
@@ -29,15 +29,16 @@ public class Bala extends Actor
             setImage(imagem);
         }
         else{
-           setImage(original);
-    }
+            setImage(original);
+        }
         if (moveEsquerda){
-            move(-5);
-        }else{
-            move(5);
+            move(-8);
+        }
+        else{
+            move(8);
         }
     }
-    
+
     public void desapareceLimite(){
         if (isAtEdge()){
             getWorld().removeObject(this);

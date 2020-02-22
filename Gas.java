@@ -10,23 +10,23 @@ public class Gas extends Actor
 {
     final int dano = 10;
     int direcaoGas;
-    
+
     public void act() 
     {
         movimentoGas();
         ultrapassaLimite();
     }   
-    
+
     public void ultrapassaLimite(){
         if(isAtEdge()){
             getWorld().removeObject(this);
         }
     }
-    
+
     public void movimentoGas(){
         if (Greenfoot.getRandomNumber(100)<5){
-          setLocation(getX()+ Greenfoot.getRandomNumber(11)-5, getY());
-    }
-          setLocation(getX(), getY() - 1);
+            setLocation(getX()+ Greenfoot.getRandomNumber(11)-5, getY());
         }
+        setLocation(getX(), getY() - 1);
     }
+}

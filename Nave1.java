@@ -8,13 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Nave1 extends Naves
 {
-    
+
     public void act() 
     {
         moveNave();
         removeGas();
     } 
-    
+
     public void moveNave(){
         if (Greenfoot.isKeyDown("a")){
             setLocation(getX()-3, getY());
@@ -23,12 +23,12 @@ public class Nave1 extends Naves
             setLocation(getX()+3, getY());
         }
     }
-    
+
     public void removeGas()
     {
         if (isTouching (Gas.class))
-            {
-             removeTouching (Gas.class);
-            }
+        {
+            removeTouching (Gas.class);
+        }
     }
 }

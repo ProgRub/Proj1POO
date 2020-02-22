@@ -20,7 +20,6 @@ public class Jogo2 extends World
         prepare();
     }
 
-    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -32,16 +31,15 @@ public class Jogo2 extends World
         Nave2 nave2 = new Nave2();
         addObject(nave2,getWidth()/2,198);
     }
-    
-    
+
     public void act()
     {
         libertarGases();
     }
-    
+
     public void libertarGases() 
     {
-         
+
         if (Greenfoot.getRandomNumber(100)<3)
         {
             addObject(new Gas(), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
@@ -50,11 +48,6 @@ public class Jogo2 extends World
 
     
     
-
-    
-    
-    
     
 }
-
     

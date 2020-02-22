@@ -10,12 +10,13 @@ public class Relâmpago extends Actor
 {
     int alturaAtual, larguraAtual;
     public Relâmpago(){
-         setImage("thunder1.png");
-         //GreenfootImage imagemAtual = getImage();
-         //alturaAtual = imagemAtual.getHeight();
+        setImage("thunder1.png");
+        //GreenfootImage imagemAtual = getImage();
+        //alturaAtual = imagemAtual.getHeight();
         // larguraAtual = imagemAtual.getWidth();
         //imagemAtual.scale(larguraAtual,alturaAtual*2);
     }
+
     public void act() 
     {
         Greenfoot.delay(3);
@@ -30,6 +31,6 @@ public class Relâmpago extends Actor
         setImage("thunder6.png");
         Greenfoot.delay(3);
         getWorld().removeObject(this);
-        
+
     }
 }

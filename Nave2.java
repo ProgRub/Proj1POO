@@ -17,6 +17,7 @@ public class Nave2 extends Naves
         moveNave();
         removeGas();
     }    
+
     public void moveNave(){
         if (Greenfoot.isKeyDown("left")){
             setLocation(getX()-3, getY());
@@ -25,13 +26,13 @@ public class Nave2 extends Naves
             setLocation(getX()+3, getY());
         }
     }
-    
+
     public void removeGas()
     {
         if (isTouching (Gas.class))
-            {
-             removeTouching (Gas.class);
-             
-            }
+        {
+            removeTouching (Gas.class);
+
+        }
     }
 }

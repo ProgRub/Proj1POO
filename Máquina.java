@@ -13,7 +13,7 @@ public class Máquina extends Actor
         vida=100;
         score=0;
     }
-    
+
     public void act() 
     {
         // Add your action code here.
@@ -21,13 +21,13 @@ public class Máquina extends Actor
         perdeVida();
         maquinaDestruida();
     }   
-    
+
     public void libertGas(){
         if (Greenfoot.getRandomNumber(100)>97){
-        Máquina maq = getWorld().getObjects(Máquina.class).get(0);
-        getWorld().addObject(new Gas(),maq.getX()+Greenfoot.getRandomNumber(40)-10, maq.getY() - maq.getImage().getHeight()/2);
+            Máquina maq = getWorld().getObjects(Máquina.class).get(0);
+            getWorld().addObject(new Gas(),maq.getX()+Greenfoot.getRandomNumber(40)-10, maq.getY() - maq.getImage().getHeight()/2);
+        }
     }
-}
 
     public void perdeVida(){
         if (isTouching(Bala.class)){
@@ -35,10 +35,10 @@ public class Máquina extends Actor
             vida--;
         }
     }
-    
+
     public void maquinaDestruida(){
-       if (vida == 0){
-           getWorld().removeObject(this);
+        if (vida == 0){
+            getWorld().removeObject(this);
         }
     }
 }

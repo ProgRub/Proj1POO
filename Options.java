@@ -8,13 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Options extends Buttons
 {
-    
+
     public void act() 
     {
-         moveMouse();
-         clickMouse();
+        moveMouse();
+        clickMouse();
     }
-    
+
     public void moveMouse(){
 
         if(Greenfoot.mouseMoved(this)){
@@ -24,7 +24,7 @@ public class Options extends Buttons
             setImage("Options2.png");
         }
     }
-    
+
     public void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
             Greenfoot.delay(10);

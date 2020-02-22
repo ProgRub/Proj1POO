@@ -10,10 +10,10 @@ public class Exit extends Buttons
 {
     public void act() 
     {
-         moveMouse();
-         clickMouse();
+        moveMouse();
+        clickMouse();
     }
-    
+
     private void moveMouse(){
 
         if(Greenfoot.mouseMoved(this)){
@@ -23,7 +23,7 @@ public class Exit extends Buttons
             setImage("EXITsem.png");
         }
     }
-    
+
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
             Greenfoot.stop();

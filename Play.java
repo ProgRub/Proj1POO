@@ -8,13 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Play extends Buttons
 {
-    
+
     public void act() 
     {
         moveMouse();
         clickMouse();
     }   
-    
+
     public void moveMouse(){
         if(Greenfoot.mouseMoved(this)){
             setImage("Play2.png");
@@ -23,12 +23,12 @@ public class Play extends Buttons
             setImage("Play1.png");
         }
     }
-    
+
     private void clickMouse(){
 
         if (Greenfoot.mouseClicked(this)){
             Greenfoot.setWorld(new Jogo1());
         }
     }
-        
+
 }

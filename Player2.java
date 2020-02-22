@@ -12,8 +12,8 @@ public class Player2 extends Players
     private String left = "left";
     private String right = "right";
     private String down = "down";
-    
-    public Player2(){}
+
+
     /**
      * Act - do whatever the Player2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -22,7 +22,7 @@ public class Player2 extends Players
     {
         move();
     }   
-    
+
     public void move(){
         if (Greenfoot.isKeyDown(up)){
             setLocation(getX(), getY()-2);

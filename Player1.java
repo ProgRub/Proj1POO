@@ -9,21 +9,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player1 extends Players
 {
     public static String up = "w";
-    private String left = "a";
-    private String right = "d";
-    private String down = "s";
+    public static String left = "a";
+    public static String right = "d";
+    public static String down = "s";
+    public static String shoot ="f";
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador=0;
     public static boolean andandoParaEsquerda;
     private Bala bullet;
     private int controlBala=0;
     public Player1(){
-        image1 = new GreenfootImage("Red/1.png");
-        image2 = new GreenfootImage("Red/2.png");
-        image3 = new GreenfootImage("Red/3.png");
-        image4 = new GreenfootImage("Red/4.png");
-        image5 = new GreenfootImage("Red/5.png");
-        image6 = new GreenfootImage("Red/6.png");
+        image1 = new GreenfootImage("Green/1.png");
+        image2 = new GreenfootImage("Green/2.png");
+        image3 = new GreenfootImage("Green/3.png");
+        image4 = new GreenfootImage("Green/4.png");
+        image5 = new GreenfootImage("Green/5.png");
+        image6 = new GreenfootImage("Green/6.png");
         setImage(image1);
         andandoParaEsquerda = false;
     }
@@ -107,7 +108,7 @@ public class Player1 extends Players
     public void disparar(){
         controlBala++;
         if (controlBala >20){
-            if (Greenfoot.isKeyDown("f")){
+            if (Greenfoot.isKeyDown(shoot)){
                 bullet = new Bala();
                 getWorld().addObject(bullet, getX(),getY()-5);
                 controlBala = 0;

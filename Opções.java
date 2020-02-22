@@ -22,7 +22,7 @@ public class Opções extends World
         setBackground(bg);
         prepare();
     }
-    
+
     private void prepare()
     {
         int larg = getWidth();
