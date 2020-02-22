@@ -62,6 +62,7 @@ dependency22.type=UsesDependency
 dependency23.from=Player1
 dependency23.to=Bala
 dependency23.type=UsesDependency
+<<<<<<< Updated upstream
 dependency24.from=M\u00E1quina
 dependency24.to=Gas
 dependency24.type=UsesDependency
@@ -74,6 +75,14 @@ dependency26.type=UsesDependency
 dependency27.from=Play
 dependency27.to=Jogo1
 dependency27.type=UsesDependency
+=======
+dependency24.from=ControlP1Cima
+dependency24.to=Player1
+dependency24.type=UsesDependency
+dependency25.from=Play
+dependency25.to=Jogo1
+dependency25.type=UsesDependency
+>>>>>>> Stashed changes
 dependency3.from=Jogo1
 dependency3.to=Player2
 dependency3.type=UsesDependency
@@ -100,8 +109,13 @@ editor.fx.0.width=1550
 editor.fx.0.x=-7
 editor.fx.0.y=-7
 height=838
+<<<<<<< Updated upstream
 package.numDependencies=27
 package.numTargets=30
+=======
+package.numDependencies=25
+package.numTargets=28
+>>>>>>> Stashed changes
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
