@@ -109,7 +109,7 @@ public class Player1 extends Players
         controlBala++;
         if (controlBala >20){
             if (Greenfoot.isKeyDown(shoot)){
-                bullet = new Bala();
+                bullet = new Bala(this);
                 getWorld().addObject(bullet, getX(),getY()-5);
                 controlBala = 0;
             }

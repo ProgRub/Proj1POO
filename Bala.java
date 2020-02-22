@@ -10,10 +10,15 @@ public class Bala extends Actor
 {
     GreenfootImage imagem, original;
     private boolean moveEsquerda;
-    public Bala(){
+    public Bala(Player1 P1){
         original = getImage();
         setImage(original);
-        moveEsquerda= Player1.andandoParaEsquerda;
+        moveEsquerda= P1.andandoParaEsquerda;
+    }
+    public Bala(Player2 P2){
+        original = getImage();
+        setImage(original);
+        moveEsquerda= P2.andandoParaEsquerda;
     }
 
     public void act() 
@@ -23,7 +28,7 @@ public class Bala extends Actor
     } 
 
     public void disparo(){
-        if (Player1.andandoParaEsquerda){
+        if (moveEsquerda){
             imagem = getImage();
             imagem.mirrorHorizontally();
             setImage(imagem);

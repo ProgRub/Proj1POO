@@ -9,10 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player2 extends Players
 {
     
-   public static String up = "w";
-    public static String left = "a";
-    public static String right = "d";
-    public static String down = "s";
+   public static String up = "up";
+    public static String left = "left";
+    public static String right = "right";
+    public static String down = "down";
     public static String shoot ="0";
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador=0;
@@ -38,10 +38,10 @@ public class Player2 extends Players
     }    
 
     public void move(){
-        if (Greenfoot.isKeyDown("up")){
+        if (Greenfoot.isKeyDown(up)){
             jump();
         }
-        else if (Greenfoot.isKeyDown("left")){
+        else if (Greenfoot.isKeyDown(left)){
             if (!andandoParaEsquerda){
                 image1.mirrorHorizontally();
                 image2.mirrorHorizontally();
@@ -54,7 +54,7 @@ public class Player2 extends Players
             animarMove();
             andandoParaEsquerda=true;
         }
-        else if (Greenfoot.isKeyDown("right")){
+        else if (Greenfoot.isKeyDown(right)){
             if (andandoParaEsquerda){
                 image1.mirrorHorizontally();
                 image2.mirrorHorizontally();
@@ -67,10 +67,10 @@ public class Player2 extends Players
             andandoParaEsquerda=false;
             animarMove();
         }
-        else if (Greenfoot.isKeyDown("down")){
+        else if (Greenfoot.isKeyDown(down)){
             setLocation(getX(), getY()+2);
         }
-        if (!Greenfoot.isKeyDown("right") && !Greenfoot.isKeyDown("up") && !Greenfoot.isKeyDown("left") && !Greenfoot.isKeyDown("down")){
+        if (!Greenfoot.isKeyDown(right) && !Greenfoot.isKeyDown(up) && !Greenfoot.isKeyDown(left) && !Greenfoot.isKeyDown(down)){
             setImage(image4);
         }
     }
@@ -110,7 +110,7 @@ public class Player2 extends Players
         controlBala++;
         if (controlBala >20){
             if (Greenfoot.isKeyDown(shoot)){
-                bullet = new Bala();
+                bullet = new Bala(this);
                 getWorld().addObject(bullet, getX(),getY()-5);
                 controlBala = 0;
             }
