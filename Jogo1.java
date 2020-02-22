@@ -17,8 +17,8 @@ public class Jogo1 extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 700, 1); 
         prepare();
-        // gameOver = new GameOver();
-        // restart = new Restart();
+        gameOver = new GameOver();
+        restart = new Restart();
         control =false;
         stop =false;
     }
@@ -47,17 +47,9 @@ public class Jogo1 extends World
     }
     
     private void gameOver(int vidaJogador1, int vidaJogador2){
-<<<<<<< Updated upstream
         if (vidaJogador1 ==0 && vidaJogador2 == 0 && control == false ){
             addObject(gameOver,getWidth()/2,getHeight()/2);
             addObject(restart,getWidth()/2,getHeight()/2 +50);
-=======
-        if (vidaJogador1 ==0 && vidaJogador2 == 0 && !control ){
-            // addObject(gameOver,getWidth()/2,getHeight()/2);
-            // addObject(restart,getWidth()/2,getHeight()/2 +50);
-            removeObject(máquina);
-            
->>>>>>> Stashed changes
             stop =true;
             if (stop == true){
                 Greenfoot.playSound("gameOver.mp3");
