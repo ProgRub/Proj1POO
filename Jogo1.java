@@ -39,7 +39,7 @@ public class Jogo1 extends World
 
     public void act(){
         atualizaVida(máquina.vida);
-        gameOver(0,0); //parametros a 0 só para testar
+        gameOver(100,100); //parametros a 0 só para testar
     }
 
     private void atualizaVida(int vidaAtualizada){

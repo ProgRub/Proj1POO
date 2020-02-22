@@ -23,7 +23,7 @@ public class Bala extends Actor
     } 
 
     public void disparo(){
-        if (Player1.andandoParaEsquerda == true){
+        if (Player1.andandoParaEsquerda){
             imagem = getImage();
             imagem.mirrorHorizontally();
             setImage(imagem);
