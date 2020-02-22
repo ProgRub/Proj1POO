@@ -1,9 +1,10 @@
 #BlueJ class context
 comment0.target=Op\u00E7\u00F5es
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Op\u00E7\u00F5es\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=Op\u00E7\u00F5es()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Op\u00E7\u00F5es.\r\n\ \r\n
+comment1.params=menu
+comment1.target=Op\u00E7\u00F5es(greenfoot.World)
 comment2.params=
 comment2.target=void\ prepare()
-numComments=3
+comment3.params=
+comment3.target=greenfoot.World\ getMenu()
+numComments=4

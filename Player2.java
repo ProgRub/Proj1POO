@@ -8,10 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player2 extends Players
 {
-    private String up = "up";
-    private String left = "left";
-    private String right = "right";
-    private String down = "down";
+    public static String up = "up";
+    public static String left = "left";
+    public static String right = "right";
+    public static String down = "down";
+    public static String shoot = "l";
 
 
     /**

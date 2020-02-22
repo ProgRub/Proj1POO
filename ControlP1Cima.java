@@ -8,11 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ControlP1Cima extends Options
 {
-    /**
-     * Act - do whatever the ControlP1Cima wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    private static GreenfootImage botao =new GreenfootImage(50,50);
+    private static GreenfootImage botao =new GreenfootImage(100,50);
     private Boolean flag = true;
     public void act() 
     {

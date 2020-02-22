@@ -1,34 +1,31 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Options here.
+ * Write a description of class Back here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Options extends Buttons
+public class Back extends Buttons
 {
-
     public void act() 
     {
         moveMouse();
         clickMouse();
-    }
+    }   
 
     public void moveMouse(){
-
         if(Greenfoot.mouseMoved(this)){
-            setImage("OptionsComBrilho.png");
+            setImage("BackComBrilho.png");
         }
         if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)){
-            setImage("Options2.png");
+            setImage("BackSemBrilho.png");
         }
     }
 
-    public void clickMouse(){
+    private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
-            Greenfoot.delay(10);
-            Greenfoot.setWorld(new Opções(getWorld()));
+            Greenfoot.setWorld(Opções.getMenu());
         }
-    }
+    }    
 }
