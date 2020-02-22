@@ -25,7 +25,6 @@ public class Play extends Buttons
     }
 
     private void clickMouse(){
-
         if (Greenfoot.mouseClicked(this)){
             Greenfoot.setWorld(new Jogo1());
         }

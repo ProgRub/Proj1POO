@@ -8,16 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ControlP1Cima extends Options
 {
-    private static GreenfootImage botao =new GreenfootImage(100,50);
     private Boolean flag = true;
     public void act() 
     {
-        // Add your action code here.
+        getImage().scale((int)(1.5*getWorld().getWidth()/9), getWorld().getHeight()/9);
+        moveMouseBotaoControlos();
         clickMouse();
-        botao.setColor(Color.DARK_GRAY);
-        botao.fill();
-        setImage(botao);
-    }    
+    }
+
 
     public void clickMouse(){
         if (Greenfoot.mouseClicked(this)){

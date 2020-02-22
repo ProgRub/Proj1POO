@@ -16,7 +16,6 @@ public class Options extends Buttons
     }
 
     public void moveMouse(){
-
         if(Greenfoot.mouseMoved(this)){
             setImage("OptionsComBrilho.png");
         }
@@ -28,6 +27,17 @@ public class Options extends Buttons
     public void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
             Greenfoot.setWorld(new Opções());
+        }
+    }
+    
+    public void moveMouseBotaoControlos(){
+        if(Greenfoot.mouseMoved(this)){
+            setImage("BotaoControlos2.png");
+            getImage().scale((int)(1.5*getWorld().getWidth()/9), getWorld().getHeight()/9);
+        }
+        if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)){
+            setImage("BotaoControlos.png");
+            getImage().scale((int)(1.5*getWorld().getWidth()/9), getWorld().getHeight()/9);
         }
     }
 }
