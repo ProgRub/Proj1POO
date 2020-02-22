@@ -35,6 +35,10 @@ public class Jogo1 extends World
         addObject(P1,getWidth()/10,getHeight()-100);
         Player2 P2 = new Player2();
         addObject(P2,(9*getWidth())/10,getHeight()-100);
+
+        VidaMáquina vidaMáquina = new VidaMáquina();
+        addObject(vidaMáquina,560,32);
+        vidaMáquina.setLocation(getWidth()/2,40);
     }
 
     public void act(){

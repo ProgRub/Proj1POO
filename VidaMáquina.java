@@ -11,16 +11,16 @@ public class VidaMáquina extends Máquina
     GreenfootImage cem,noventa,oitenta,setenta,sessenta,cinquenta,quarenta,trinta,vinte,dez;
     
     public VidaMáquina(){
-        cem = new GreenfootImage("vidaaa.png");
-        noventa = new GreenfootImage("90%.png");
-        oitenta = new GreenfootImage("80%.png");
-        setenta = new GreenfootImage("70%.png");
-        sessenta = new GreenfootImage("60%.png");
-        cinquenta = new GreenfootImage("50%.png");
-        quarenta = new GreenfootImage("40%.png");
-        trinta = new GreenfootImage("30%.png");
-        vinte = new GreenfootImage("20%.png");
-        dez = new GreenfootImage("10%.png");
+        cem = new GreenfootImage("100.png");
+        noventa = new GreenfootImage("90.png");
+        oitenta = new GreenfootImage("80.png");
+        setenta = new GreenfootImage("70.png");
+        sessenta = new GreenfootImage("60.png");
+        cinquenta = new GreenfootImage("50.png");
+        quarenta = new GreenfootImage("40.png");
+        trinta = new GreenfootImage("30.png");
+        vinte = new GreenfootImage("20.png");
+        dez = new GreenfootImage("10.png");
         setImage(cem);
     }
     
