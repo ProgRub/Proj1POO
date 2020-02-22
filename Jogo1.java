@@ -8,13 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Jogo1 extends World
 {
-
+    GameOver gameOver;
+    Restart restart;
     public Máquina máquina;
+    public boolean control,stop;
     public Jogo1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 700, 1); 
         prepare();
+        gameOver = new GameOver();
+        restart = new Restart();
+        control =false;
+        stop =false;
     }
 
     /**
@@ -33,9 +39,28 @@ public class Jogo1 extends World
 
     public void act(){
         atualizaVida(máquina.vida);
+        gameOver(0, 0); //parametros a 0 só para testar
     }
 
     private void atualizaVida(int vidaAtualizada){
         showText("" + vidaAtualizada + "%", getWidth()/2,getHeight()-190);
+    }
+    
+    private void gameOver(int vidaJogador1, int vidaJogador2){
+        if (vidaJogador1 ==0 && vidaJogador2 == 0 && control == false ){
+            addObject(gameOver,getWidth()/2,getHeight()/2);
+            addObject(restart,getWidth()/2,getHeight()/2 +50);
+            removeObject(máquina);
+            
+            stop =true;
+            if (stop == true){
+                Greenfoot.playSound("gameOver.mp3");
+                control =true;
+                stop =false;
+            }
+        }
+        if (vidaJogador1 ==0 && vidaJogador2 == 0){
+            showText("", getWidth()/2,getHeight()-190); //apagar texto anterior
+        }
     }
 }
