@@ -16,9 +16,9 @@ public class MenuInicial extends World
     public MenuInicial()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1300,700, 1); 
+        super(1200,700, 1); 
         GreenfootImage bg = new GreenfootImage("Earth.png");
-        bg.scale(1300, 700);
+        bg.scale(getWidth(), getHeight());
         setBackground(bg);
         prepare();
     }
@@ -29,8 +29,8 @@ public class MenuInicial extends World
      */
     private void prepare()
     {
-        addObject(new Play(),656,349);
-        addObject(new Options(),650,420);
-        addObject(new Exit(),652,462);
+        addObject(new Play(),getWidth()/2,349);
+        addObject(new Options(),getWidth()/2,420);
+        addObject(new Exit(),getWidth()/2,462);
     }
 }
