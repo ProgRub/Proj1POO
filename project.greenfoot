@@ -62,7 +62,6 @@ dependency22.type=UsesDependency
 dependency23.from=Player1
 dependency23.to=Bala
 dependency23.type=UsesDependency
-<<<<<<< Updated upstream
 dependency24.from=M\u00E1quina
 dependency24.to=Gas
 dependency24.type=UsesDependency
@@ -72,17 +71,12 @@ dependency25.type=UsesDependency
 dependency26.from=Options
 dependency26.to=Op\u00E7\u00F5es
 dependency26.type=UsesDependency
-dependency27.from=Play
-dependency27.to=Jogo1
+dependency27.from=ControlP1Cima
+dependency27.to=Player1
 dependency27.type=UsesDependency
-=======
-dependency24.from=ControlP1Cima
-dependency24.to=Player1
-dependency24.type=UsesDependency
-dependency25.from=Play
-dependency25.to=Jogo1
-dependency25.type=UsesDependency
->>>>>>> Stashed changes
+dependency28.from=Play
+dependency28.to=Jogo1
+dependency28.type=UsesDependency
 dependency3.from=Jogo1
 dependency3.to=Player2
 dependency3.type=UsesDependency
@@ -104,18 +98,13 @@ dependency8.type=UsesDependency
 dependency9.from=MenuInicial
 dependency9.to=Exit
 dependency9.type=UsesDependency
-editor.fx.0.height=838
-editor.fx.0.width=1550
-editor.fx.0.x=-7
-editor.fx.0.y=-7
+editor.fx.0.height=737
+editor.fx.0.width=814
+editor.fx.0.x=360
+editor.fx.0.y=28
 height=838
-<<<<<<< Updated upstream
-package.numDependencies=27
+package.numDependencies=28
 package.numTargets=30
-=======
-package.numDependencies=25
-package.numTargets=28
->>>>>>> Stashed changes
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
