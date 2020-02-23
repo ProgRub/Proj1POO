@@ -15,5 +15,24 @@ public class Players extends Actor
     public void act() 
     {
         // Add your action code here.
-    }    
+    }  
+    
+    protected void perdeVidas(Player1 player1)
+    {
+        if(isTouching(Granizo.class))
+        {
+            player1.numeroVidas --; 
+            removeTouching(Granizo.class);
+        }
+    }
+    
+    protected void perdeVidas(Player2 player2)
+    {
+        if(isTouching(Granizo.class))
+        {
+            player2.numeroVidas--; 
+            removeTouching(Granizo.class);
+        }
+    }
 }
+

@@ -21,6 +21,8 @@ public class Player1 extends Players
     private Bala bullet;
     private int controlBala=0;
     
+    public int numeroVidas;
+    
     public Player1(){
         image1 = new GreenfootImage("Green/1.png");
         image2 = new GreenfootImage("Green/2.png");
@@ -30,6 +32,8 @@ public class Player1 extends Players
         image6 = new GreenfootImage("Green/6.png");
         setImage(image1);
         andandoParaEsquerda = false;
+        
+        numeroVidas = 10;
     }
     
     public static String[] getControls(){
@@ -102,6 +106,8 @@ public class Player1 extends Players
     {
         move();
         disparar();
+        
+        perdeVidas(this);
 
     }    
 
