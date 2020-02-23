@@ -20,16 +20,9 @@ public class Player1 extends Players
     private int contador=0;
     public static boolean andandoParaEsquerda;
     private Bala bullet;
-<<<<<<< Updated upstream
     private int controlBala=0;
     
     public static int numeroVidas;
-    
-=======
-    private int controlBala=0;    
-    public int numeroVidas;
-
->>>>>>> Stashed changes
     public Player1(){
         image1 = new GreenfootImage(cor+"/1.png");
         image2 = new GreenfootImage(cor+"/2.png");

@@ -22,7 +22,6 @@ public class Players extends Actor
         if(isTouching(Granizo.class))
         {
             player1.numeroVidas --; 
-            System.out.println(player1.numeroVidas);
             removeTouching(Granizo.class);
         }
     }
