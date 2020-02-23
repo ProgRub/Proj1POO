@@ -30,33 +30,33 @@ public class VidaMáquina extends Máquina
     }  
     
     public void vidaAtual(){
-        if (Máquina.vida == 100){
+        if (Máquina.vida == 1000){
             setImage(cem);
-        }else if (Máquina.vida == 90){
+        }else if (Máquina.vida == 900){
             setImage(noventa);
         }
-        else if (Máquina.vida == 80){
+        else if (Máquina.vida == 800){
             setImage(oitenta);
         }
-        else if (Máquina.vida == 70){
+        else if (Máquina.vida == 700){
             setImage(setenta);
         }
-        else if (Máquina.vida == 60){
+        else if (Máquina.vida == 600){
             setImage(sessenta);
         }
-        else if (Máquina.vida == 50){
+        else if (Máquina.vida == 500){
             setImage(cinquenta);
         }
-        else if (Máquina.vida == 40){
+        else if (Máquina.vida == 400){
             setImage(quarenta);
         }
-        else if (Máquina.vida == 30){
+        else if (Máquina.vida == 300){
             setImage(trinta);
         }
-        else if (Máquina.vida == 20){
+        else if (Máquina.vida == 200){
             setImage(vinte);
         }
-        else if (Máquina.vida == 10){
+        else if (Máquina.vida == 100){
             setImage(dez);
         }
         else if (Máquina.vida == 0){

@@ -11,7 +11,7 @@ public class Máquina extends Actor
     public static int vida,score;
     GreenfootImage explosion1,explosion2,explosion3,explosion4,explosion5,explosion6,explosion7,explosion8,explosion9,explosion10,explosion11,explosion12,explosion13;
     public Máquina(){
-        vida=100;
+        vida=1000;
         score=0;
         explosion1 = new GreenfootImage("explosion1.png");
         explosion2 = new GreenfootImage("explosion2.png");

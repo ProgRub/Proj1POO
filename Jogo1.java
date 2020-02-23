@@ -86,6 +86,8 @@ public class Jogo1 extends World
         VidaMáquina vidaMáquina = new VidaMáquina();
         addObject(vidaMáquina,560,32);
         vidaMáquina.setLocation(getWidth()/2,40);
+        P1.setLocation(120,620);
+        P2.setLocation(1080,620);
     }
 
     public void act(){

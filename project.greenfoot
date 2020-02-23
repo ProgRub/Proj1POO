@@ -14,13 +14,18 @@ class.ControlP2Esq.image=BotaoControlos.png
 class.Exit.image=EXITsem.png
 class.GameOver.image=gameOver.png
 class.Gas.image=Gas.png
+<<<<<<< Updated upstream
 class.Granizo.image=Granizo.png
 class.Jogo1.image=fundoFINAL.png
 class.Jogo2.image=img.png
+=======
+class.Jogo1.image=jogo1_background.png
+class.Jogo2.image=jogo2_background.png
+>>>>>>> Stashed changes
 class.MenuInicial.image=Earth.png
 class.M\u00E1quina.image=Maquina.png
-class.Nave1.image=imageedit_3_9171205871.png
-class.Nave2.image=imageedit_1_5932920679.png
+class.Nave1.image=nave1.png
+class.Nave2.image=nave3.png
 class.Options.image=Options2.png
 class.Op\u00E7\u00F5es.image=Earth.png
 class.Play.image=Play1.png
@@ -253,8 +258,13 @@ editor.fx.0.width=814
 editor.fx.0.x=360
 editor.fx.0.y=28
 height=838
+<<<<<<< Updated upstream
 package.numDependencies=70
 package.numTargets=47
+=======
+package.numDependencies=45
+package.numTargets=34
+>>>>>>> Stashed changes
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -268,7 +278,11 @@ readme.name=@README
 readme.width=47
 readme.x=10
 readme.y=10
+<<<<<<< Updated upstream
 simulation.speed=49
+=======
+simulation.speed=53
+>>>>>>> Stashed changes
 target1.height=50
 target1.name=Options
 target1.showInterface=false
