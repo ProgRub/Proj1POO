@@ -10,15 +10,22 @@ public class Bala extends Actor
 {
     GreenfootImage imagem, original;
     private boolean moveEsquerda;
+    
+    GreenfootSound disparo = new GreenfootSound("gun.wav");
+    
     public Bala(Player1 P1){
         original = getImage();
         setImage(original);
         moveEsquerda= P1.andandoParaEsquerda;
+        disparo.setVolume(70);
+        disparo.play();
     }
     public Bala(Player2 P2){
         original = getImage();
         setImage(original);
         moveEsquerda= P2.andandoParaEsquerda;
+        disparo.setVolume(70);
+        disparo.play();
     }
 
     public void act() 

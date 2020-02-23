@@ -21,7 +21,7 @@ public class Players extends Actor
     {
         if(isTouching(Granizo.class))
         {
-            player1.numeroVidas --; 
+            player1.numeroVidas--; 
             removeTouching(Granizo.class);
         }
     }

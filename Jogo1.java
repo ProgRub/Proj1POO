@@ -14,6 +14,9 @@ public class Jogo1 extends World
     public boolean control,stop;
     
     VidaMáquina vidaMáquina;
+    Player1 P1;
+    Player2 P2;
+    GreenfootSound somAmbiente = new GreenfootSound("winter.mp3");
     
     public Jogo1()
     {    
@@ -24,7 +27,6 @@ public class Jogo1 extends World
         restart = new Restart();
         control =false;
         stop =false;
-       
         
     }
 
@@ -36,9 +38,9 @@ public class Jogo1 extends World
     {
         máquina = new Máquina();
         addObject(máquina,getWidth()/2,getHeight()-150);
-        Player1 P1 = new Player1();
+        P1 = new Player1();
         addObject(P1,getWidth()/10,getHeight()-100);
-        Player2 P2 = new Player2();
+        P2 = new Player2();
         addObject(P2,(9*getWidth())/10,getHeight()-100);
 
         vidaMáquina = new VidaMáquina();
@@ -53,13 +55,16 @@ public class Jogo1 extends World
         
         Vida_player2 vida_player2 = new Vida_player2();
         addObject(vida_player2, 1050, 100);
+        somAmbiente.setVolume(60);
+        somAmbiente.play();
         
     }
 
     public void act(){
         atualizaVida(máquina.vida);
-        gameOver(100,100); //parametros a 0 só para testar
+        gameOver(P1.numeroVidas,P2.numeroVidas); 
         cairGranizo();
+        cairNeve();
 
     }
 
@@ -91,7 +96,19 @@ public class Jogo1 extends World
         {
             addObject(new Granizo(), Greenfoot.getRandomNumber(getWidth()-1),0);
         }
+        
     }
+    
+    public void cairNeve() 
+    {
+         
+        if (Greenfoot.getRandomNumber(100)<20)
+        {
+            addObject(new Neve(), Greenfoot.getRandomNumber(getWidth()-1),0);
+        }
+        
+    }
+    
         
     
     

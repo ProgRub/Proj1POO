@@ -36,6 +36,6 @@ public class Granizo extends Actor
     }
 
     public void movimentoGranizo(){
-        setLocation(getX()-1, getY() + 7);
+        setLocation(getX()-1, getY() + 8);
     }   
 }
