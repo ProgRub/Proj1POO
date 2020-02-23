@@ -9,4 +9,6 @@ comment3.params=
 comment3.target=void\ clickMouse()
 comment4.params=
 comment4.target=void\ moveMouseBotaoControlos()
-numComments=5
+comment5.params=texto\ text
+comment5.target=void\ updateText(java.lang.String,\ greenfoot.Actor)
+numComments=6
