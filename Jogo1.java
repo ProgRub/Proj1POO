@@ -65,7 +65,7 @@ public class Jogo1 extends World
         gameOver(P1.numeroVidas,P2.numeroVidas); 
         cairGranizo();
         cairNeve();
-
+        cairRelampagos();
     }
 
     private void atualizaVida(int vidaAtualizada){
@@ -99,12 +99,22 @@ public class Jogo1 extends World
         
     }
     
+    public void cairRelampagos() 
+    {
+         
+        if (Greenfoot.getRandomNumber(100)<1)
+        {
+            addObject(new Relâmpago(), Greenfoot.getRandomNumber(getWidth()-1),320);
+        }
+        
+    }
+    
     public void cairNeve() 
     {
          
-        if (Greenfoot.getRandomNumber(100)<20)
+        if (Greenfoot.getRandomNumber(100)<10)
         {
-            addObject(new Neve(), Greenfoot.getRandomNumber(getWidth()-1),0);
+            addObject(new Neve_(), Greenfoot.getRandomNumber(getWidth()-1),0);
         }
         
     }
