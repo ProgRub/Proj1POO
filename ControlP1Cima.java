@@ -30,7 +30,7 @@ public class ControlP1Cima extends Options
             Greenfoot.delay(1);
             while (flag){
                 String key= Greenfoot.getKey();
-                if (key!=null){
+                if (key!=null && Players.podeMudar(Player1.getControls(),Player2.getControls(),key)){
                     Player1.setControls(0,key);
                     flag=false;
                     if(!flag){

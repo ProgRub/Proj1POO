@@ -13,33 +13,39 @@ public class Player1 extends Players
     private static String left = "a";
     private static String right = "d";
     private static String down = "s";
-    private static String shoot ="f";
+    private static String shoot = "f";
     private static String[] controlos= {up,left,right,down,shoot};
+    private static String cor="";
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador=0;
     public static boolean andandoParaEsquerda;
     private Bala bullet;
+<<<<<<< Updated upstream
     private int controlBala=0;
     
     public static int numeroVidas;
     
+=======
+    private int controlBala=0;    
+    public int numeroVidas;
+
+>>>>>>> Stashed changes
     public Player1(){
-        image1 = new GreenfootImage("Green/1.png");
-        image2 = new GreenfootImage("Green/2.png");
-        image3 = new GreenfootImage("Green/3.png");
-        image4 = new GreenfootImage("Green/4.png");
-        image5 = new GreenfootImage("Green/5.png");
-        image6 = new GreenfootImage("Green/6.png");
+        image1 = new GreenfootImage(cor+"/1.png");
+        image2 = new GreenfootImage(cor+"/2.png");
+        image3 = new GreenfootImage(cor+"/3.png");
+        image4 = new GreenfootImage(cor+"/4.png");
+        image5 = new GreenfootImage(cor+"/5.png");
+        image6 = new GreenfootImage(cor+"/6.png");
         setImage(image1);
-        andandoParaEsquerda = false;
-        
+        andandoParaEsquerda = false;        
         numeroVidas = 10;
     }
-    
+
     public static String[] getControls(){
         return controlos;
     }
-    
+
     public static void setControls(int pos, String key){
         controlos[pos]=key;
         switch(pos){
@@ -59,56 +65,57 @@ public class Player1 extends Players
             shoot=key;
             break;
         }
-        
+
     }
-    
+
+    public static void setColor(String color){
+        cor=color;
+    }
     // public static String getUp(){
-        // return up;
+    // return up;
     // }
-    
+
     // public static void setUp(String key){
-        // up=key;
+    // up=key;
     // }
-    
+
     // public static String getLeft(){
-        // return left;
+    // return left;
     // }
-    
+
     // public static void setLeft(String key){
-        // left=key;
+    // left=key;
     // }
-    
+
     // public static String getRight(){
-        // return right;
+    // return right;
     // }
-    
+
     // public static void setRight(String key){
-        // right=key;
+    // right=key;
     // }
-    
+
     // public static String getDown(){
-        // return down;
+    // return down;
     // }
-    
+
     // public static void setDown(String key){
-        // down=key;
+    // down=key;
     // }
-    
+
     // public static String getShoot(){
-        // return shoot;
+    // return shoot;
     // }
-    
+
     // public static void setShoot(String key){
-        // shoot=key;
+    // shoot=key;
     // }
 
     public void act() 
     {
         move();
-        disparar();
-        
+        disparar();        
         perdeVidas(this);
-
     }    
 
     public void move(){

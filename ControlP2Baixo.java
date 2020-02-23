@@ -30,7 +30,7 @@ public class ControlP2Baixo extends Options
             Greenfoot.delay(1);
             while (flag){
                 String key= Greenfoot.getKey();
-                if (key!=null){
+                if (key!=null && Players.podeMudar(Player1.getControls(),Player2.getControls(),key)){
                     Player2.setControls(3,key);
                     flag=false;
                     if(!flag){

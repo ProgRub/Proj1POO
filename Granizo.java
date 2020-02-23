@@ -14,30 +14,28 @@ public class Granizo extends Actor
      */
     private GreenfootImage imageGranizo;
     public Granizo()
-    
+
     {
         imageGranizo = getImage();
         int larguraAtual = imageGranizo.getWidth();
         int alturaAtual = imageGranizo.getHeight();
         imageGranizo.scale(larguraAtual/3, alturaAtual/3);
-        
-    
+
     }
-    
-    
+
     public void act() 
     {
         movimentoGranizo();
         ultrapassaLimite();
     }   
-    
+
     public void ultrapassaLimite(){
         if(isAtEdge()){
             getWorld().removeObject(this);
         }
     }
-    
+
     public void movimentoGranizo(){
-          setLocation(getX(), getY() + 1);
-        }   
+        setLocation(getX(), getY() + 1);
+    }   
 }

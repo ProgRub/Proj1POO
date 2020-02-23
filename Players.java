@@ -16,16 +16,17 @@ public class Players extends Actor
     {
         // Add your action code here.
     }  
-    
+
     protected void perdeVidas(Player1 player1)
     {
         if(isTouching(Granizo.class))
         {
             player1.numeroVidas --; 
+            System.out.println(player1.numeroVidas);
             removeTouching(Granizo.class);
         }
     }
-    
+
     protected void perdeVidas(Player2 player2)
     {
         if(isTouching(Granizo.class))
@@ -33,6 +34,15 @@ public class Players extends Actor
             player2.numeroVidas--; 
             removeTouching(Granizo.class);
         }
+    }
+
+    public static boolean podeMudar(String[] P1Controls, String[] P2Controls, String key){
+        for (int i=0; i<5;i++){
+            if (key.equals(P1Controls[i]) || key.equals(P2Controls[i])){
+                return false;
+            }
+        }
+        return true;
     }
 }
 

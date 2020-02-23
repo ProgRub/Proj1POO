@@ -45,4 +45,9 @@ public class Options extends Buttons
         GreenfootImage image = new GreenfootImage(texto.toUpperCase(),size, Color.WHITE, new Color(0,0,0,0));
         text.setImage(image);
     }
+    
+    public void updateText_EscolherCor(String texto, Actor text, int size){
+        GreenfootImage image = new GreenfootImage(texto,size, Color.WHITE, new Color(0,0,0,0));
+        text.setImage(image);
+    }
 }

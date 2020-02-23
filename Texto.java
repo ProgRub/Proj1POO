@@ -23,4 +23,13 @@ public class Texto extends Options
         GreenfootImage image = new GreenfootImage("Player " + Integer.toString(qualPlayer),50, Color.WHITE, new Color(0,0,0,0));
         setImage(image);
     }
+    
+    public Texto(boolean P1escolheu){
+        if(!P1escolheu){
+            updateText("Player 1, pick your color",this,60);
+        }
+        else{
+            updateText("Player 2, pick your color",this,60);
+        }
+    }
 }

@@ -8,4 +8,6 @@ comment2.params=
 comment2.target=Texto()
 comment3.params=qualPlayer
 comment3.target=Texto(int)
-numComments=4
+comment4.params=P1escolheu
+comment4.target=Texto(boolean)
+numComments=5

@@ -15,6 +15,7 @@ public class Player2 extends Players
     private static String down = "down";
     private static String shoot ="0";
     private static String[] controlos= {up,left,right,down,shoot};
+    private static String cor="";
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador=0;
     public static boolean andandoParaEsquerda;
@@ -24,12 +25,12 @@ public class Player2 extends Players
     public static int numeroVidas;
     
     public Player2(){
-        image1 = new GreenfootImage("Black/1.png");
-        image2 = new GreenfootImage("Black/2.png");
-        image3 = new GreenfootImage("Black/3.png");
-        image4 = new GreenfootImage("Black/4.png");
-        image5 = new GreenfootImage("Black/5.png");
-        image6 = new GreenfootImage("Black/6.png");
+        image1 = new GreenfootImage(cor+"/1.png");
+        image2 = new GreenfootImage(cor+"/2.png");
+        image3 = new GreenfootImage(cor+"/3.png");
+        image4 = new GreenfootImage(cor+"/4.png");
+        image5 = new GreenfootImage(cor+"/5.png");
+        image6 = new GreenfootImage(cor+"/6.png");
         setImage(image1);
         andandoParaEsquerda = false;
         
@@ -60,6 +61,10 @@ public class Player2 extends Players
             break;
         }
         
+    }
+
+    public static void setColor(String color){
+        cor=color;
     }
 
     // public static String getUp(){
