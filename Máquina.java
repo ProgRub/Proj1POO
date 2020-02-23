@@ -27,7 +27,7 @@ public class Máquina extends Actor
         explosion11= new GreenfootImage("explosion11.png");
         explosion12 = new GreenfootImage("explosion12.png");
         explosion13 = new GreenfootImage("explosion13.png");
-        
+
     }
 
     public void act() 
@@ -51,13 +51,10 @@ public class Máquina extends Actor
         if (isTouching(Bala.class)){
             removeTouching(Bala.class);
             vida--;
-            if (vida ==900 || vida ==800 || vida ==700 || vida ==600 || vida ==500 || vida ==400 || vida ==300 || vida ==200 || vida ==100 || vida ==0 ){
-                vidaMáquina.perdeVida();
-            }
+            vidaMáquina.perdeVida();
         }
     }
-        
-    
+
 
     public void maquinaDestruida(){
         if (vida == 0){

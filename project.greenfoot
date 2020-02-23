@@ -389,7 +389,11 @@ readme.name=@README
 readme.width=47
 readme.x=10
 readme.y=10
+<<<<<<< HEAD
 simulation.speed=49
+=======
+simulation.speed=50
+>>>>>>> 810b7775920707de61f06c6e43f5ea45f7291f28
 target1.height=50
 target1.name=Options
 target1.showInterface=false
