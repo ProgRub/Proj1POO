@@ -8,16 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player1 extends Players
 {
-    public static String up = "w";
-    public static String left = "a";
-    public static String right = "d";
-    public static String down = "s";
-    public static String shoot ="f";
+    private static String up = "w";
+    private static String left = "a";
+    private static String right = "d";
+    private static String down = "s";
+    private static String shoot ="f";
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador=0;
     public static boolean andandoParaEsquerda;
     private Bala bullet;
     private int controlBala=0;
+    
     public Player1(){
         image1 = new GreenfootImage("Green/1.png");
         image2 = new GreenfootImage("Green/2.png");
@@ -27,6 +28,46 @@ public class Player1 extends Players
         image6 = new GreenfootImage("Green/6.png");
         setImage(image1);
         andandoParaEsquerda = false;
+    }
+    
+    public static String getUp(){
+        return up;
+    }
+    
+    public static void setUp(String key){
+        up=key;
+    }
+    
+    public static String getLeft(){
+        return left;
+    }
+    
+    public static void setLeft(String key){
+        left=key;
+    }
+    
+    public static String getRight(){
+        return right;
+    }
+    
+    public static void setRight(String key){
+        right=key;
+    }
+    
+    public static String getDown(){
+        return down;
+    }
+    
+    public static void setDown(String key){
+        down=key;
+    }
+    
+    public static String getShoot(){
+        return shoot;
+    }
+    
+    public static void setShoot(String key){
+        shoot=key;
     }
 
     public void act() 
