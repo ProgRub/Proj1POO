@@ -102,7 +102,7 @@ public class Jogo1 extends World
     public void cairRelampagos() 
     {
          
-        if (Greenfoot.getRandomNumber(100)<1)
+        if (Greenfoot.getRandomNumber(500)<1)
         {
             addObject(new Relâmpago(), Greenfoot.getRandomNumber(getWidth()-1),320);
         }
@@ -114,7 +114,7 @@ public class Jogo1 extends World
          
         if (Greenfoot.getRandomNumber(100)<10)
         {
-            addObject(new Neve_(), Greenfoot.getRandomNumber(getWidth()-1),0);
+            addObject(new Neve(), Greenfoot.getRandomNumber(getWidth()-1),0);
         }
         
     }

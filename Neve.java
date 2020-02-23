@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Neve_ extends Actor
+public class Neve extends Actor
 {
     /**
      * Act - do whatever the Neve_ wants to do. This method is called whenever

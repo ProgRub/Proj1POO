@@ -20,7 +20,7 @@ public class Relâmpago extends Actor
     
     private int count;
     private int count2;
-    
+    GreenfootSound somRelampago = new GreenfootSound ("relampago.mp3");
     public Relâmpago()
     {
         image1 = new GreenfootImage("lightning1_.png");
@@ -28,7 +28,7 @@ public class Relâmpago extends Actor
         image3 = new GreenfootImage("lightning3_.png");
         image4 = new GreenfootImage("lightning4_.png");
         setImage(image1);
-        
+        somRelampago.play();
         count = 20;
         count2 = 0;
     }
