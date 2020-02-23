@@ -15,5 +15,12 @@ public class Texto extends Options
     public void act() 
     {
         // Add your action code here.
-    }    
+    }
+    
+    public Texto(){}
+    
+    public Texto(int qualPlayer){
+        GreenfootImage image = new GreenfootImage("Player " + Integer.toString(qualPlayer),50, Color.WHITE, new Color(0,0,0,0));
+        setImage(image);
+    }
 }

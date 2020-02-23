@@ -27,6 +27,8 @@ public class Opções extends World
     {
         int larg = getWidth();
         int comp = getHeight();
+        addObject(new Texto(1), larg/3, comp/7);
+        addObject(new Texto(2), (2*larg)/3, comp/7);
         addObject(new ControlP1Cima(), larg/3, (2*comp)/7);
         addObject(new ControlP1Esq(), larg/3, (3*comp)/7);
         addObject(new ControlP1Dir(), larg/3, (4*comp)/7);

@@ -15,7 +15,7 @@ public class ControlP2Dir extends Options
     {
         if (prepara){
             getWorld().addObject(text, getX(), getY());
-            updateText(Player2.getRight(),text);
+            updateText(Player2.getRight(),text,40);
             prepara=false;
         }
         getImage().scale((int)(1.5*getWorld().getWidth()/9), getWorld().getHeight()/9);
@@ -26,7 +26,7 @@ public class ControlP2Dir extends Options
     public void clickMouse(){
         if (Greenfoot.mouseClicked(this) || Greenfoot.mouseClicked(text)){
             Greenfoot.getKey();
-            updateText("Press any key", text);
+            updateText("Press any key",text,30);
             Greenfoot.delay(1);
             while (flag){
                 String key= Greenfoot.getKey();
@@ -34,7 +34,7 @@ public class ControlP2Dir extends Options
                     Player2.setRight(key);
                     flag=false;
                     if(!flag){
-                        updateText(Player2.getRight(),text);
+                        updateText(Player2.getRight(),text,40);
                     }
                 }
             }

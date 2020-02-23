@@ -41,8 +41,8 @@ public class Options extends Buttons
         }
     }
     
-    public void updateText(String texto, Actor text){
-        GreenfootImage image = new GreenfootImage(texto,30, Color.WHITE, new Color(0,0,0,0));
+    public void updateText(String texto, Actor text, int size){
+        GreenfootImage image = new GreenfootImage(texto.toUpperCase(),size, Color.WHITE, new Color(0,0,0,0));
         text.setImage(image);
     }
 }

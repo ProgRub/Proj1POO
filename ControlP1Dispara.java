@@ -15,7 +15,7 @@ public class ControlP1Dispara extends Options
     {
         if (prepara){
             getWorld().addObject(text, getX(), getY());
-            updateText(Player1.getShoot(),text);
+            updateText(Player1.getShoot(),text,40);
             prepara=false;
         }
         getImage().scale((int)(1.5*getWorld().getWidth()/9), getWorld().getHeight()/9);
@@ -26,7 +26,7 @@ public class ControlP1Dispara extends Options
     public void clickMouse(){
         if (Greenfoot.mouseClicked(this) || Greenfoot.mouseClicked(text)){
             Greenfoot.getKey();
-            updateText("Press any key", text);
+            updateText("Press any key",text,30);
             Greenfoot.delay(1);
             while (flag){
                 String key= Greenfoot.getKey();
@@ -34,7 +34,7 @@ public class ControlP1Dispara extends Options
                     Player1.setShoot(key);
                     flag=false;
                     if(!flag){
-                        updateText(Player1.getShoot(),text);
+                        updateText(Player1.getShoot(),text,40);
                     }
                 }
             }
