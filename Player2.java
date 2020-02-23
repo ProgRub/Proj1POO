@@ -21,7 +21,7 @@ public class Player2 extends Players
     private Bala bullet;
     private int controlBala=0;
     
-    public int numeroVidas;
+    public static int numeroVidas;
     
     public Player2(){
         image1 = new GreenfootImage("Black/1.png");
