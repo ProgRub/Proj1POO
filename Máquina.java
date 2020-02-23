@@ -1,4 +1,4 @@
-;import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Máquina here.
@@ -10,6 +10,7 @@ public class Máquina extends Actor
 {           
     public static int vida,score;
     GreenfootImage explosion1,explosion2,explosion3,explosion4,explosion5,explosion6,explosion7,explosion8,explosion9,explosion10,explosion11,explosion12,explosion13;
+    VidaMáquina vidaMáquina;
     public Máquina(){
         vida=1000;
         score=0;
@@ -44,11 +45,19 @@ public class Máquina extends Actor
     }
 
     public void perdeVida(){
+        World myWorld = getWorld();
+        Jogo1 jogo1 = (Jogo1)myWorld;
+        vidaMáquina = jogo1.getVidaMáquina();
         if (isTouching(Bala.class)){
             removeTouching(Bala.class);
             vida--;
+            if (vida ==900 || vida ==800 || vida ==700 || vida ==600 || vida ==500 || vida ==400 || vida ==300 || vida ==200 || vida ==100 || vida ==0 ){
+                vidaMáquina.perdeVida();
+            }
         }
     }
+        
+    
 
     public void maquinaDestruida(){
         if (vida == 0){

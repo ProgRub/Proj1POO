@@ -13,9 +13,7 @@ public class Jogo1 extends World
     public Máquina máquina;
     public boolean control,stop;
     
-    
-    
-    
+    VidaMáquina vidaMáquina;
     
     public Jogo1()
     {    
@@ -30,10 +28,10 @@ public class Jogo1 extends World
         
     }
 
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
+    public  VidaMáquina getVidaMáquina(){
+        return vidaMáquina;
+    }
+    
     private void prepare()
     {
         máquina = new Máquina();
@@ -43,9 +41,10 @@ public class Jogo1 extends World
         Player2 P2 = new Player2();
         addObject(P2,(9*getWidth())/10,getHeight()-100);
 
-        VidaMáquina vidaMáquina = new VidaMáquina();
+        vidaMáquina = new VidaMáquina();
         addObject(vidaMáquina,560,32);
         vidaMáquina.setLocation(getWidth()/2,40);
+        
         P1.setLocation(120,620);
         P2.setLocation(1080,620);
         
@@ -60,7 +59,6 @@ public class Jogo1 extends World
     public void act(){
         atualizaVida(máquina.vida);
         gameOver(100,100); //parametros a 0 só para testar
-        
         cairGranizo();
 
     }
