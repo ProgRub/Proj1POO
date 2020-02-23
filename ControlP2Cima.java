@@ -15,7 +15,7 @@ public class ControlP2Cima extends Options
     {
         if (prepara){
             getWorld().addObject(text, getX(), getY());
-            updateText(Player2.getUp(),text,40);
+            updateText(Player2.getControls()[0],text,40);
             prepara=false;
         }
         getImage().scale((int)(1.5*getWorld().getWidth()/9), getWorld().getHeight()/9);
@@ -31,10 +31,10 @@ public class ControlP2Cima extends Options
             while (flag){
                 String key= Greenfoot.getKey();
                 if (key!=null){
-                    Player2.setUp(key);
+                    Player2.setControls(0,key);
                     flag=false;
                     if(!flag){
-                        updateText(Player2.getUp(),text,40);
+                        updateText(Player2.getControls()[0],text,40);
                     }
                 }
             }

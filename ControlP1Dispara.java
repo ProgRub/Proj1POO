@@ -15,7 +15,7 @@ public class ControlP1Dispara extends Options
     {
         if (prepara){
             getWorld().addObject(text, getX(), getY());
-            updateText(Player1.getShoot(),text,40);
+            updateText(Player1.getControls()[4],text,40);
             prepara=false;
         }
         getImage().scale((int)(1.5*getWorld().getWidth()/9), getWorld().getHeight()/9);
@@ -31,10 +31,10 @@ public class ControlP1Dispara extends Options
             while (flag){
                 String key= Greenfoot.getKey();
                 if (key!=null){
-                    Player1.setShoot(key);
+                    Player1.setControls(4,key);
                     flag=false;
                     if(!flag){
-                        updateText(Player1.getShoot(),text,40);
+                        updateText(Player1.getControls()[4],text,40);
                     }
                 }
             }

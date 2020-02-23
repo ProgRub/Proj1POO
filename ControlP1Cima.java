@@ -15,7 +15,7 @@ public class ControlP1Cima extends Options
     {
         if (prepara){
             getWorld().addObject(text, getX(), getY());
-            updateText(Player1.getUp(),text,40);
+            updateText(Player1.getControls()[0],text,40);
             prepara=false;
         }
         getImage().scale((int)(1.5*getWorld().getWidth()/9), getWorld().getHeight()/9);
@@ -31,10 +31,10 @@ public class ControlP1Cima extends Options
             while (flag){
                 String key= Greenfoot.getKey();
                 if (key!=null){
-                    Player1.setUp(key);
+                    Player1.setControls(0,key);
                     flag=false;
                     if(!flag){
-                        updateText(Player1.getUp(),text,40);
+                        updateText(Player1.getControls()[0],text,40);
                     }
                 }
             }

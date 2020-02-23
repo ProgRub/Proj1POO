@@ -15,7 +15,7 @@ public class ControlP2Dir extends Options
     {
         if (prepara){
             getWorld().addObject(text, getX(), getY());
-            updateText(Player2.getRight(),text,40);
+            updateText(Player2.getControls()[2],text,40);
             prepara=false;
         }
         getImage().scale((int)(1.5*getWorld().getWidth()/9), getWorld().getHeight()/9);
@@ -31,10 +31,10 @@ public class ControlP2Dir extends Options
             while (flag){
                 String key= Greenfoot.getKey();
                 if (key!=null){
-                    Player2.setRight(key);
+                    Player2.setControls(2,key);
                     flag=false;
                     if(!flag){
-                        updateText(Player2.getRight(),text,40);
+                        updateText(Player2.getControls()[2],text,40);
                     }
                 }
             }

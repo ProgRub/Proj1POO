@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Write a description of class Player1 here.
@@ -13,6 +14,7 @@ public class Player1 extends Players
     private static String right = "d";
     private static String down = "s";
     private static String shoot ="f";
+    private static String[] controlos= {up,left,right,down,shoot};
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador=0;
     public static boolean andandoParaEsquerda;
@@ -30,45 +32,71 @@ public class Player1 extends Players
         andandoParaEsquerda = false;
     }
     
-    public static String getUp(){
-        return up;
+    public static String[] getControls(){
+        return controlos;
     }
     
-    public static void setUp(String key){
-        up=key;
+    public static void setControls(int pos, String key){
+        controlos[pos]=key;
+        switch(pos){
+            case 0:
+            up=key;
+            break;
+            case 1:
+            left=key;
+            break;
+            case 2:
+            right=key;
+            break;
+            case 3:
+            down=key;
+            break;
+            case 4:
+            shoot=key;
+            break;
+        }
+        
     }
     
-    public static String getLeft(){
-        return left;
-    }
+    // public static String getUp(){
+        // return up;
+    // }
     
-    public static void setLeft(String key){
-        left=key;
-    }
+    // public static void setUp(String key){
+        // up=key;
+    // }
     
-    public static String getRight(){
-        return right;
-    }
+    // public static String getLeft(){
+        // return left;
+    // }
     
-    public static void setRight(String key){
-        right=key;
-    }
+    // public static void setLeft(String key){
+        // left=key;
+    // }
     
-    public static String getDown(){
-        return down;
-    }
+    // public static String getRight(){
+        // return right;
+    // }
     
-    public static void setDown(String key){
-        down=key;
-    }
+    // public static void setRight(String key){
+        // right=key;
+    // }
     
-    public static String getShoot(){
-        return shoot;
-    }
+    // public static String getDown(){
+        // return down;
+    // }
     
-    public static void setShoot(String key){
-        shoot=key;
-    }
+    // public static void setDown(String key){
+        // down=key;
+    // }
+    
+    // public static String getShoot(){
+        // return shoot;
+    // }
+    
+    // public static void setShoot(String key){
+        // shoot=key;
+    // }
 
     public void act() 
     {

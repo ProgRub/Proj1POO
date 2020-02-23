@@ -14,6 +14,7 @@ public class Player2 extends Players
     private static String right = "right";
     private static String down = "down";
     private static String shoot ="0";
+    private static String[] controlos= {up,left,right,down,shoot};
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador=0;
     public static boolean andandoParaEsquerda;
@@ -29,46 +30,72 @@ public class Player2 extends Players
         setImage(image1);
         andandoParaEsquerda = false;
     }
-
-    public static String getUp(){
-        return up;
+    
+    public static String[] getControls(){
+        return controlos;
+    }
+    
+    public static void setControls(int pos, String key){
+        controlos[pos]=key;
+        switch(pos){
+            case 0:
+            up=key;
+            break;
+            case 1:
+            left=key;
+            break;
+            case 2:
+            right=key;
+            break;
+            case 3:
+            down=key;
+            break;
+            case 4:
+            shoot=key;
+            break;
+        }
+        
     }
 
-    public static void setUp(String key){
-        up=key;
-    }
+    // public static String getUp(){
+        // return up;
+    // }
 
-    public static String getLeft(){
-        return left;
-    }
+    // public static void setUp(String key){
+        // up=key;
+    // }
 
-    public static void setLeft(String key){
-        left=key;
-    }
+    // public static String getLeft(){
+        // return left;
+    // }
 
-    public static String getRight(){
-        return right;
-    }
+    // public static void setLeft(String key){
+        // left=key;
+    // }
 
-    public static void setRight(String key){
-        right=key;
-    }
+    // public static String getRight(){
+        // return right;
+    // }
 
-    public static String getDown(){
-        return down;
-    }
+    // public static void setRight(String key){
+        // right=key;
+    // }
 
-    public static void setDown(String key){
-        down=key;
-    }
+    // public static String getDown(){
+        // return down;
+    // }
 
-    public static String getShoot(){
-        return shoot;
-    }
+    // public static void setDown(String key){
+        // down=key;
+    // }
 
-    public static void setShoot(String key){
-        shoot=key;
-    }
+    // public static String getShoot(){
+        // return shoot;
+    // }
+
+    // public static void setShoot(String key){
+        // shoot=key;
+    // }
 
     public void act() 
     {

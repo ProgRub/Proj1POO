@@ -15,7 +15,7 @@ public class ControlP1Esq extends Options
     {
         if (prepara){
             getWorld().addObject(text, getX(), getY());
-            updateText(Player1.getLeft(),text,35);
+            updateText(Player1.getControls()[1],text,35);
             prepara=false;
         }
         getImage().scale((int)(1.5*getWorld().getWidth()/9), getWorld().getHeight()/9);
@@ -31,10 +31,10 @@ public class ControlP1Esq extends Options
             while (flag){
                 String key= Greenfoot.getKey();
                 if (key!=null){
-                    Player1.setLeft(key);
+                    Player1.setControls(1,key);
                     flag=false;
                     if(!flag){
-                        updateText(Player1.getLeft(),text,35);
+                        updateText(Player1.getControls()[1],text,35);
                     }
                 }
             }
