@@ -369,11 +369,19 @@ dependency98.type=UsesDependency
 dependency99.from=Vermelho
 dependency99.to=Jogo1
 dependency99.type=UsesDependency
+<<<<<<< Updated upstream
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
 editor.fx.0.y=0
 height=27
+=======
+editor.fx.0.height=737
+editor.fx.0.width=814
+editor.fx.0.x=360
+editor.fx.0.y=28
+height=838
+>>>>>>> Stashed changes
 package.numDependencies=114
 package.numTargets=44
 project.charset=UTF-8
@@ -389,7 +397,11 @@ readme.name=@README
 readme.width=47
 readme.x=10
 readme.y=10
+<<<<<<< Updated upstream
 simulation.speed=58
+=======
+simulation.speed=100
+>>>>>>> Stashed changes
 target1.height=50
 target1.name=Options
 target1.showInterface=false
