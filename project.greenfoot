@@ -202,13 +202,13 @@ dependency48.from=M\u00E1quina
 dependency48.to=Gas
 dependency48.type=UsesDependency
 dependency49.from=M\u00E1quina
-dependency49.to=Jogo1
+dependency49.to=Bala
 dependency49.type=UsesDependency
 dependency5.from=Jogo1
 dependency5.to=Player1
 dependency5.type=UsesDependency
 dependency50.from=M\u00E1quina
-dependency50.to=Bala
+dependency50.to=Jogo1
 dependency50.type=UsesDependency
 dependency51.from=Options
 dependency51.to=Op\u00E7\u00F5es
@@ -370,12 +370,15 @@ dependency99.from=Vermelho
 dependency99.to=Jogo1
 dependency99.type=UsesDependency
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
 editor.fx.0.y=0
 height=27
 =======
+=======
+>>>>>>> Stashed changes
 editor.fx.0.height=737
 editor.fx.0.width=814
 editor.fx.0.x=360

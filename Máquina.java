@@ -45,11 +45,10 @@ public class Máquina extends Actor
     }
 
     public void perdeVida(){
-        Jogo1 jogo1=(Jogo1)getWorld();
         if (isTouching(Bala.class)){
             removeTouching(Bala.class);
             vida--;
-            jogo1.getVidaMáquina().perdeVida();
+            getWorldOfType(Jogo1.class).getVidaMáquina().perdeVida();
         }
     }
 
