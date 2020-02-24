@@ -26,7 +26,7 @@ public class ControlP1Baixo extends Options
     public void clickMouse(){
         if (Greenfoot.mouseClicked(this) || Greenfoot.mouseClicked(text)){
             Greenfoot.getKey();
-            updateText("Press any key",text,30);
+            updateText("Press any key",text,40);
             Greenfoot.delay(1);
             while (flag){
                 String key= Greenfoot.getKey();

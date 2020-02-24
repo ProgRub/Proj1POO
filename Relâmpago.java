@@ -66,7 +66,7 @@ public class Relâmpago extends Actor
 
             }
         }  
-        count2 ++;     
+        count2++;     
     }
 
     public void removerRelampago(){
