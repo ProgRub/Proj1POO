@@ -28,6 +28,8 @@ public class Jogo1 extends World
         control =false;
         stop =false;
         
+        
+        
     }
 
     public  VidaMáquina getVidaMáquina(){
@@ -66,6 +68,7 @@ public class Jogo1 extends World
         cairGranizo();
         cairNeve();
         cairRelampagos();
+        cairVida();
     }
 
     // private void atualizaVida(int vidaAtualizada){
@@ -118,6 +121,19 @@ public class Jogo1 extends World
         }
         
     }
+    
+    
+    public void cairVida() 
+    {
+         
+        if (Greenfoot.getRandomNumber(500)<1)
+        {
+            addObject(new Vida(), Greenfoot.getRandomNumber(getWidth()-1),0);
+        }
+        
+    }
+    
+   
     
         
     

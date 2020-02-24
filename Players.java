@@ -47,6 +47,23 @@ public class Players extends Actor
                     aux--;
                 }
             }
+            
+            
+            if(isTouching(Vida.class))
+            {
+                if(P1.numeroVidas >= 9)
+                {
+                    P1.numeroVidas = 10;
+                }
+                
+                else
+                {
+                    P1.numeroVidas = P1.numeroVidas + 2; 
+                    removeTouching(Vida.class);
+                }
+                
+                
+            }
         }
         else{
             //getWorld().removeObject(this);
@@ -75,6 +92,22 @@ public class Players extends Actor
                 {
                     aux--;
                 }
+            }
+            
+            if(isTouching(Vida.class))
+            {
+                if(P2.numeroVidas >= 9)
+                {
+                    P2.numeroVidas = 10;
+                }
+                
+                else
+                {
+                    P2.numeroVidas = P2.numeroVidas + 2; 
+                    removeTouching(Vida.class);
+                }
+                
+                
             }
         }
         else{
