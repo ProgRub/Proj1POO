@@ -17,16 +17,16 @@ public class Vida_player1 extends Player1
     public Vida_player1()
     {
         
-        dez = new GreenfootImage("10_.png");
-        nove = new GreenfootImage("9.png");
-        oito = new GreenfootImage("8.png");
-        sete = new GreenfootImage("7.png");
-        seis = new GreenfootImage("6.png");
-        cinco = new GreenfootImage("5.png");
-        quatro = new GreenfootImage("4.png");
-        tres = new GreenfootImage("3.png");
-        dois = new GreenfootImage("2.png");
-        um = new GreenfootImage("1.png");
+        dez = new GreenfootImage("Vida/10.png");
+        nove = new GreenfootImage("Vida/9.png");
+        oito = new GreenfootImage("Vida/8.png");
+        sete = new GreenfootImage("Vida/7.png");
+        seis = new GreenfootImage("Vida/6.png");
+        cinco = new GreenfootImage("Vida/5.png");
+        quatro = new GreenfootImage("Vida/4.png");
+        tres = new GreenfootImage("Vida/3.png");
+        dois = new GreenfootImage("Vida/2.png");
+        um = new GreenfootImage("Vida/1.png");
         setImage(dez);
     }
     public void act() 
@@ -69,9 +69,6 @@ public class Vida_player1 extends Player1
         }
         else if(Player1.numeroVidas <= 0){
             getWorld().removeObject(this);
-    }
-    
-        
-    
+        }    
     }
 }

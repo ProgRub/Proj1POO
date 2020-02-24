@@ -24,7 +24,7 @@ public class Jogo1 extends World
     public Jogo1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1200, 700, 1); 
+        super(1200, 700, 1);
         prepare();
         gameOver = new GameOver();
         restart = new Restart();
@@ -39,6 +39,8 @@ public class Jogo1 extends World
     
     private void prepare()
     {
+        Chão chao= new Chão();
+        addObject(chao,getWidth()/2,getHeight()-chao.getImage().getHeight()/2);
         máquina = new Máquina();
         addObject(máquina,getWidth()/2,getHeight()-150);
         P1 = new Player1();
@@ -65,7 +67,7 @@ public class Jogo1 extends World
 
     public void act(){
         // atualizaVida(máquina.vida);
-        //gameOver(P1.numeroVidas,P2.numeroVidas); 
+        gameOver(P1.numeroVidas,P2.numeroVidas); 
         cairGranizo();
         cairNeve();
         cairRelampagos();

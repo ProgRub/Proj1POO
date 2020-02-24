@@ -18,6 +18,7 @@ public class Player1 extends Players
     private static String cor="";
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador=0;
+    private final int GRAVIDADE =10;
     public static boolean andandoParaEsquerda;
     private int controlBala=0;
 
@@ -108,13 +109,15 @@ public class Player1 extends Players
         move();
         disparar();        
         perdeVidas(this);
-    }    
+    }
 
     public void move(){
         if (Greenfoot.isKeyDown(up)){
-            jump();
+            if(isTouching(Chão.class)){
+                jump();
+            }
         }
-        else if (Greenfoot.isKeyDown(left)){
+        if (Greenfoot.isKeyDown(left)){
             if (!andandoParaEsquerda){
                 image1.mirrorHorizontally();
                 image2.mirrorHorizontally();
@@ -149,8 +152,15 @@ public class Player1 extends Players
     }
 
     public void jump(){
-        for (int i=10;i>0;i--){            
-            setLocation(getX(),getY()-1);
+        // for (int i=GRAVIDADE;i>0;i--){    
+            // if (i%2==0){
+                setLocation(getX(),getY()-GRAVIDADE);
+            // }
+        // }
+        for (int i=GRAVIDADE;i>0;i--){    
+            if (i%2==0){
+                setLocation(getX(),getY()+1);
+            }
         }
     }
 

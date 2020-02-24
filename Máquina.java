@@ -14,19 +14,19 @@ public class Máquina extends Actor
     public Máquina(){
         vida=500;
         score=0;
-        explosion1 = new GreenfootImage("explosion1.png");
-        explosion2 = new GreenfootImage("explosion2.png");
-        explosion3 = new GreenfootImage("explosion3.png");
-        explosion4 = new GreenfootImage("explosion4.png");
-        explosion5 = new GreenfootImage("explosion5.png");
-        explosion6 = new GreenfootImage("explosion6.png");
-        explosion7 = new GreenfootImage("explosion7.png");
-        explosion8 = new GreenfootImage("explosion8.png");
-        explosion9 = new GreenfootImage("explosion9.png");
-        explosion10 = new GreenfootImage("explosion10.png");
-        explosion11= new GreenfootImage("explosion11.png");
-        explosion12 = new GreenfootImage("explosion12.png");
-        explosion13 = new GreenfootImage("explosion13.png");
+        explosion1 = new GreenfootImage("Explosion/1.png");
+        explosion2 = new GreenfootImage("Explosion/2.png");
+        explosion3 = new GreenfootImage("Explosion/3.png");
+        explosion4 = new GreenfootImage("Explosion/4.png");
+        explosion5 = new GreenfootImage("Explosion/5.png");
+        explosion6 = new GreenfootImage("Explosion/6.png");
+        explosion7 = new GreenfootImage("Explosion/7.png");
+        explosion8 = new GreenfootImage("Explosion/8.png");
+        explosion9 = new GreenfootImage("Explosion/9.png");
+        explosion10 = new GreenfootImage("Explosion/10.png");
+        explosion11= new GreenfootImage("Explosion/11.png");
+        explosion12 = new GreenfootImage("Explosion/12.png");
+        explosion13 = new GreenfootImage("Explosion/13.png");
 
     }
 
