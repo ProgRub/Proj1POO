@@ -738,9 +738,13 @@ readme.width=47
 readme.x=10
 readme.y=10
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 simulation.speed=52
 =======
 simulation.speed=49
+>>>>>>> Stashed changes
+=======
+simulation.speed=51
 >>>>>>> Stashed changes
 target1.height=50
 target1.name=Options
@@ -1093,7 +1097,11 @@ target9.y=0
 version=3.0.0
 width=1550
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 world.lastInstantiated=Jogo2
+=======
+world.lastInstantiated=MenuInicial
+>>>>>>> Stashed changes
 =======
 world.lastInstantiated=MenuInicial
 >>>>>>> Stashed changes
