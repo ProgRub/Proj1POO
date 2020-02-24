@@ -62,7 +62,7 @@ public class Jogo1 extends World
 
     public void act(){
         // atualizaVida(máquina.vida);
-        gameOver(P1.numeroVidas,P2.numeroVidas); 
+        //gameOver(P1.numeroVidas,P2.numeroVidas); 
         cairGranizo();
         cairNeve();
         cairRelampagos();

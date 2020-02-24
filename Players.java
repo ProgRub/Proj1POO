@@ -49,7 +49,7 @@ public class Players extends Actor
             }
         }
         else{
-            getWorld().removeObject(this);
+            //getWorld().removeObject(this);
         }
 
     }
@@ -78,7 +78,7 @@ public class Players extends Actor
             }
         }
         else{
-            getWorld().removeObject(this);
+            //getWorld().removeObject(this);
         }
     }
 
