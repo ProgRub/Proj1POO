@@ -17,17 +17,20 @@ public class Relâmpago extends Actor
     private GreenfootImage image2;
     private GreenfootImage image3;
     private GreenfootImage image4;
+    private GreenfootImage target;
 
     private int count;
     private final int TIMER;
     private int count2;
-    GreenfootSound somRelampago = new GreenfootSound ("relampago.mp3");
+    private int wait;
+    private GreenfootSound somRelampago;
     public Relâmpago()
     {
         image1 = new GreenfootImage("lightning1_.png");
         image2 = new GreenfootImage("lightning2_.png");
         image3 = new GreenfootImage("lightning3_.png");
         image4 = new GreenfootImage("lightning4_.png");
+        somRelampago = new GreenfootSound ("relampago.mp3");
         setImage(image1);
         somRelampago.play();
         TIMER=5;
@@ -45,7 +48,6 @@ public class Relâmpago extends Actor
     {
         if (count2%TIMER==0){
             if (getImage() == image1)
-
             {
                 setImage(image2);
             }
