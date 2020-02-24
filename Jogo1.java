@@ -61,19 +61,19 @@ public class Jogo1 extends World
     }
 
     public void act(){
-        atualizaVida(máquina.vida);
+        // atualizaVida(máquina.vida);
         gameOver(P1.numeroVidas,P2.numeroVidas); 
         cairGranizo();
         cairNeve();
         cairRelampagos();
     }
 
-    private void atualizaVida(int vidaAtualizada){
-        showText("" + vidaAtualizada + "%", getWidth()/2,getHeight()-190);
-    }
+    // private void atualizaVida(int vidaAtualizada){
+        // showText("" + vidaAtualizada + "%", getWidth()/2,getHeight()-190);
+    // }
     
     private void gameOver(int vidaJogador1, int vidaJogador2){
-        if (vidaJogador1 ==0 && vidaJogador2 == 0 && control == false ){
+        if (vidaJogador1 <=0 && vidaJogador2 <= 0 && control == false ){
             addObject(gameOver,getWidth()/2,getHeight()/2);
             addObject(restart,getWidth()/2,getHeight()/2 +50);
             stop =true;

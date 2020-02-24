@@ -17,9 +17,7 @@ public class Granizo extends Actor
 
     {
         imageGranizo = getImage();
-        int larguraAtual = imageGranizo.getWidth();
-        int alturaAtual = imageGranizo.getHeight();
-        imageGranizo.scale(larguraAtual/3, alturaAtual/3);
+        imageGranizo.scale(imageGranizo.getWidth()/3, imageGranizo.getHeight()/3);
 
     }
 

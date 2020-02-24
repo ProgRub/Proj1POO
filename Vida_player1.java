@@ -67,7 +67,7 @@ public class Vida_player1 extends Player1
         else if(Player1.numeroVidas == 1){
             setImage(um);
         }
-        else if(Player1.numeroVidas == 0){
+        else if(Player1.numeroVidas <= 0){
             getWorld().removeObject(this);
     }
     

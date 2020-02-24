@@ -45,19 +45,17 @@ public class Máquina extends Actor
     }
 
     public void perdeVida(){
-        World myWorld = getWorld();
-        Jogo1 jogo1 = (Jogo1)myWorld;
-        vidaMáquina = jogo1.getVidaMáquina();
+        Jogo1 jogo1=(Jogo1)getWorld();
         if (isTouching(Bala.class)){
             removeTouching(Bala.class);
             vida--;
-            vidaMáquina.perdeVida();
+            jogo1.getVidaMáquina().perdeVida();
         }
     }
 
 
     public void maquinaDestruida(){
-        if (vida == 0){
+        if (vida <= 0){
             Greenfoot.playSound("explosion.wav");
             Greenfoot.delay(3);
             setImage(explosion1);

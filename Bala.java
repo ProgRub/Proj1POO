@@ -10,6 +10,7 @@ public class Bala extends Actor
 {
     GreenfootImage imagem, original;
     private boolean moveEsquerda;
+    private final int VELOCIDADE;
     
     GreenfootSound disparo = new GreenfootSound("gun.wav");
     
@@ -19,6 +20,7 @@ public class Bala extends Actor
         moveEsquerda= P1.andandoParaEsquerda;
         disparo.setVolume(70);
         disparo.play();
+        VELOCIDADE=8;
     }
     public Bala(Player2 P2){
         original = getImage();
@@ -26,6 +28,7 @@ public class Bala extends Actor
         moveEsquerda= P2.andandoParaEsquerda;
         disparo.setVolume(70);
         disparo.play();
+        VELOCIDADE=8;
     }
 
     public void act() 
@@ -44,10 +47,10 @@ public class Bala extends Actor
             setImage(original);
         }
         if (moveEsquerda){
-            move(-8);
+            move(-VELOCIDADE);
         }
         else{
-            move(8);
+            move(VELOCIDADE);
         }
     }
 

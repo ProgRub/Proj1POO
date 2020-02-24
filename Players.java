@@ -25,12 +25,12 @@ public class Players extends Actor
         aux = 19; 
     }
 
-    protected void perdeVidas(Player1 player1)
+    protected void perdeVidas(Player1 P1)
     {
-        if(player1.numeroVidas>0){
+        if(P1.numeroVidas>0){
             if(isTouching(Granizo.class))
             {
-                player1.numeroVidas--; 
+                P1.numeroVidas--; 
                 removeTouching(Granizo.class);
             }
 
@@ -38,8 +38,7 @@ public class Players extends Actor
             {
                 if (aux==0)
                 {
-                    player1.numeroVidas--;
-                    player1.numeroVidas =  player1.numeroVidas - 2;
+                    P1.numeroVidas =  P1.numeroVidas - 2;
                     //removeTouching(Relâmpago.class);
                     aux = 20;
                 }
@@ -55,12 +54,12 @@ public class Players extends Actor
 
     }
 
-    protected void perdeVidas(Player2 player2)
+    protected void perdeVidas(Player2 P2)
     {
-        if(player2.numeroVidas>0){
+        if(P2.numeroVidas>0){
             if(isTouching(Granizo.class))
             {
-                player2.numeroVidas--; 
+                P2.numeroVidas--; 
                 removeTouching(Granizo.class);
             }
 
@@ -68,8 +67,7 @@ public class Players extends Actor
             {
                 if (aux==0)
                 {
-                    player2.numeroVidas--;
-                    player2.numeroVidas =  player2.numeroVidas - 2;
+                    P2.numeroVidas =  P2.numeroVidas - 2;
                     //removeTouching(Relâmpago.class);
                     aux = 20;
                 }

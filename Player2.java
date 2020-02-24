@@ -19,11 +19,10 @@ public class Player2 extends Players
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador=0;
     public static boolean andandoParaEsquerda;
-    private Bala bullet;
     private int controlBala=0;
-    
+
     public static int numeroVidas;
-    
+
     public Player2(){
         image1 = new GreenfootImage(cor+"/1.png");
         image2 = new GreenfootImage(cor+"/2.png");
@@ -33,14 +32,14 @@ public class Player2 extends Players
         image6 = new GreenfootImage(cor+"/6.png");
         setImage(image1);
         andandoParaEsquerda = false;
-        
+
         numeroVidas = 10;
     }
-    
+
     public static String[] getControls(){
         return controlos;
     }
-    
+
     public static void setControls(int pos, String key){
         controlos[pos]=key;
         switch(pos){
@@ -60,7 +59,7 @@ public class Player2 extends Players
             shoot=key;
             break;
         }
-        
+
     }
 
     public static void setColor(String color){
@@ -68,50 +67,50 @@ public class Player2 extends Players
     }
 
     // public static String getUp(){
-        // return up;
+    // return up;
     // }
 
     // public static void setUp(String key){
-        // up=key;
+    // up=key;
     // }
 
     // public static String getLeft(){
-        // return left;
+    // return left;
     // }
 
     // public static void setLeft(String key){
-        // left=key;
+    // left=key;
     // }
 
     // public static String getRight(){
-        // return right;
+    // return right;
     // }
 
     // public static void setRight(String key){
-        // right=key;
+    // right=key;
     // }
 
     // public static String getDown(){
-        // return down;
+    // return down;
     // }
 
     // public static void setDown(String key){
-        // down=key;
+    // down=key;
     // }
 
     // public static String getShoot(){
-        // return shoot;
+    // return shoot;
     // }
 
     // public static void setShoot(String key){
-        // shoot=key;
+    // shoot=key;
     // }
 
     public void act() 
     {
         move();
         disparar();
-        
+
         perdeVidas(this);
 
     }    
@@ -187,12 +186,9 @@ public class Player2 extends Players
 
     public void disparar(){
         controlBala++;
-        if (controlBala >20){
-            if (Greenfoot.isKeyDown(shoot)){
-                bullet = new Bala(this);
-                getWorld().addObject(bullet, getX(),getY()-5);
-                controlBala = 0;
-            }
+        if (controlBala >20 && Greenfoot.isKeyDown(shoot)){
+            getWorld().addObject(new Bala(this), getX(),getY()-5);
+            controlBala = 0;
         }
     }
 }

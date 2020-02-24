@@ -19,9 +19,8 @@ public class Player1 extends Players
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador=0;
     public static boolean andandoParaEsquerda;
-    private Bala bullet;
     private int controlBala=0;
-    
+
     public static int numeroVidas;
     public Player1(){
         image1 = new GreenfootImage(cor+"/1.png");
@@ -182,12 +181,9 @@ public class Player1 extends Players
 
     public void disparar(){
         controlBala++;
-        if (controlBala >20){
-            if (Greenfoot.isKeyDown(shoot)){
-                bullet = new Bala(this);
-                getWorld().addObject(bullet, getX(),getY()-5);
-                controlBala = 0;
-            }
+        if (controlBala >20 && Greenfoot.isKeyDown(shoot)){
+            getWorld().addObject(new Bala(this), getX(),getY()-5);
+            controlBala = 0;
         }
     }
 }

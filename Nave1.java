@@ -26,9 +26,9 @@ public class Nave1 extends Naves
 
     public void removeGas()
     {
-        if (isTouching (Gas.class))
+        if (isTouching(Gas.class))
         {
-            removeTouching (Gas.class);
+            removeTouching(Gas.class);
         }
     }
 }

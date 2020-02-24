@@ -12,13 +12,14 @@ public class Relâmpago extends Actor
      * Act - do whatever the Relâmpago wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
+
     private GreenfootImage image1;
     private GreenfootImage image2;
     private GreenfootImage image3;
     private GreenfootImage image4;
-    
+
     private int count;
+    private final int TIMER;
     private int count2;
     GreenfootSound somRelampago = new GreenfootSound ("relampago.mp3");
     public Relâmpago()
@@ -29,67 +30,50 @@ public class Relâmpago extends Actor
         image4 = new GreenfootImage("lightning4_.png");
         setImage(image1);
         somRelampago.play();
-        count = 20;
+        TIMER=5;
+        count = TIMER*4;
         count2 = 0;
     }
+
     public void act() 
     {
         switchImage();
         removerRelampago();
     }
-    
+
     public void switchImage()
     {
-        if (getImage() == image1  && (count2 % 4 == 0  ))
-        
-        {
-            setImage(image2);
-            count2 ++;
-        }
-        
-        else if (getImage() == image2 && (count2 % 4 == 0  ))
-        
-        {
-            setImage(image3);
-            count2 ++;
-        }
-        
-        else if (getImage() == image3  && (count2 % 4 == 0  )  )
-        
-        {
-            setImage(image4);
-            count2 ++;
-        }
-        
-        else if (getImage() == image4 && (count2 % 4 == 0  ))
-        
-        {
-            setImage(image1);
-            count2 ++;
-            
-        }
-        
-        else
-        {
-            count2 ++;
-        }
-        
-        
-        
-        
+        if (count2%TIMER==0){
+            if (getImage() == image1)
+
+            {
+                setImage(image2);
+            }
+
+            else if (getImage() == image2)
+            {
+                setImage(image3);
+            }
+
+            else if (getImage() == image3)
+            {
+                setImage(image4);
+            }
+
+            else if (getImage() == image4)
+            {
+                setImage(image1);
+
+            }
+        }  
+        count2 ++;     
     }
-    
+
     public void removerRelampago(){
-        
-        
-        
-        if(count == 0){
+
+        if(count <= 0){
             getWorld().removeObject(this);
         }
-        
-        else 
-        {
-            count--;
-        }
+        count--;
     }
 }
