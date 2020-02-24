@@ -18,7 +18,6 @@ public class Jogo1 extends World
     Player2 P2;
     GreenfootSound somAmbiente = new GreenfootSound("winter.mp3");
     private int wait;
-    private final int WAITTIME;
     
     long lastAdded = System.currentTimeMillis();
     
@@ -31,14 +30,7 @@ public class Jogo1 extends World
         restart = new Restart();
         control =false;
         stop =false;
-<<<<<<< Updated upstream
         
-        
-        
-=======
-        WAITTIME = 300000;
-        wait = WAITTIME;
->>>>>>> Stashed changes
     }
 
     public  VidaMáquina getVidaMáquina(){
@@ -113,22 +105,13 @@ public class Jogo1 extends World
     
     public void cairRelampagos() 
     {
-        if (Greenfoot.getRandomNumber(500)<1)
-        {
+        if (Greenfoot.getRandomNumber(500)<1){
             Target target = new Target();
             addObject(target, Greenfoot.getRandomNumber(getWidth()-1),getHeight()-70);
             //lastAdded = System.currentTimeMillis();
-            int delay=0;
-            while (delay <10000) {
-                if (delay == 549) {
-                    addObject(new Relâmpago(), target.getX(),320);
-                    //removeObject(target);
-                }
-                delay++;
-            }
-            
-        }
-        
+            addObject(new Relâmpago(), target.getX(),320);
+            removeObject(target);
+        } 
     }
     
     public void cairNeve() 

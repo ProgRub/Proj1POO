@@ -35,6 +35,6 @@ public class Vida extends Actor
     }
 
     public void movimentoVida(){
-        setLocation(getX()-1, getY() + 8);
+        setLocation(getX(), getY() + 4);
     }      
 }
