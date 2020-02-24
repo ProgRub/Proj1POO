@@ -12,6 +12,8 @@ public class Target extends Actor
     private final int TIMER;
     private int count2;
     GreenfootImage semBrilho,comBrilho;
+    
+    private int contador;
     public Target(){
         semBrilho = new GreenfootImage("targetf.png");
         comBrilho = new GreenfootImage("target8.png");
@@ -19,11 +21,13 @@ public class Target extends Actor
         TIMER=5;
         count = TIMER*4;
         count2 = 0;
+        contador=0;
     }
     
     public void act() 
     {
         switchImage();
+        conta(this);
     }
     
     public void switchImage()
@@ -40,5 +44,15 @@ public class Target extends Actor
             }
         }  
         count2++;     
+    }
+    private void conta(Target target)
+    {  
+        contador++;
+        if(contador == 140)
+        {
+           getWorld().addObject(new Relâmpago(), target.getX(),320);
+           getWorld().removeObject(target);
+           contador = 0;
+        }
     }
 }

@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Relâmpago extends Actor
+public class Relâmpago extends Target
 {
     /**
      * Act - do whatever the Relâmpago wants to do. This method is called whenever
@@ -26,18 +26,11 @@ public class Relâmpago extends Actor
     private GreenfootSound somRelampago;
     public Relâmpago()
     {
-<<<<<<< Updated upstream
-        image1 = new GreenfootImage("lightning1_.png");
-        image2 = new GreenfootImage("lightning2_.png");
-        image3 = new GreenfootImage("lightning3_.png");
-        image4 = new GreenfootImage("lightning4_.png");
         somRelampago = new GreenfootSound ("relampago.mp3");
-=======
         image1 = new GreenfootImage("Lightning/1.png");
         image2 = new GreenfootImage("Lightning/2.png");
         image3 = new GreenfootImage("Lightning/3.png");
         image4 = new GreenfootImage("Lightning/4.png");
->>>>>>> Stashed changes
         setImage(image1);
         somRelampago.play();
         TIMER=5;
@@ -77,7 +70,7 @@ public class Relâmpago extends Actor
         }  
         count2++;     
     }
-
+    
     public void removerRelampago(){
 
         if(count <= 0){
