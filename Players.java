@@ -12,83 +12,75 @@ public class Players extends Actor
      * Act - do whatever the Players wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
+
     public int aux;
-    
+
     public void act() 
     {
         // Add your action code here.
     }  
-    
+
     public Players()
     {
-       aux = 19; 
+        aux = 19; 
     }
 
     protected void perdeVidas(Player1 player1)
     {
-        if(isTouching(Granizo.class))
-        {
-            player1.numeroVidas--; 
-            removeTouching(Granizo.class);
-        }
-        
-        if(isTouching(Relâmpago.class))
-        {
-            if (aux==0)
+        if(player1.numeroVidas>0){
+            if(isTouching(Granizo.class))
             {
-                if (player1.numeroVidas == 1)
+                player1.numeroVidas--; 
+                removeTouching(Granizo.class);
+            }
+
+            if(isTouching(Relâmpago.class))
+            {
+                if (aux==0)
                 {
                     player1.numeroVidas--;
+                    player1.numeroVidas =  player1.numeroVidas - 2;
+                    //removeTouching(Relâmpago.class);
+                    aux = 20;
                 }
-                
                 else
                 {
-                    player1.numeroVidas =  player1.numeroVidas - 2;
-                    removeTouching(Relâmpago.class);
-                    aux = 20;
-                
+                    aux--;
                 }
             }
-            else
-            {
-                aux--;
-            }
         }
-        
-        
+        else{
+            getWorld().removeObject(this);
+        }
+
     }
 
     protected void perdeVidas(Player2 player2)
     {
-        if(isTouching(Granizo.class))
-        {
-            player2.numeroVidas--; 
-            removeTouching(Granizo.class);
-        }
-        
-        if(isTouching(Relâmpago.class))
-        {
-            if (aux==0)
+        if(player2.numeroVidas>0){
+            if(isTouching(Granizo.class))
             {
-                if (player2.numeroVidas == 1)
+                player2.numeroVidas--; 
+                removeTouching(Granizo.class);
+            }
+
+            if(isTouching(Relâmpago.class))
+            {
+                if (aux==0)
                 {
                     player2.numeroVidas--;
+                    player2.numeroVidas =  player2.numeroVidas - 2;
+                    //removeTouching(Relâmpago.class);
+                    aux = 20;
                 }
-                
                 else
                 {
-                    player2.numeroVidas =  player2.numeroVidas - 2;
-                    removeTouching(Relâmpago.class);
-                    aux = 20;
-                
+                    aux--;
                 }
-                
             }
-            else
-            {
-                aux--;
-            }
+        }
+        else{
+            getWorld().removeObject(this);
         }
     }
 
