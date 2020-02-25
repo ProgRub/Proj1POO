@@ -19,7 +19,11 @@ public class Player1 extends Players
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador;
     private int contador1;
-    private final int GRAVIDADE;
+    private final int GRAVIDADE =15;
+    private int tempoJump=GRAVIDADE;
+    private int tempoQueda=GRAVIDADE;
+    private boolean podeSaltar=false;
+    private boolean saltou=false;
     public static boolean andandoParaEsquerda;
     private int controlBala;
 
@@ -27,9 +31,8 @@ public class Player1 extends Players
     public Player1(){
         contador=0;
         contador1=0;
-        GRAVIDADE =10;
         controlBala=0;
-        
+
         //movimento jogador:
         image1 = new GreenfootImage(cor+"/1.png");
         image2 = new GreenfootImage(cor+"/2.png");
@@ -37,8 +40,7 @@ public class Player1 extends Players
         image4 = new GreenfootImage(cor+"/4.png");
         image5 = new GreenfootImage(cor+"/5.png");
         image6 = new GreenfootImage(cor+"/6.png");
-        
-        setImage(image1);
+        setImage(image4);
         andandoParaEsquerda = false;        
         numeroVidas = 10;
     }
@@ -72,59 +74,23 @@ public class Player1 extends Players
     public static void setColor(String color){
         cor=color;
     }
-    // public static String getUp(){
-    // return up;
-    // }
-
-    // public static void setUp(String key){
-    // up=key;
-    // }
-
-    // public static String getLeft(){
-    // return left;
-    // }
-
-    // public static void setLeft(String key){
-    // left=key;
-    // }
-
-    // public static String getRight(){
-    // return right;
-    // }
-
-    // public static void setRight(String key){
-    // right=key;
-    // }
-
-    // public static String getDown(){
-    // return down;
-    // }
-
-    // public static void setDown(String key){
-    // down=key;
-    // }
-
-    // public static String getShoot(){
-    // return shoot;
-    // }
-
-    // public static void setShoot(String key){
-    // shoot=key;
-    // }
 
     public void act() 
     {
+        queda();
         move();
         disparar();        
         perdeVidas(this);
     }
 
     public void move(){
-        if (numeroVidas >0){
-            if (Greenfoot.isKeyDown(up)){
-                if(isTouching(Chão.class)){
-                    jump();
-                }
+        if(numeroVidas >0){
+            if (Greenfoot.isKeyDown(up) && podeSaltar){
+                saltou=true;
+                podeSaltar=false;
+            }
+            if(saltou){
+                jump();
             }
             if (Greenfoot.isKeyDown(left)){
                 if (!andandoParaEsquerda){
@@ -136,8 +102,8 @@ public class Player1 extends Players
                     image6.mirrorHorizontally();
                 }
                 setLocation(getX()-2, getY());
-                animarMove();
                 andandoParaEsquerda=true;
+                animarMove();
             }
             else if (Greenfoot.isKeyDown(right)){
                 if (andandoParaEsquerda){
@@ -162,23 +128,34 @@ public class Player1 extends Players
     }
 
     public void jump(){
-        // for (int i=GRAVIDADE;i>0;i--){    
-            // if (i%2==0){
-                setLocation(getX(),getY()-GRAVIDADE);
-            // }
-        // }
-        for (int i=GRAVIDADE;i>0;i--){    
-            if (i%2==0){
-                setLocation(getX(),getY()+1);
+        if (tempoJump>0){
+            setLocation(getX(),getY()-tempoJump);
+            tempoJump--;
+        }
+        else{
+            tempoJump=GRAVIDADE;
+            saltou=false;
+        }
+    }
+
+    public void queda(){
+        if (!isTouching(Chão.class) && !saltou){
+            setLocation(getX(),getY()+tempoQueda);
+            tempoQueda++;
+        }
+        else{
+            tempoQueda=0;
+            if(isTouching(Chão.class)){
+                podeSaltar=true;
             }
         }
     }
 
     public void animarMove(){
         contador++;
-        
-            if (contador==4){
-                if (numeroVidas >0){
+
+        if (contador==4){
+            if (numeroVidas >0){
                 if(getImage()==image1){
                     setImage(image2);
                 }
@@ -208,8 +185,8 @@ public class Player1 extends Players
         if (controlBala >20 && Greenfoot.isKeyDown(shoot)){
             getWorld().addObject(new Bala(this), getX(),getY()-5);
             controlBala = 0;
-        //}
+            //}
+        }
     }
-    }
-    
+
 }

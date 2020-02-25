@@ -40,18 +40,15 @@ public class Jogo1 extends World
         Chão chao= new Chão();
         addObject(chao,getWidth()/2,getHeight()-chao.getImage().getHeight()/2);
         máquina = new Máquina();
-        addObject(máquina,getWidth()/2,getHeight()-150);
+        addObject(máquina,getWidth()/2,getHeight()-chao.getImage().getHeight()-máquina.getImage().getHeight()/2);
         P1 = new Player1();
-        addObject(P1,getWidth()/10,getHeight()-100);
+        addObject(P1,getWidth()/10,getHeight()-chao.getImage().getHeight()-P1.getImage().getHeight()/2+2);
         P2 = new Player2();
-        addObject(P2,(9*getWidth())/10,getHeight()-100);
+        addObject(P2,(9*getWidth())/10,getHeight()-chao.getImage().getHeight()-P2.getImage().getHeight()/2+2);
 
         vidaMáquina = new VidaMáquina();
         addObject(vidaMáquina,560,32);
         vidaMáquina.setLocation(getWidth()/2,40);
-        
-        P1.setLocation(120,620);
-        P2.setLocation(1080,620);
         
         Vida_player1 vida_player1 = new Vida_player1();
         addObject(vida_player1, 350, 100);

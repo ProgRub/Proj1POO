@@ -18,6 +18,11 @@ public class Player2 extends Players
     private static String cor="";
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador=0;
+    private final int GRAVIDADE =15;
+    private int tempoJump=GRAVIDADE;
+    private int tempoQueda=GRAVIDADE;
+    private boolean podeSaltar=false;
+    private boolean saltou=false;
     public static boolean andandoParaEsquerda;
     private int controlBala=0;
 
@@ -30,8 +35,7 @@ public class Player2 extends Players
         image4 = new GreenfootImage(cor+"/4.png");
         image5 = new GreenfootImage(cor+"/5.png");
         image6 = new GreenfootImage(cor+"/6.png");
-        
-        setImage(image1);
+        setImage(image4);
         andandoParaEsquerda = false;
 
         numeroVidas = 10;
@@ -67,125 +71,108 @@ public class Player2 extends Players
         cor=color;
     }
 
-    // public static String getUp(){
-    // return up;
-    // }
-
-    // public static void setUp(String key){
-    // up=key;
-    // }
-
-    // public static String getLeft(){
-    // return left;
-    // }
-
-    // public static void setLeft(String key){
-    // left=key;
-    // }
-
-    // public static String getRight(){
-    // return right;
-    // }
-
-    // public static void setRight(String key){
-    // right=key;
-    // }
-
-    // public static String getDown(){
-    // return down;
-    // }
-
-    // public static void setDown(String key){
-    // down=key;
-    // }
-
-    // public static String getShoot(){
-    // return shoot;
-    // }
-
-    // public static void setShoot(String key){
-    // shoot=key;
-    // }
 
     public void act() 
     {
+        queda();
         move();
         disparar();
         perdeVidas(this);
-
     }    
 
     public void move(){
         if(numeroVidas >0){
-        if (Greenfoot.isKeyDown(up)){
-            jump();
-        }
-        else if (Greenfoot.isKeyDown(left)){
-            if (!andandoParaEsquerda){
-                image1.mirrorHorizontally();
-                image2.mirrorHorizontally();
-                image3.mirrorHorizontally();
-                image4.mirrorHorizontally();
-                image5.mirrorHorizontally();
-                image6.mirrorHorizontally();
+            if (Greenfoot.isKeyDown(up) && podeSaltar){
+                saltou=true;
+                podeSaltar=false;
             }
-            setLocation(getX()-2, getY());
-            animarMove();
-            andandoParaEsquerda=true;
-        }
-        else if (Greenfoot.isKeyDown(right)){
-            if (andandoParaEsquerda){
-                image1.mirrorHorizontally();
-                image2.mirrorHorizontally();
-                image3.mirrorHorizontally();
-                image4.mirrorHorizontally();
-                image5.mirrorHorizontally();
-                image6.mirrorHorizontally();
+            if(saltou){
+                jump();
             }
-            setLocation(getX()+2, getY());
-            andandoParaEsquerda=false;
-            animarMove();
+            if (Greenfoot.isKeyDown(left)){
+                if (!andandoParaEsquerda){
+                    image1.mirrorHorizontally();
+                    image2.mirrorHorizontally();
+                    image3.mirrorHorizontally();
+                    image4.mirrorHorizontally();
+                    image5.mirrorHorizontally();
+                    image6.mirrorHorizontally();
+                }
+                setLocation(getX()-2, getY());
+                animarMove();
+                andandoParaEsquerda=true;
+            }
+            else if (Greenfoot.isKeyDown(right)){
+                if (andandoParaEsquerda){
+                    image1.mirrorHorizontally();
+                    image2.mirrorHorizontally();
+                    image3.mirrorHorizontally();
+                    image4.mirrorHorizontally();
+                    image5.mirrorHorizontally();
+                    image6.mirrorHorizontally();
+                }
+                setLocation(getX()+2, getY());
+                andandoParaEsquerda=false;
+                animarMove();
+            }
+            else if (Greenfoot.isKeyDown(down)){
+                setLocation(getX(), getY()+2);
+            }
+            if (!Greenfoot.isKeyDown(right) && !Greenfoot.isKeyDown(up) && !Greenfoot.isKeyDown(left) && !Greenfoot.isKeyDown(down)){
+                setImage(image4);
+            }
         }
-        else if (Greenfoot.isKeyDown(down)){
-            setLocation(getX(), getY()+2);
-        }
-        if (!Greenfoot.isKeyDown(right) && !Greenfoot.isKeyDown(up) && !Greenfoot.isKeyDown(left) && !Greenfoot.isKeyDown(down)){
-            setImage(image4);
-        }
-    }
     }
 
     public void jump(){
-        for (int i=10;i>0;i--){            
-            setLocation(getX(),getY()-1);
+        if (tempoJump>0){
+            setLocation(getX(),getY()-tempoJump);
+            tempoJump--;
+        }
+        else{
+            tempoJump=GRAVIDADE;
+            saltou=false;
+        }
+    }
+
+    public void queda(){
+        if (!isTouching(Chão.class) &&!saltou){
+            setLocation(getX(),getY()+tempoQueda);
+            tempoQueda++;
+        }
+        else{
+            tempoQueda=0;
+            if(isTouching(Chão.class)){
+                podeSaltar=true;
+            }
         }
     }
 
     public void animarMove(){
         contador++;
-        
-            if (contador==4){
-                if (numeroVidas >0){
-                    if(getImage()==image1){
-                        setImage(image2);
-                    }
-                    else if (getImage()==image2){
-                        setImage(image3);
-                    }
-                    else if(getImage()==image3){
-                        setImage(image4);
-                    }
-                    else if (getImage()==image4){
-                        setImage(image5);
-                    }
-                    else if(getImage()==image5){
-                        setImage(image6);
-                    }
-                    else if (getImage()==image6){
-                        setImage(image1);
-                    }
+
+        if (contador==4){
+            if (numeroVidas >0){
+                if(getImage()==image1){
+                    setImage(image2);
                 }
-                contador=0;
+                else if (getImage()==image2){
+                    setImage(image3);
+                }
+                else if(getImage()==image3){
+                    setImage(image4);
+                }
+                else if (getImage()==image4){
+                    setImage(image5);
+                }
+                else if(getImage()==image5){
+                    setImage(image6);
+                }
+                else if (getImage()==image6){
+                    setImage(image1);
+                }
+            }
+            contador=0;
         }
     }
 
@@ -196,8 +183,8 @@ public class Player2 extends Players
                 getWorld().addObject(new Bala(this), getX(),getY()-5);
                 controlBala = 0;
             }
+        }
     }
-    }
-    
+
 }
 
