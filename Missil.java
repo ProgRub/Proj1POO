@@ -41,7 +41,10 @@ public class Missil extends Jogos
             teleguiado(alvo1);
         }
         chegouAoFim();
-    }    
+        
+       
+    }   
+    
 
     public void teleguiado(Nave2 alvo){
         if(getY()>limite)
