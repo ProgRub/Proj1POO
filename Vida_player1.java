@@ -13,10 +13,11 @@ public class Vida_player1 extends Player1
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootImage dez, nove, oito, sete, seis, cinco, quatro, tres, dois, um;
-    
-    public Vida_player1()
+    private Player1 P1=null;
+    private Nave1 N1=null;
+
+    public Vida_player1(Player1 player)
     {
-        
         dez = new GreenfootImage("Vida/10.png");
         nove = new GreenfootImage("Vida/9.png");
         oito = new GreenfootImage("Vida/8.png");
@@ -28,46 +29,109 @@ public class Vida_player1 extends Player1
         dois = new GreenfootImage("Vida/2.png");
         um = new GreenfootImage("Vida/1.png");
         setImage(dez);
+        P1=player;
     }
+
+    public Vida_player1(Nave1 player)
+    {
+        dez = new GreenfootImage("Vida/10.png");
+        nove = new GreenfootImage("Vida/9.png");
+        oito = new GreenfootImage("Vida/8.png");
+        sete = new GreenfootImage("Vida/7.png");
+        seis = new GreenfootImage("Vida/6.png");
+        cinco = new GreenfootImage("Vida/5.png");
+        quatro = new GreenfootImage("Vida/4.png");
+        tres = new GreenfootImage("Vida/3.png");
+        dois = new GreenfootImage("Vida/2.png");
+        um = new GreenfootImage("Vida/1.png");
+        setImage(dez);
+        N1=player;
+    }
+
     public void act() 
     {
-        vidaPlayer1();
+        if(P1!=null)
+        {
+            vidaPlayer1(P1);
+        }
+        else
+        {
+            vidaPlayer1(N1);
+        }
     }   
-    
-    public void vidaPlayer1()
+
+    public void vidaPlayer1(Player1 P1)
     {
-        if (Player1.getNumeroVidas() == 10)
+        if (P1.getNumeroVidas() == 10)
         {
             setImage(dez);
         }
-        else if(Player1.getNumeroVidas() == 9){
+        else if(P1.getNumeroVidas() == 9){
             setImage(nove);
         }
-        else if(Player1.getNumeroVidas() == 8){
+        else if(P1.getNumeroVidas() == 8){
             setImage(oito);
         }
-        else if(Player1.getNumeroVidas() == 7){
+        else if(P1.getNumeroVidas() == 7){
             setImage(sete);
         }
-        else if(Player1.getNumeroVidas() == 6){
+        else if(P1.getNumeroVidas() == 6){
             setImage(seis);
         }
-        else if(Player1.getNumeroVidas() == 5){
+        else if(P1.getNumeroVidas() == 5){
             setImage(cinco);
         }
-        else if(Player1.getNumeroVidas() == 4){
+        else if(P1.getNumeroVidas() == 4){
             setImage(quatro);
         }
-        else if(Player1.getNumeroVidas() == 3){
+        else if(P1.getNumeroVidas() == 3){
             setImage(tres);
         }
-        else if(Player1.getNumeroVidas() == 2){
+        else if(P1.getNumeroVidas() == 2){
             setImage(dois);
         }
-        else if(Player1.getNumeroVidas() == 1){
+        else if(P1.getNumeroVidas() == 1){
             setImage(um);
         }
-        else if(Player1.getNumeroVidas() <= 0){
+        else if(P1.getNumeroVidas() <= 0){
+            getWorld().removeObject(this);
+        }    
+    }   
+
+    public void vidaPlayer1(Nave1 P1)
+    {
+        if (P1.getNumeroVidas() == 10)
+        {
+            setImage(dez);
+        }
+        else if(P1.getNumeroVidas() == 9){
+            setImage(nove);
+        }
+        else if(P1.getNumeroVidas() == 8){
+            setImage(oito);
+        }
+        else if(P1.getNumeroVidas() == 7){
+            setImage(sete);
+        }
+        else if(P1.getNumeroVidas() == 6){
+            setImage(seis);
+        }
+        else if(P1.getNumeroVidas() == 5){
+            setImage(cinco);
+        }
+        else if(P1.getNumeroVidas() == 4){
+            setImage(quatro);
+        }
+        else if(P1.getNumeroVidas() == 3){
+            setImage(tres);
+        }
+        else if(P1.getNumeroVidas() == 2){
+            setImage(dois);
+        }
+        else if(P1.getNumeroVidas() == 1){
+            setImage(um);
+        }
+        else if(P1.getNumeroVidas() <= 0){
             getWorld().removeObject(this);
         }    
     }

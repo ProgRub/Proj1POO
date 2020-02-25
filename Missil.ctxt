@@ -15,4 +15,6 @@ comment6.params=
 comment6.target=void\ chegouAoFim()
 comment7.params=alvo
 comment7.target=void\ atingiuAlvo(Nave1)
-numComments=8
+comment8.params=alvo
+comment8.target=void\ atingiuAlvo(Nave2)
+numComments=9

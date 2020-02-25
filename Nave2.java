@@ -40,4 +40,14 @@ public class Nave2 extends Player2
 
         }
     }
+    
+    public static int getNumeroVidas()
+    {
+        return vida;
+    }
+    
+    public static void tiraNumeroVidas(int valor)
+    {
+        vida+=valor;
+    }
 }

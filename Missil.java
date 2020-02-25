@@ -16,13 +16,15 @@ public class Missil extends Jogos
     private Nave2 alvo2=null;
     private Nave1 alvo1=null;
 
-    public Missil(int valor,Nave2 nave){
+    public Missil(int valor,Nave2 nave)
+    {
         getImage().scale(100, 100);   
         limite=valor;
         alvo2=nave;
     }
 
-    public Missil(int valor,Nave1 nave){
+    public Missil(int valor,Nave1 nave)
+    {
         getImage().scale(100, 100);   
         limite=valor;
         alvo1=nave;
@@ -50,7 +52,8 @@ public class Missil extends Jogos
     }    
 
     public void teleguiado(Nave1 alvo){
-        if(getY()>limite){
+        if(getY()>limite)
+        {
             turnTowards(alvo.getX(), alvo.getY());
         }
         move(3);
@@ -62,13 +65,22 @@ public class Missil extends Jogos
             getWorld().removeObject(this);
         }
     }
-    
+
     public void atingiuAlvo(Nave1 alvo)
     {
         if (isTouching(Nave1.class))
         {
             alvo.tiraNumeroVidas(-1);
-        }
-            
+            getWorld().removeObject(this);
+        }            
+    }
+
+    public void atingiuAlvo(Nave2 alvo)
+    {
+        if (isTouching(Nave2.class))
+        {
+            alvo.tiraNumeroVidas(-1);
+            getWorld().removeObject(this);
+        }            
     }
 }
