@@ -89,7 +89,7 @@ public class Máquina extends Jogos
             Greenfoot.delay(1);
             Nave1.setNumeroVidas(getWorld().getObjects(Player1.class).get(0).getNumeroVidas());
             Nave2.setNumeroVidas(getWorld().getObjects(Player2.class).get(0).getNumeroVidas());
-            Greenfoot.setWorld(new Jogo2());
+            Greenfoot.setWorld(new Stage1Complete());
             //getWorld().removeObject(this);
         }
     }

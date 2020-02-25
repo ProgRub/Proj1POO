@@ -9,15 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MenuInicial extends World
 {
 
-    /**
-     * Constructor for objects of class MenuInicial.
-     * 
-     */
+    GreenfootSound musica;
     public MenuInicial()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200,700, 1); 
         GreenfootImage bg = new GreenfootImage("Earth.png");
+        musica = new GreenfootSound("music.mp3");
+        musica.play();
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
         prepare();
