@@ -25,7 +25,7 @@ public class Missil extends Jogos
 
     public Missil(int valor,Nave1 nave)
     {
-        getImage().scale(100, 100);   
+        getImage().scale(100, 50);     
         limite=valor;
         alvo1=nave;
     }

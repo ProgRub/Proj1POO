@@ -28,7 +28,6 @@ public class Vida_player1 extends Player1
         tres = new GreenfootImage("Vida/3.png");
         dois = new GreenfootImage("Vida/2.png");
         um = new GreenfootImage("Vida/1.png");
-        setImage(dez);
         P1=player;
     }
 
@@ -44,7 +43,6 @@ public class Vida_player1 extends Player1
         tres = new GreenfootImage("Vida/3.png");
         dois = new GreenfootImage("Vida/2.png");
         um = new GreenfootImage("Vida/1.png");
-        setImage(dez);
         N1=player;
     }
 

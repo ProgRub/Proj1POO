@@ -9,23 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Nave1 extends Player1
 {
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     private static String left=Player1.getControls()[1];
     private static String right=Player1.getControls()[2];
     private static int vida;
     
     public Nave1()
     {
-        vida=Player1.getNumeroVidas();
         setImage("nave1.png");
     }
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     
     public void act() 
     {
@@ -51,21 +42,18 @@ public class Nave1 extends Player1
         }
     }
     
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     public static int getNumeroVidas()
     {
         return vida;
+    }
+    
+    public static void setNumeroVidas(int numVidas)
+    {
+        vida = numVidas;
     }
     
     public static void tiraNumeroVidas(int valor)
     {
         vida+=valor;
     }
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 }

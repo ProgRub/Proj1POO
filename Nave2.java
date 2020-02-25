@@ -14,7 +14,6 @@ public class Nave2 extends Player2
     
     public Nave2()
     {
-        vida=Player2.getNumeroVidas();
         setImage("nave3.png");
     }
     
@@ -45,6 +44,11 @@ public class Nave2 extends Player2
     public static int getNumeroVidas()
     {
         return vida;
+    }
+    
+    public static void setNumeroVidas(int numVidas)
+    {
+        vida = numVidas;
     }
     
     public static void tiraNumeroVidas(int valor)

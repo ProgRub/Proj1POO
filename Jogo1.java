@@ -58,7 +58,6 @@ public class Jogo1 extends World
     }
 
     public void act(){
-        // atualizaVida(máquina.vida);
         //gameOver(P1.numeroVidas,P2.numeroVidas); 
         cairGranizo();
         cairNeve();
@@ -66,9 +65,6 @@ public class Jogo1 extends World
         cairVida();
     }
 
-    // private void atualizaVida(int vidaAtualizada){
-        // showText("" + vidaAtualizada + "%", getWidth()/2,getHeight()-190);
-    // }
     
     private void gameOver(int vidaJogador1, int vidaJogador2){
         if (vidaJogador1 <=0 && vidaJogador2 <= 0 && control == false ){
