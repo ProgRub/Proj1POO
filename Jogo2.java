@@ -25,9 +25,6 @@ public class Jogo2 extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200,700, 1); 
         prepare();
-        
-        
-        
     }
 
     /**
@@ -67,7 +64,6 @@ public class Jogo2 extends World
 
     public void libertarGases() 
     {
-
         if (Greenfoot.getRandomNumber(100)<3)
         {
             addObject(new Gas(), Greenfoot.getRandomNumber(getWidth()+1),getHeight());

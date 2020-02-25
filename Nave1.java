@@ -20,6 +20,7 @@ public class Nave1 extends Player1
     public Nave1()
     {
         vida=Player1.getNumeroVidas();
+        setImage("nave1.png");
     }
 <<<<<<< Updated upstream
 =======
@@ -29,8 +30,7 @@ public class Nave1 extends Player1
     public void act() 
     {
         moveNave();
-        removeGas();
-        
+        removeGas();        
     } 
 
     public void moveNave(){

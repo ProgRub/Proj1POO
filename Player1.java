@@ -15,7 +15,7 @@ public class Player1 extends Players
     private static String down;
     private static String shoot;
     private static String[] controlos= {up,left,right,down,shoot};
-    private static String cor;
+    private static String cor="";
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador;
     private int contador1;

@@ -15,6 +15,7 @@ public class Nave2 extends Player2
     public Nave2()
     {
         vida=Player2.getNumeroVidas();
+        setImage("nave3.png");
     }
     
     public void act() 
