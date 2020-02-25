@@ -19,7 +19,6 @@ public class Jogo1 extends World
     GreenfootSound somAmbiente = new GreenfootSound("winter.mp3");
     private int wait;
     private int contador;
-    
     public Jogo1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -66,7 +65,7 @@ public class Jogo1 extends World
 
     public void act(){
         // atualizaVida(máquina.vida);
-        gameOver(P1.numeroVidas,P2.numeroVidas); 
+        //gameOver(P1.numeroVidas,P2.numeroVidas); 
         cairGranizo();
         cairNeve();
         invocaTarget();
@@ -96,18 +95,20 @@ public class Jogo1 extends World
     
     public void cairGranizo() 
     {
-         
+        if (máquina.vida >250 ){
         if (Greenfoot.getRandomNumber(100)<3)
         {
             addObject(new Granizo(), Greenfoot.getRandomNumber(getWidth()-1),0);
         }
+    }
         
     }
     
     public void invocaTarget() 
     {   
+        if(máquina.vida <=250){
         int prob = Greenfoot.getRandomNumber(2);
-        if (Greenfoot.getRandomNumber(500)<1){
+        if (Greenfoot.getRandomNumber(500)<3){
             Target target = new Target();
             if (prob == 1){
                 addObject(target, P1.getX(), P1.getY());      
@@ -117,13 +118,15 @@ public class Jogo1 extends World
             }                     
         } 
     }
+    }
     
     public void cairNeve() 
     {
-         
-        if (Greenfoot.getRandomNumber(100)<10)
-        {
-            addObject(new Neve(), Greenfoot.getRandomNumber(getWidth()-1),0);
+        if (máquina.vida >250 ){
+            if (Greenfoot.getRandomNumber(100)<10)
+            {
+                addObject(new Neve(), Greenfoot.getRandomNumber(getWidth()-1),0);
+            }
         }
         
     }

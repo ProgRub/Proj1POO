@@ -204,11 +204,11 @@ public class Player1 extends Players
 
     public void disparar(){
         controlBala++;
-        if(numeroVidas >0){
+        //if(numeroVidas >0){
         if (controlBala >20 && Greenfoot.isKeyDown(shoot)){
             getWorld().addObject(new Bala(this), getX(),getY()-5);
             controlBala = 0;
-        }
+        //}
     }
     }
     
