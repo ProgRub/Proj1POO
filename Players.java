@@ -107,6 +107,8 @@ public class Players extends Actor
             //getWorld().removeObject(this);
         }
     }
+    
+    
 
     public static boolean podeMudar(String[] P1Controls, String[] P2Controls, String key){
         for (int i=0; i<5;i++){

@@ -9,6 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Nave1 extends Player1
 {
+<<<<<<< HEAD
+    
+    
+    
+    
+=======
     private static String left=Player1.getControls()[1];
     private static String right=Player1.getControls()[2];
     private static int vida;
@@ -17,11 +23,13 @@ public class Nave1 extends Player1
     {
         vida=Player1.getNumeroVidas();
     }
+>>>>>>> d67e199ddb98f4b1a4f7e4d3cc12e176f22610af
     
     public void act() 
     {
         moveNave();
         removeGas();
+        
     } 
 
     public void moveNave(){
@@ -38,9 +46,13 @@ public class Nave1 extends Player1
         if (isTouching(Gas.class))
         {
             removeTouching(Gas.class);
+            
         }
     }
     
+<<<<<<< HEAD
+    
+=======
     public static int getNumeroVidas()
     {
         return vida;
@@ -50,4 +62,5 @@ public class Nave1 extends Player1
     {
         vida+=valor;
     }
+>>>>>>> d67e199ddb98f4b1a4f7e4d3cc12e176f22610af
 }
