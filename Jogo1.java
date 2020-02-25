@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -63,6 +64,7 @@ public class Jogo1 extends World
         cairNeve();
         invocaTarget();
         cairVida();
+        cairChuva();
     }
 
     
@@ -103,10 +105,10 @@ public class Jogo1 extends World
         if (Greenfoot.getRandomNumber(500)<3){
             Target target = new Target();
             if (prob == 1){
-                addObject(target, P1.getX(), P1.getY());      
+                addObject(target, P1.getX(), 620);      
             }
             else{
-                addObject(target, P2.getX(), P2.getY());            
+                addObject(target, P2.getX(), 620);            
             }                     
         } 
     }
@@ -122,6 +124,14 @@ public class Jogo1 extends World
         }
     }
     
+    public void cairChuva(){
+        if (máquina.getVida() <= midway ){
+            if (Greenfoot.getRandomNumber(100)<10)
+            {
+                addObject(new Gota(), Greenfoot.getRandomNumber(getWidth()-1),0);
+            }
+        }
+    }
     
     public void cairVida() 
     {
@@ -131,12 +141,4 @@ public class Jogo1 extends World
         }
         
     }
-    
-   
-    
-        
-    
-    
-    
-    
 }
