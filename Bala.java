@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bala extends Actor
+public class Bala extends Players
 {
     private GreenfootImage imagem, original;
     private boolean moveEsquerda;

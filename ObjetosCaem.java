@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class ObjetosCaem extends Actor
+public class ObjetosCaem extends Jogos
 {
     /**
      * Act - do whatever the ObjetosCaem wants to do. This method is called whenever
@@ -18,7 +18,7 @@ public class ObjetosCaem extends Actor
     } 
     
     protected void ultrapassaLimite(){
-        if(isAtEdge()){
+        if(isTouching(Chão.class)){
             getWorld().removeObject(this);
         }
     }

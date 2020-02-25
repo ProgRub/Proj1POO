@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Cor extends Buttons
+public class Cor extends Menus
 {
     private static boolean P1escolheu;
     /**

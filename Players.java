@@ -39,7 +39,6 @@ public class Players extends Actor
                 if (aux==0)
                 {
                     P1.numeroVidas =  P1.numeroVidas - 2;
-                    //removeTouching(Relâmpago.class);
                     aux = 20;
                 }
                 else
@@ -47,22 +46,19 @@ public class Players extends Actor
                     aux--;
                 }
             }
-            
-            
+
             if(isTouching(Vida.class))
             {
                 if(P1.numeroVidas >= 9)
                 {
                     P1.numeroVidas = 10;
                 }
-                
+
                 else
                 {
-                    P1.numeroVidas = P1.numeroVidas + 2; 
-                    removeTouching(Vida.class);
-                }
-                
-                
+                    P1.numeroVidas = P1.numeroVidas + 2;
+                } 
+                removeTouching(Vida.class);
             }
         }
         else{
@@ -85,7 +81,6 @@ public class Players extends Actor
                 if (aux==0)
                 {
                     P2.numeroVidas =  P2.numeroVidas - 2;
-                    //removeTouching(Relâmpago.class);
                     aux = 20;
                 }
                 else
@@ -93,21 +88,19 @@ public class Players extends Actor
                     aux--;
                 }
             }
-            
+
             if(isTouching(Vida.class))
             {
                 if(P2.numeroVidas >= 9)
                 {
                     P2.numeroVidas = 10;
                 }
-                
+
                 else
                 {
-                    P2.numeroVidas = P2.numeroVidas + 2; 
-                    removeTouching(Vida.class);
-                }
-                
-                
+                    P2.numeroVidas = P2.numeroVidas + 2;
+                } 
+                removeTouching(Vida.class);
             }
         }
         else{
