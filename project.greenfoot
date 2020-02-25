@@ -100,32 +100,37 @@ dependency119.from=Play
 dependency119.to=EscolherCor
 dependency119.type=UsesDependency
 dependency12.from=Jogo1
-dependency12.to=Neve
+dependency12.to=Rel\u00E2mpago
 dependency12.type=UsesDependency
 dependency13.from=Jogo1
-dependency13.to=Vida
+dependency13.to=Neve
 dependency13.type=UsesDependency
-dependency14.from=Jogo2
-dependency14.to=Nave1
+dependency14.from=Jogo1
+dependency14.to=Vida
 dependency14.type=UsesDependency
 dependency15.from=Jogo2
-dependency15.to=Nave2
+dependency15.to=Nave1
 dependency15.type=UsesDependency
 dependency16.from=Jogo2
-dependency16.to=Gas
+dependency16.to=Nave2
 dependency16.type=UsesDependency
-dependency17.from=MenuInicial
-dependency17.to=Play
+dependency17.from=Jogo2
+dependency17.to=Gas
 dependency17.type=UsesDependency
 dependency18.from=MenuInicial
-dependency18.to=Options
+dependency18.to=Play
 dependency18.type=UsesDependency
 dependency19.from=MenuInicial
+<<<<<<< Updated upstream
 dependency19.to=Exit
+=======
+dependency19.to=Options
+>>>>>>> Stashed changes
 dependency19.type=UsesDependency
 dependency2.from=Jogo1
 dependency2.to=Restart
 dependency2.type=UsesDependency
+<<<<<<< Updated upstream
 dependency20.from=Op\u00E7\u00F5es
 dependency20.to=Texto
 dependency20.type=UsesDependency
@@ -155,48 +160,93 @@ dependency28.to=ControlP2Dir
 dependency28.type=UsesDependency
 dependency29.from=Op\u00E7\u00F5es
 dependency29.to=ControlP2Baixo
+=======
+dependency20.from=MenuInicial
+dependency20.to=Exit
+dependency20.type=UsesDependency
+dependency21.from=Op\u00E7\u00F5es
+dependency21.to=Texto
+dependency21.type=UsesDependency
+dependency22.from=Op\u00E7\u00F5es
+dependency22.to=ControlP1Cima
+dependency22.type=UsesDependency
+dependency23.from=Op\u00E7\u00F5es
+dependency23.to=ControlP1Esq
+dependency23.type=UsesDependency
+dependency24.from=Op\u00E7\u00F5es
+dependency24.to=ControlP1Dir
+dependency24.type=UsesDependency
+dependency25.from=Op\u00E7\u00F5es
+dependency25.to=ControlP1Baixo
+dependency25.type=UsesDependency
+dependency26.from=Op\u00E7\u00F5es
+dependency26.to=ControlP1Dispara
+dependency26.type=UsesDependency
+dependency27.from=Op\u00E7\u00F5es
+dependency27.to=ControlP2Cima
+dependency27.type=UsesDependency
+dependency28.from=Op\u00E7\u00F5es
+dependency28.to=ControlP2Esq
+dependency28.type=UsesDependency
+dependency29.from=Op\u00E7\u00F5es
+dependency29.to=ControlP2Dir
+>>>>>>> Stashed changes
 dependency29.type=UsesDependency
 dependency3.from=Jogo1
 dependency3.to=M\u00E1quina
 dependency3.type=UsesDependency
 dependency30.from=Op\u00E7\u00F5es
+<<<<<<< Updated upstream
 dependency30.to=ControlP2Dispara
+=======
+dependency30.to=ControlP2Baixo
+>>>>>>> Stashed changes
 dependency30.type=UsesDependency
 dependency31.from=Op\u00E7\u00F5es
-dependency31.to=Back
+dependency31.to=ControlP2Dispara
 dependency31.type=UsesDependency
-dependency32.from=EscolherCor
-dependency32.to=Vermelho
+dependency32.from=Op\u00E7\u00F5es
+dependency32.to=Back
 dependency32.type=UsesDependency
 dependency33.from=EscolherCor
-dependency33.to=Preto
+dependency33.to=Vermelho
 dependency33.type=UsesDependency
 dependency34.from=EscolherCor
-dependency34.to=Verde
+dependency34.to=Preto
 dependency34.type=UsesDependency
 dependency35.from=EscolherCor
-dependency35.to=Amarelo
+dependency35.to=Verde
 dependency35.type=UsesDependency
 dependency36.from=EscolherCor
-dependency36.to=Azul
+dependency36.to=Amarelo
 dependency36.type=UsesDependency
 dependency37.from=EscolherCor
-dependency37.to=Texto
+dependency37.to=Azul
 dependency37.type=UsesDependency
 dependency38.from=EscolherCor
-dependency38.to=Cor
+dependency38.to=Texto
 dependency38.type=UsesDependency
+<<<<<<< Updated upstream
 dependency39.from=Bala
 dependency39.to=Player1
+=======
+dependency39.from=EscolherCor
+dependency39.to=Cor
+>>>>>>> Stashed changes
 dependency39.type=UsesDependency
 dependency4.from=Jogo1
 dependency4.to=VidaM\u00E1quina
 dependency4.type=UsesDependency
 dependency40.from=Bala
-dependency40.to=Player2
+dependency40.to=Player1
 dependency40.type=UsesDependency
+<<<<<<< Updated upstream
 dependency41.from=Target
 dependency41.to=Rel\u00E2mpago
+=======
+dependency41.from=Bala
+dependency41.to=Player2
+>>>>>>> Stashed changes
 dependency41.type=UsesDependency
 dependency42.from=Players
 dependency42.to=Player1
@@ -387,10 +437,17 @@ dependency98.type=UsesDependency
 dependency99.from=Amarelo
 dependency99.to=Texto
 dependency99.type=UsesDependency
+<<<<<<< Updated upstream
 editor.fx.0.height=737
 editor.fx.0.width=814
 editor.fx.0.x=395
 editor.fx.0.y=64
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+>>>>>>> Stashed changes
 height=838
 package.numDependencies=119
 package.numTargets=47
@@ -407,7 +464,11 @@ readme.name=@README
 readme.width=47
 readme.x=10
 readme.y=10
+<<<<<<< Updated upstream
 simulation.speed=100
+=======
+simulation.speed=49
+>>>>>>> Stashed changes
 target1.height=50
 target1.name=Options
 target1.showInterface=false
