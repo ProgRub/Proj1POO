@@ -8,9 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Máquina extends Jogos
 {           
-    public static int vida,score;
+    private static int vida,score;
     private GreenfootImage explosion1,explosion2,explosion3,explosion4,explosion5,explosion6,explosion7,explosion8,explosion9,explosion10,explosion11,explosion12,explosion13;
-    private VidaMáquina vidaMáquina;
     public Máquina(){
         vida=500;
         score=0;
@@ -32,12 +31,17 @@ public class Máquina extends Jogos
 
     public void act() 
     {
-        libertGas();
+        libertaGas();
         perdeVida();
         maquinaDestruida();
     }   
 
-    private void libertGas(){
+    public static int getVida()
+    {
+        return vida;
+    }
+
+    private void libertaGas(){
         if (Greenfoot.getRandomNumber(100)>97){
             Máquina maq = getWorld().getObjects(Máquina.class).get(0);
             getWorld().addObject(new Gas(),maq.getX()+Greenfoot.getRandomNumber(40)-10, maq.getY() - maq.getImage().getHeight()/2);
@@ -48,10 +52,9 @@ public class Máquina extends Jogos
         if (isTouching(Bala.class)){
             removeTouching(Bala.class);
             vida--;
-            getWorldOfType(Jogo1.class).getVidaMáquina().perdeVida();
+            getWorldOfType(Jogo1.class).getObjects(VidaMáquina.class).get(0).perdeVida();
         }
     }
-
 
     private void maquinaDestruida(){
         if (vida <= 0){

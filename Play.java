@@ -27,6 +27,7 @@ public class Play extends Menus
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
             Greenfoot.setWorld(new EscolherCor());
+            // Greenfoot.setWorld(new Jogo2());
         }
     }
 

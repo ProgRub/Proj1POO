@@ -9,13 +9,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player2 extends Players
 {
 
-    private static String up = "up";
-    private static String left = "left";
-    private static String right = "right";
-    private static String down = "down";
-    private static String shoot ="0";
+    private static String up;
+    private static String left;
+    private static String right;
+    private static String down;
+    private static String shoot;
     private static String[] controlos= {up,left,right,down,shoot};
-    private static String cor="";
+    private static String cor;
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador=0;
     private final int GRAVIDADE =15;
@@ -25,10 +25,10 @@ public class Player2 extends Players
     private boolean saltou=false;
     public static boolean andandoParaEsquerda;
     private int controlBala=0;
+    private static int numeroVidas;
 
-    public static int numeroVidas;
-
-    public Player2(){
+    public Player2()
+    {
         image1 = new GreenfootImage(cor+"/1.png");
         image2 = new GreenfootImage(cor+"/2.png");
         image3 = new GreenfootImage(cor+"/3.png");
@@ -37,9 +37,16 @@ public class Player2 extends Players
         image6 = new GreenfootImage(cor+"/6.png");
         setImage(image4);
         andandoParaEsquerda = false;
-
         numeroVidas = 10;
     }
+
+    public void act() 
+    {
+        queda();
+        move();
+        disparar();
+        perdeVidas(this);
+    }  
 
     public static String[] getControls(){
         return controlos;
@@ -70,15 +77,16 @@ public class Player2 extends Players
     public static void setColor(String color){
         cor=color;
     }
-
-
-    public void act() 
+    
+    public static int getNumeroVidas()
     {
-        queda();
-        move();
-        disparar();
-        perdeVidas(this);
-    }    
+        return numeroVidas;
+    }
+    
+    public static void adicionaNumeroVidas(int valor)
+    {
+        numeroVidas += valor;
+    }  
 
     public void move(){
         if(numeroVidas >0){
@@ -89,7 +97,7 @@ public class Player2 extends Players
             if(saltou){
                 jump();
             }
-            if (Greenfoot.isKeyDown(left)){
+            if (Greenfoot.isKeyDown(left)&&!isTouching(Máquina.class)){
                 if (!andandoParaEsquerda){
                     image1.mirrorHorizontally();
                     image2.mirrorHorizontally();
@@ -102,7 +110,7 @@ public class Player2 extends Players
                 animarMove();
                 andandoParaEsquerda=true;
             }
-            else if (Greenfoot.isKeyDown(right)){
+            else if (Greenfoot.isKeyDown(right)&&!isTouching(Máquina.class)){
                 if (andandoParaEsquerda){
                     image1.mirrorHorizontally();
                     image2.mirrorHorizontally();

@@ -32,5 +32,19 @@ public class MenuInicial extends World
         addObject(new Play(),getWidth()/2,349);
         addObject(new Options(),getWidth()/2,420);
         addObject(new Exit(),getWidth()/2,462);
+        resetStaticVariables();
+    }
+    
+    private void resetStaticVariables(){
+        Player1.setControls(0, "w");
+        Player1.setControls(1, "a");
+        Player1.setControls(2, "d");
+        Player1.setControls(3, "s");
+        Player1.setControls(4, "f");
+        Player2.setControls(0, "up");
+        Player2.setControls(1, "left");
+        Player2.setControls(2, "right");
+        Player2.setControls(3, "down");
+        Player2.setControls(4, "0");
     }
 }
