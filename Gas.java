@@ -18,7 +18,7 @@ public class Gas extends Actor
     }   
 
     public void ultrapassaLimite(){
-        if(isAtEdge()){
+        if(getY()==0){
             getWorld().removeObject(this);
         }
     }
