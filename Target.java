@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Target extends Actor
+public class Target extends Jogos
 {
     private int count;
     private final int TIMER;

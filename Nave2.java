@@ -6,12 +6,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Nave2 extends Naves
+public class Nave2 extends Player2
 {
-    /**
-     * Act - do whatever the Nave2 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private static String left=Player2.getControls()[1];
+    private static String right=Player2.getControls()[2];
+    private static int vida;
+    
+    public Nave2()
+    {
+        vida=Player2.getNumeroVidas();
+    }
+    
     public void act() 
     {
         moveNave();
@@ -19,10 +24,10 @@ public class Nave2 extends Naves
     }    
 
     public void moveNave(){
-        if (Greenfoot.isKeyDown("left")){
+        if (Greenfoot.isKeyDown(left)){
             setLocation(getX()-3, getY());
         }
-        if (Greenfoot.isKeyDown("right")){
+        if (Greenfoot.isKeyDown(right)){
             setLocation(getX()+3, getY());
         }
     }

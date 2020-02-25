@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Granizo extends Actor
+public class Granizo extends ObjetosCaem
 {
     /**
      * Act - do whatever the Granizo wants to do. This method is called whenever
@@ -23,17 +23,9 @@ public class Granizo extends Actor
 
     public void act() 
     {
-        movimentoGranizo();
+        movimento();
         ultrapassaLimite();
     }   
 
-    public void ultrapassaLimite(){
-        if(isAtEdge()){
-            getWorld().removeObject(this);
-        }
-    }
-
-    public void movimentoGranizo(){
-        setLocation(getX()-1, getY() + 8);
-    }   
+    
 }

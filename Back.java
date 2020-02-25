@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Back extends Buttons
+public class Back extends Menus
 {
     public void act() 
     {
@@ -14,7 +14,7 @@ public class Back extends Buttons
         clickMouse();
     }   
 
-    public void moveMouse(){
+    private void moveMouse(){
         if(Greenfoot.mouseMoved(this)){
             setImage("BackComBrilho.png");
         }

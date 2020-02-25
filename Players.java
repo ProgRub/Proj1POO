@@ -13,7 +13,7 @@ public class Players extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
 
-    public int aux;
+    private int aux;
 
     public void act() 
     {
@@ -27,10 +27,10 @@ public class Players extends Actor
 
     protected void perdeVidas(Player1 P1)
     {
-        if(P1.numeroVidas>0){
+        if(P1.getNumeroVidas()>0){
             if(isTouching(Granizo.class))
             {
-                P1.numeroVidas--; 
+                P1.adicionaNumeroVidas(-1); 
                 removeTouching(Granizo.class);
             }
 
@@ -38,8 +38,7 @@ public class Players extends Actor
             {
                 if (aux==0)
                 {
-                    P1.numeroVidas =  P1.numeroVidas - 2;
-                    //removeTouching(Relâmpago.class);
+                    P1.adicionaNumeroVidas(-2);
                     aux = 20;
                 }
                 else
@@ -47,22 +46,19 @@ public class Players extends Actor
                     aux--;
                 }
             }
-            
-            
+
             if(isTouching(Vida.class))
             {
-                if(P1.numeroVidas >= 9)
+                if(P1.getNumeroVidas() >= 9)
                 {
-                    P1.numeroVidas = 10;
+                    P1.adicionaNumeroVidas(1);
                 }
-                
+
                 else
                 {
-                    P1.numeroVidas = P1.numeroVidas + 2; 
-                    removeTouching(Vida.class);
-                }
-                
-                
+                    P1.adicionaNumeroVidas(2);
+                } 
+                removeTouching(Vida.class);
             }
         }
         else{
@@ -73,10 +69,10 @@ public class Players extends Actor
 
     protected void perdeVidas(Player2 P2)
     {
-        if(P2.numeroVidas>0){
+        if(P2.getNumeroVidas()>0){
             if(isTouching(Granizo.class))
             {
-                P2.numeroVidas--; 
+                P2.adicionaNumeroVidas(-1); 
                 removeTouching(Granizo.class);
             }
 
@@ -84,8 +80,7 @@ public class Players extends Actor
             {
                 if (aux==0)
                 {
-                    P2.numeroVidas =  P2.numeroVidas - 2;
-                    //removeTouching(Relâmpago.class);
+                    P2.adicionaNumeroVidas(-2); 
                     aux = 20;
                 }
                 else
@@ -93,21 +88,19 @@ public class Players extends Actor
                     aux--;
                 }
             }
-            
+
             if(isTouching(Vida.class))
             {
-                if(P2.numeroVidas >= 9)
+                if(P2.getNumeroVidas() >= 9)
                 {
-                    P2.numeroVidas = 10;
+                    P2.adicionaNumeroVidas(1); 
                 }
-                
+
                 else
                 {
-                    P2.numeroVidas = P2.numeroVidas + 2; 
-                    removeTouching(Vida.class);
-                }
-                
-                
+                    P2.adicionaNumeroVidas(2); 
+                } 
+                removeTouching(Vida.class);
             }
         }
         else{

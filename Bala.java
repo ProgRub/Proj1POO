@@ -6,15 +6,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bala extends Actor
+public class Bala extends Players
 {
-    GreenfootImage imagem, original;
+    private GreenfootImage imagem, original;
     private boolean moveEsquerda;
     private final int VELOCIDADE;
     
-    GreenfootSound disparo = new GreenfootSound("gun.wav");
+    private GreenfootSound disparo;
     
     public Bala(Player1 P1){
+        disparo = new GreenfootSound("gun.wav");
         original = getImage();
         setImage(original);
         moveEsquerda= P1.andandoParaEsquerda;
@@ -23,6 +24,7 @@ public class Bala extends Actor
         VELOCIDADE=8;
     }
     public Bala(Player2 P2){
+        disparo = new GreenfootSound("gun.wav");
         original = getImage();
         setImage(original);
         moveEsquerda= P2.andandoParaEsquerda;
@@ -37,7 +39,7 @@ public class Bala extends Actor
         desapareceLimite();
     } 
 
-    public void disparo(){
+    private void disparo(){
         if (moveEsquerda){
             imagem = getImage();
             imagem.mirrorHorizontally();
@@ -54,7 +56,7 @@ public class Bala extends Actor
         }
     }
 
-    public void desapareceLimite(){
+    private void desapareceLimite(){
         if (isAtEdge()){
             getWorld().removeObject(this);
         }

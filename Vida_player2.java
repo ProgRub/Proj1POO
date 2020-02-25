@@ -36,38 +36,38 @@ public class Vida_player2 extends Player2
     
     public void vidaPlayer2()
     {
-        if (Player2.numeroVidas == 10)
+        if (Player2.getNumeroVidas() == 10)
         {
             setImage(dez);
         }
-        else if(Player2.numeroVidas == 9){
+        else if(Player2.getNumeroVidas() == 9){
             setImage(nove);
         }
-        else if(Player2.numeroVidas == 8){
+        else if(Player2.getNumeroVidas() == 8){
             setImage(oito);
         }
-        else if(Player2.numeroVidas == 7){
+        else if(Player2.getNumeroVidas() == 7){
             setImage(sete);
         }
-        else if(Player2.numeroVidas == 6){
+        else if(Player2.getNumeroVidas() == 6){
             setImage(seis);
         }
-        else if(Player2.numeroVidas == 5){
+        else if(Player2.getNumeroVidas() == 5){
             setImage(cinco);
         }
-        else if(Player2.numeroVidas == 4){
+        else if(Player2.getNumeroVidas() == 4){
             setImage(quatro);
         }
-        else if(Player2.numeroVidas == 3){
+        else if(Player2.getNumeroVidas() == 3){
             setImage(tres);
         }
-        else if(Player2.numeroVidas == 2){
+        else if(Player2.getNumeroVidas() == 2){
             setImage(dois);
         }
-        else if(Player2.numeroVidas == 1){
+        else if(Player2.getNumeroVidas() == 1){
             setImage(um);
         }
-        else if(Player2.numeroVidas <= 0){
+        else if(Player2.getNumeroVidas() <= 0){
             getWorld().removeObject(this);
     }
     

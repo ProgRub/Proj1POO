@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Vida extends Actor
+public class Vida extends ObjetosCaem
 {
     /**
      * Act - do whatever the Vida wants to do. This method is called whenever
@@ -21,20 +21,13 @@ public class Vida extends Actor
 
     }
     
-    
     public void act() 
     {
         movimentoVida();
         ultrapassaLimite();
     }   
 
-    public void ultrapassaLimite(){
-        if(isAtEdge()){
-            getWorld().removeObject(this);
-        }
-    }
-
-    public void movimentoVida(){
+    private void movimentoVida(){ 
         setLocation(getX(), getY() + 4);
     }      
 }

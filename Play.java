@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Play extends Buttons
+public class Play extends Menus
 {
 
     public void act() 
@@ -27,6 +27,7 @@ public class Play extends Buttons
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
             Greenfoot.setWorld(new EscolherCor());
+            // Greenfoot.setWorld(new Jogo2());
         }
     }
 

@@ -6,10 +6,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Gas extends Actor
+public class Gas extends Jogos
 {
-    final int dano = 10;
-    int direcaoGas;
+    private final int dano = 10;
 
     public void act() 
     {
@@ -17,13 +16,18 @@ public class Gas extends Actor
         ultrapassaLimite();
     }   
 
+<<<<<<< HEAD
     public void ultrapassaLimite(){
         if(getY()==0){
+=======
+    private void ultrapassaLimite(){
+        if(isAtEdge()){
+>>>>>>> d67e199ddb98f4b1a4f7e4d3cc12e176f22610af
             getWorld().removeObject(this);
         }
     }
 
-    public void movimentoGas(){
+    private void movimentoGas(){
         if (Greenfoot.getRandomNumber(100)<5){
             setLocation(getX()+ Greenfoot.getRandomNumber(11)-5, getY());
         }
