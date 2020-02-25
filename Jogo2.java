@@ -9,12 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Jogo2 extends World
 {
 
-<<<<<<< HEAD
 
-   
-
-=======
->>>>>>> c5f74d167766ca7ce36907fe154ae2595bb24b38
     private int LIMITE=100;
 
 
@@ -35,37 +30,30 @@ public class Jogo2 extends World
 
 
         Nave1 nave1 = new Nave1();
-<<<<<<< HEAD
+
         addObject(nave1,getWidth()/2,100);
-
-
-=======
-        addObject(nave1,getWidth()/2,50);
         
->>>>>>> c5f74d167766ca7ce36907fe154ae2595bb24b38
+
         Nave2 nave2 = new Nave2();
         addObject(nave2,getWidth()/2,200);
-        addObject(new Vida_player1(nave1),200,600);
-        addObject(new Vida_player2(nave2),1000,600);
+        addObject(new Vida_player1(nave1),280,600);
+        addObject(new Vida_player2(nave2),1100,600);
         
-        addObject(new Camada_Ozono(),getWidth()/2, 5);
+        addObject(new CamadaOzono(),getWidth()/2, 10);
     }
 
     public void act()
     {
         libertarGases();
-<<<<<<< HEAD
 
-
-=======
         vidas();
        
->>>>>>> c5f74d167766ca7ce36907fe154ae2595bb24b38
+
         disparaMissil();
 
 
 
-        //vidas();
+        
        
 
     }
@@ -78,15 +66,10 @@ public class Jogo2 extends World
             addObject(new Gas(), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
         }
     }
-<<<<<<< HEAD
 
-    
-   public void vidas() 
-
-=======
     
     public void vidas() 
->>>>>>> c5f74d167766ca7ce36907fe154ae2595bb24b38
+
     {
 
 
@@ -95,22 +78,10 @@ public class Jogo2 extends World
             addObject(new Vida_jogo2(), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
         }
     }
-<<<<<<< HEAD
-
-    
-    
 
 
     
-    
-    
-    
 
-
-
-=======
-    
->>>>>>> c5f74d167766ca7ce36907fe154ae2595bb24b38
     public void disparaMissil(){
         int random = Greenfoot.getRandomNumber(250);
         if (random<2)
@@ -124,14 +95,5 @@ public class Jogo2 extends World
                 addObject(new Missil(getObjects(Nave1.class).get(0).getY()+LIMITE,getObjects(Nave1.class).get(0)), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
             }
         }
-<<<<<<< HEAD
-
-    }  
-
     }
-
-=======
-    }  
 }
->>>>>>> c5f74d167766ca7ce36907fe154ae2595bb24b38
- 
