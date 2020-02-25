@@ -15,14 +15,9 @@ public class Gas extends Jogos
         movimentoGas();
         ultrapassaLimite();
     }   
-
-<<<<<<< HEAD
-    public void ultrapassaLimite(){
-        if(getY()==0){
-=======
-    private void ultrapassaLimite(){
+    private void ultrapassaLimite()
+    {
         if(isAtEdge()){
->>>>>>> d67e199ddb98f4b1a4f7e4d3cc12e176f22610af
             getWorld().removeObject(this);
         }
     }

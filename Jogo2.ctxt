@@ -11,9 +11,5 @@ comment3.target=void\ act()
 comment4.params=
 comment4.target=void\ libertarGases()
 comment5.params=
-<<<<<<< HEAD
-comment5.target=void\ vidas()
-=======
 comment5.target=void\ disparaMissil()
->>>>>>> d67e199ddb98f4b1a4f7e4d3cc12e176f22610af
 numComments=6
