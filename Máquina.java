@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Máquina extends Actor
 {           
-    public static int vida,score;
-    GreenfootImage explosion1,explosion2,explosion3,explosion4,explosion5,explosion6,explosion7,explosion8,explosion9,explosion10,explosion11,explosion12,explosion13;
-    VidaMáquina vidaMáquina;
+    private static int vida,score;
+    private GreenfootImage explosion1,explosion2,explosion3,explosion4,explosion5,explosion6,explosion7,explosion8,explosion9,explosion10,explosion11,explosion12,explosion13;
+    private VidaMáquina vidaMáquina;
     public Máquina(){
         vida=500;
         score=0;
@@ -37,14 +37,14 @@ public class Máquina extends Actor
         maquinaDestruida();
     }   
 
-    public void libertGas(){
+    private void libertGas(){
         if (Greenfoot.getRandomNumber(100)>97){
             Máquina maq = getWorld().getObjects(Máquina.class).get(0);
             getWorld().addObject(new Gas(),maq.getX()+Greenfoot.getRandomNumber(40)-10, maq.getY() - maq.getImage().getHeight()/2);
         }
     }
 
-    public void perdeVida(){
+    private void perdeVida(){
         if (isTouching(Bala.class)){
             removeTouching(Bala.class);
             vida--;
@@ -53,7 +53,7 @@ public class Máquina extends Actor
     }
 
 
-    public void maquinaDestruida(){
+    private void maquinaDestruida(){
         if (vida <= 0){
             Greenfoot.playSound("explosion.wav");
             Greenfoot.delay(3);

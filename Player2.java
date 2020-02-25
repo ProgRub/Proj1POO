@@ -30,6 +30,7 @@ public class Player2 extends Players
         image4 = new GreenfootImage(cor+"/4.png");
         image5 = new GreenfootImage(cor+"/5.png");
         image6 = new GreenfootImage(cor+"/6.png");
+        
         setImage(image1);
         andandoParaEsquerda = false;
 
@@ -110,12 +111,12 @@ public class Player2 extends Players
     {
         move();
         disparar();
-
         perdeVidas(this);
 
     }    
 
     public void move(){
+        if(numeroVidas >0){
         if (Greenfoot.isKeyDown(up)){
             jump();
         }
@@ -152,6 +153,7 @@ public class Player2 extends Players
             setImage(image4);
         }
     }
+    }
 
     public void jump(){
         for (int i=10;i>0;i--){            
@@ -161,35 +163,41 @@ public class Player2 extends Players
 
     public void animarMove(){
         contador++;
-        if (contador==4){
-            if(getImage()==image1){
-                setImage(image2);
-            }
-            else if (getImage()==image2){
-                setImage(image3);
-            }
-            else if(getImage()==image3){
-                setImage(image4);
-            }
-            else if (getImage()==image4){
-                setImage(image5);
-            }
-            else if(getImage()==image5){
-                setImage(image6);
-            }
-            else if (getImage()==image6){
-                setImage(image1);
-            }
-            contador=0;
+        
+            if (contador==4){
+                if (numeroVidas >0){
+                    if(getImage()==image1){
+                        setImage(image2);
+                    }
+                    else if (getImage()==image2){
+                        setImage(image3);
+                    }
+                    else if(getImage()==image3){
+                        setImage(image4);
+                    }
+                    else if (getImage()==image4){
+                        setImage(image5);
+                    }
+                    else if(getImage()==image5){
+                        setImage(image6);
+                    }
+                    else if (getImage()==image6){
+                        setImage(image1);
+                    }
+                }
+                contador=0;
         }
     }
 
     public void disparar(){
-        controlBala++;
-        if (controlBala >20 && Greenfoot.isKeyDown(shoot)){
-            getWorld().addObject(new Bala(this), getX(),getY()-5);
-            controlBala = 0;
-        }
+        if(numeroVidas >0){
+            controlBala++;
+            if (controlBala >20 && Greenfoot.isKeyDown(shoot)){
+                getWorld().addObject(new Bala(this), getX(),getY()-5);
+                controlBala = 0;
+            }
     }
+    }
+    
 }
 

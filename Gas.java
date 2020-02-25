@@ -8,8 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Gas extends Actor
 {
-    final int dano = 10;
-    int direcaoGas;
+    private final int dano = 10;
 
     public void act() 
     {
@@ -17,13 +16,13 @@ public class Gas extends Actor
         ultrapassaLimite();
     }   
 
-    public void ultrapassaLimite(){
+    private void ultrapassaLimite(){
         if(isAtEdge()){
             getWorld().removeObject(this);
         }
     }
 
-    public void movimentoGas(){
+    private void movimentoGas(){
         if (Greenfoot.getRandomNumber(100)<5){
             setLocation(getX()+ Greenfoot.getRandomNumber(11)-5, getY());
         }

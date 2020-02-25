@@ -14,7 +14,7 @@ public class Back extends Buttons
         clickMouse();
     }   
 
-    public void moveMouse(){
+    private void moveMouse(){
         if(Greenfoot.mouseMoved(this)){
             setImage("BackComBrilho.png");
         }
