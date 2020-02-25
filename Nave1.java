@@ -17,10 +17,6 @@ public class Nave1 extends Player1
     {
         setImage("nave1.png");
     }
-<<<<<<< Updated upstream
-    
-=======
->>>>>>> Stashed changes
     public void act() 
     {
         moveNave();

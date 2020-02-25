@@ -9,13 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Jogo2 extends World
 {
 
-<<<<<<< Updated upstream
-    /**
-     * Constructor for objects of class Jogo2.
-     * 
-     */
-=======
->>>>>>> Stashed changes
     private int LIMITE=100;
     public Jogo2()
     {    
@@ -32,10 +25,7 @@ public class Jogo2 extends World
     {
         Nave1 nave1 = new Nave1();
         addObject(nave1,getWidth()/2,50);
-<<<<<<< Updated upstream
-=======
         
->>>>>>> Stashed changes
         Nave2 nave2 = new Nave2();
         addObject(nave2,getWidth()/2,150);
         addObject(new Vida_player1(nave1),500,500);
@@ -45,13 +35,8 @@ public class Jogo2 extends World
     public void act()
     {
         libertarGases();
-<<<<<<< Updated upstream
-=======
-
         vidas();
        
->>>>>>> Stashed changes
-
         disparaMissil();
     }
     
@@ -63,8 +48,7 @@ public class Jogo2 extends World
             addObject(new Gas(), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
         }
     }
-<<<<<<< Updated upstream
-=======
+    
     public void vidas() 
     {
 
@@ -74,7 +58,7 @@ public class Jogo2 extends World
             addObject(new Vida_jogo2(), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
         }
     }
->>>>>>> Stashed changes
+    
     public void disparaMissil(){
         int random = Greenfoot.getRandomNumber(250);
         if (random<2)
@@ -88,10 +72,6 @@ public class Jogo2 extends World
                 addObject(new Missil(getObjects(Nave1.class).get(0).getY()+LIMITE,getObjects(Nave1.class).get(0)), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
             }
         }
-<<<<<<< Updated upstream
     }  
-=======
-    }
->>>>>>> Stashed changes
 }
  
