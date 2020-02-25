@@ -5,14 +5,22 @@ comment1.params=
 comment1.target=Nave1()
 comment2.params=
 comment2.target=void\ act()
+comment2.text=<<<<<<<\ Updated\ upstream\r\n\=\=\=\=\=\=\=\r\n\r\n>>>>>>>\ Stashed\ changes
 comment3.params=
 comment3.target=void\ moveNave()
 comment4.params=
 comment4.target=void\ removeGas()
 comment5.params=
 comment5.target=int\ getNumeroVidas()
+<<<<<<< Updated upstream
 comment6.params=numVidas
 comment6.target=void\ setNumeroVidas(int)
 comment7.params=valor
 comment7.target=void\ tiraNumeroVidas(int)
 numComments=8
+=======
+comment5.text=<<<<<<<\ Updated\ upstream\r\n\=\=\=\=\=\=\=\r\n\r\n>>>>>>>\ Stashed\ changes
+comment6.params=valor
+comment6.target=void\ tiraNumeroVidas(int)
+numComments=7
+>>>>>>> Stashed changes

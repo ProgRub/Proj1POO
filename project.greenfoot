@@ -117,6 +117,7 @@ dependency120.type=UsesDependency
 dependency121.from=Amarelo
 dependency121.to=Player1
 dependency121.type=UsesDependency
+<<<<<<< Updated upstream
 dependency122.from=Amarelo
 dependency122.to=Player2
 dependency122.type=UsesDependency
@@ -140,10 +141,36 @@ dependency128.to=Jogo1
 dependency128.type=UsesDependency
 dependency129.from=Preto
 dependency129.to=Player1
+=======
+dependency122.from=Verde
+dependency122.to=Player2
+dependency122.type=UsesDependency
+dependency123.from=Play
+dependency123.to=Jogo2
+dependency123.type=UsesDependency
+dependency124.from=Play
+dependency124.to=Player1
+dependency124.type=UsesDependency
+dependency125.from=Play
+dependency125.to=Player2
+dependency125.type=UsesDependency
+dependency126.from=M\u00E1quina
+dependency126.to=Gas
+dependency126.type=UsesDependency
+dependency127.from=M\u00E1quina
+dependency127.to=Bala
+dependency127.type=UsesDependency
+dependency128.from=M\u00E1quina
+dependency128.to=Jogo1
+dependency128.type=UsesDependency
+dependency129.from=M\u00E1quina
+dependency129.to=VidaM\u00E1quina
+>>>>>>> Stashed changes
 dependency129.type=UsesDependency
 dependency13.from=Jogo1
 dependency13.to=Gota
 dependency13.type=UsesDependency
+<<<<<<< Updated upstream
 dependency130.from=Preto
 dependency130.to=Player2
 dependency130.type=UsesDependency
@@ -176,6 +203,22 @@ dependency139.to=EscolherCor
 dependency139.type=UsesDependency
 dependency14.from=Jogo1
 dependency14.to=Vida
+=======
+dependency130.from=Target
+dependency130.to=Rel\u00E2mpago
+dependency130.type=UsesDependency
+dependency131.from=Missil
+dependency131.to=Nave2
+dependency131.type=UsesDependency
+dependency132.from=Missil
+dependency132.to=Nave1
+dependency132.type=UsesDependency
+dependency133.from=ObjetosCaem
+dependency133.to=Ch\u00E3o
+dependency133.type=UsesDependency
+dependency14.from=Jogo2
+dependency14.to=Nave1
+>>>>>>> Stashed changes
 dependency14.type=UsesDependency
 dependency140.from=M\u00E1quina
 dependency140.to=Gas
@@ -505,12 +548,21 @@ dependency99.from=ControlP2Esq
 dependency99.to=Player2
 dependency99.type=UsesDependency
 editor.fx.0.height=737
+<<<<<<< Updated upstream
 editor.fx.0.width=815
 editor.fx.0.x=360
 editor.fx.0.y=28
 height=830
 package.numDependencies=155
 package.numTargets=60
+=======
+editor.fx.0.width=814
+editor.fx.0.x=360
+editor.fx.0.y=28
+height=838
+package.numDependencies=133
+package.numTargets=52
+>>>>>>> Stashed changes
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -947,6 +999,10 @@ target9.x=0
 target9.y=0
 version=3.0.0
 width=1550
+<<<<<<< Updated upstream
 world.lastInstantiated=MenuInicial
+=======
+world.lastInstantiated=Jogo1
+>>>>>>> Stashed changes
 xPosition=0
 yPosition=0
