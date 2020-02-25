@@ -18,6 +18,7 @@ public class Missil extends Jogos
 
     public Missil(int valor,Nave2 nave)
     {
+        setImage(Player2.getColor()+"/Missil.png");
         getImage().scale(100, 50);   
         limite=valor;
         alvo2=nave;
@@ -25,6 +26,7 @@ public class Missil extends Jogos
 
     public Missil(int valor,Nave1 nave)
     {
+        setImage(Player1.getColor()+"/Missil.png");
         getImage().scale(100, 50);     
         limite=valor;
         alvo1=nave;
