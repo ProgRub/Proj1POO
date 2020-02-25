@@ -77,6 +77,10 @@ public class Player2 extends Players
     public static void setColor(String color){
         cor=color;
     }
+
+    public static String getColor(){
+        return cor;
+    }
     
     public static int getNumeroVidas()
     {

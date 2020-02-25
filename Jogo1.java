@@ -18,6 +18,7 @@ public class Jogo1 extends World
     Player1 P1;
     Player2 P2;
     GreenfootSound somAmbiente = new GreenfootSound("winter.mp3");
+    GreenfootSound somChuva = new GreenfootSound("rain.mp3");
     private int wait;
     private int contador;
     private final int midway=máquina.getVida()/2;
@@ -56,6 +57,7 @@ public class Jogo1 extends World
         somAmbiente.setVolume(60);
         somAmbiente.play();
         
+        somChuva.setVolume(60);
     }
 
     public void act(){
@@ -101,6 +103,8 @@ public class Jogo1 extends World
     {   
         if(máquina.getVida() <=midway)
         {
+        somAmbiente.stop();
+        somChuva.play();
         int prob = Greenfoot.getRandomNumber(2);
         if (Greenfoot.getRandomNumber(500)<3){
             Target target = new Target();
@@ -141,4 +145,5 @@ public class Jogo1 extends World
         }
         
     }
+    
 }

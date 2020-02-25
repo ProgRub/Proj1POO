@@ -18,7 +18,10 @@ public class Nave1 extends Player1
     {
         setImage("nave1.png");
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> c5f74d167766ca7ce36907fe154ae2595bb24b38
     public void act() 
     {
         moveNave();
