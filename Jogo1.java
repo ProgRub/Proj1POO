@@ -118,7 +118,7 @@ public class Jogo1 extends World
     
     public void cairNeve() 
     {
-        if (máquina.getVida() >midway ){
+        if (máquina.getVida() > midway ){
             if (Greenfoot.getRandomNumber(100)<10)
             {
                 addObject(new Neve(), Greenfoot.getRandomNumber(getWidth()-1),0);
@@ -128,7 +128,7 @@ public class Jogo1 extends World
     
     public void cairChuva(){
         if (máquina.getVida() <= midway ){
-            if (Greenfoot.getRandomNumber(100)<10)
+            if (Greenfoot.getRandomNumber(100)<20)
             {
                 addObject(new Gota(), Greenfoot.getRandomNumber(getWidth()-1),0);
             }

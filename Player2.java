@@ -114,7 +114,7 @@ public class Player2 extends Players
                 animarMove();
                 andandoParaEsquerda=true;
             }
-            else if (Greenfoot.isKeyDown(right)&&!isTouching(Máquina.class)){
+            else if (Greenfoot.isKeyDown(right)){
                 if (andandoParaEsquerda){
                     image1.mirrorHorizontally();
                     image2.mirrorHorizontally();

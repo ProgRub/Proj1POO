@@ -110,7 +110,7 @@ public class Player1 extends Players
             if(saltou){
                 jump();
             }
-            if (Greenfoot.isKeyDown(left) &&!isTouching(Máquina.class)){
+            if (Greenfoot.isKeyDown(left)){
                 if (!andandoParaEsquerda){
                     image1.mirrorHorizontally();
                     image2.mirrorHorizontally();
@@ -123,7 +123,7 @@ public class Player1 extends Players
                 andandoParaEsquerda=true;
                 animarMove();
             }
-            else if (Greenfoot.isKeyDown(right)&&!isTouching(Máquina.class)){
+            else if (Greenfoot.isKeyDown(right) && !isTouching(Máquina.class)){
                 if (andandoParaEsquerda){
                     image1.mirrorHorizontally();
                     image2.mirrorHorizontally();
