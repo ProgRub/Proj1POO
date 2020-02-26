@@ -14,19 +14,19 @@ public class Máquina extends Jogos
     public Máquina(){
         vida=2;
         score=0;
-        explosion1 = new GreenfootImage("Explosion/1.png");
-        explosion2 = new GreenfootImage("Explosion/2.png");
-        explosion3 = new GreenfootImage("Explosion/3.png");
-        explosion4 = new GreenfootImage("Explosion/4.png");
-        explosion5 = new GreenfootImage("Explosion/5.png");
-        explosion6 = new GreenfootImage("Explosion/6.png");
-        explosion7 = new GreenfootImage("Explosion/7.png");
-        explosion8 = new GreenfootImage("Explosion/8.png");
-        explosion9 = new GreenfootImage("Explosion/9.png");
-        explosion10 = new GreenfootImage("Explosion/10.png");
-        explosion11= new GreenfootImage("Explosion/11.png");
-        explosion12 = new GreenfootImage("Explosion/12.png");
-        explosion13 = new GreenfootImage("Explosion/13.png");
+        explosion1 = new GreenfootImage("ExplosionMáquina/1.png");
+        explosion2 = new GreenfootImage("ExplosionMáquina/2.png");
+        explosion3 = new GreenfootImage("ExplosionMáquina/3.png");
+        explosion4 = new GreenfootImage("ExplosionMáquina/4.png");
+        explosion5 = new GreenfootImage("ExplosionMáquina/5.png");
+        explosion6 = new GreenfootImage("ExplosionMáquina/6.png");
+        explosion7 = new GreenfootImage("ExplosionMáquina/7.png");
+        explosion8 = new GreenfootImage("ExplosionMáquina/8.png");
+        explosion9 = new GreenfootImage("ExplosionMáquina/9.png");
+        explosion10 = new GreenfootImage("ExplosionMáquina/10.png");
+        explosion11= new GreenfootImage("ExplosionMáquina/11.png");
+        explosion12 = new GreenfootImage("ExplosionMáquina/12.png");
+        explosion13 = new GreenfootImage("ExplosionMáquina/13.png");
 
     }
 
