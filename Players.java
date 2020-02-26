@@ -47,7 +47,7 @@ public class Players extends Actor
                 }
             }
 
-            if(isTouching(Vida.class))
+            if(isTouching(Vida.class) )
             {
                 if(P1.getNumeroVidas() >= 9)
                 {
@@ -59,6 +59,7 @@ public class Players extends Actor
                     P1.adicionaNumeroVidas(2);
                 } 
                 removeTouching(Vida.class);
+                
             }
         }
         else{
@@ -107,6 +108,65 @@ public class Players extends Actor
             //getWorld().removeObject(this);
         }
     }
+    
+    
+    
+    protected void perdeVidas(Nave1 N1)
+    {
+        if(N1.getNumeroVidas()>0){
+            
+
+            if(isTouching(Vida_jogo2.class))
+            {
+                if(N1.getNumeroVidas() >= 9)
+                {
+                    N1.tiraNumeroVidas(1); 
+                }
+
+                else
+                {
+                    N1.tiraNumeroVidas(2); 
+                } 
+                removeTouching(Vida_jogo2.class);
+            }
+            
+            /*if(isTouching(Missil.class))
+            {
+                
+                    N1.tiraNumeroVidas(-2); 
+                    removeTouching(Missil.class);
+            }*/
+        }
+        
+    }
+    
+    
+    
+    protected void perdeVidas(Nave2 N2)
+    {
+        if(N2.getNumeroVidas()>0){
+            
+
+            if(isTouching(Vida_jogo2.class))
+            {
+                if(N2.getNumeroVidas() >= 9)
+                {
+                    N2.tiraNumeroVidas(1); 
+                }
+
+                else
+                {
+                    N2.tiraNumeroVidas(2); 
+                } 
+                removeTouching(Vida_jogo2.class);
+            }
+            
+            
+        }
+        
+    }
+    
+    
     
     
 

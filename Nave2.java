@@ -21,6 +21,7 @@ public class Nave2 extends Player2
     {
         moveNave();
         removeGas();
+        perdeVidas(this);
     }    
 
     public void moveNave(){

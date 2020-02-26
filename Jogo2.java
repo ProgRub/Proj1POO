@@ -9,22 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Jogo2 extends World
 {
 
-<<<<<<< Updated upstream
-=======
-    /**
-     * Constructor for objects of class Jogo2.
-     * 
-     */
 
->>>>>>> Stashed changes
 
     private int LIMITE=100;
 
 
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
     public Jogo2()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -38,51 +28,24 @@ public class Jogo2 extends World
      */
     private void prepare()
     {
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 
         Nave1 nave1 = new Nave1();
-
-<<<<<<< Updated upstream
         addObject(nave1,getWidth()/2,100);
-        
-
-=======
->>>>>>> Stashed changes
         Nave2 nave2 = new Nave2();
         addObject(nave2,getWidth()/2,200);
-        addObject(new Vida_player1(nave1),280,600);
+        addObject(new Vida_player1(nave1),260,600);
         addObject(new Vida_player2(nave2),1100,600);
         
-        addObject(new CamadaOzono(),getWidth()/2, 10);
+        addObject(new CamadaOzono(),getWidth()/2, 20);
     }
 
     public void act()
     {
         libertarGases();
-<<<<<<< Updated upstream
-=======
-
-        disparaMissil();
-
->>>>>>> Stashed changes
 
         vidas();
        
-
-<<<<<<< Updated upstream
         disparaMissil();
-
-
-
-        
-       
-
-=======
-        
->>>>>>> Stashed changes
     }
     
 
@@ -93,17 +56,11 @@ public class Jogo2 extends World
             addObject(new Gas(), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
         }
     }
-<<<<<<< Updated upstream
-
-    
-    public void vidas() 
-
-=======
     
 
     
    public void vidas() 
->>>>>>> Stashed changes
+
     {
 
 
@@ -114,12 +71,6 @@ public class Jogo2 extends World
     }
 
 
-    
-
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     public void disparaMissil(){
         int random = Greenfoot.getRandomNumber(250);
         if (random<2)
@@ -133,10 +84,5 @@ public class Jogo2 extends World
                 addObject(new Missil(getObjects(Nave1.class).get(0).getY()+LIMITE,getObjects(Nave1.class).get(0)), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
             }
         }
-<<<<<<< Updated upstream
     }
-=======
-    }  
-
->>>>>>> Stashed changes
 }
