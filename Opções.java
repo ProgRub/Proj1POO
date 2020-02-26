@@ -13,7 +13,8 @@ public class Opções extends World
      * Constructor for objects of class Opções.
      * 
      */
-    public Opções()
+    private static MenuInicial referencia;
+    public Opções(MenuInicial start)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200,700, 1); 
@@ -21,6 +22,7 @@ public class Opções extends World
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
         prepare();
+        referencia=start;
     }
 
     private void prepare()
@@ -40,5 +42,10 @@ public class Opções extends World
         addObject(new ControlP2Baixo(), (2*larg)/3, (5*comp)/7);
         addObject(new ControlP2Dispara(), (2*larg)/3, (6*comp)/7);
         addObject(new Back(), larg-100, comp-50);
+    }
+    
+    public static MenuInicial getReferencia()
+    {
+        return referencia;
     }
 }
