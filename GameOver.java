@@ -9,10 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class GameOver extends Jogos
 {
     GreenfootImage pisca1, pisca2;
-    
+    private int contador;
     public GameOver(){
-        pisca1 = new GreenfootImage("gameOVER.png");
-        pisca2 = new GreenfootImage("gameOVER1.png");
+        pisca1 = new GreenfootImage("GM1.png");
+        pisca2 = new GreenfootImage("gm2.png");
+        setImage(pisca1);
+        contador = 0;
     }
     
     public void act() 
@@ -21,9 +23,16 @@ public class GameOver extends Jogos
     }  
     
     public void pisca(){
-        setImage(pisca1);
-        Greenfoot.delay(10);
-        setImage(pisca2);
-        Greenfoot.delay(10);
+        contador++;
+
+        if (contador==10){
+           if(getImage()==pisca1){
+               setImage(pisca2);
+           }
+           else if (getImage()==pisca2){
+               setImage(pisca1);
+           }
+            contador=0;
+        }
     }
 }

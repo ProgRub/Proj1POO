@@ -59,5 +59,6 @@ public class Nave1 extends Player1
     {
         vida+=valor;
     }
+    
 
 }

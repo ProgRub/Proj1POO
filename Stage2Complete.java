@@ -28,7 +28,7 @@ public class Stage2Complete extends World
         addObject(menu,500,468);
         NextLevel nextLevel = new NextLevel();
         addObject(nextLevel,700,468);
-        RestartLevel restartLevel = new RestartLevel();
-        addObject(restartLevel,600,468);
+        PlayersScore players_score = new PlayersScore();
+        addObject(players_score,600,468);
     }
 }

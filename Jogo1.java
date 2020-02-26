@@ -32,6 +32,7 @@ public class Jogo1 extends World
         control =false;
         stop =false;
         contador=0;
+        setPaintOrder(GameOver.class, Restart.class, VidaMáquina.class);
     }
 
     public  VidaMáquina getVidaMáquina(){
@@ -61,7 +62,7 @@ public class Jogo1 extends World
     }
 
     public void act(){
-        //gameOver(P1.numeroVidas,P2.numeroVidas); 
+        gameOver(P1.getNumeroVidas(),P2.getNumeroVidas()); 
         cairGranizo();
         cairNeve();
         invocaTarget();
@@ -73,16 +74,13 @@ public class Jogo1 extends World
     private void gameOver(int vidaJogador1, int vidaJogador2){
         if (vidaJogador1 <=0 && vidaJogador2 <= 0 && control == false ){
             addObject(gameOver,getWidth()/2,getHeight()/2);
-            addObject(restart,getWidth()/2,getHeight()/2 +50);
+            addObject(restart,getWidth()/2,getHeight()/2 +150);
             stop =true;
             if (stop == true){
                 Greenfoot.playSound("gameOver.mp3");
                 control =true;
                 stop =false;
             }
-        }
-        if (vidaJogador1 ==0 && vidaJogador2 == 0){
-            showText("", getWidth()/2,getHeight()-190); //apagar % de vida
         }
     }
     
