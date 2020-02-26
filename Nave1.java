@@ -16,7 +16,8 @@ public class Nave1 extends Player1
     
     public Nave1()
     {
-        setImage("nave1.png");
+        setImage(Player1.getColor()+"/Nave.png");
+        getImage().scale(getImage().getWidth()/2,getImage().getHeight()/2);
     }
 
     public void act() 
