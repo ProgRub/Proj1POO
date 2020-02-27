@@ -14,6 +14,6 @@ public class PlataformaGelo extends Jogos
      */
     public void act() 
     {
-        // Add your action code here.
+        move(-1);
     }    
 }
