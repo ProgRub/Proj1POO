@@ -35,6 +35,7 @@ public class Vermelho extends Cor
             }
             else{
                 Player2.setColor("Red");
+                MenuInicial.getMusica().stop();
                 Greenfoot.setWorld(new Jogo1());
             }
         }

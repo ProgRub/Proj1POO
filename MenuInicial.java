@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MenuInicial extends World
 {
 
-    GreenfootSound musica;
+    private static GreenfootSound musica;
     public MenuInicial()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -45,5 +45,9 @@ public class MenuInicial extends World
         Player2.setControls(2, "right");
         Player2.setControls(3, "down");
         Player2.setControls(4, "0");
+    }
+    
+    public static GreenfootSound getMusica(){
+        return musica;
     }
 }

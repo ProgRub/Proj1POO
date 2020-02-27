@@ -11,14 +11,14 @@ public class Jogo1 extends World
 {
     GameOver gameOver;
     Restart restart;
-    public Máquina máquina;
-    public boolean control,stop;
+    private Máquina máquina;
+    private boolean control,stop;
     
     VidaMáquina vidaMáquina;
     Player1 P1;
     Player2 P2;
-    GreenfootSound somAmbiente = new GreenfootSound("winter.mp3");
-    GreenfootSound somChuva = new GreenfootSound("rain.mp3");
+    private static GreenfootSound somAmbiente = new GreenfootSound("winter.mp3");
+    private static GreenfootSound somChuva = new GreenfootSound("rain.mp3");
     private int wait;
     private int contador;
     private final int midway=máquina.getVida()/2;
@@ -69,6 +69,10 @@ public class Jogo1 extends World
         cairChuva();
     }
 
+    public static GreenfootSound getSomChuva()
+    {
+        return somChuva;
+    }
     
     private void gameOver(int vidaJogador1, int vidaJogador2){
         if (vidaJogador1 <=0 && vidaJogador2 <= 0 && control == false ){

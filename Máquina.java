@@ -59,6 +59,7 @@ public class Máquina extends Jogos
 
     private void maquinaDestruida(){
         if (vida <= 0){
+            Jogo1.getSomChuva().stop();
             Greenfoot.playSound("explosion.wav");
             Greenfoot.delay(3);
             setImage(explosion1);
