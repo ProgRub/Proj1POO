@@ -52,9 +52,8 @@ public class Jogo1 extends World
 
         addObject(new VidaMáquina(),getWidth()/2,40);
         
-        addObject(new Vida_player1(P1), 350, 100);
-        
-        addObject(new Vida_player2(P2), 1050, 100);
+        addObject(new Vida_player1(P1), 285/2, 125);
+        addObject(new Vida_player2(P2), getWidth()-285/2, 125);
         somAmbiente.setVolume(60);
         somAmbiente.play();
         

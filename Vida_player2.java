@@ -19,15 +19,25 @@ public class Vida_player2 extends Player2
     public Vida_player2(Player2 player)
     {
         dez = new GreenfootImage("Vida/10.png");
+        dez.mirrorHorizontally();
         nove = new GreenfootImage("Vida/9.png");
+        nove.mirrorHorizontally();
         oito = new GreenfootImage("Vida/8.png");
+        oito.mirrorHorizontally();
         sete = new GreenfootImage("Vida/7.png");
+        sete.mirrorHorizontally();
         seis = new GreenfootImage("Vida/6.png");
+        seis.mirrorHorizontally();
         cinco = new GreenfootImage("Vida/5.png");
+        cinco.mirrorHorizontally();
         quatro = new GreenfootImage("Vida/4.png");
+        quatro.mirrorHorizontally();
         tres = new GreenfootImage("Vida/3.png");
+        tres.mirrorHorizontally();
         dois = new GreenfootImage("Vida/2.png");
+        dois.mirrorHorizontally();
         um = new GreenfootImage("Vida/1.png");
+        um.mirrorHorizontally();
         P2=player;
         vidaPlayer2(P2);
     }
@@ -35,15 +45,25 @@ public class Vida_player2 extends Player2
     public Vida_player2(Nave2 player)
     {
         dez = new GreenfootImage("Vida/10.png");
+        dez.mirrorHorizontally();
         nove = new GreenfootImage("Vida/9.png");
+        nove.mirrorHorizontally();
         oito = new GreenfootImage("Vida/8.png");
+        oito.mirrorHorizontally();
         sete = new GreenfootImage("Vida/7.png");
+        sete.mirrorHorizontally();
         seis = new GreenfootImage("Vida/6.png");
+        seis.mirrorHorizontally();
         cinco = new GreenfootImage("Vida/5.png");
+        cinco.mirrorHorizontally();
         quatro = new GreenfootImage("Vida/4.png");
+        quatro.mirrorHorizontally();
         tres = new GreenfootImage("Vida/3.png");
+        tres.mirrorHorizontally();
         dois = new GreenfootImage("Vida/2.png");
+        dois.mirrorHorizontally();
         um = new GreenfootImage("Vida/1.png");
+        um.mirrorHorizontally();
         N2=player;
         vidaPlayer2(N2);
     }

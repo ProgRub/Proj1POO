@@ -130,12 +130,6 @@ public class Players extends Actor
                 } 
                 removeTouching(Vida_jogo2.class);
             }
-
-            if (isTouching(Missil.class))
-            {
-                N1.tiraNumeroVidas(-1); 
-                //removeTouching(Missil.class);
-            }
         }
 
     }
@@ -145,7 +139,6 @@ public class Players extends Actor
     {
         if(N2.getNumeroVidas()>0)
         {
-
             if(isTouching(Vida_jogo2.class))
             {
                 if(N2.getNumeroVidas() >= 9)
@@ -158,12 +151,6 @@ public class Players extends Actor
                     N2.tiraNumeroVidas(2); 
                 } 
                 removeTouching(Vida_jogo2.class);
-            }
-
-            if (isTouching(Missil.class))
-            {
-                N2.tiraNumeroVidas(-1); 
-               // N2.tiraNumeroVidas(-1);
             }
 
         }

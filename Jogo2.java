@@ -11,7 +11,7 @@ public class Jogo2 extends World
 
 
 
-    private int LIMITE=100;
+    private int LIMITE=200;
 
 
 
@@ -33,8 +33,8 @@ public class Jogo2 extends World
         addObject(nave1,getWidth()/2,100);
         Nave2 nave2 = new Nave2();
         addObject(nave2,getWidth()/2,200);
-        addObject(new Vida_player1(nave1),260,600);
-        addObject(new Vida_player2(nave2),1100,600);
+        addObject(new Vida_player1(nave1),285/2,600);
+        addObject(new Vida_player2(nave2),getWidth()-285/2,600);
         
         addObject(new CamadaOzono(),getWidth()/2, 20);
     }
@@ -62,8 +62,6 @@ public class Jogo2 extends World
    public void vidas() 
 
     {
-
-
         if (Greenfoot.getRandomNumber(500)<1)
         {
             addObject(new Vida_jogo2(), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
@@ -72,7 +70,7 @@ public class Jogo2 extends World
 
 
     public void disparaMissil(){
-        int random = Greenfoot.getRandomNumber(250);
+        int random = Greenfoot.getRandomNumber(400);
         if (random<2)
         {
             if(random==1)

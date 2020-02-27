@@ -68,16 +68,18 @@ public class Missil extends Jogos
         if (alvo2!=null)
         {
             teleguiado(alvo2);
-            atingiuAlvo(alvo2);
+            if(!atingiuAlvo(alvo2)){
+                chegouAoFim();
+            }
         }
         else
         {
             teleguiado(alvo1);
-            atingiuAlvo(alvo1);
+            if(!atingiuAlvo(alvo1)){
+                chegouAoFim();
+            }
         }
-        //chegouAoFim();
     }   
-    
 
     public void teleguiado(Nave2 alvo){
         if(getY()>limite)
@@ -98,87 +100,69 @@ public class Missil extends Jogos
     public void chegouAoFim(){
         if(isAtEdge())
         {
+            animaExplosao();
             getWorld().removeObject(this);
         }
     }
 
-    public void atingiuAlvo(Nave1 alvo)
+    public boolean atingiuAlvo(Nave1 alvo)
     {
         if (isTouching(Nave1.class))
         {
-            Greenfoot.playSound("explosion.wav");
-            Greenfoot.delay(3);
-            setImage(explosion1);
-            Greenfoot.delay(1);
-            setImage(explosion2);
-            Greenfoot.delay(1);
-            setImage(explosion3);
-            Greenfoot.delay(1);
-            setImage(explosion4);
-            Greenfoot.delay(1);
-            setImage(explosion5);
-            Greenfoot.delay(1);
-            setImage(explosion6);
-            Greenfoot.delay(1);
-            setImage(explosion7);
-            Greenfoot.delay(1);
-            setImage(explosion8);
-            Greenfoot.delay(1);
-            setImage(explosion9);
-            Greenfoot.delay(1);
-            setImage(explosion10);
-            Greenfoot.delay(1);
-            setImage(explosion11);
-            Greenfoot.delay(1);
-            setImage(explosion12);
-            Greenfoot.delay(1);
-            setImage(explosion13);
-            Greenfoot.delay(1);
-            setImage(explosion14);
-            Greenfoot.delay(1);
-            setImage(explosion15);
-            Greenfoot.delay(1);
+            alvo.tiraNumeroVidas(-1);
+            animaExplosao();
             getWorld().removeObject(this);
-        }            
+            return true;
+        }
+        return false;
     }
 
-    public void atingiuAlvo(Nave2 alvo)
+    public boolean atingiuAlvo(Nave2 alvo)
     {
         if (isTouching(Nave2.class))
         {
-            Greenfoot.playSound("explosion.wav");
-            Greenfoot.delay(3);
-            setImage(explosion1);
-            Greenfoot.delay(1);
-            setImage(explosion2);
-            Greenfoot.delay(1);
-            setImage(explosion3);
-            Greenfoot.delay(1);
-            setImage(explosion4);
-            Greenfoot.delay(1);
-            setImage(explosion5);
-            Greenfoot.delay(1);
-            setImage(explosion6);
-            Greenfoot.delay(1);
-            setImage(explosion7);
-            Greenfoot.delay(1);
-            setImage(explosion8);
-            Greenfoot.delay(1);
-            setImage(explosion9);
-            Greenfoot.delay(1);
-            setImage(explosion10);
-            Greenfoot.delay(1);
-            setImage(explosion11);
-            Greenfoot.delay(1);
-            setImage(explosion12);
-            Greenfoot.delay(1);
-            setImage(explosion13);
-            Greenfoot.delay(1);
-            setImage(explosion14);
-            Greenfoot.delay(1);
-            setImage(explosion15);
-            Greenfoot.delay(1);
+            alvo.tiraNumeroVidas(-1);
+            animaExplosao();
             getWorld().removeObject(this);
-        }            
+            return true;
+        }
+        return false;
+    }
+
+    public void animaExplosao()
+    {
+        Greenfoot.playSound("explosion.wav");
+        getImage().clear();
+        setLocation(getX(), getY()-40);
+        setImage(explosion1);
+        Greenfoot.delay(1);
+        setImage(explosion2);
+        Greenfoot.delay(1);
+        setImage(explosion3);
+        Greenfoot.delay(1);
+        setImage(explosion4);
+        Greenfoot.delay(1);
+        setImage(explosion5);
+        Greenfoot.delay(1);
+        setImage(explosion6);
+        Greenfoot.delay(1);
+        setImage(explosion7);
+        Greenfoot.delay(1);
+        setImage(explosion8);
+        Greenfoot.delay(1);
+        setImage(explosion9);
+        Greenfoot.delay(1);
+        setImage(explosion10);
+        Greenfoot.delay(1);
+        setImage(explosion11);
+        Greenfoot.delay(1);
+        setImage(explosion12);
+        Greenfoot.delay(1);
+        setImage(explosion13);
+        Greenfoot.delay(1);
+        setImage(explosion14);
+        Greenfoot.delay(1);
+        setImage(explosion15);
+        Greenfoot.delay(1);
     }
 }

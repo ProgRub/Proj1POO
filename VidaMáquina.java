@@ -21,7 +21,7 @@ public class VidaMáquina extends Máquina
        GreenfootImage myImage = getImage();
        myImage.setColor(Color.WHITE);
        myImage.drawRect(0,0,healthBarComprimento +1, healthBarAltura +1);
-       myImage.setColor(Color.RED);
+       myImage.setColor(new Color(109, 16, 120));
        myImage.fillRect(1,1,health*percentagemDeVida, healthBarAltura);
     }
     
