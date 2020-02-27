@@ -13,10 +13,18 @@ public class Jogo3 extends World
      * Constructor for objects of class Jogo3.
      * 
      */
+    
+    
+    
+    
     public Jogo3()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 700, 1); 
+        
+       
     }
 
+    
+    
 }
