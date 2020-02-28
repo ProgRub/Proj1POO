@@ -14,19 +14,22 @@ public class CamadaOzono extends Jogos
      */
     private GreenfootImage imageCamada;
     private int aux;
+    private static int vida =25;
+    
+    public CamadaOzono(){
+        imageCamada= getImage();
+        aux=0;
+        vida = 25;
+    }
     
     public void act() 
     {
         mudarTransparencia();
     }  
     
-    public CamadaOzono()
-    {
-        imageCamada= getImage();
-        aux=0;
+    public static int getVida(){
+        return vida;
     }
-    
-    
     public void mudarTransparencia()
     {
         if (isTouching(Gas.class))
@@ -34,7 +37,6 @@ public class CamadaOzono extends Jogos
             if ( aux >= 5 && aux < 10)
             {
                 imageCamada.setTransparency(200);
-                
             }
             
             if ( aux >= 10 && aux < 15)
@@ -60,7 +62,8 @@ public class CamadaOzono extends Jogos
                imageCamada.setTransparency(0); 
                
             }
-            
+            vida--;
+            getWorldOfType(Jogo2.class).getObjects(VidaCamadaOzono.class).get(0).perdeVida();
             aux++;
             
             removeTouching(Gas.class);

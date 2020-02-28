@@ -9,28 +9,41 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Jogo2 extends World
 {
     private int LIMITE=200;
+<<<<<<< Updated upstream
+=======
+    GameOver gameOver;
+    Restart restart;
+    private boolean control,stop;
+    Nave1 nave1;
+    Nave2 nave2;
+    CamadaOzono camadaOzono;
+>>>>>>> Stashed changes
     public Jogo2()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200,700, 1); 
         prepare();
+        gameOver = new GameOver();
+        restart = new Restart();
+        control =false;
+        stop =false;
     }
 
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
     private void prepare()
     {
 
-        Nave1 nave1 = new Nave1();
+        nave1 = new Nave1();
         addObject(nave1,getWidth()/2,100);
-        Nave2 nave2 = new Nave2();
+        nave2 = new Nave2();
         addObject(nave2,getWidth()/2,200);
         addObject(new Vida_player1(nave1),285/2,600);
         addObject(new Vida_player2(nave2),getWidth()-285/2,600);
         
-        addObject(new CamadaOzono(),getWidth()/2, 20);
+        camadaOzono= new CamadaOzono();
+        addObject(camadaOzono,getWidth()/2, 20);
+        
+        addObject(new VidaCamadaOzono(), getWidth()/2, 600);
+        setPaintOrder(GameOver.class, Restart.class, CamadaOzono.class);
     }
 
     public void act()
@@ -40,6 +53,8 @@ public class Jogo2 extends World
         vidas();
        
         disparaMissil();
+        
+        gameOver(camadaOzono.getVida(), nave1.getNumeroVidas(), nave2.getNumeroVidas());
     }
     
 
@@ -74,6 +89,21 @@ public class Jogo2 extends World
             else
             {
                 addObject(new Missil(getObjects(Nave1.class).get(0).getY()+LIMITE,false,getObjects(Nave1.class).get(0),getObjects(Nave2.class).get(0)), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
+            }
+        }
+    }
+    
+    
+    
+    private void gameOver(int vidaCamada, int vidaNave1, int vidaNave2){
+        if ( ((vidaNave1 <=0 && vidaNave2 <= 0 ) || vidaCamada <=0) && control == false){
+            addObject(gameOver,getWidth()/2,getHeight()/2);
+            addObject(restart,getWidth()/2,getHeight()/2 +150);
+            stop =true;
+            if (stop == true){
+                Greenfoot.playSound("gameOver.mp3");
+                control =true;
+                stop =false;
             }
         }
     }
