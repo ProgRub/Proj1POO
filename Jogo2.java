@@ -9,15 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Jogo2 extends World
 {
     private int LIMITE=200;
-<<<<<<< Updated upstream
-=======
     GameOver gameOver;
     Restart restart;
     private boolean control,stop;
     Nave1 nave1;
     Nave2 nave2;
     CamadaOzono camadaOzono;
->>>>>>> Stashed changes
     public Jogo2()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -93,8 +90,7 @@ public class Jogo2 extends World
         }
     }
     
-    
-    
+
     private void gameOver(int vidaCamada, int vidaNave1, int vidaNave2){
         if ( ((vidaNave1 <=0 && vidaNave2 <= 0 ) || vidaCamada <=0) && control == false){
             addObject(gameOver,getWidth()/2,getHeight()/2);

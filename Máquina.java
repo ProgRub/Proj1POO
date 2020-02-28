@@ -61,9 +61,9 @@ public class Máquina extends Jogos
     private void maquinaDestruida(){
         if (vida <= 0 && contador%3==0){
             Jogo1.getSomChuva().stop();
-            Greenfoot.playSound("explosion.wav");
             if (getImage() == explosion1)
             {
+                Greenfoot.playSound("explosion.wav");
                 setImage(explosion2);
             }
             else if (getImage() == explosion2)

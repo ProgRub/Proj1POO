@@ -155,10 +155,11 @@ public class Missil extends Jogos
     {
         if (contador%3==0)
         {
-            Greenfoot.playSound("explosion.wav");
+            
             getImage().clear();
             if (getImage() == explosion1)
             {
+                Greenfoot.playSound("explosion.wav");
                 setImage(explosion2);
             }
             else if (getImage() == explosion2)
