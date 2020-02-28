@@ -16,7 +16,7 @@ public class Player1 extends Players
     private static String shoot;
     private static String[] controlos= {up,left,right,down,shoot};
     private static String cor="";
-    private GreenfootImage image1,image2,image3,image4,image5,image6,imageJumpUp,imageJumpDown;
+    private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador;
     private int contador1;
     private final int GRAVIDADE =15;
@@ -41,8 +41,6 @@ public class Player1 extends Players
         image4 = new GreenfootImage(cor+"/4.png");
         image5 = new GreenfootImage(cor+"/5.png");
         image6 = new GreenfootImage(cor+"/6.png");
-        imageJumpUp = new GreenfootImage(cor+"/Jump_Up.png");
-        imageJumpDown = new GreenfootImage(cor+"/Jump_Down.png");
         setImage(image4);
         andandoParaEsquerda = false;        
         numeroVidas = 10;
@@ -121,8 +119,6 @@ public class Player1 extends Players
                     image4.mirrorHorizontally();
                     image5.mirrorHorizontally();
                     image6.mirrorHorizontally();
-                    imageJumpUp.mirrorHorizontally();
-                    imageJumpDown.mirrorHorizontally();
                 }
                 setLocation(getX()-2, getY());
                 andandoParaEsquerda=true;
@@ -136,8 +132,6 @@ public class Player1 extends Players
                     image4.mirrorHorizontally();
                     image5.mirrorHorizontally();
                     image6.mirrorHorizontally();
-                    imageJumpUp.mirrorHorizontally();
-                    imageJumpDown.mirrorHorizontally();
                 }
                 setLocation(getX()+2, getY());
                 andandoParaEsquerda=false;
