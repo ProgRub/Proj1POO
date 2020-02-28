@@ -8,13 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Jogo2 extends World
 {
-
-
-
     private int LIMITE=200;
-
-
-
     public Jogo2()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -75,11 +69,11 @@ public class Jogo2 extends World
         {
             if(random==1)
             {
-                addObject(new Missil(getObjects(Nave2.class).get(0).getY()+LIMITE,getObjects(Nave2.class).get(0)), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
+                addObject(new Missil(getObjects(Nave2.class).get(0).getY()+LIMITE,true,getObjects(Nave1.class).get(0),getObjects(Nave2.class).get(0)), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
             }
             else
             {
-                addObject(new Missil(getObjects(Nave1.class).get(0).getY()+LIMITE,getObjects(Nave1.class).get(0)), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
+                addObject(new Missil(getObjects(Nave1.class).get(0).getY()+LIMITE,false,getObjects(Nave1.class).get(0),getObjects(Nave2.class).get(0)), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
             }
         }
     }
