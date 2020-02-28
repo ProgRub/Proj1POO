@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Pinguim
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Pinguim\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Pinguim()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ animar()
+comment4.params=
+comment4.target=void\ emCimaPlataforma()
+comment5.params=
+comment5.target=void\ desaparece()
+numComments=6
