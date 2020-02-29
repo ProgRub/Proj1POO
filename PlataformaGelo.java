@@ -1,19 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-<<<<<<< HEAD
-/**
- * Write a description of class PlataformaGelo here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class PlataformaGelo extends Jogos
-{
-    /**
-     * Act - do whatever the PlataformaGelo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-=======
 
 public class PlataformaGelo extends Jogos
 {
@@ -22,7 +8,6 @@ public class PlataformaGelo extends Jogos
     public PlataformaGelo(){
         podeCriarPinguim();
     }
->>>>>>> 62d88bb920ef8bf4641ee79d5742d33a40b36b44
     public void act() 
     {
         move(-1);
