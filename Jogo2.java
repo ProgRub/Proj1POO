@@ -8,15 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Jogo2 extends World
 {
-
-
-
-   
-
-
-
-
-
     private int LIMITE=200;
     GameOver gameOver;
     Restart restart;
@@ -38,13 +29,6 @@ public class Jogo2 extends World
 
     private void prepare()
     {
-
-
-        
-
-
-        
-
         nave1 = new Nave1();
         addObject(nave1,getWidth()/2,100);
         nave2 = new Nave2();
@@ -52,10 +36,10 @@ public class Jogo2 extends World
         addObject(nave2,getWidth()/2,200);
         addObject(new Vida_player1(nave1),285/2,600);
         addObject(new Vida_player2(nave2),getWidth()-285/2,600);
-        
+
         camadaOzono= new CamadaOzono();
         addObject(camadaOzono,getWidth()/2, 20);
-        
+
         addObject(new VidaCamadaOzono(), getWidth()/2, 600);
         setPaintOrder(GameOver.class, Restart.class, CamadaOzono.class);
     }
@@ -64,20 +48,15 @@ public class Jogo2 extends World
     {
         libertarGases();
 
-
         
-
         disparaMissil();
 
-
         vidas();
-       
 
         
         gameOver(camadaOzono.getVida(), nave1.getNumeroVidas(), nave2.getNumeroVidas());
 
     }
-    
 
     public void libertarGases() 
     {
@@ -86,10 +65,9 @@ public class Jogo2 extends World
             addObject(new Gas(), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
         }
     }
-    
 
     
-   public void vidas() 
+    public void vidas() 
 
     {
         if (Greenfoot.getRandomNumber(500)<1)
@@ -99,11 +77,7 @@ public class Jogo2 extends World
     }
 
 
-
     
-    
-
-
 
     public void disparaMissil(){
         int random = Greenfoot.getRandomNumber(400);
@@ -119,7 +93,6 @@ public class Jogo2 extends World
             }
         }
     }
-    
 
     private void gameOver(int vidaCamada, int vidaNave1, int vidaNave2){
         if ( ((vidaNave1 <=0 && vidaNave2 <= 0 ) || vidaCamada <=0) && control == false){
@@ -135,7 +108,6 @@ public class Jogo2 extends World
 
     }
 
- }  
-
+}  
 
 

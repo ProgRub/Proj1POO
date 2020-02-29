@@ -11,6 +11,4 @@ comment4.params=
 comment4.target=void\ moveMouseBotaoControlos()
 comment5.params=texto\ text\ size
 comment5.target=void\ updateText(java.lang.String,\ greenfoot.Actor,\ int)
-comment6.params=texto\ text\ size
-comment6.target=void\ updateText_EscolherCor(java.lang.String,\ greenfoot.Actor,\ int)
-numComments=7
+numComments=6

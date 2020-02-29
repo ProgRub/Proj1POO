@@ -31,6 +31,7 @@ public class Players extends Actor
             if(isTouching(Granizo.class))
             {
                 P1.adicionaNumeroVidas(-1); 
+                P1.adicionaScore(-5);
                 removeTouching(Granizo.class);
             }
 
@@ -39,6 +40,7 @@ public class Players extends Actor
                 if (aux==0)
                 {
                     P1.adicionaNumeroVidas(-2);
+                    P1.adicionaScore(-10);
                     aux = 20;
                 }
                 else
@@ -58,6 +60,7 @@ public class Players extends Actor
                 {
                     P1.adicionaNumeroVidas(2);
                 } 
+                P1.adicionaScore(5);
                 removeTouching(Vida.class);
 
             }
@@ -75,6 +78,7 @@ public class Players extends Actor
             if(isTouching(Granizo.class))
             {
                 P2.adicionaNumeroVidas(-1); 
+                P2.adicionaScore(-5);
                 removeTouching(Granizo.class);
             }
 
@@ -83,6 +87,7 @@ public class Players extends Actor
                 if (aux==0)
                 {
                     P2.adicionaNumeroVidas(-2); 
+                    P2.adicionaScore(-10);
                     aux = 20;
                 }
                 else
@@ -102,6 +107,7 @@ public class Players extends Actor
                 {
                     P2.adicionaNumeroVidas(2); 
                 } 
+                P2.adicionaScore(5);
                 removeTouching(Vida.class);
             }
         }
@@ -111,7 +117,6 @@ public class Players extends Actor
         }
     }
 
-    
     protected void perdeVidas(Nave1 N1)
     {
         if(N1.getNumeroVidas()>0)
@@ -134,7 +139,6 @@ public class Players extends Actor
 
     }
 
-    
     protected void perdeVidas(Nave2 N2)
     {
         if(N2.getNumeroVidas()>0)
@@ -156,8 +160,6 @@ public class Players extends Actor
         }
 
     }
-
-    
 
     public static boolean podeMudar(String[] P1Controls, String[] P2Controls, String key){
         for (int i=0; i<5;i++){

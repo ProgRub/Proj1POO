@@ -11,32 +11,38 @@ public class Bala extends Players
     private GreenfootImage imagem, original;
     private boolean moveEsquerda;
     private final int VELOCIDADE;
-    
+    private Player1 P1Disparou;
+    private Player2 P2Disparou;
+
     private GreenfootSound disparo;
-    
+
     public Bala(Player1 P1){
         disparo = new GreenfootSound("gun.wav");
         original = getImage();
         setImage(original);
-        moveEsquerda= P1.andandoParaEsquerda;
+        moveEsquerda= P1.getAndandoParaEsquerda();
         disparo.setVolume(70);
         disparo.play();
         VELOCIDADE=8;
+        P1Disparou = P1;
     }
+
     public Bala(Player2 P2){
         disparo = new GreenfootSound("gun.wav");
         original = getImage();
         setImage(original);
-        moveEsquerda= P2.andandoParaEsquerda;
+        moveEsquerda= P2.getAndandoParaEsquerda();
         disparo.setVolume(70);
         disparo.play();
         VELOCIDADE=8;
+        P2Disparou = P2;
     }
 
     public void act() 
     {
         disparo();
         desapareceLimite();
+        atingiuMáquina();
     } 
 
     private void disparo(){
@@ -60,5 +66,34 @@ public class Bala extends Players
         if (isAtEdge()){
             getWorld().removeObject(this);
         }
+    }
+
+    private void atingiuMáquina()
+    {
+        if (isTouching(Máquina.class) && getWorld().getObjects(Máquina.class).get(0).getVida()>0)
+        {
+            if (P1Disparou!=null)
+            {
+                P1Disparou.adicionaScore(10);
+            }
+            else
+            {
+                P2Disparou.adicionaScore(10);
+            }
+            getWorld().getObjects(Máquina.class).get(0).tiraVida(1);
+            getWorldOfType(Jogo1.class).getObjects(VidaMáquina.class).get(0).perdeVida();
+            getWorld().removeObject(this);
+        }
+
+    }
+
+    public Player1 getP1Disparou()
+    {
+        return P1Disparou;
+    }
+
+    public Player2 getP2Disparou()
+    {
+        return P2Disparou;
     }
 }

@@ -94,6 +94,8 @@ public class Jogo1 extends World
         aparecerNuvem();
         aparecerNuvem2();
         trocaFundo();
+        showText(""+P1.getScore(), 285/2, 200);
+        showText(""+P2.getScore(), getWidth()-285/2, 200);
     }
 
     public static GreenfootSound getSomChuva()

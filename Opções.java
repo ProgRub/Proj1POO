@@ -29,18 +29,20 @@ public class Opções extends World
     {
         int larg = getWidth();
         int comp = getHeight();
-        addObject(new Texto(1), larg/3, comp/7);
-        addObject(new Texto(2), (2*larg)/3, comp/7);
-        addObject(new ControlP1Cima(), larg/3, (2*comp)/7);
-        addObject(new ControlP1Esq(), larg/3, (3*comp)/7);
-        addObject(new ControlP1Dir(), larg/3, (4*comp)/7);
-        addObject(new ControlP1Baixo(), larg/3, (5*comp)/7);
-        addObject(new ControlP1Dispara(), larg/3, (6*comp)/7);
-        addObject(new ControlP2Cima(), (2*larg)/3, (2*comp)/7);
-        addObject(new ControlP2Esq(), (2*larg)/3, (3*comp)/7);
-        addObject(new ControlP2Dir(), (2*larg)/3, (4*comp)/7);
-        addObject(new ControlP2Baixo(), (2*larg)/3, (5*comp)/7);
-        addObject(new ControlP2Dispara(), (2*larg)/3, (6*comp)/7);
+        addObject(new Texto("Player 1"), larg/3, comp/6);
+        addObject(new Texto("Player 2"), (2*larg)/3, comp/6);
+        addObject(new Texto("Jump"), larg/8, 2*comp/6);
+        addObject(new Texto("Left"), larg/8, 3*comp/6);
+        addObject(new Texto("Right"), larg/8, 4*comp/6);
+        addObject(new Texto("Shoot"), larg/8, 5*comp/6);
+        addObject(new ControlP1Cima(), larg/3, (2*comp)/6);
+        addObject(new ControlP1Esq(), larg/3, (3*comp)/6);
+        addObject(new ControlP1Dir(), larg/3, (4*comp)/6);
+        addObject(new ControlP1Dispara(), larg/3, (5*comp)/6);
+        addObject(new ControlP2Cima(), (2*larg)/3, (2*comp)/6);
+        addObject(new ControlP2Esq(), (2*larg)/3, (3*comp)/6);
+        addObject(new ControlP2Dir(), (2*larg)/3, (4*comp)/6);
+        addObject(new ControlP2Dispara(), (2*larg)/3, (5*comp)/6);
         addObject(new Back(), larg-100, comp-50);
     }
     

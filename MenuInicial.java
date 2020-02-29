@@ -38,13 +38,11 @@ public class MenuInicial extends World
         Player1.setControls(0, "w");
         Player1.setControls(1, "a");
         Player1.setControls(2, "d");
-        Player1.setControls(3, "s");
-        Player1.setControls(4, "f");
+        Player1.setControls(3, "f");
         Player2.setControls(0, "up");
         Player2.setControls(1, "left");
         Player2.setControls(2, "right");
-        Player2.setControls(3, "down");
-        Player2.setControls(4, "0");
+        Player2.setControls(3, "0");
     }
     
     public static GreenfootSound getMusica(){

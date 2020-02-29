@@ -8,27 +8,28 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player2 extends Players
 {
-
     private static String up;
     private static String left;
     private static String right;
-    private static String down;
     private static String shoot;
-    private static String[] controlos= {up,left,right,down,shoot};
+    private static String[] controlos= {up,left,right,shoot};
     private static String cor="";
     private GreenfootImage image1,image2,image3,image4,image5,image6;
-    private int contador=0;
+    private int contador;
+    private int score;
     private final int GRAVIDADE =15;
     private int tempoJump=GRAVIDADE;
     private int tempoQueda=GRAVIDADE;
     private boolean podeSaltar=false;
     private boolean saltou=false;
-    public static boolean andandoParaEsquerda;
+    private boolean andandoParaEsquerda;
     private int controlBala=0;
     private static int numeroVidas;
 
     public Player2()
     {
+        score=0;
+        contador=0;
         image1 = new GreenfootImage(cor+"/1.png");
         image2 = new GreenfootImage(cor+"/2.png");
         image3 = new GreenfootImage(cor+"/3.png");
@@ -47,6 +48,25 @@ public class Player2 extends Players
         disparar();
         perdeVidas(this);
     }  
+    
+    public boolean getAndandoParaEsquerda()
+    {
+        return andandoParaEsquerda;
+    }
+    
+    public int getScore()
+    {
+        return score;
+    }
+    
+    public void adicionaScore(int valor)
+    {
+        score+=valor;
+        if(score<0)
+        {
+            score-=valor;
+        }
+    }
 
     public static String[] getControls(){
         return controlos;
@@ -65,9 +85,6 @@ public class Player2 extends Players
             right=key;
             break;
             case 3:
-            down=key;
-            break;
-            case 4:
             shoot=key;
             break;
         }
@@ -127,10 +144,7 @@ public class Player2 extends Players
                 andandoParaEsquerda=false;
                 animarMove();
             }
-            else if (Greenfoot.isKeyDown(down)){
-                setLocation(getX(), getY()+2);
-            }
-            if (!Greenfoot.isKeyDown(right) && !Greenfoot.isKeyDown(up) && !Greenfoot.isKeyDown(left) && !Greenfoot.isKeyDown(down)){
+            if (!Greenfoot.isKeyDown(right) && !Greenfoot.isKeyDown(up) && !Greenfoot.isKeyDown(left)){
                 setImage(image4);
             }
         }

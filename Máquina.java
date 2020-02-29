@@ -35,13 +35,18 @@ public class Máquina extends Jogos
     public void act() 
     {
         libertaGas();
-        perdeVida();
+        // perdeVida();
         maquinaDestruida();
     }   
 
     public static int getVida()
     {
         return vida;
+    }   
+
+    public static void tiraVida(int valor)
+    {
+        vida-=valor;
     }
 
     private void libertaGas(){
@@ -51,13 +56,13 @@ public class Máquina extends Jogos
         }
     }
 
-    private void perdeVida(){
-        if (isTouching(Bala.class) && vida > 0){
-            removeTouching(Bala.class);
-            vida--;
-            getWorldOfType(Jogo1.class).getObjects(VidaMáquina.class).get(0).perdeVida();
-        }
-    }
+    // private void perdeVida(){
+        // if (isTouching(Bala.class) && vida > 0){
+            // removeTouching(Bala.class);
+            // vida--;
+            // getWorldOfType(Jogo1.class).getObjects(VidaMáquina.class).get(0).perdeVida();
+        // }
+    // }
 
     private void maquinaDestruida(){
         if (vida <= 0 && contador%3==0){

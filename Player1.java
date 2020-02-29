@@ -12,24 +12,25 @@ public class Player1 extends Players
     private static String up;
     private static String left;
     private static String right;
-    private static String down;
     private static String shoot;
-    private static String[] controlos= {up,left,right,down,shoot};
+    private static String[] controlos= {up,left,right,shoot};
     private static String cor="";
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador;
     private int contador1;
+    private int score;
     private final int GRAVIDADE =15;
     private int tempoJump=GRAVIDADE;
     private int tempoQueda=GRAVIDADE;
     private boolean podeSaltar=false;
     private boolean saltou=false;
-    public static boolean andandoParaEsquerda;
+    private boolean andandoParaEsquerda;
     private int controlBala;
     private static int numeroVidas;
 
     public Player1()
     {
+        score=0;
         contador=0;
         contador1=0;
         controlBala=0;
@@ -54,6 +55,25 @@ public class Player1 extends Players
         perdeVidas(this);
     }
 
+    public int getScore()
+    {
+        return score;
+    }
+
+    public void adicionaScore(int valor)
+    {
+        score+=valor;
+        if(score<0)
+        {
+            score-=valor;
+        }
+    }
+
+    public boolean getAndandoParaEsquerda()
+    {
+        return andandoParaEsquerda;
+    }
+
     public static String[] getControls()
     {
         return controlos;
@@ -73,9 +93,6 @@ public class Player1 extends Players
             right=key;
             break;
             case 3:
-            down=key;
-            break;
-            case 4:
             shoot=key;
             break;
         }
@@ -137,10 +154,7 @@ public class Player1 extends Players
                 andandoParaEsquerda=false;
                 animarMove();
             }
-            else if (Greenfoot.isKeyDown(down)){
-                setLocation(getX(), getY()+2);
-            }
-            if (!Greenfoot.isKeyDown(right) && !Greenfoot.isKeyDown(up) && !Greenfoot.isKeyDown(left) && !Greenfoot.isKeyDown(down)){
+            if (!Greenfoot.isKeyDown(right) && !Greenfoot.isKeyDown(up) && !Greenfoot.isKeyDown(left)){
                 setImage(image4);
             }
         }
