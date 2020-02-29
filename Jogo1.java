@@ -13,6 +13,8 @@ public class Jogo1 extends World
     private Máquina máquina;
     private boolean control,stop;
     private int tempo=120;
+    private Texto clock;
+    private String escreverClock = "2:00";
     private Texto scoreP1;
     private Texto scoreP2;
 
@@ -29,8 +31,6 @@ public class Jogo1 extends World
     private int auxNuvem2;
     GreenfootImage fundo1, fundo2, fundo3, fundo4, fundo5, fundo6, fundo7, fundo8,fundo9;
     private int auxFundo;
-    private Texto clock;
-    private String escreverClock = "2:00";
     private final int TAMANHOTEXTO=45;
 
     public Jogo1()
@@ -85,14 +85,14 @@ public class Jogo1 extends World
 
         addObject(new Vida_player1(), 285/2, 125);
         addObject(new Vida_player2(), getWidth()-285/2, 125);
-        clock = new Texto(escreverClock,TAMANHOTEXTO);
+        clock = new Texto(escreverClock,TAMANHOTEXTO, new Color(255,255,255));
         addObject(clock, getWidth()/2,125);
-        scoreP1 = new Texto(""+P1.getScore(),TAMANHOTEXTO);
+        scoreP1 = new Texto(""+Player1.getScore(),TAMANHOTEXTO, new Color(255,255,255));
         addObject(scoreP1, 285/2,175);
-        scoreP2 = new Texto(""+P2.getScore(),TAMANHOTEXTO);
+        scoreP2 = new Texto(""+Player2.getScore(),TAMANHOTEXTO, new Color(255,255,255));
         addObject(scoreP2, getWidth()-285/2,175);
-        addObject(new Texto("PLAYER 1",TAMANHOTEXTO-10),285/2,80);
-        addObject(new Texto("PLAYER 2",TAMANHOTEXTO-10),getWidth()-285/2,80);
+        addObject(new Texto("PLAYER 1",TAMANHOTEXTO-10, new Color(255,255,255)),285/2,80);
+        addObject(new Texto("PLAYER 2",TAMANHOTEXTO-10, new Color(255,255,255)),getWidth()-285/2,80);
     }
 
     public void act(){
@@ -105,8 +105,8 @@ public class Jogo1 extends World
         aparecerNuvem();
         aparecerNuvem2();
         trocaFundo();
-        Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO);
-        Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO);
+        Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
+        Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
         atualizaRelogio();
     }
 
@@ -155,7 +155,7 @@ public class Jogo1 extends World
                 escreverClock = "" + tempo/60 + ":" + tempo%60;
             }
         }        
-        Options.updateText(escreverClock,clock,TAMANHOTEXTO);
+        Options.updateText(escreverClock,clock,TAMANHOTEXTO, clock.getCor());
     }
 
     public void invocaTarget() 

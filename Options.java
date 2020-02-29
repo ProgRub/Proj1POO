@@ -42,8 +42,8 @@ public class Options extends Menus
         }
     }
     
-    public static void updateText(String texto, Actor text, int size){
-        GreenfootImage image = new GreenfootImage(texto.toUpperCase(),size, Color.WHITE, new Color(0,0,0,0));
+    public static void updateText(String texto, Actor text, int size, Color cor){
+        GreenfootImage image = new GreenfootImage(texto.toUpperCase(),size, cor, new Color(0,0,0,0));
         text.setImage(image);
     }
 }

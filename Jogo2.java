@@ -48,16 +48,16 @@ public class Jogo2 extends World
         addObject(camadaOzono,getWidth()/2, 20);
 
         addObject(new VidaCamadaOzono(), getWidth()/2, 600);
-        addObject(new Texto("Camada Ozono",TAMANHOTEXTO-10),getWidth()/2,575);
+        addObject(new Texto("Camada Ozono",TAMANHOTEXTO-10, new Color(255,255,255)),getWidth()/2,575);
         setPaintOrder(GameOver.class, Restart.class, CamadaOzono.class, Gas.class);
-        clock = new Texto(escreverClock,TAMANHOTEXTO);
+        clock = new Texto(escreverClock,TAMANHOTEXTO, new Color(255,255,255));
         addObject(clock, getWidth()/2,650);
-        scoreP1 = new Texto(""+Player1.getScore(),TAMANHOTEXTO);
+        scoreP1 = new Texto(""+Player1.getScore(),TAMANHOTEXTO, new Color(255,255,255));
         addObject(scoreP1, 285/2,645);
-        scoreP2 = new Texto(""+Player2.getScore(),TAMANHOTEXTO);
+        scoreP2 = new Texto(""+Player2.getScore(),TAMANHOTEXTO, new Color(255,255,255));
         addObject(scoreP2, getWidth()-285/2,645);
-        addObject(new Texto("PLAYER 1",TAMANHOTEXTO-10),285/2,555);
-        addObject(new Texto("PLAYER 2",TAMANHOTEXTO-10),getWidth()-285/2,555);
+        addObject(new Texto("PLAYER 1",TAMANHOTEXTO-10, new Color(255,255,255)),285/2,555);
+        addObject(new Texto("PLAYER 2",TAMANHOTEXTO-10, new Color(255,255,255)),getWidth()-285/2,555);
     }
 
     public void act()
@@ -66,8 +66,8 @@ public class Jogo2 extends World
         disparaMissil();
         vidas();        
         gameOver(camadaOzono.getVida(), nave1.getNumeroVidas(), nave2.getNumeroVidas());
-        Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO);
-        Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO);
+        Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
+        Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
         atualizaRelogio();
     }
 
@@ -86,7 +86,7 @@ public class Jogo2 extends World
                 escreverClock = "" + tempo/60 + ":" + tempo%60;
             }
         }        
-        Options.updateText(escreverClock,clock,TAMANHOTEXTO);
+        Options.updateText(escreverClock,clock,TAMANHOTEXTO, clock.getCor());
     }
 
     public void libertarGases() 

@@ -29,8 +29,7 @@ public class Amarelo extends Cor
             if(!Cor.getP1escolheu()){
                 Player1.setColor("Yellow");
                 Cor.setP1escolheu(true);
-                getWorld().removeObject(getWorld().getObjects(Texto.class).get(0));
-                getWorld().addObject(new Texto(Cor.getP1escolheu()),getWorld().getWidth()/2,getWorld().getHeight()/3);
+                Options.updateText("PLAYER 2, PICK YOUR COLOUR", getWorld().getObjects(Texto.class).get(0), 60, new Color(255,255,255));
                 getWorld().removeObject(this);
             }
             else{

@@ -14,6 +14,7 @@ public class Opções extends World
      * 
      */
     private static MenuInicial referencia;
+    private final int TAMANHOTEXTO=50;
     public Opções(MenuInicial start)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -29,12 +30,12 @@ public class Opções extends World
     {
         int larg = getWidth();
         int comp = getHeight();
-        addObject(new Texto("Player 1",50), larg/3, comp/6);
-        addObject(new Texto("Player 2",50), (2*larg)/3, comp/6);
-        addObject(new Texto("Jump",50), larg/8, 2*comp/6);
-        addObject(new Texto("Left",50), larg/8, 3*comp/6);
-        addObject(new Texto("Right",50), larg/8, 4*comp/6);
-        addObject(new Texto("Shoot",50), larg/8, 5*comp/6);
+        addObject(new Texto("Player 1",TAMANHOTEXTO, new Color(255,255,255)), larg/3, comp/6);
+        addObject(new Texto("Player 2",TAMANHOTEXTO, new Color(255,255,255)), (2*larg)/3, comp/6);
+        addObject(new Texto("Jump",TAMANHOTEXTO, new Color(255,255,255)), larg/8, 2*comp/6);
+        addObject(new Texto("Left",TAMANHOTEXTO, new Color(255,255,255)), larg/8, 3*comp/6);
+        addObject(new Texto("Right",TAMANHOTEXTO, new Color(255,255,255)), larg/8, 4*comp/6);
+        addObject(new Texto("Shoot",TAMANHOTEXTO, new Color(255,255,255)), larg/8, 5*comp/6);
         addObject(new ControlP1Cima(), larg/3, (2*comp)/6);
         addObject(new ControlP1Esq(), larg/3, (3*comp)/6);
         addObject(new ControlP1Dir(), larg/3, (4*comp)/6);
