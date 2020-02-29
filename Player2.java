@@ -13,7 +13,8 @@ public class Player2 extends Players
     protected static String right;
     protected static String shoot;
     private static String[] controlos= {up,left,right,shoot};
-    protected static String cor="Blue";
+    protected static String cor;
+    protected static String nome;
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador;
     protected static int score=0;
@@ -50,6 +51,16 @@ public class Player2 extends Players
     public boolean getAndandoParaEsquerda()
     {
         return andandoParaEsquerda;
+    }
+    
+    public static String getNome()
+    {
+        return nome;
+    }
+    
+    public static void setNome(String texto)
+    {
+        nome=texto;
     }
     
     public static int getScore()

@@ -14,7 +14,8 @@ public class Player1 extends Players
     protected static String right;
     protected static String shoot;
     private static String[] controlos= {up,left,right,shoot};
-    protected static String cor="Red";
+    protected static String cor;
+    protected static String nome;
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador;
     private int contador1;
@@ -51,6 +52,16 @@ public class Player1 extends Players
         move();
         disparar();        
         perdeVidas(this);
+    }
+    
+    public static String getNome()
+    {
+        return nome;
+    }
+    
+    public static void setNome(String texto)
+    {
+        nome=texto;
     }
 
     public static int getScore()
