@@ -9,6 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Jogo2 extends World
 {
     private int LIMITE=200;
+    private int timer, tempo;
+    private int contador;
     GameOver gameOver;
     Restart restart;
     private boolean control,stop;
@@ -25,6 +27,7 @@ public class Jogo2 extends World
         restart = new Restart();
         control =false;
         stop =false;
+        contador =0;
     }
 
     private void prepare()
@@ -36,12 +39,14 @@ public class Jogo2 extends World
         addObject(nave2,getWidth()/2,200);
         addObject(new Vida_player1(),285/2,600);
         addObject(new Vida_player2(),getWidth()-285/2,600);
-
+        showText("PLAYER 1",285/2, 570);
+        showText("PLAYER 2",getWidth()-285/2,570);
         camadaOzono= new CamadaOzono();
         addObject(camadaOzono,getWidth()/2, 20);
 
         addObject(new VidaCamadaOzono(), getWidth()/2, 600);
-        setPaintOrder(GameOver.class, Restart.class, CamadaOzono.class);
+        showText("Camada Ozono", getWidth()/2, 585);
+        setPaintOrder(GameOver.class, Restart.class, CamadaOzono.class, Gas.class);
     }
 
     public void act()
@@ -52,6 +57,16 @@ public class Jogo2 extends World
         disparaMissil();
         vidas();        
         gameOver(camadaOzono.getVida(), nave1.getNumeroVidas(), nave2.getNumeroVidas());
+        contador++;
+        
+        if(contador%61==0)
+        {
+            //tempo = 120 - timer;
+            tempo =0;
+            timer++;
+            
+        }
+        showText(""+tempo, getWidth()/2, 650);
 
     }
 
@@ -92,7 +107,7 @@ public class Jogo2 extends World
     }
 
     private void gameOver(int vidaCamada, int vidaNave1, int vidaNave2){
-        if ( ((vidaNave1 <=0 && vidaNave2 <= 0 ) || vidaCamada <=0) && control == false){
+        if ( ((vidaNave1 <=0 && vidaNave2 <= 0 ) || vidaCamada <=0 || tempo == 0) && control == false){
             addObject(gameOver,getWidth()/2,getHeight()/2);
             addObject(restart,getWidth()/2,getHeight()/2 +150);
             stop =true;

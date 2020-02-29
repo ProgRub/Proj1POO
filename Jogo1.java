@@ -13,7 +13,7 @@ public class Jogo1 extends World
     Restart restart;
     private Máquina máquina;
     private boolean control,stop;
-    private int timer;
+    private int timer, tempo;
 
     VidaMáquina vidaMáquina;
     Player1 P1;
@@ -39,7 +39,7 @@ public class Jogo1 extends World
         control =false;
         stop =false;
         contador=0;
-        setPaintOrder(GameOver.class, Restart.class, VidaMáquina.class);
+        setPaintOrder(GameOver.class, Restart.class, VidaMáquina.class, Gas.class);
 
         auxNuvem = 0;
         auxNuvem2 = 0;
@@ -98,11 +98,14 @@ public class Jogo1 extends World
         showText(""+P1.getScore(), 285/2, 200);
         showText(""+P2.getScore(), getWidth()-285/2, 200);
         contador++;
+        
         if(contador%61==0)
         {
+            tempo = 120 - timer;
             timer++;
+            
         }
-        showText(""+timer, getWidth()/2, 300);
+        showText(""+tempo, getWidth()/2, 125);
     }
 
     public static GreenfootSound getSomChuva()
