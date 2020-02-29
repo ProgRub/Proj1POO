@@ -29,12 +29,12 @@ public class Opções extends World
     {
         int larg = getWidth();
         int comp = getHeight();
-        addObject(new Texto("Player 1"), larg/3, comp/6);
-        addObject(new Texto("Player 2"), (2*larg)/3, comp/6);
-        addObject(new Texto("Jump"), larg/8, 2*comp/6);
-        addObject(new Texto("Left"), larg/8, 3*comp/6);
-        addObject(new Texto("Right"), larg/8, 4*comp/6);
-        addObject(new Texto("Shoot"), larg/8, 5*comp/6);
+        addObject(new Texto("Player 1",50), larg/3, comp/6);
+        addObject(new Texto("Player 2",50), (2*larg)/3, comp/6);
+        addObject(new Texto("Jump",50), larg/8, 2*comp/6);
+        addObject(new Texto("Left",50), larg/8, 3*comp/6);
+        addObject(new Texto("Right",50), larg/8, 4*comp/6);
+        addObject(new Texto("Shoot",50), larg/8, 5*comp/6);
         addObject(new ControlP1Cima(), larg/3, (2*comp)/6);
         addObject(new ControlP1Esq(), larg/3, (3*comp)/6);
         addObject(new ControlP1Dir(), larg/3, (4*comp)/6);

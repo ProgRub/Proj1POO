@@ -19,8 +19,8 @@ public class Texto extends Options
     
     public Texto(){}
     
-    public Texto(String text){
-        GreenfootImage image = new GreenfootImage(text,50, Color.WHITE, new Color(0,0,0,0));
+    public Texto(String text, int size){
+        GreenfootImage image = new GreenfootImage(text,size, Color.WHITE, new Color(0,0,0,0));
         setImage(image);
     }
     

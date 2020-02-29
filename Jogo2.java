@@ -9,13 +9,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Jogo2 extends World
 {
     private int LIMITE=200;
-    private int timer, tempo;
+    private int tempo=120;
+    private Texto clock;
+    private Texto scoreP1;
+    private Texto scoreP2;
+    private String escreverClock = "2:00";
+    private final int TAMANHOTEXTO=45;
     private int contador;
     GameOver gameOver;
     Restart restart;
     private boolean control,stop;
-    Nave1 nave1;
-    Nave2 nave2;
+    private Nave1 nave1;
+    private Nave2 nave2;
     CamadaOzono camadaOzono;
 
     public Jogo2()
@@ -39,35 +44,49 @@ public class Jogo2 extends World
         addObject(nave2,getWidth()/2,200);
         addObject(new Vida_player1(),285/2,600);
         addObject(new Vida_player2(),getWidth()-285/2,600);
-        showText("PLAYER 1",285/2, 570);
-        showText("PLAYER 2",getWidth()-285/2,570);
         camadaOzono= new CamadaOzono();
         addObject(camadaOzono,getWidth()/2, 20);
 
         addObject(new VidaCamadaOzono(), getWidth()/2, 600);
-        showText("Camada Ozono", getWidth()/2, 585);
+        addObject(new Texto("Camada Ozono",TAMANHOTEXTO-10),getWidth()/2,575);
         setPaintOrder(GameOver.class, Restart.class, CamadaOzono.class, Gas.class);
+        clock = new Texto(escreverClock,TAMANHOTEXTO);
+        addObject(clock, getWidth()/2,650);
+        scoreP1 = new Texto(""+Player1.getScore(),TAMANHOTEXTO);
+        addObject(scoreP1, 285/2,645);
+        scoreP2 = new Texto(""+Player2.getScore(),TAMANHOTEXTO);
+        addObject(scoreP2, getWidth()-285/2,645);
+        addObject(new Texto("PLAYER 1",TAMANHOTEXTO-10),285/2,555);
+        addObject(new Texto("PLAYER 2",TAMANHOTEXTO-10),getWidth()-285/2,555);
     }
 
     public void act()
     {
-        showText(""+Player1.getScore(), 285/2, 650);
-        showText(""+Player2.getScore(), getWidth()-285/2, 650);
         libertarGases();        
         disparaMissil();
         vidas();        
         gameOver(camadaOzono.getVida(), nave1.getNumeroVidas(), nave2.getNumeroVidas());
-        contador++;
-        
+        Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO);
+        Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO);
+        atualizaRelogio();
+    }
+
+    private void atualizaRelogio()
+    {
+        contador++;        
         if(contador%61==0)
         {
-            //tempo = 120 - timer;
-            tempo =0;
-            timer++;
-            
-        }
-        showText(""+tempo, getWidth()/2, 650);
-
+            tempo--;
+            if(tempo%60<10)
+            {
+                escreverClock = "" + tempo/60 + ":0" + tempo%60;
+            }
+            else
+            {
+                escreverClock = "" + tempo/60 + ":" + tempo%60;
+            }
+        }        
+        Options.updateText(escreverClock,clock,TAMANHOTEXTO);
     }
 
     public void libertarGases() 
@@ -78,9 +97,7 @@ public class Jogo2 extends World
         }
     }
 
-    
     public void vidas() 
-
     {
         if (Greenfoot.getRandomNumber(500)<1)
         {
@@ -88,9 +105,7 @@ public class Jogo2 extends World
         }
     }
 
-
     
-
     public void disparaMissil(){
         int random = Greenfoot.getRandomNumber(400);
         if (random<2)
@@ -121,5 +136,4 @@ public class Jogo2 extends World
     }
 
 }  
-
 

@@ -57,6 +57,16 @@ public class Player2 extends Players
         return score;
     }
     
+    public static void resetScore()
+    {
+        score=0;
+    }
+
+    public static void resetNumVidas()
+    {
+        numeroVidas=10;
+    }
+    
     public static void adicionaScore(int valor)
     {
         score+=valor;
@@ -102,10 +112,21 @@ public class Player2 extends Players
         return numeroVidas;
     }
 
+    
     public static void adicionaNumeroVidas(int valor)
     {
-        numeroVidas += valor;
-    }  
+        if (valor<0 || (valor > 0 && numeroVidas<9))
+        {
+            numeroVidas += valor;
+        }
+        else
+        {
+            if(numeroVidas<10)
+            {
+                numeroVidas++;
+            }
+        }
+    } 
 
     public void move(){
         if(numeroVidas >0){

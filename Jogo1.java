@@ -1,4 +1,3 @@
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -13,11 +12,13 @@ public class Jogo1 extends World
     Restart restart;
     private Máquina máquina;
     private boolean control,stop;
-    private int timer, tempo;
+    private int tempo=120;
+    private Texto scoreP1;
+    private Texto scoreP2;
 
     VidaMáquina vidaMáquina;
-    Player1 P1;
-    Player2 P2;
+    private Player1 P1;
+    private Player2 P2;
     private static GreenfootSound somAmbiente = new GreenfootSound("winter.mp3");
     private static GreenfootSound somChuva = new GreenfootSound("rain.mp3");
     private int wait;
@@ -28,6 +29,9 @@ public class Jogo1 extends World
     private int auxNuvem2;
     GreenfootImage fundo1, fundo2, fundo3, fundo4, fundo5, fundo6, fundo7, fundo8,fundo9;
     private int auxFundo;
+    private Texto clock;
+    private String escreverClock = "2:00";
+    private final int TAMANHOTEXTO=45;
 
     public Jogo1()
     {    
@@ -39,13 +43,12 @@ public class Jogo1 extends World
         control =false;
         stop =false;
         contador=0;
+        setPaintOrder(Texto.class);
         setPaintOrder(GameOver.class, Restart.class, VidaMáquina.class, Gas.class);
 
         auxNuvem = 0;
         auxNuvem2 = 0;
-        setPaintOrder(Nuvem.class,Relâmpago.class);
-        setPaintOrder(Nuvem.class,Gota.class);
-        setPaintOrder(VidaMáquina.class,Nuvem.class);
+        setPaintOrder(VidaMáquina.class,Nuvem.class,Relâmpago.class,Gota.class);
 
         auxFundo = -1;
         fundo1 = new GreenfootImage("jogo1_backgrounds/jogo1_background_5.jpg");
@@ -66,6 +69,9 @@ public class Jogo1 extends World
 
     private void prepare()
     {
+        somAmbiente.setVolume(60);
+        somAmbiente.play();
+        somChuva.setVolume(60);
         Chão chao= new Chão();
         addObject(chao,getWidth()/2,getHeight()-chao.getImage().getHeight()/2);
         máquina = new Máquina();
@@ -79,10 +85,14 @@ public class Jogo1 extends World
 
         addObject(new Vida_player1(), 285/2, 125);
         addObject(new Vida_player2(), getWidth()-285/2, 125);
-        somAmbiente.setVolume(60);
-        somAmbiente.play();
-
-        somChuva.setVolume(60);
+        clock = new Texto(escreverClock,TAMANHOTEXTO);
+        addObject(clock, getWidth()/2,125);
+        scoreP1 = new Texto(""+P1.getScore(),TAMANHOTEXTO);
+        addObject(scoreP1, 285/2,175);
+        scoreP2 = new Texto(""+P2.getScore(),TAMANHOTEXTO);
+        addObject(scoreP2, getWidth()-285/2,175);
+        addObject(new Texto("PLAYER 1",TAMANHOTEXTO-10),285/2,80);
+        addObject(new Texto("PLAYER 2",TAMANHOTEXTO-10),getWidth()-285/2,80);
     }
 
     public void act(){
@@ -95,17 +105,9 @@ public class Jogo1 extends World
         aparecerNuvem();
         aparecerNuvem2();
         trocaFundo();
-        showText(""+P1.getScore(), 285/2, 200);
-        showText(""+P2.getScore(), getWidth()-285/2, 200);
-        contador++;
-        
-        if(contador%61==0)
-        {
-            tempo = 120 - timer;
-            timer++;
-            
-        }
-        showText(""+tempo, getWidth()/2, 125);
+        Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO);
+        Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO);
+        atualizaRelogio();
     }
 
     public static GreenfootSound getSomChuva()
@@ -114,7 +116,7 @@ public class Jogo1 extends World
     }
 
     private void gameOver(int vidaJogador1, int vidaJogador2){
-        if (vidaJogador1 <=0 && vidaJogador2 <= 0 && control == false ){
+        if (((vidaJogador1 <=0 && vidaJogador2 <= 0) || tempo==0) && control == false ){
             addObject(gameOver,getWidth()/2,getHeight()/2);
             addObject(restart,getWidth()/2,getHeight()/2 +150);
             stop =true;
@@ -136,6 +138,24 @@ public class Jogo1 extends World
             }
         }
 
+    }
+
+    private void atualizaRelogio()
+    {
+        contador++;        
+        if(contador%61==0)
+        {
+            tempo--;
+            if(tempo%60<10)
+            {
+                escreverClock = "" + tempo/60 + ":0" + tempo%60;
+            }
+            else
+            {
+                escreverClock = "" + tempo/60 + ":" + tempo%60;
+            }
+        }        
+        Options.updateText(escreverClock,clock,TAMANHOTEXTO);
     }
 
     public void invocaTarget() 
