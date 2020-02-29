@@ -118,8 +118,8 @@ public class Máquina extends Jogos
             }
             else if (getImage() == explosion13)
             {
-            Nave1.setNumeroVidas(getWorld().getObjects(Player1.class).get(0).getNumeroVidas());
-            Nave2.setNumeroVidas(getWorld().getObjects(Player2.class).get(0).getNumeroVidas());
+            // Nave1.setNumeroVidas(getWorld().getObjects(Player1.class).get(0).getNumeroVidas());
+            // Nave2.setNumeroVidas(getWorld().getObjects(Player2.class).get(0).getNumeroVidas());
             Greenfoot.setWorld(new Stage1Complete());
             getWorld().removeObject(this);
             }

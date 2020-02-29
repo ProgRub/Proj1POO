@@ -8,15 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player2 extends Players
 {
-    private static String up;
-    private static String left;
-    private static String right;
-    private static String shoot;
+    protected static String up;
+    protected static String left;
+    protected static String right;
+    protected static String shoot;
     private static String[] controlos= {up,left,right,shoot};
-    private static String cor="";
+    protected static String cor="";
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador;
-    private int score;
+    protected static int score=0;
     private final int GRAVIDADE =15;
     private int tempoJump=GRAVIDADE;
     private int tempoQueda=GRAVIDADE;
@@ -24,11 +24,10 @@ public class Player2 extends Players
     private boolean saltou=false;
     private boolean andandoParaEsquerda;
     private int controlBala=0;
-    private static int numeroVidas;
+    private static int numeroVidas=10;
 
     public Player2()
     {
-        score=0;
         contador=0;
         image1 = new GreenfootImage(cor+"/1.png");
         image2 = new GreenfootImage(cor+"/2.png");
@@ -38,7 +37,6 @@ public class Player2 extends Players
         image6 = new GreenfootImage(cor+"/6.png");
         setImage(image4);
         andandoParaEsquerda = false;
-        numeroVidas = 10;
     }
 
     public void act() 
@@ -54,12 +52,12 @@ public class Player2 extends Players
         return andandoParaEsquerda;
     }
     
-    public int getScore()
+    public static int getScore()
     {
         return score;
     }
     
-    public void adicionaScore(int valor)
+    public static void adicionaScore(int valor)
     {
         score+=valor;
         if(score<0)

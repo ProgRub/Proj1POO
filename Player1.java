@@ -9,16 +9,16 @@ import java.util.List;
  */
 public class Player1 extends Players
 {
-    private static String up;
-    private static String left;
-    private static String right;
-    private static String shoot;
+    protected static String up;
+    protected static String left;
+    protected static String right;
+    protected static String shoot;
     private static String[] controlos= {up,left,right,shoot};
-    private static String cor="";
+    protected static String cor="";
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private int contador;
     private int contador1;
-    private int score;
+    protected static int score=0;
     private final int GRAVIDADE =15;
     private int tempoJump=GRAVIDADE;
     private int tempoQueda=GRAVIDADE;
@@ -26,11 +26,10 @@ public class Player1 extends Players
     private boolean saltou=false;
     private boolean andandoParaEsquerda;
     private int controlBala;
-    private static int numeroVidas;
+    protected static int numeroVidas=10;
 
     public Player1()
     {
-        score=0;
         contador=0;
         contador1=0;
         controlBala=0;
@@ -43,8 +42,7 @@ public class Player1 extends Players
         image5 = new GreenfootImage(cor+"/5.png");
         image6 = new GreenfootImage(cor+"/6.png");
         setImage(image4);
-        andandoParaEsquerda = false;        
-        numeroVidas = 10;
+        andandoParaEsquerda = false;
     }
 
     public void act() 
@@ -55,12 +53,12 @@ public class Player1 extends Players
         perdeVidas(this);
     }
 
-    public int getScore()
+    public static int getScore()
     {
         return score;
     }
 
-    public void adicionaScore(int valor)
+    public static void adicionaScore(int valor)
     {
         score+=valor;
         if(score<0)

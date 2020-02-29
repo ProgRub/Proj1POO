@@ -34,8 +34,8 @@ public class Jogo2 extends World
         nave2 = new Nave2();
 
         addObject(nave2,getWidth()/2,200);
-        addObject(new Vida_player1(nave1),285/2,600);
-        addObject(new Vida_player2(nave2),getWidth()-285/2,600);
+        addObject(new Vida_player1(),285/2,600);
+        addObject(new Vida_player2(),getWidth()-285/2,600);
 
         camadaOzono= new CamadaOzono();
         addObject(camadaOzono,getWidth()/2, 20);
@@ -46,14 +46,11 @@ public class Jogo2 extends World
 
     public void act()
     {
-        libertarGases();
-
-        
+        showText(""+Player1.getScore(), 285/2, 650);
+        showText(""+Player2.getScore(), getWidth()-285/2, 650);
+        libertarGases();        
         disparaMissil();
-
-        vidas();
-
-        
+        vidas();        
         gameOver(camadaOzono.getVida(), nave1.getNumeroVidas(), nave2.getNumeroVidas());
 
     }

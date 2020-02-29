@@ -55,29 +55,6 @@ public class Missil extends Jogos
         contador=0;
     }
 
-    // public Missil(int valor,Nave1 nave)
-    // {
-    // limite=valor;
-    // nave=nave;    
-    // alvoENave2=false;    
-    // alvo2=getWorldOfType(Jogo2.class).getObjects(Nave2.class).get(0);
-    // explosion1 = new GreenfootImage("ExplosionMisseis/1.png");
-    // explosion2 = new GreenfootImage("ExplosionMisseis/2.png");
-    // explosion3 = new GreenfootImage("ExplosionMisseis/3.png");
-    // explosion4 = new GreenfootImage("ExplosionMisseis/4.png");
-    // explosion5 = new GreenfootImage("ExplosionMisseis/5.png");
-    // explosion6 = new GreenfootImage("ExplosionMisseis/6.png");
-    // explosion7 = new GreenfootImage("ExplosionMisseis/7.png");
-    // explosion8 = new GreenfootImage("ExplosionMisseis/8.png");
-    // explosion9 = new GreenfootImage("ExplosionMisseis/9.png");
-    // explosion10 = new GreenfootImage("ExplosionMisseis/10.png");
-    // explosion11= new GreenfootImage("ExplosionMisseis/11.png");
-    // explosion12 = new GreenfootImage("ExplosionMisseis/12.png");
-    // explosion13 = new GreenfootImage("ExplosionMisseis/13.png");
-    // explosion14 = new GreenfootImage("ExplosionMisseis/14.png");
-    // explosion15 = new GreenfootImage("ExplosionMisseis/15.png");
-    // contador=0;
-    // }
 
     public void act() 
     {
@@ -105,10 +82,7 @@ public class Missil extends Jogos
         else
         {
             animaExplosao();
-        }
-
-        //chegouAoFim();
-        
+        }       
        
     }   
     
@@ -141,7 +115,8 @@ public class Missil extends Jogos
     {
         if (isTouching(Nave1.class))
         {
-            alvo.tiraNumeroVidas(-1);
+            Player1.adicionaNumeroVidas(-1);
+            Player1.adicionaScore(-5);
             setLocation(getX(), getY()-40);
             explosao=true;
         }
@@ -151,7 +126,8 @@ public class Missil extends Jogos
     {
         if (isTouching(Nave2.class))
         {
-            alvo.tiraNumeroVidas(-1);
+            Player2.adicionaNumeroVidas(-1);
+            Player2.adicionaScore(-5);
             setLocation(getX(), getY()-40);
             explosao=true;
         }
@@ -161,7 +137,6 @@ public class Missil extends Jogos
     {
         if (contador%3==0)
         {
-            
             getImage().clear();
             if (getImage() == explosion1)
             {

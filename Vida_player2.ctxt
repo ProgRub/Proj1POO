@@ -1,14 +1,10 @@
 #BlueJ class context
 comment0.target=Vida_player2
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Vida_player2\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=player
-comment1.target=Vida_player2(Player2)
-comment2.params=player
-comment2.target=Vida_player2(Nave2)
-comment3.params=
-comment3.target=void\ act()
-comment4.params=P2
-comment4.target=void\ vidaPlayer2(Player2)
-comment5.params=P2
-comment5.target=void\ vidaPlayer2(Nave2)
-numComments=6
+comment1.params=
+comment1.target=Vida_player2()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=P2
+comment3.target=void\ vidaPlayer2(Player2)
+numComments=4

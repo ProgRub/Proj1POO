@@ -14,7 +14,7 @@ public class Nave2 extends Player2
     
     public Nave2()
     {
-        setImage(Player2.getColor()+"/Nave.png");
+        setImage(getColor()+"/Nave.png");
         getImage().scale(getImage().getWidth()/2,getImage().getHeight()/2);
     }
     
@@ -38,23 +38,9 @@ public class Nave2 extends Player2
     {
         if (isTouching (Gas.class))
         {
+            Player2.adicionaScore(10);
             removeTouching (Gas.class);
 
         }
-    }
-    
-    public static int getNumeroVidas()
-    {
-        return vida;
-    }
-    
-    public static void setNumeroVidas(int numVidas)
-    {
-        vida = numVidas;
-    }
-    
-    public static void tiraNumeroVidas(int valor)
-    {
-        vida+=valor;
     }
 }

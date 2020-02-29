@@ -16,7 +16,7 @@ public class Vida_player2 extends Player2
     private Player2 P2=null;
     private Nave2 N2=null;
 
-    public Vida_player2(Player2 player)
+    public Vida_player2()
     {
         dez = new GreenfootImage("Vida/10.png");
         dez.mirrorHorizontally();
@@ -38,48 +38,14 @@ public class Vida_player2 extends Player2
         dois.mirrorHorizontally();
         um = new GreenfootImage("Vida/1.png");
         um.mirrorHorizontally();
-        P2=player;
-        vidaPlayer2(P2);
+
     }
 
-    public Vida_player2(Nave2 player)
-    {
-        dez = new GreenfootImage("Vida/10.png");
-        dez.mirrorHorizontally();
-        nove = new GreenfootImage("Vida/9.png");
-        nove.mirrorHorizontally();
-        oito = new GreenfootImage("Vida/8.png");
-        oito.mirrorHorizontally();
-        sete = new GreenfootImage("Vida/7.png");
-        sete.mirrorHorizontally();
-        seis = new GreenfootImage("Vida/6.png");
-        seis.mirrorHorizontally();
-        cinco = new GreenfootImage("Vida/5.png");
-        cinco.mirrorHorizontally();
-        quatro = new GreenfootImage("Vida/4.png");
-        quatro.mirrorHorizontally();
-        tres = new GreenfootImage("Vida/3.png");
-        tres.mirrorHorizontally();
-        dois = new GreenfootImage("Vida/2.png");
-        dois.mirrorHorizontally();
-        um = new GreenfootImage("Vida/1.png");
-        um.mirrorHorizontally();
-        N2=player;
-        vidaPlayer2(N2);
-    }
     public void act() 
     {
-        if(P2!=null)
-        {
-            vidaPlayer2(P2);
-        }
-        else
-        {
-            vidaPlayer2(N2);
-        }
+        vidaPlayer2(P2);
     }   
-    
-       
+
 
     public void vidaPlayer2(Player2 P2)
     {
@@ -119,41 +85,4 @@ public class Vida_player2 extends Player2
         }    
     }   
 
-    public void vidaPlayer2(Nave2 P2)
-    {
-        if (P2.getNumeroVidas() == 10)
-        {
-            setImage(dez);
-        }
-        else if(P2.getNumeroVidas() == 9){
-            setImage(nove);
-        }
-        else if(P2.getNumeroVidas() == 8){
-            setImage(oito);
-        }
-        else if(P2.getNumeroVidas() == 7){
-            setImage(sete);
-        }
-        else if(P2.getNumeroVidas() == 6){
-            setImage(seis);
-        }
-        else if(P2.getNumeroVidas() == 5){
-            setImage(cinco);
-        }
-        else if(P2.getNumeroVidas() == 4){
-            setImage(quatro);
-        }
-        else if(P2.getNumeroVidas() == 3){
-            setImage(tres);
-        }
-        else if(P2.getNumeroVidas() == 2){
-            setImage(dois);
-        }
-        else if(P2.getNumeroVidas() == 1){
-            setImage(um);
-        }
-        else if(P2.getNumeroVidas() <= 0){
-            getWorld().removeObject(this);
-        }    
-    }
 }

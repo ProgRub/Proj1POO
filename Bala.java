@@ -41,8 +41,10 @@ public class Bala extends Players
     public void act() 
     {
         disparo();
-        desapareceLimite();
-        atingiuMáquina();
+        if(desapareceLimite() ||atingiuMáquina())
+        {
+            getWorld().removeObject(this);
+        }
     } 
 
     private void disparo(){
@@ -62,13 +64,14 @@ public class Bala extends Players
         }
     }
 
-    private void desapareceLimite(){
+    private boolean desapareceLimite(){
         if (isAtEdge()){
-            getWorld().removeObject(this);
+            return true;
         }
+        return false;
     }
 
-    private void atingiuMáquina()
+    private boolean atingiuMáquina()
     {
         if (isTouching(Máquina.class) && getWorld().getObjects(Máquina.class).get(0).getVida()>0)
         {
@@ -82,9 +85,9 @@ public class Bala extends Players
             }
             getWorld().getObjects(Máquina.class).get(0).tiraVida(1);
             getWorldOfType(Jogo1.class).getObjects(VidaMáquina.class).get(0).perdeVida();
-            getWorld().removeObject(this);
+            return true;
         }
-
+        return false;
     }
 
     public Player1 getP1Disparou()

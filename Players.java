@@ -126,12 +126,12 @@ public class Players extends Actor
             {
                 if(N1.getNumeroVidas() >= 9)
                 {
-                    N1.tiraNumeroVidas(1); 
+                    N1.adicionaNumeroVidas(1); 
                 }
 
                 else
                 {
-                    N1.tiraNumeroVidas(2); 
+                    N1.adicionaNumeroVidas(2); 
                 } 
                 removeTouching(Vida_jogo2.class);
             }
@@ -147,12 +147,12 @@ public class Players extends Actor
             {
                 if(N2.getNumeroVidas() >= 9)
                 {
-                    N2.tiraNumeroVidas(1); 
+                    N2.adicionaNumeroVidas(1); 
                 }
 
                 else
                 {
-                    N2.tiraNumeroVidas(2); 
+                    N2.adicionaNumeroVidas(1); 
                 } 
                 removeTouching(Vida_jogo2.class);
             }
