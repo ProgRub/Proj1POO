@@ -13,8 +13,14 @@ public class Jogo3 extends World
      * Constructor for objects of class Jogo3.
      * 
      */
-    
+
     private int contador;
+    private final int ALTURA1=200;
+    private final int ALTURA2=350;
+    private final int ALTURA3=500;
+    private int tempo=120;
+    private Texto scoreP1;
+    private Texto scoreP2;
 
     public Jogo3()
     {    
@@ -30,9 +36,21 @@ public class Jogo3 extends World
 
     public void invocarPlataformas() 
     {
-        if (Greenfoot.getRandomNumber(500)<3)
+        int random =Greenfoot.getRandomNumber(500);
+        if (random<3)
         {
-            addObject(new PlataformaGelo(),getWidth()-1,Greenfoot.getRandomNumber(getHeight() -1));
+            if (random==0)
+            {
+                addObject(new PlataformaGelo(),getWidth()-1,ALTURA1);
+            }
+            else if (random==1)
+            {
+                addObject(new PlataformaGelo(),getWidth()-1,ALTURA2);
+            }
+            else
+            {
+                addObject(new PlataformaGelo(),getWidth()-1,ALTURA3);
+            }
         }
     }
 
