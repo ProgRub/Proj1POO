@@ -14,6 +14,13 @@ public class Mar extends Jogos
      */
     public void act() 
     {
-        move(-2);
-    }    
+        move(-1);
+        invocar();
+    }  
+    
+    public void invocar(){
+        if (isAtEdge()){
+            getWorld().removeObject(this);
+    }
+}
 }

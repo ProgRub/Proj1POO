@@ -27,7 +27,7 @@ public class Player1 extends Players
     public static boolean andandoParaEsquerda;
     private int controlBala;
     private static int numeroVidas;
-    
+
     public Player1()
     {
         contador=0;
@@ -90,16 +90,17 @@ public class Player1 extends Players
     public static String getColor(){
         return cor;
     }
-    
+
     public static int getNumeroVidas()
     {
         return numeroVidas;
     }
-    
+
     public static void adicionaNumeroVidas(int valor)
     {
         numeroVidas += valor;
     }
+
     public void move()
     {
         if(numeroVidas >0){

@@ -2,9 +2,11 @@
 comment0.target=CamadaOzono
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ CamadaOzono\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
-comment1.target=void\ act()
+comment1.target=CamadaOzono()
 comment2.params=
-comment2.target=CamadaOzono()
+comment2.target=void\ act()
 comment3.params=
-comment3.target=void\ mudarTransparencia()
-numComments=4
+comment3.target=int\ getVida()
+comment4.params=
+comment4.target=void\ mudarTransparencia()
+numComments=5

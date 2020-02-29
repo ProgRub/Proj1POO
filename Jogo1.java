@@ -11,17 +11,23 @@ public class Jogo1 extends World
 {
     GameOver gameOver;
     Restart restart;
-    public Máquina máquina;
-    public boolean control,stop;
+    private Máquina máquina;
+    private boolean control,stop;
     
     VidaMáquina vidaMáquina;
     Player1 P1;
     Player2 P2;
-    GreenfootSound somAmbiente = new GreenfootSound("winter.mp3");
-    GreenfootSound somChuva = new GreenfootSound("rain.mp3");
+    private static GreenfootSound somAmbiente = new GreenfootSound("winter.mp3");
+    private static GreenfootSound somChuva = new GreenfootSound("rain.mp3");
     private int wait;
     private int contador;
     private final int midway=máquina.getVida()/2;
+    
+    private int auxNuvem;
+    private int auxNuvem2;
+    GreenfootImage fundo1, fundo2, fundo3, fundo4, fundo5, fundo6, fundo7, fundo8,fundo9;
+    private int auxFundo;
+    
     public Jogo1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -33,6 +39,24 @@ public class Jogo1 extends World
         stop =false;
         contador=0;
         setPaintOrder(GameOver.class, Restart.class, VidaMáquina.class);
+        
+        auxNuvem = 0;
+        auxNuvem2 = 0;
+        setPaintOrder(Nuvem.class,Relâmpago.class);
+        setPaintOrder(Nuvem.class,Gota.class);
+        setPaintOrder(VidaMáquina.class,Nuvem.class);
+        
+        auxFundo = -1;
+        fundo1 = new GreenfootImage("jogo1_backgrounds/jogo1_background_5.jpg");
+        fundo2 = new GreenfootImage("jogo1_backgrounds/jogo1_background_10.jpg");
+        fundo3 = new GreenfootImage("jogo1_backgrounds/jogo1_background_15.jpg");
+        fundo4 = new GreenfootImage("jogo1_backgrounds/jogo1_background_20.jpg");
+        fundo5 = new GreenfootImage("jogo1_backgrounds/jogo1_background_25.jpg");
+        fundo6 = new GreenfootImage("jogo1_backgrounds/jogo1_background_30.jpg");
+        fundo7 = new GreenfootImage("jogo1_backgrounds/jogo1_background_35.jpg");
+        fundo8 = new GreenfootImage("jogo1_backgrounds/jogo1_background_40.jpg");
+        fundo9 = new GreenfootImage("jogo1_backgrounds/jogo1_background_45.jpg");
+        
     }
 
     public  VidaMáquina getVidaMáquina(){
@@ -67,8 +91,15 @@ public class Jogo1 extends World
         invocaTarget();
         cairVida();
         cairChuva();
+        aparecerNuvem();
+        aparecerNuvem2();
+        trocaFundo();
     }
 
+    public static GreenfootSound getSomChuva()
+    {
+        return somChuva;
+    }
     
     private void gameOver(int vidaJogador1, int vidaJogador2){
         if (vidaJogador1 <=0 && vidaJogador2 <= 0 && control == false ){
@@ -143,4 +174,82 @@ public class Jogo1 extends World
         
     }
     
+    public void aparecerNuvem(){
+        if (máquina.getVida() <= midway && auxNuvem == 0){
+            //acrescentei 3 objetos para a nuvem ficar mais escura
+            addObject(new Nuvem(), 0,2);
+            addObject(new Nuvem(), 0,2);
+            addObject(new Nuvem(), 0,2);
+            auxNuvem++;
+        }
+    }
+    
+    public void aparecerNuvem2(){
+        if (máquina.getVida() <= midway && auxNuvem2 == 0){
+            
+            addObject(new Nuvem2(), getWidth(),10);
+            addObject(new Nuvem2(), getWidth(),10);
+            addObject(new Nuvem2(), getWidth(),10);
+            auxNuvem2++;
+        }
+    }
+    
+    
+    
+    public void trocaFundo()
+    {
+        if (máquina.getVida() <= midway)
+        {
+            if (auxFundo==0)
+            {
+                setBackground(fundo1);
+            }
+            
+            if (auxFundo==12)
+            {
+                setBackground(fundo2);
+            }
+            
+            if (auxFundo==24)
+            {
+                setBackground(fundo3);
+            }
+            
+            if (auxFundo==36)
+            {
+                setBackground(fundo4);
+            }
+            
+            if (auxFundo==48)
+            {
+                setBackground(fundo5);
+            }
+            
+            if (auxFundo==60)
+            {
+                setBackground(fundo6);
+            }
+            
+            if (auxFundo==72)
+            {
+                setBackground(fundo7);
+            }
+            
+            if (auxFundo==84)
+            {
+                setBackground(fundo8);
+            }
+            
+            if (auxFundo==96)
+            {
+                setBackground(fundo9);
+            }
+            
+            auxFundo++;
+        }
+    }
 }
+    
+    
+    
+

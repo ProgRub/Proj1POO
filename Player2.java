@@ -81,12 +81,12 @@ public class Player2 extends Players
     public static String getColor(){
         return cor;
     }
-    
+
     public static int getNumeroVidas()
     {
         return numeroVidas;
     }
-    
+
     public static void adicionaNumeroVidas(int valor)
     {
         numeroVidas += valor;
