@@ -6,6 +6,7 @@ public class IndividualScore extends World
     private Texto scoreP1;
     private Texto scoreP2;
     private GoBack back;
+    protected static boolean jogo1;
     public IndividualScore()
     {    
         super(1200, 700, 1); 

@@ -23,7 +23,12 @@ public class GoBack extends Stage
 
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
-            Greenfoot.setWorld(new Stage1Complete());
+            if(IndividualScore.jogo1){
+                Greenfoot.setWorld(new Stage1Complete());
+            }
+            else{
+            Greenfoot.setWorld(new Stage2Complete());
         }
+    }
     }  
 }

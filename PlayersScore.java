@@ -17,9 +17,7 @@ public class PlayersScore extends Stage
 
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
-            if (getWorld() instanceof Stage1Complete){
               Greenfoot.setWorld(new IndividualScore());
-            }
         }
     }     
 }

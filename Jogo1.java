@@ -1,32 +1,20 @@
 
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Jogo1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Jogo1 extends World
 {
     private Máquina máquina;
     private boolean control,stop;
     private int tempo=120;
-    private Texto clock;
     private String escreverClock = "2:00";
-    private Texto scoreP1;
-    private Texto scoreP2;
+    private Texto scoreP1, scoreP2, clock;
     private Player1 P1;
     private Player2 P2;
     private static GreenfootSound somAmbiente;
     private static GreenfootSound somChuva;
-    private int contador;
-    private int midway;
-
-    private int auxNuvem;
-    private int auxNuvem2;
+    private int contador, midway, auxNuvem, auxNuvem2, auxFundo;
     GreenfootImage fundo1, fundo2, fundo3, fundo4, fundo5, fundo6, fundo7, fundo8,fundo9;
-    private int auxFundo;
     private final int TAMANHOTEXTO=45;
 
     public Jogo1()

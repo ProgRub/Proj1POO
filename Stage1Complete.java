@@ -7,13 +7,12 @@ public class Stage1Complete extends World
     private Texto score;
     public Stage1Complete()
     {    
-
         super(1200, 700, 1); 
         GreenfootImage bg = new GreenfootImage("Stage1Complete.png");
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
         prepare();
-        
+        IndividualScore.jogo1 = true;
     }
 
     /**

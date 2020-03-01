@@ -26,7 +26,7 @@ public class NextLevel extends Stage
             if (getWorld() instanceof Stage1Complete){
               Greenfoot.setWorld(new Jogo2());
             }else if(getWorld() instanceof Stage2Complete){
-                Greenfoot.setWorld(new Jogo3());
+              Greenfoot.setWorld(new Jogo3());
             } 
         }
     }    
