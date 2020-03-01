@@ -15,8 +15,9 @@ public class Player2 extends Players
     private static String[] controlos= {up,left,right,shoot};
     protected static String cor;
     protected static String nome;
-    private GreenfootImage image1,image2,image3,image4,image5,image6;
+    private GreenfootImage[] animacao=new GreenfootImage[7];
     private int contador;
+    private int indice=0;
     protected static int score=0;
     private final int GRAVIDADE =15;
     private int tempoJump=GRAVIDADE;
@@ -30,13 +31,14 @@ public class Player2 extends Players
     public Player2()
     {
         contador=0;
-        image1 = new GreenfootImage(cor+"/1.png");
-        image2 = new GreenfootImage(cor+"/2.png");
-        image3 = new GreenfootImage(cor+"/3.png");
-        image4 = new GreenfootImage(cor+"/4.png");
-        image5 = new GreenfootImage(cor+"/5.png");
-        image6 = new GreenfootImage(cor+"/6.png");
-        setImage(image4);
+        animacao[0] = new GreenfootImage(cor+"/Idle.png");
+        animacao[1] = new GreenfootImage(cor+"/1.png");
+        animacao[2] = new GreenfootImage(cor+"/2.png");
+        animacao[3] = new GreenfootImage(cor+"/4.png");
+        animacao[4] = new GreenfootImage(cor+"/4.png");
+        animacao[5] = new GreenfootImage(cor+"/5.png");
+        animacao[6] = new GreenfootImage(cor+"/6.png");
+        setImage(animacao[0]);
         andandoParaEsquerda = false;
     }
 
@@ -139,7 +141,8 @@ public class Player2 extends Players
         }
     } 
 
-    public void move(){
+    public void move()
+    {
         if(numeroVidas >0){
             if (Greenfoot.isKeyDown(up) && podeSaltar){
                 saltou=true;
@@ -148,34 +151,30 @@ public class Player2 extends Players
             if(saltou){
                 jump();
             }
-            if (Greenfoot.isKeyDown(left)&&!isTouching(Máquina.class)){
+            if (Greenfoot.isKeyDown(left)){
                 if (!andandoParaEsquerda){
-                    image1.mirrorHorizontally();
-                    image2.mirrorHorizontally();
-                    image3.mirrorHorizontally();
-                    image4.mirrorHorizontally();
-                    image5.mirrorHorizontally();
-                    image6.mirrorHorizontally();
+                    for (int i=0; i < animacao.length;i++)
+                    {
+                        animacao[i].mirrorHorizontally();
+                    }
                 }
                 setLocation(getX()-2, getY());
-                animarMove();
                 andandoParaEsquerda=true;
+                animarMove();
             }
-            else if (Greenfoot.isKeyDown(right)){
+            else if (Greenfoot.isKeyDown(right) && !isTouching(Máquina.class)){
                 if (andandoParaEsquerda){
-                    image1.mirrorHorizontally();
-                    image2.mirrorHorizontally();
-                    image3.mirrorHorizontally();
-                    image4.mirrorHorizontally();
-                    image5.mirrorHorizontally();
-                    image6.mirrorHorizontally();
+                    for (int i=0; i < animacao.length;i++)
+                    {
+                        animacao[i].mirrorHorizontally();
+                    }
                 }
                 setLocation(getX()+2, getY());
                 andandoParaEsquerda=false;
                 animarMove();
             }
             if (!Greenfoot.isKeyDown(right) && !Greenfoot.isKeyDown(up) && !Greenfoot.isKeyDown(left)){
-                setImage(image4);
+                setImage(animacao[0]);
             }
         }
     }
@@ -206,27 +205,17 @@ public class Player2 extends Players
 
     public void animarMove(){
         contador++;
-
         if (contador==4){
             if (numeroVidas >0){
-                if(getImage()==image1){
-                    setImage(image2);
+                if(indice<6)
+                {
+                    indice++;
                 }
-                else if (getImage()==image2){
-                    setImage(image3);
+                else
+                {
+                    indice=1;
                 }
-                else if(getImage()==image3){
-                    setImage(image4);
-                }
-                else if (getImage()==image4){
-                    setImage(image5);
-                }
-                else if(getImage()==image5){
-                    setImage(image6);
-                }
-                else if (getImage()==image6){
-                    setImage(image1);
-                }
+                setImage(animacao[indice]);
             }
             contador=0;
         }
