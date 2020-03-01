@@ -38,13 +38,8 @@ public class Jogo3 extends World
         addObject(mar,603,getHeight() -30);
         Mar mar2 = new Mar();
         addObject(mar2,1012,getHeight() -30);
-<<<<<<< Updated upstream
         addObject(new Esquimó1(),390,304);
         addObject(new Esquimó2(),410,304);
-=======
-        addObject(new Player1(),400,290);
-        addObject(new Player2(),400,290);
->>>>>>> Stashed changes
 
         addObject(new Vida_player1(), 285/2, 125);
         addObject(new Vida_player2(), getWidth()-285/2, 125);

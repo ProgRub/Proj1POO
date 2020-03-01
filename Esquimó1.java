@@ -1,11 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Esquimó1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Esquimó1 extends Player1
 {
     private GreenfootImage[] animacao=new GreenfootImage[6];
@@ -14,7 +9,6 @@ public class Esquimó1 extends Player1
     
     public void act() 
     {
-<<<<<<< Updated upstream
         animacao[0] = new GreenfootImage(cor+"");
     }  
 
@@ -34,8 +28,7 @@ public class Esquimó1 extends Player1
             }
             contador=0;
         }
-    }  
-=======
+    
        emCimaPlataforma();
     }    
     
@@ -44,5 +37,4 @@ public class Esquimó1 extends Player1
             
         }
     }
->>>>>>> Stashed changes
 }
