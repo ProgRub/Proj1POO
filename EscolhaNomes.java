@@ -15,6 +15,7 @@ public class EscolhaNomes extends World
      */
     private Texto caixa;
     private Texto displayNome;
+    private Texto header;
     private String nome="";
     private boolean flag=true;
     private boolean recebeuNomeP1=false;
@@ -45,6 +46,10 @@ public class EscolhaNomes extends World
         displayNome = new Texto();
         displayNome.getImage().clear();
         addObject(displayNome, getWidth()/2, 3*getHeight()/4);
+        header=new Texto("Player 1,\nescreve o teu nome",60, new Color(255,255,0));
+        addObject(header, getWidth()/2, getHeight()/2);
+        addObject(new Texto("Tamanho máximo de 10 carateres",30, new Color(255,0,0)),getWidth()/2,3*getHeight()/4-40);
+        addObject(new Texto("Carrega enter para submeter",30, new Color(255,0,0)),getWidth()/2,3*getHeight()/4+40);
     }
 
     public void act()
@@ -56,39 +61,44 @@ public class EscolhaNomes extends World
     private void escritaNome()
     {
         Greenfoot.getKey();
-        Greenfoot.delay(1);
+        String key=null;
         while (flag)
         {
-            String key =Greenfoot.getKey();
+            key =Greenfoot.getKey();
             if (key!=null){
-                if( key.length()<2)
+                if(key.length()<2)
                 {
                     nome+=key;
-                }
-                else if (key.equals("backspace"))
-                {
-                    nome=nome.substring(0, nome.length()-1);
                 }
                 else if (key.equals("space"))
                 {
                     nome+=" ";
                 }
-                else if (key.equals("enter"))
-                {
-                    if(!recebeuNomeP1)
-                    {
-                        Player1.setNome(nome);
-                        System.out.println(Player1.getNome());
-                        nome="";
-                    }
-                    else
-                    {
-                        Player2.setNome(nome);
-                        System.out.println(Player2.getNome());
-                    }
-                }
-
                 flag=false;
+            }
+        }
+        if (key.equals("enter") || nome.length()>=10)
+        {
+            Options.updateText(nome,displayNome,40, new Color(0,255,0));
+            Greenfoot.delay(50);
+            if(!recebeuNomeP1)
+            {
+                Player1.setNome(nome);
+                Options.updateText("Player 2,\nescreve o teu nome", header,60, new Color(255,255,0));
+                nome="";
+                recebeuNomeP1=true;
+            }
+            else
+            {
+                Player2.setNome(nome);
+                Greenfoot.setWorld(new EscolherCor());
+            }
+        }
+        else if (key.equals("backspace"))
+        {
+            if(nome.length()>0)
+            {
+                nome=nome.substring(0, nome.length()-1);
             }
         }
         flag=true;

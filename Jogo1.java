@@ -89,8 +89,8 @@ public class Jogo1 extends World
         addObject(scoreP1, 285/2,175);
         scoreP2 = new Texto(""+Player2.getScore(),TAMANHOTEXTO, new Color(255,255,255));
         addObject(scoreP2, getWidth()-285/2,175);
-        addObject(new Texto("PLAYER 1",TAMANHOTEXTO-10, new Color(255,255,255)),285/2,80);
-        addObject(new Texto("PLAYER 2",TAMANHOTEXTO-10, new Color(255,255,255)),getWidth()-285/2,80);
+        addObject(new Texto(Player1.getNome(),TAMANHOTEXTO-10, new Color(255,255,255)),285/2,80);
+        addObject(new Texto(Player2.getNome(),TAMANHOTEXTO-10, new Color(255,255,255)),getWidth()-285/2,80);
     }
 
     public void act(){

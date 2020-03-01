@@ -31,6 +31,27 @@ public class Jogo3 extends World
         contador=0;
         prepare();   
     }
+    
+    private void prepare()
+    {
+        Mar mar = new Mar();
+        addObject(mar,603,getHeight() -30);
+        Mar mar2 = new Mar();
+        addObject(mar2,1012,getHeight() -30);
+        addObject(new Player1(),200,200);
+        addObject(new Player2(),400,400);
+
+        addObject(new Vida_player1(), 285/2, 125);
+        addObject(new Vida_player2(), getWidth()-285/2, 125);
+        clock = new Texto(escreverClock,TAMANHOTEXTO, new Color(0,0,0));
+        addObject(clock, getWidth()/2,125);
+        scoreP1 = new Texto(""+Player1.getScore(),TAMANHOTEXTO, new Color(0,0,0));
+        addObject(scoreP1, 285/2,175);
+        scoreP2 = new Texto(""+Player2.getScore(),TAMANHOTEXTO, new Color(0,0,0));
+        addObject(scoreP2, getWidth()-285/2,175);
+        addObject(new Texto(Player1.getNome(),TAMANHOTEXTO, new Color(0,0,0)),285/2,80);
+        addObject(new Texto(Player2.getNome(),TAMANHOTEXTO, new Color(0,0,0)),getWidth()-285/2,80);
+    }
 
     public void act(){
         invocarPlataformas();
@@ -83,29 +104,5 @@ public class Jogo3 extends World
         }
     }
 
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    private void prepare()
-    {
-        Mar mar = new Mar();
-        addObject(mar,603,getHeight() -30);
-        Mar mar2 = new Mar();
-        addObject(mar2,1012,getHeight() -30);
-        addObject(new Player1(),200,200);
-        addObject(new Player2(),400,400);
-
-        addObject(new Vida_player1(), 285/2, 125);
-        addObject(new Vida_player2(), getWidth()-285/2, 125);
-        clock = new Texto(escreverClock,TAMANHOTEXTO, new Color(0,0,0));
-        addObject(clock, getWidth()/2,125);
-        scoreP1 = new Texto(""+Player1.getScore(),TAMANHOTEXTO, new Color(0,0,0));
-        addObject(scoreP1, 285/2,175);
-        scoreP2 = new Texto(""+Player2.getScore(),TAMANHOTEXTO, new Color(0,0,0));
-        addObject(scoreP2, getWidth()-285/2,175);
-        addObject(new Texto("PLAYER 1",TAMANHOTEXTO, new Color(0,0,0)),285/2,80);
-        addObject(new Texto("PLAYER 2",TAMANHOTEXTO, new Color(0,0,0)),getWidth()-285/2,80);
-    }
 }
 

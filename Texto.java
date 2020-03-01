@@ -13,7 +13,7 @@ public class Texto extends Options
     public Texto(){}
 
     public Texto(String text, int size , Color cor){
-        GreenfootImage image = new GreenfootImage(text,size, cor, new Color(0,0,0,0));
+        GreenfootImage image = new GreenfootImage(text.toUpperCase(),size, cor, new Color(0,0,0,0));
         setImage(image);
         Cor=cor;
     }
