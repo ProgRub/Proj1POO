@@ -8,12 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Jogo3 extends World
 {
-
-    /**
-     * Constructor for objects of class Jogo3.
-     * 
-     */
-
     private int contador;
     private final int ALTURA1=200;
     private final int ALTURA2=350;
