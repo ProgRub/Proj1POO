@@ -23,7 +23,7 @@ public class Menu extends Stage
 
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
-            Greenfoot.setWorld(new MenuInicial());
+            Greenfoot.setWorld(new MenuInicial(false));
             // Player1.setColor("Red");
             // Player2.setColor("Red");
             // Greenfoot.setWorld(new Jogo2());

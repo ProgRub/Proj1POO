@@ -58,8 +58,13 @@ dependency101.type=UsesDependency
 dependency102.from=Player2
 dependency102.to=Ch\u00E3o
 dependency102.type=UsesDependency
+<<<<<<< Updated upstream
 dependency103.from=Nave2
 dependency103.to=Gas
+=======
+dependency103.from=Back
+dependency103.to=MenuInicial
+>>>>>>> Stashed changes
 dependency103.type=UsesDependency
 dependency104.from=Vida_player2
 dependency104.to=Nave2

@@ -81,7 +81,14 @@ public class Jogo2 extends World
             {
                 escreverClock = "" + tempo/60 + ":" + tempo%60;
             }        
-            Options.updateText(escreverClock,clock,TAMANHOTEXTO, clock.getCor());
+        }
+        if (tempo <=10 && contador%61<30)
+        {
+            Options.updateText(escreverClock,clock,TAMANHOTEXTO, Color.RED);
+        }
+        else
+        {
+            Options.updateText(escreverClock,clock,TAMANHOTEXTO, Color.WHITE);
         }
         if(tempo==0)
         {

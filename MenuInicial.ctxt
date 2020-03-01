@@ -1,12 +1,14 @@
 #BlueJ class context
 comment0.target=MenuInicial
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ MenuInicial\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=MenuInicial()
+comment1.params=resetControlos
+comment1.target=MenuInicial(boolean)
 comment2.params=
-comment2.target=void\ prepare()
+comment2.target=MenuInicial()
 comment3.params=
-comment3.target=void\ resetStaticVariables()
+comment3.target=void\ prepare()
 comment4.params=
-comment4.target=greenfoot.GreenfootSound\ getMusica()
-numComments=5
+comment4.target=void\ resetStaticVariables()
+comment5.params=
+comment5.target=greenfoot.GreenfootSound\ getMusica()
+numComments=6

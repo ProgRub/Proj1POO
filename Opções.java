@@ -6,8 +6,12 @@ public class Opções extends World
 
     private static MenuInicial referencia;
     private final int TAMANHOTEXTO=50;
+<<<<<<< Updated upstream
     
     public Opções(MenuInicial start)
+=======
+    public Opções()
+>>>>>>> Stashed changes
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200,700, 1); 
@@ -15,7 +19,6 @@ public class Opções extends World
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
         prepare();
-        referencia=start;
     }
 
     private void prepare()
@@ -37,10 +40,5 @@ public class Opções extends World
         addObject(new ControlP2Dir(), (2*larg)/3, (4*comp)/6);
         addObject(new ControlP2Dispara(), (2*larg)/3, (5*comp)/6);
         addObject(new Back(), larg-100, comp-50);
-    }
-    
-    public static MenuInicial getReferencia()
-    {
-        return referencia;
     }
 }

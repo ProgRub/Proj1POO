@@ -27,7 +27,7 @@ public class Options extends Menus
     public void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
             MenuInicial start=getWorldOfType(MenuInicial.class);
-            Greenfoot.setWorld(new Opções(start));
+            Greenfoot.setWorld(new Opções());
         }
     }
     

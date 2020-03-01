@@ -25,7 +25,7 @@ public class Back extends Menus
 
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
-            Greenfoot.setWorld(Opções.getReferencia());
+            Greenfoot.setWorld(new MenuInicial(false));
         }
     }    
 }
