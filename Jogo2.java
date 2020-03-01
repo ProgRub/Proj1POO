@@ -16,8 +16,6 @@ public class Jogo2 extends World
     private String escreverClock = "2:00";
     private final int TAMANHOTEXTO=45;
     private int contador;
-    GameOver gameOver;
-    Restart restart;
     private boolean control,stop;
     private Nave1 nave1;
     private Nave2 nave2;
@@ -28,8 +26,6 @@ public class Jogo2 extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200,700, 1); 
         prepare();
-        gameOver = new GameOver();
-        restart = new Restart();
         control =false;
         stop =false;
         contador =0;
@@ -126,8 +122,8 @@ public class Jogo2 extends World
 
     private void gameOver(int vidaCamada, int vidaNave1, int vidaNave2){
         if ( ((vidaNave1 <=0 && vidaNave2 <= 0 ) || vidaCamada <=0 || tempo == 0) && control == false){
-            addObject(gameOver,getWidth()/2,getHeight()/2);
-            addObject(restart,getWidth()/2,getHeight()/2 +150);
+            addObject(new GameOver(),getWidth()/2,getHeight()/2);
+            addObject(new Restart(),getWidth()/2,getHeight()/2 +150);
             stop =true;
             if (stop == true){
                 Greenfoot.playSound("gameOver.mp3");
