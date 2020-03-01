@@ -15,6 +15,7 @@ public class Player2 extends Players
     private static String[] controlos= {up,left,right,shoot};
     protected static String cor="";
     private GreenfootImage image1,image2,image3,image4,image5,image6;
+    private GreenfootImage image1DEATH, image2DEATH,image3DEATH,image4DEATH,image5DEATH,image6DEATH, image7DEATH, image8DEATH;
     private int contador;
     protected static int score=0;
     private final int GRAVIDADE =15;
@@ -25,6 +26,9 @@ public class Player2 extends Players
     private boolean andandoParaEsquerda;
     private int controlBala=0;
     private static int numeroVidas=10;
+    private int auxDEATH;
+    
+    
 
     public Player2()
     {
@@ -37,6 +41,17 @@ public class Player2 extends Players
         image6 = new GreenfootImage(cor+"/6.png");
         setImage(image4);
         andandoParaEsquerda = false;
+        
+        //animação do jogador a "morrer"
+        image1DEATH = new GreenfootImage(cor+"/Death/1.png");
+        image2DEATH = new GreenfootImage(cor+"/Death/2.png");
+        image3DEATH = new GreenfootImage(cor+"/Death/3.png");
+        image4DEATH = new GreenfootImage(cor+"/Death/4.png");
+        image5DEATH = new GreenfootImage(cor+"/Death/5.png");
+        image6DEATH = new GreenfootImage(cor+"/Death/6.png");
+        image7DEATH = new GreenfootImage(cor+"/Death/7.png");
+        image8DEATH = new GreenfootImage(cor+"/Death/8.png");
+        auxDEATH = 0;
     }
 
     public void act() 
@@ -45,6 +60,7 @@ public class Player2 extends Players
         move();
         disparar();
         perdeVidas(this);
+        animarMorte();
     }  
     
     public boolean getAndandoParaEsquerda()
@@ -199,6 +215,107 @@ public class Player2 extends Players
             contador=0;
         }
     }
+    
+    
+    public void animarMorte()
+    {
+        if(numeroVidas == 0 || numeroVidas<0)
+        {
+            if(auxDEATH==0 && andandoParaEsquerda == false)
+            {
+                setImage(image1DEATH);
+            }
+            
+            if(auxDEATH==0 && andandoParaEsquerda == true)
+            {
+                image1DEATH.mirrorHorizontally();
+                setImage(image1DEATH);
+            }
+            
+            if(auxDEATH==15 && andandoParaEsquerda == false)
+            {
+                setImage(image2DEATH);
+            }
+            
+            if(auxDEATH==15 && andandoParaEsquerda == true)
+            {
+                image2DEATH.mirrorHorizontally();
+                setImage(image2DEATH);
+            }
+            
+            if(auxDEATH==30 && andandoParaEsquerda == false)
+            {
+                setImage(image3DEATH);
+            }
+            
+            if(auxDEATH==30 && andandoParaEsquerda == true)
+            {
+                image3DEATH.mirrorHorizontally();
+                setImage(image3DEATH);
+            }
+            
+            if(auxDEATH==30 && andandoParaEsquerda == false)
+            {
+                setImage(image4DEATH);
+            }
+            
+            if(auxDEATH==30 && andandoParaEsquerda == true)
+            {
+                image4DEATH.mirrorHorizontally();
+                setImage(image4DEATH);
+            }
+            
+            if(auxDEATH==45 && andandoParaEsquerda == false)
+            {
+                setImage(image5DEATH);
+            }
+            
+            if(auxDEATH==45 && andandoParaEsquerda == true)
+            {
+                image5DEATH.mirrorHorizontally();
+                setImage(image5DEATH);
+            }
+            
+            if(auxDEATH==60 && andandoParaEsquerda == false)
+            {
+                setImage(image6DEATH);
+            }
+            
+            if(auxDEATH==60 && andandoParaEsquerda == true)
+            {
+                image6DEATH.mirrorHorizontally();
+                setImage(image6DEATH);
+            }
+            
+            if(auxDEATH==75 && andandoParaEsquerda == false)
+            {
+                setImage(image7DEATH);
+            }
+            
+            if(auxDEATH==75 && andandoParaEsquerda == true)
+            {
+                image7DEATH.mirrorHorizontally();
+                setImage(image7DEATH);
+            }
+            
+            
+            if(auxDEATH==90 && andandoParaEsquerda == false)
+            {
+                setImage(image8DEATH);
+            }
+            
+            if(auxDEATH==90 && andandoParaEsquerda == true)
+            {
+                image8DEATH.mirrorHorizontally();
+                setImage(image8DEATH);
+            }
+            
+            auxDEATH++;
+            
+        }
+    }
+    
+    
 
     public void disparar(){
         if(numeroVidas >0){
