@@ -2,10 +2,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class VidaCamadaOzono extends CamadaOzono
 {
-   int health=CamadaOzono.getVida();
-   int healthBarComprimento = 250;
-   int healthBarAltura = 10;
-   final int percentagemDeVida = (int)healthBarComprimento/health;
+   private final int healthBarComprimento = 250;
+   private final int healthBarAltura = 10;
+   final int percentagemDeVida = (int)healthBarComprimento/CamadaOzono.getVida();
    
    public VidaCamadaOzono(){
        atualiza();
@@ -22,10 +21,6 @@ public class VidaCamadaOzono extends CamadaOzono
        myImage.setColor(Color.BLACK);
        myImage.drawRect(0,0,healthBarComprimento +1, healthBarAltura +1);
        myImage.setColor(Color.CYAN);
-       myImage.fillRect(1,1,health*percentagemDeVida, healthBarAltura);
+       myImage.fillRect(1,1,CamadaOzono.getVida()*percentagemDeVida, healthBarAltura);
     }
-    
-    public void perdeVida(){
-        health--;
-}
 }

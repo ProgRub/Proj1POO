@@ -9,4 +9,6 @@ comment3.params=
 comment3.target=void\ moveNave()
 comment4.params=
 comment4.target=void\ removeGas()
-numComments=5
+comment5.params=
+comment5.target=void\ naveDestruida()
+numComments=6

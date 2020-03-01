@@ -9,26 +9,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Máquina extends Jogos
 {           
     private static int vida=2;
-    private static int score;
     private static int contador;
-    
+    private GreenfootImage explosao[] = new GreenfootImage[13];
+    private int indice=0;
+
     private GreenfootImage explosion1,explosion2,explosion3,explosion4,explosion5,explosion6,explosion7,explosion8,explosion9,explosion10,explosion11,explosion12,explosion13;
     public Máquina(){
         vida=2;
-        score=0;
-        explosion1 = new GreenfootImage("ExplosionMáquina/1.png");
-        explosion2 = new GreenfootImage("ExplosionMáquina/2.png");
-        explosion3 = new GreenfootImage("ExplosionMáquina/3.png");
-        explosion4 = new GreenfootImage("ExplosionMáquina/4.png");
-        explosion5 = new GreenfootImage("ExplosionMáquina/5.png");
-        explosion6 = new GreenfootImage("ExplosionMáquina/6.png");
-        explosion7 = new GreenfootImage("ExplosionMáquina/7.png");
-        explosion8 = new GreenfootImage("ExplosionMáquina/8.png");
-        explosion9 = new GreenfootImage("ExplosionMáquina/9.png");
-        explosion10 = new GreenfootImage("ExplosionMáquina/10.png");
-        explosion11= new GreenfootImage("ExplosionMáquina/11.png");
-        explosion12 = new GreenfootImage("ExplosionMáquina/12.png");
-        explosion13 = new GreenfootImage("ExplosionMáquina/13.png");
+        explosao[0] = new GreenfootImage("ExplosionMáquina/1.png");
+        explosao[1] = new GreenfootImage("ExplosionMáquina/2.png");
+        explosao[2] = new GreenfootImage("ExplosionMáquina/3.png");
+        explosao[3] = new GreenfootImage("ExplosionMáquina/4.png");
+        explosao[4] = new GreenfootImage("ExplosionMáquina/5.png");
+        explosao[5] = new GreenfootImage("ExplosionMáquina/6.png");
+        explosao[6] = new GreenfootImage("ExplosionMáquina/7.png");
+        explosao[7] = new GreenfootImage("ExplosionMáquina/8.png");
+        explosao[8] = new GreenfootImage("ExplosionMáquina/9.png");
+        explosao[9] = new GreenfootImage("ExplosionMáquina/10.png");
+        explosao[10]= new GreenfootImage("ExplosionMáquina/11.png");
+        explosao[11] = new GreenfootImage("ExplosionMáquina/12.png");
+        explosao[12] = new GreenfootImage("ExplosionMáquina/13.png");
         contador=0;
     }
 
@@ -55,76 +55,22 @@ public class Máquina extends Jogos
         }
     }
 
-
     private void maquinaDestruida(){
         if (vida <= 0 && contador%3==0){
             Jogo1.getSomChuva().stop();
-            if (getImage() == explosion1)
+            if(indice==0)
             {
                 Greenfoot.playSound("explosion.wav");
-                setImage(explosion2);
             }
-            else if (getImage() == explosion2)
+            setImage(explosao[indice]);
+            indice++;
+            if(indice>=explosao.length)
             {
-            setImage(explosion3);
-            }
-            else if (getImage() == explosion3)
-            {
-            setImage(explosion4);
-            }
-            else if (getImage() == explosion4)
-            {
-            setImage(explosion5);
-            }
-            else if (getImage() == explosion5)
-            {
-            setImage(explosion6);
-            }
-            else if (getImage() == explosion6)
-            {
-            setImage(explosion7);
-            }
-            else if (getImage() == explosion7)
-            {
-            setImage(explosion8);
-            }
-            else if (getImage() == explosion8)
-            {
-            setImage(explosion9);
-            }
-            else if (getImage() == explosion9)
-            {
-            setImage(explosion10);
-            }
-            else if (getImage() == explosion10)
-            {
-            setImage(explosion11);
-            }
-            else if (getImage() == explosion11)
-            {
-            setImage(explosion12);
-            }
-            else if (getImage() == explosion12)
-            {
-            setImage(explosion13);
-            }
-            else if (getImage() == explosion13)
-            {
-            Greenfoot.setWorld(new Stage1Complete());
-            getWorld().removeObject(this);
-            }
-            else 
-            {
-                setImage(explosion1);                
+                Greenfoot.setWorld(new Stage1Complete());
+                getWorld().removeObject(this);
             }
         }
         contador++;
     }
-    
-    
-        
-        
-    
-    
-    
+
 }

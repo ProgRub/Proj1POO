@@ -19,11 +19,11 @@ public class Vida_jogo2 extends Vida
     } 
     
     public void movimentoVida(){
-        setLocation(getX(), getY() - 1);
+        setLocation(getX(), getY() - 3);
     }   
     
     protected void ultrapassaLimite(){
-        if(getY()==0){
+        if(isAtEdge()){
             getWorld().removeObject(this);
         }
     }

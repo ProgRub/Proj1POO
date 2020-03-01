@@ -18,8 +18,8 @@ public class Jogo1 extends World
     private Texto scoreP2;
     private Player1 P1;
     private Player2 P2;
-    private static GreenfootSound somAmbiente = new GreenfootSound("winter.mp3");
-    private static GreenfootSound somChuva = new GreenfootSound("rain.mp3");
+    private static GreenfootSound somAmbiente;
+    private static GreenfootSound somChuva;
     private int contador;
     private final int midway=máquina.getVida()/2;
 
@@ -57,6 +57,8 @@ public class Jogo1 extends World
 
     private void prepare()
     {
+        somAmbiente = new GreenfootSound("winter.mp3");
+        somChuva = new GreenfootSound("rain.mp3");
         somAmbiente.setVolume(60);
         somAmbiente.play();
         somChuva.setVolume(60);
@@ -90,8 +92,7 @@ public class Jogo1 extends World
         invocaTarget();
         cairVida();
         cairChuva();
-        aparecerNuvem();
-        aparecerNuvem2();
+        aparecerNuvens();
         trocaFundo();
         Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
         Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
@@ -198,23 +199,16 @@ public class Jogo1 extends World
 
     }
 
-    public void aparecerNuvem(){
+    public void aparecerNuvens(){
         if (máquina.getVida() <= midway && auxNuvem == 0){
             //acrescentei 3 objetos para a nuvem ficar mais escura
-            addObject(new Nuvem(), 0,2);
-            addObject(new Nuvem(), 0,2);
-            addObject(new Nuvem(), 0,2);
+            addObject(new Nuvem(1), 0,2);
+            addObject(new Nuvem(1), 0,2);
+            addObject(new Nuvem(1), 0,2);
+            addObject(new Nuvem(-1), getWidth(),10);
+            addObject(new Nuvem(-1), getWidth(),10);
+            addObject(new Nuvem(-1), getWidth(),10);
             auxNuvem++;
-        }
-    }
-
-    public void aparecerNuvem2(){
-        if (máquina.getVida() <= midway && auxNuvem2 == 0){
-
-            addObject(new Nuvem2(), getWidth(),10);
-            addObject(new Nuvem2(), getWidth(),10);
-            addObject(new Nuvem2(), getWidth(),10);
-            auxNuvem2++;
         }
     }
 
