@@ -49,7 +49,7 @@ public class Jogo2 extends World
 
         addObject(new VidaCamadaOzono(), getWidth()/2, 600);
         addObject(new Texto("Camada Ozono",TAMANHOTEXTO-10, new Color(255,255,255)),getWidth()/2,575);
-        setPaintOrder(GameOver.class, Restart.class, CamadaOzono.class, Gas.class);
+        setPaintOrder(Texto.class, GameOver.class, Restart.class, CamadaOzono.class, Player1.class, Player2.class, Gas.class);
         clock = new Texto(escreverClock,TAMANHOTEXTO, new Color(255,255,255));
         addObject(clock, getWidth()/2,650);
         scoreP1 = new Texto(""+Player1.getScore(),TAMANHOTEXTO, new Color(255,255,255));
