@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Jogo3 extends World
 {
-    private int contador;
+    private int contadorMar, contador;
     private final int ALTURA1=200;
     private final int ALTURA2=350;
     private final int ALTURA3=500;
@@ -24,7 +24,7 @@ public class Jogo3 extends World
     public Jogo3()
     {    
         super(1200, 700, 1); 
-        contador=0;
+        contadorMar=0;
         prepare();
         CONTADOR = 150;
         altura_anterior=0; //o valor 0 não interfere com a escolha da altura na primeira interação, apenas serve para inicializar a variável
@@ -32,12 +32,19 @@ public class Jogo3 extends World
     
     private void prepare()
     {
+        
+        setPaintOrder(Texto.class, GameOver.class, Restart.class, Player1.class, Player2.class, Pinguim.class, PlataformaGelo.class);
         Mar mar = new Mar();
         addObject(mar,603,getHeight() -30);
         Mar mar2 = new Mar();
         addObject(mar2,1012,getHeight() -30);
+<<<<<<< Updated upstream
         addObject(new Esquimó1(),390,304);
         addObject(new Esquimó2(),410,304);
+=======
+        addObject(new Player1(),400,290);
+        addObject(new Player2(),400,290);
+>>>>>>> Stashed changes
 
         addObject(new Vida_player1(), 285/2, 125);
         addObject(new Vida_player2(), getWidth()-285/2, 125);
@@ -51,11 +58,13 @@ public class Jogo3 extends World
         addObject(new Texto(Player2.getNome(),TAMANHOTEXTO, new Color(0,0,0)),getWidth()-285/2,80);
         
         addObject(new Plataforma_Inicial(),400,304);
+        
     }
 
     public void act(){
         invocarPlataformas();
         invocarMar();
+        atualizaRelogio();
     }
 
     public void invocarPlataformas() 
@@ -120,10 +129,10 @@ public class Jogo3 extends World
     }
 
     public void invocarMar(){
-        contador++;
-        if(contador == 200){
+        contadorMar++;
+        if(contadorMar == 200){
             addObject(new Mar(),getWidth()-10,getHeight() -30);
-            contador=0;
+            contadorMar=0;
         }
     }
 

@@ -14,6 +14,7 @@ public class Esquimó1 extends Player1
     
     public void act() 
     {
+<<<<<<< Updated upstream
         animacao[0] = new GreenfootImage(cor+"");
     }  
 
@@ -34,4 +35,14 @@ public class Esquimó1 extends Player1
             contador=0;
         }
     }  
+=======
+       emCimaPlataforma();
+    }    
+    
+    public void emCimaPlataforma(){
+        if (isTouching(PlataformaGelo.class)){
+            
+        }
+    }
+>>>>>>> Stashed changes
 }
