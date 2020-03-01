@@ -21,7 +21,7 @@ public class Players extends Actor
 
     public Players()
     {
-        aux = 19; 
+        aux = 15; 
     }
 
     protected void perdeVidas(Player1 P1)
@@ -29,7 +29,7 @@ public class Players extends Actor
         if(P1.getNumeroVidas()>0){
             if(isTouching(Granizo.class))
             {
-                P1.adicionaNumeroVidas(-1); 
+                P1.adicionaNumeroVidas(-10); 
                 P1.adicionaScore(-5);
                 removeTouching(Granizo.class);
             }
@@ -40,7 +40,7 @@ public class Players extends Actor
                 {
                     P1.adicionaNumeroVidas(-2);
                     P1.adicionaScore(-10);
-                    aux = 20;
+                    aux = 15;
                 }
                 else
                 {

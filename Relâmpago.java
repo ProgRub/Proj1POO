@@ -17,7 +17,8 @@ public class Relâmpago extends Target
     private GreenfootImage image2;
     private GreenfootImage image3;
     private GreenfootImage image4;
-    private GreenfootImage target;
+    private GreenfootImage[] relampago= new GreenfootImage[4];
+    private int indice=0;
 
     private int count;
     private final int TIMER;
@@ -27,48 +28,34 @@ public class Relâmpago extends Target
     public Relâmpago()
     {
         somRelampago = new GreenfootSound ("relampago.mp3");
-        image1 = new GreenfootImage("Lightning/1.png");
-        image2 = new GreenfootImage("Lightning/2.png");
-        image3 = new GreenfootImage("Lightning/3.png");
-        image4 = new GreenfootImage("Lightning/4.png");
-        setImage(image1);
+        relampago[0] = new GreenfootImage("Lightning/1.png");
+        relampago[1] = new GreenfootImage("Lightning/2.png");
+        relampago[2] = new GreenfootImage("Lightning/3.png");
+        relampago[3] = new GreenfootImage("Lightning/4.png");
+        setImage(relampago[indice]);
+        indice++;
         somRelampago.play();
-        TIMER=5;
-        count = TIMER*4;
-        count2 = 0;
+        TIMER=8;
+        count = 0;
     }
 
     public void act() 
     {
         switchImage();
-        removerRelampago();
+        //removerRelampago();
     }
 
     public void switchImage()
     {
-        if (count2%TIMER==0){
-            if (getImage() == image1)
+        if (count%TIMER==0){
+            setImage(relampago[indice]);
+            indice++;
+            if (indice >= relampago.length)
             {
-                setImage(image2);
-            }
-
-            else if (getImage() == image2)
-            {
-                setImage(image3);
-            }
-
-            else if (getImage() == image3)
-            {
-                setImage(image4);
-            }
-
-            else if (getImage() == image4)
-            {
-                setImage(image1);
-
+                getWorld().removeObject(this);
             }
         }  
-        count2++;     
+        count++;     
     }
     
     public void removerRelampago(){

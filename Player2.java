@@ -166,7 +166,7 @@ public class Player2 extends Players
             if(saltou){
                 jump();
             }
-            if (Greenfoot.isKeyDown(left)){
+            if (Greenfoot.isKeyDown(left) && !isTouching(Máquina.class)){
                 if (!andandoParaEsquerda){
                     for (int i=0; i < animacao.length;i++)
                     {
@@ -177,7 +177,7 @@ public class Player2 extends Players
                 andandoParaEsquerda=true;
                 animarMove();
             }
-            else if (Greenfoot.isKeyDown(right) && !isTouching(Máquina.class)){
+            else if (Greenfoot.isKeyDown(right)){
                 if (andandoParaEsquerda){
                     for (int i=0; i < animacao.length;i++)
                     {

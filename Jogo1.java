@@ -21,7 +21,7 @@ public class Jogo1 extends World
     private static GreenfootSound somAmbiente;
     private static GreenfootSound somChuva;
     private int contador;
-    private final int midway=máquina.getVida()/2;
+    private int midway;
 
     private int auxNuvem;
     private int auxNuvem2;
@@ -83,6 +83,7 @@ public class Jogo1 extends World
         addObject(scoreP2, getWidth()-285/2,175);
         addObject(new Texto(Player1.getNome(),TAMANHOTEXTO-10, new Color(255,255,255)),285/2,80);
         addObject(new Texto(Player2.getNome(),TAMANHOTEXTO-10, new Color(255,255,255)),getWidth()-285/2,80);
+        midway=máquina.getVida()/2;
     }
 
     public void act(){
@@ -161,10 +162,12 @@ public class Jogo1 extends World
             int prob = Greenfoot.getRandomNumber(2);
             if (Greenfoot.getRandomNumber(500)<3){
                 Target target = new Target();
-                if (prob == 1){
+                if (prob == 1 && !getObjects(Player1.class).isEmpty())
+                {
                     addObject(target, P1.getX(), 620);      
                 }
-                else{
+                else if (prob == 0 && !getObjects(Player2.class).isEmpty())
+                {
                     addObject(target, P2.getX(), 620);            
                 }                     
             } 

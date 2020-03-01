@@ -29,14 +29,13 @@ public class Missil extends Jogos
         if (alvoENave2)
         {
             setImage(Player2.getColor()+"/Missil.png");
-            Nave2EAlvo=true;
         }
         else
         {
             setImage(Player1.getColor()+"/Missil.png");
-            Nave2EAlvo=false;
         }
-            getImage().scale(getImage().getWidth()/8, getImage().getHeight()/8);   
+        Nave2EAlvo=alvoENave2;
+        getImage().scale(getImage().getWidth()/8, getImage().getHeight()/8);   
         animaExplosao[0] = new GreenfootImage("ExplosionMisseis/1.png");
         animaExplosao[1] = new GreenfootImage("ExplosionMisseis/2.png");
         animaExplosao[2] = new GreenfootImage("ExplosionMisseis/3.png");
@@ -54,7 +53,6 @@ public class Missil extends Jogos
         animaExplosao[14] = new GreenfootImage("ExplosionMisseis/15.png");
         contador=0;
     }
-
 
     public void act() 
     {
@@ -83,15 +81,16 @@ public class Missil extends Jogos
         {
             animaExplosao();
         }       
-       
-    }   
-    
 
+    }   
 
     public void teleguiado(Nave2 alvo){
         if(getY()>limite)
         {
-            turnTowards(alvo.getX(), alvo.getY());
+            if (!getWorld().getObjects(Nave2.class).isEmpty())
+            {
+                turnTowards(alvo.getX(), alvo.getY());
+            }
         }
         move(2);
     }    
@@ -99,7 +98,10 @@ public class Missil extends Jogos
     public void teleguiado(Nave1 alvo){
         if(getY()>limite)
         {
-            turnTowards(alvo.getX(), alvo.getY());
+            if (!getWorld().getObjects(Nave1.class).isEmpty())
+            {
+                turnTowards(alvo.getX(), alvo.getY());
+            }
         }
         move(2);
     }
@@ -126,7 +128,7 @@ public class Missil extends Jogos
     {
         if (isTouching(Nave2.class))
         {
-            Player2.adicionaNumeroVidas(-1);
+            Player2.adicionaNumeroVidas(-10);
             Player2.adicionaScore(-5);
             setLocation(getX(), getY()-40);
             explosao=true;

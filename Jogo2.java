@@ -109,13 +109,13 @@ public class Jogo2 extends World
         int random = Greenfoot.getRandomNumber(400);
         if (random<2)
         {
-            if(random==1)
+            if(random==1 && !getObjects(Nave2.class).isEmpty())
             {
-                addObject(new Missil(getObjects(Nave2.class).get(0).getY()+LIMITE,true,getObjects(Nave1.class).get(0),getObjects(Nave2.class).get(0)), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
+                addObject(new Missil(nave2.getY()+LIMITE,true,nave1,nave2), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
             }
-            else
+            else if(random==0 & !getObjects(Nave1.class).isEmpty())
             {
-                addObject(new Missil(getObjects(Nave1.class).get(0).getY()+LIMITE,false,getObjects(Nave1.class).get(0),getObjects(Nave2.class).get(0)), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
+                addObject(new Missil(nave1.getY()+LIMITE,false,nave1,nave2), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
             }
         }
     }
