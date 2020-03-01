@@ -8,34 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Máquina extends Jogos
 {           
-<<<<<<< Updated upstream
-    private static int vida=2;
-=======
     private static int vida=1000;
     private static int score;
->>>>>>> Stashed changes
     private static int contador;
     private GreenfootImage explosao[] = new GreenfootImage[13];
     private int indice=0;
 
     private GreenfootImage explosion1,explosion2,explosion3,explosion4,explosion5,explosion6,explosion7,explosion8,explosion9,explosion10,explosion11,explosion12,explosion13;
     public Máquina(){
-<<<<<<< Updated upstream
-        vida=2;
-        explosao[0] = new GreenfootImage("ExplosionMáquina/1.png");
-        explosao[1] = new GreenfootImage("ExplosionMáquina/2.png");
-        explosao[2] = new GreenfootImage("ExplosionMáquina/3.png");
-        explosao[3] = new GreenfootImage("ExplosionMáquina/4.png");
-        explosao[4] = new GreenfootImage("ExplosionMáquina/5.png");
-        explosao[5] = new GreenfootImage("ExplosionMáquina/6.png");
-        explosao[6] = new GreenfootImage("ExplosionMáquina/7.png");
-        explosao[7] = new GreenfootImage("ExplosionMáquina/8.png");
-        explosao[8] = new GreenfootImage("ExplosionMáquina/9.png");
-        explosao[9] = new GreenfootImage("ExplosionMáquina/10.png");
-        explosao[10]= new GreenfootImage("ExplosionMáquina/11.png");
-        explosao[11] = new GreenfootImage("ExplosionMáquina/12.png");
-        explosao[12] = new GreenfootImage("ExplosionMáquina/13.png");
-=======
         vida=1000;
         score=0;
         explosion1 = new GreenfootImage("ExplosionMáquina/1.png");
@@ -51,7 +31,6 @@ public class Máquina extends Jogos
         explosion11= new GreenfootImage("ExplosionMáquina/11.png");
         explosion12 = new GreenfootImage("ExplosionMáquina/12.png");
         explosion13 = new GreenfootImage("ExplosionMáquina/13.png");
->>>>>>> Stashed changes
         contador=0;
     }
 
