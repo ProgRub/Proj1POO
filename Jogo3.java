@@ -18,12 +18,16 @@ public class Jogo3 extends World
     private Texto scoreP1;
     private Texto scoreP2;
     private final int TAMANHOTEXTO=45;
-
+    private int CONTADOR;
+    private int altura_anterior;
+    
     public Jogo3()
     {    
         super(1200, 700, 1); 
         contador=0;
-        prepare();   
+        prepare();
+        CONTADOR = 150;
+        altura_anterior=0; //o valor 0 não interfere com a escolha da altura na primeira interação, apenas serve para inicializar a variável
     }
     
     private void prepare()
@@ -45,6 +49,8 @@ public class Jogo3 extends World
         addObject(scoreP2, getWidth()-285/2,175);
         addObject(new Texto(Player1.getNome(),TAMANHOTEXTO, new Color(0,0,0)),285/2,80);
         addObject(new Texto(Player2.getNome(),TAMANHOTEXTO, new Color(0,0,0)),getWidth()-285/2,80);
+        
+        addObject(new Plataforma_Inicial(),400,304);
     }
 
     public void act(){
@@ -54,22 +60,45 @@ public class Jogo3 extends World
 
     public void invocarPlataformas() 
     {
-        int random =Greenfoot.getRandomNumber(500);
-        if (random<3)
+        int random =Greenfoot.getRandomNumber(3);
+        int random2 =Greenfoot.getRandomNumber(2);
+        if (CONTADOR%150==0)
         {
-            if (random==0)
+            if (random==0 && altura_anterior !=2)
             {
                 addObject(new PlataformaGelo(),getWidth()-1,ALTURA1);
+                altura_anterior = random;
             }
-            else if (random==1)
+            
+            if (random==0 && altura_anterior ==2)
+            {
+                if(random2==0)
+                {
+                    addObject(new PlataformaGelo(),getWidth()-1,ALTURA2);
+                }
+                
+                else
+                {
+                    addObject(new PlataformaGelo(),getWidth()-1,ALTURA3);
+                }
+                altura_anterior = random2+1;
+            }
+            
+            if (random==1)
             {
                 addObject(new PlataformaGelo(),getWidth()-1,ALTURA2);
+                altura_anterior = random;
             }
-            else
+            
+            if (random==2)
             {
                 addObject(new PlataformaGelo(),getWidth()-1,ALTURA3);
+                altura_anterior = random;
             }
+            
         }
+        CONTADOR++;
+        
     }
 
     private void atualizaRelogio()
