@@ -35,7 +35,6 @@ public class Máquina extends Jogos
     public void act() 
     {
         libertaGas();
-        // perdeVida();
         maquinaDestruida();
     }   
 
@@ -56,13 +55,6 @@ public class Máquina extends Jogos
         }
     }
 
-    // private void perdeVida(){
-        // if (isTouching(Bala.class) && vida > 0){
-            // removeTouching(Bala.class);
-            // vida--;
-            // getWorldOfType(Jogo1.class).getObjects(VidaMáquina.class).get(0).perdeVida();
-        // }
-    // }
 
     private void maquinaDestruida(){
         if (vida <= 0 && contador%3==0){
@@ -118,8 +110,6 @@ public class Máquina extends Jogos
             }
             else if (getImage() == explosion13)
             {
-            // Nave1.setNumeroVidas(getWorld().getObjects(Player1.class).get(0).getNumeroVidas());
-            // Nave2.setNumeroVidas(getWorld().getObjects(Player2.class).get(0).getNumeroVidas());
             Greenfoot.setWorld(new Stage1Complete());
             getWorld().removeObject(this);
             }

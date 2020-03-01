@@ -15,7 +15,6 @@ public class EscolherCor extends World
      */
     public EscolherCor()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 700, 1); 
         GreenfootImage bg = new GreenfootImage("Earth.png");
         bg.scale(getWidth(), getHeight());
@@ -38,6 +37,7 @@ public class EscolherCor extends World
         addObject(new Amarelo(),4*larg/6,2*alt/3); 
         addObject(new Azul(),5*larg/6,2*alt/3);       
         Cor.setP1escolheu(false);
-        addObject(new Texto(Cor.getP1escolheu()),larg/2,alt/3);
+        Texto text =new Texto(Player1.getNome()+",\nescolhe a tua cor",60, new Color(255,255,255));
+        addObject(text,larg/2,alt/3);
     }
 }

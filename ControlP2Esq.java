@@ -15,7 +15,7 @@ public class ControlP2Esq extends Options
     {
         if (prepara){
             getWorld().addObject(text, getX(), getY());
-            updateText(Player2.getControls()[1],text,35);
+            updateText(Player2.getControls()[1],text,35, new Color(255,255,255));
             prepara=false;
         }
         getImage().scale((int)(1.5*getWorld().getWidth()/9), getWorld().getHeight()/9);
@@ -26,7 +26,7 @@ public class ControlP2Esq extends Options
     public void clickMouse(){
         if (Greenfoot.mouseClicked(this) || Greenfoot.mouseClicked(text)){
             Greenfoot.getKey();
-            updateText("Press any key",text,30);
+            updateText("Press any key",text,30, new Color(255,255,255));
             Greenfoot.delay(1);
             while (flag){
                 String key= Greenfoot.getKey();
@@ -34,7 +34,7 @@ public class ControlP2Esq extends Options
                     Player2.setControls(1,key);
                     flag=false;
                     if(!flag){
-                        updateText(Player2.getControls()[1],text,35);
+                        updateText(Player2.getControls()[1],text,35, new Color(255,255,255));
                     }
                 }
             }

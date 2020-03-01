@@ -20,12 +20,9 @@ public class MenuInicial extends World
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
         prepare();
+        Greenfoot.setSpeed(50);
     }
 
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
     private void prepare()
     {
         addObject(new Play(),getWidth()/2,349);
@@ -43,6 +40,10 @@ public class MenuInicial extends World
         Player2.setControls(1, "left");
         Player2.setControls(2, "right");
         Player2.setControls(3, "0");
+        Player1.resetScore();
+        Player2.resetScore();
+        Player1.resetNumVidas();
+        Player2.resetNumVidas();
     }
     
     public static GreenfootSound getMusica(){

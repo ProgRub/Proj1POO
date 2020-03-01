@@ -13,7 +13,8 @@ public class Player2 extends Players
     protected static String right;
     protected static String shoot;
     private static String[] controlos= {up,left,right,shoot};
-    protected static String cor="";
+    protected static String cor;
+    protected static String nome;
     private GreenfootImage image1,image2,image3,image4,image5,image6;
     private GreenfootImage image1DEATH, image2DEATH,image3DEATH,image4DEATH,image5DEATH,image6DEATH, image7DEATH, image8DEATH;
     private int contador;
@@ -68,9 +69,29 @@ public class Player2 extends Players
         return andandoParaEsquerda;
     }
     
+    public static String getNome()
+    {
+        return nome;
+    }
+    
+    public static void setNome(String texto)
+    {
+        nome=texto;
+    }
+    
     public static int getScore()
     {
         return score;
+    }
+    
+    public static void resetScore()
+    {
+        score=0;
+    }
+
+    public static void resetNumVidas()
+    {
+        numeroVidas=10;
     }
     
     public static void adicionaScore(int valor)
@@ -118,10 +139,21 @@ public class Player2 extends Players
         return numeroVidas;
     }
 
+    
     public static void adicionaNumeroVidas(int valor)
     {
-        numeroVidas += valor;
-    }  
+        if (valor<0 || (valor > 0 && numeroVidas<9))
+        {
+            numeroVidas += valor;
+        }
+        else
+        {
+            if(numeroVidas<10)
+            {
+                numeroVidas++;
+            }
+        }
+    } 
 
     public void move(){
         if(numeroVidas >0){

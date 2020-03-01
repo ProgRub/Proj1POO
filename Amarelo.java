@@ -18,9 +18,9 @@ public class Amarelo extends Cor
     }   
     
     public Amarelo(){
-        GreenfootImage image = new GreenfootImage(100,100);
+        GreenfootImage image = new GreenfootImage(125,125);
         image.setColor(new Color(190,187,41));
-        image.fillOval(0, 0, 100, 100);
+        image.fillOval(0, 0, 125, 125);
         this.setImage(image);
     }
     
@@ -29,14 +29,13 @@ public class Amarelo extends Cor
             if(!Cor.getP1escolheu()){
                 Player1.setColor("Yellow");
                 Cor.setP1escolheu(true);
-                getWorld().removeObject(getWorld().getObjects(Texto.class).get(0));
-                getWorld().addObject(new Texto(Cor.getP1escolheu()),getWorld().getWidth()/2,getWorld().getHeight()/3);
+                Options.updateText(Player2.getNome()+",\nescolhe a tua cor", getWorld().getObjects(Texto.class).get(0), 60, new Color(255,255,255));
                 getWorld().removeObject(this);
             }
             else{
                 Player2.setColor("Yellow");
                 MenuInicial.getMusica().stop();
-                Greenfoot.setWorld(new Jogo1());
+                Greenfoot.setWorld(new Jogo3());
             }
         }
     }    

@@ -1,18 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class StageComplete here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Stage1Complete extends World
 {
-
-    /**
-     * Constructor for objects of class StageComplete.
-     * 
-     */
+    private int finalSore;
     public Stage1Complete()
     {    
 

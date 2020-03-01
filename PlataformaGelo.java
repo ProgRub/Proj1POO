@@ -47,7 +47,7 @@ public void podeCriarPinguim(){
 }
 public void invocaPinguim(){
     if (pinguim == true){
-        getWorld().addObject(new Pinguim(), getX() + Greenfoot.getRandomNumber(50)-50, getY()-60);
+        getWorld().addObject(new Pinguim(), getX() + Greenfoot.getRandomNumber(50)-50, getY()-getImage().getHeight());
         pinguim = false;
     }
 }

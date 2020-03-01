@@ -8,28 +8,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Texto extends Options
 {
-    /**
-     * Act - do whatever the Texto wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }
-    
+    private Color Cor;
+
     public Texto(){}
-    
-    public Texto(String text){
-        GreenfootImage image = new GreenfootImage(text,50, Color.WHITE, new Color(0,0,0,0));
+
+    public Texto(String text, int size , Color cor){
+        GreenfootImage image = new GreenfootImage(text.toUpperCase(),size, cor, new Color(0,0,0,0));
         setImage(image);
+        Cor=cor;
     }
-    
-    public Texto(boolean P1escolheu){
-        if(!P1escolheu){
-            updateText("Player 1, pick your color",this,60);
-        }
-        else{
-            updateText("Player 2, pick your color",this,60);
-        }
+
+    public void act()
+    {
+
     }
+
+    public Color getCor()
+    {
+        return Cor;
+    }
+
 }
