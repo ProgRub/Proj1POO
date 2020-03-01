@@ -16,11 +16,6 @@ comment14.target=int\ getNumeroVidas()
 comment15.params=valor
 comment15.target=void\ adicionaNumeroVidas(int)
 comment16.params=
-<<<<<<< HEAD
-comment16.target=void\ animarMorte()
-comment17.params=
-comment17.target=void\ disparar()
-=======
 comment16.target=void\ move()
 comment17.params=
 comment17.target=void\ jump()
@@ -28,11 +23,12 @@ comment18.params=
 comment18.target=void\ queda()
 comment19.params=
 comment19.target=void\ animarMove()
->>>>>>> 4339bb2ac300f0f404e1e418ed0afc8e4781d273
 comment2.params=
 comment2.target=void\ act()
 comment20.params=
-comment20.target=void\ disparar()
+comment20.target=void\ animarMorte()
+comment21.params=
+comment21.target=void\ disparar()
 comment3.params=
 comment3.target=java.lang.String\ getNome()
 comment4.params=texto
@@ -46,10 +42,5 @@ comment7.target=void\ resetNumVidas()
 comment8.params=valor
 comment8.target=void\ adicionaScore(int)
 comment9.params=
-<<<<<<< HEAD
-comment9.target=java.lang.String\ getColor()
-numComments=18
-=======
 comment9.target=boolean\ getAndandoParaEsquerda()
-numComments=21
->>>>>>> 4339bb2ac300f0f404e1e418ed0afc8e4781d273
+numComments=22

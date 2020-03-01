@@ -17,7 +17,6 @@ public class Players extends Actor
 
     public void act() 
     {
-        // Add your action code here.
     }  
 
     public Players()
@@ -30,7 +29,7 @@ public class Players extends Actor
         if(P1.getNumeroVidas()>0){
             if(isTouching(Granizo.class))
             {
-                P1.adicionaNumeroVidas(0); 
+                P1.adicionaNumeroVidas(-10); 
                 P1.adicionaScore(-5);
                 removeTouching(Granizo.class);
             }
@@ -57,10 +56,6 @@ public class Players extends Actor
 
             }
         }
-        else{
-            //animarMorte();
-            //getWorld().removeObject(this);
-        }
 
     }
 
@@ -69,7 +64,7 @@ public class Players extends Actor
         if(P2.getNumeroVidas()>0){
             if(isTouching(Granizo.class))
             {
-                P2.adicionaNumeroVidas(-1); 
+                P2.adicionaNumeroVidas(-10); 
                 P2.adicionaScore(-5);
                 removeTouching(Granizo.class);
             }
@@ -94,10 +89,6 @@ public class Players extends Actor
                 P2.adicionaScore(5);
                 removeTouching(Vida.class);
             }
-        }
-        else{
-            //animarMorte();
-            //getWorld().removeObject(this);
         }
     }
 

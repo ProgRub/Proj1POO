@@ -17,9 +17,10 @@ public class Player1 extends Players
     protected static String cor;
     protected static String nome;
     private GreenfootImage[] animacao=new GreenfootImage[7];
-    private GreenfootImage image1DEATH, image2DEATH,image3DEATH,image4DEATH,image5DEATH,image6DEATH, image7DEATH, image8DEATH;
+    private GreenfootImage[] animacaoDeath=new GreenfootImage[8];
     private int contador;
     private int indice=0;
+    private int indiceDeath=0;
     private int contador1;
     protected static int score=0;
     private final int GRAVIDADE =15;
@@ -46,20 +47,20 @@ public class Player1 extends Players
         animacao[4] = new GreenfootImage(cor+"/4.png");
         animacao[5] = new GreenfootImage(cor+"/5.png");
         animacao[6] = new GreenfootImage(cor+"/6.png");
-        setImage(animacao[0]);
+        setImage(animacao[indice]);
         andandoParaEsquerda = false;
-        
+
         //animação do jogador a "morrer"
-        image1DEATH = new GreenfootImage(cor+"/Death/1.png");
-        image2DEATH = new GreenfootImage(cor+"/Death/2.png");
-        image3DEATH = new GreenfootImage(cor+"/Death/3.png");
-        image4DEATH = new GreenfootImage(cor+"/Death/4.png");
-        image5DEATH = new GreenfootImage(cor+"/Death/5.png");
-        image6DEATH = new GreenfootImage(cor+"/Death/6.png");
-        image7DEATH = new GreenfootImage(cor+"/Death/7.png");
-        image8DEATH = new GreenfootImage(cor+"/Death/8.png");
+        animacaoDeath[0] = new GreenfootImage(cor+"/Death/1.png");
+        animacaoDeath[1] = new GreenfootImage(cor+"/Death/2.png");
+        animacaoDeath[2] = new GreenfootImage(cor+"/Death/3.png");
+        animacaoDeath[3] = new GreenfootImage(cor+"/Death/4.png");
+        animacaoDeath[4] = new GreenfootImage(cor+"/Death/5.png");
+        animacaoDeath[5] = new GreenfootImage(cor+"/Death/6.png");
+        animacaoDeath[6] = new GreenfootImage(cor+"/Death/7.png");
+        animacaoDeath[7] = new GreenfootImage(cor+"/Death/8.png");
         auxDEATH = 0;
-        
+
     }
 
     public void act() 
@@ -197,7 +198,8 @@ public class Player1 extends Players
                 animarMove();
             }
             if (!Greenfoot.isKeyDown(right) && !Greenfoot.isKeyDown(up) && !Greenfoot.isKeyDown(left)){
-                setImage(animacao[0]);
+                indice=0;
+                setImage(animacao[indice]);
             }
         }
     }
@@ -243,113 +245,39 @@ public class Player1 extends Players
             contador=0;
         }
     }
-    
-    
+
     public void animarMorte()
     {
-        if(numeroVidas == 0 || numeroVidas<0)
+        if(numeroVidas <=0)
         {
-            if(auxDEATH==0 && andandoParaEsquerda == false)
+            if(andandoParaEsquerda)
             {
-                setImage(image1DEATH);
+                for (int i=0; i < animacaoDeath.length;i++)
+                {
+                    animacaoDeath[i].mirrorHorizontally();
+                }
+                andandoParaEsquerda=false;
             }
-            
-            if(auxDEATH==0 && andandoParaEsquerda == true)
+            if(auxDEATH%10==0)
             {
-                image1DEATH.mirrorHorizontally();
-                setImage(image1DEATH);
+                setImage(animacaoDeath[indiceDeath]);
+                indiceDeath++;
+                if (indiceDeath>=animacaoDeath.length)
+                {
+                    getWorld().removeObject(this);
+                }
             }
-            
-            if(auxDEATH==15 && andandoParaEsquerda == false)
-            {
-                setImage(image2DEATH);
-            }
-            
-            if(auxDEATH==15 && andandoParaEsquerda == true)
-            {
-                image2DEATH.mirrorHorizontally();
-                setImage(image2DEATH);
-            }
-            
-            if(auxDEATH==30 && andandoParaEsquerda == false)
-            {
-                setImage(image3DEATH);
-            }
-            
-            if(auxDEATH==30 && andandoParaEsquerda == true)
-            {
-                image3DEATH.mirrorHorizontally();
-                setImage(image3DEATH);
-            }
-            
-            if(auxDEATH==30 && andandoParaEsquerda == false)
-            {
-                setImage(image4DEATH);
-            }
-            
-            if(auxDEATH==30 && andandoParaEsquerda == true)
-            {
-                image4DEATH.mirrorHorizontally();
-                setImage(image4DEATH);
-            }
-            
-            if(auxDEATH==45 && andandoParaEsquerda == false)
-            {
-                setImage(image5DEATH);
-            }
-            
-            if(auxDEATH==45 && andandoParaEsquerda == true)
-            {
-                image5DEATH.mirrorHorizontally();
-                setImage(image5DEATH);
-            }
-            
-            if(auxDEATH==60 && andandoParaEsquerda == false)
-            {
-                setImage(image6DEATH);
-            }
-            
-            if(auxDEATH==60 && andandoParaEsquerda == true)
-            {
-                image6DEATH.mirrorHorizontally();
-                setImage(image6DEATH);
-            }
-            
-            if(auxDEATH==75 && andandoParaEsquerda == false)
-            {
-                setImage(image7DEATH);
-            }
-            
-            if(auxDEATH==75 && andandoParaEsquerda == true)
-            {
-                image7DEATH.mirrorHorizontally();
-                setImage(image7DEATH);
-            }
-            
-            
-           if(auxDEATH==90 && andandoParaEsquerda == false)
-            {
-                setImage(image8DEATH);
-            }
-            
-            if(auxDEATH==90 && andandoParaEsquerda == true)
-            {
-                image8DEATH.mirrorHorizontally();
-                setImage(image8DEATH);
-            }
-            
             auxDEATH++;
-            
         }
     }
 
     public void disparar(){
         controlBala++;
-        //if(numeroVidas >0){
+        if(numeroVidas >0){
         if (controlBala >20 && Greenfoot.isKeyDown(shoot)){
             getWorld().addObject(new Bala(this), getX(),getY()-5);
             controlBala = 0;
-            //}
+           }
         }
     }
 
