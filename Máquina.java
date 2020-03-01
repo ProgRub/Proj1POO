@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Máquina extends Jogos
 {           
-    private static int vida=1000;
+    private static int vida=500;
     private static int score;
     private static int contador;
     private GreenfootImage explosao[] = new GreenfootImage[13];

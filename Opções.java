@@ -6,12 +6,7 @@ public class Opções extends World
 
     private static MenuInicial referencia;
     private final int TAMANHOTEXTO=50;
-<<<<<<< Updated upstream
-    
-    public Opções(MenuInicial start)
-=======
     public Opções()
->>>>>>> Stashed changes
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200,700, 1); 
