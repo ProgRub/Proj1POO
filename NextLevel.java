@@ -13,6 +13,7 @@ public class NextLevel extends Stage
     public NextLevel(){
         image1 = new GreenfootImage("nextLevel1.png"); //sem brilho
         image2 = new GreenfootImage("nextLevel.png"); //com brilho
+        setImage(image1);
     }
     public void act() 
     {
@@ -22,10 +23,11 @@ public class NextLevel extends Stage
 
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
+            if (getWorld() instanceof Stage1Complete){
               Greenfoot.setWorld(new Jogo2());
-            // Player1.setColor("Red");
-            // Player2.setColor("Red");
-            // Greenfoot.setWorld(new Jogo2());
+            }else if(getWorld() instanceof Stage2Complete){
+                Greenfoot.setWorld(new Jogo3());
+            } 
         }
     }    
 }

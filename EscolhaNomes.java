@@ -23,7 +23,7 @@ public class EscolhaNomes extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 700, 1); 
-        GreenfootImage bg = new GreenfootImage("Earth.png");
+        GreenfootImage bg = new GreenfootImage("chooseName.png");
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
         prepare(); 
@@ -46,10 +46,17 @@ public class EscolhaNomes extends World
         displayNome = new Texto();
         displayNome.getImage().clear();
         addObject(displayNome, getWidth()/2, 3*getHeight()/4);
+<<<<<<< Updated upstream
         header=new Texto("Player 1,\nwrite your name",60, new Color(255,255,0));
         addObject(header, getWidth()/2, getHeight()/2);
         addObject(new Texto("Max size of 10 characters",30, new Color(255,0,0)),getWidth()/2,3*getHeight()/4-40);
         addObject(new Texto("Press enter to submit",30, new Color(255,0,0)),getWidth()/2,3*getHeight()/4+40);
+=======
+        header=new Texto("Player 1,\nenter your name:",50, new Color(255,255,255));
+        addObject(header, getWidth()/2, getHeight()/2);
+        addObject(new Texto("Maximum characters: 10",30, new Color(200, 8, 16)),getWidth()/2,3*getHeight()/4-40);
+        addObject(new Texto("Press 'ENTER' to submit.",30, new Color(200, 8, 16)),getWidth()/2,3*getHeight()/4+40);
+>>>>>>> Stashed changes
     }
 
     public void act()
@@ -84,7 +91,11 @@ public class EscolhaNomes extends World
             if(!recebeuNomeP1)
             {
                 Player1.setNome(nome);
+<<<<<<< Updated upstream
                 Options.updateText("Player 2,\nwrite your name", header,60, new Color(255,255,0));
+=======
+                Options.updateText("Player 2,\nenter your name:", header,50, new Color(255,255,255));
+>>>>>>> Stashed changes
                 nome="";
                 recebeuNomeP1=true;
             }

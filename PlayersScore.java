@@ -1,11 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class RestartLevel here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class PlayersScore extends Stage
 {
     GreenfootImage image1,image2;
@@ -13,6 +7,7 @@ public class PlayersScore extends Stage
     public PlayersScore(){
         image1 = new GreenfootImage("playersScore1.png"); //sem brilho
         image2 = new GreenfootImage("playersScore.png"); //com brilho
+        setImage(image1);
     }
     public void act() 
     {
@@ -22,16 +17,9 @@ public class PlayersScore extends Stage
 
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
-            if (getWorld() instanceof Jogo1){
-              Greenfoot.setWorld(new Jogo1());
-            }else if (getWorld() instanceof Jogo2){
-                Greenfoot.setWorld(new Jogo2());
-            }else if (getWorld() instanceof Jogo3){
-                Greenfoot.setWorld(new Jogo3());
+            if (getWorld() instanceof Stage1Complete){
+              Greenfoot.setWorld(new IndividualScore());
             }
-            // Player1.setColor("Red");
-            // Player2.setColor("Red");
-            // Greenfoot.setWorld(new Jogo2());
         }
     }     
 }

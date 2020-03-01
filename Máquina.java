@@ -8,13 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Máquina extends Jogos
 {           
+<<<<<<< Updated upstream
     private static int vida=2;
+=======
+    private static int vida=1000;
+    private static int score;
+>>>>>>> Stashed changes
     private static int contador;
     private GreenfootImage explosao[] = new GreenfootImage[13];
     private int indice=0;
 
     private GreenfootImage explosion1,explosion2,explosion3,explosion4,explosion5,explosion6,explosion7,explosion8,explosion9,explosion10,explosion11,explosion12,explosion13;
     public Máquina(){
+<<<<<<< Updated upstream
         vida=2;
         explosao[0] = new GreenfootImage("ExplosionMáquina/1.png");
         explosao[1] = new GreenfootImage("ExplosionMáquina/2.png");
@@ -29,6 +35,23 @@ public class Máquina extends Jogos
         explosao[10]= new GreenfootImage("ExplosionMáquina/11.png");
         explosao[11] = new GreenfootImage("ExplosionMáquina/12.png");
         explosao[12] = new GreenfootImage("ExplosionMáquina/13.png");
+=======
+        vida=1000;
+        score=0;
+        explosion1 = new GreenfootImage("ExplosionMáquina/1.png");
+        explosion2 = new GreenfootImage("ExplosionMáquina/2.png");
+        explosion3 = new GreenfootImage("ExplosionMáquina/3.png");
+        explosion4 = new GreenfootImage("ExplosionMáquina/4.png");
+        explosion5 = new GreenfootImage("ExplosionMáquina/5.png");
+        explosion6 = new GreenfootImage("ExplosionMáquina/6.png");
+        explosion7 = new GreenfootImage("ExplosionMáquina/7.png");
+        explosion8 = new GreenfootImage("ExplosionMáquina/8.png");
+        explosion9 = new GreenfootImage("ExplosionMáquina/9.png");
+        explosion10 = new GreenfootImage("ExplosionMáquina/10.png");
+        explosion11= new GreenfootImage("ExplosionMáquina/11.png");
+        explosion12 = new GreenfootImage("ExplosionMáquina/12.png");
+        explosion13 = new GreenfootImage("ExplosionMáquina/13.png");
+>>>>>>> Stashed changes
         contador=0;
     }
 

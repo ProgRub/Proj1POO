@@ -13,6 +13,7 @@ public class Menu extends Stage
     public Menu(){
         image1 = new GreenfootImage("close1.png"); //sem brilho
         image2 = new GreenfootImage("close.png"); //com brilho
+        setImage(image1);
     }
     public void act() 
     {
