@@ -18,9 +18,9 @@ public class Verde extends Cor
     }   
     
     public Verde(){
-        GreenfootImage image = new GreenfootImage(100,100);
+        GreenfootImage image = new GreenfootImage(125,125);
         image.setColor(new Color(107,175,87));
-        image.fillOval(0, 0, 100, 100);
+        image.fillOval(0, 0, 125, 125);
         this.setImage(image);
     }
     
@@ -29,7 +29,7 @@ public class Verde extends Cor
             if(!Cor.getP1escolheu()){
                 Player1.setColor("Green");
                 Cor.setP1escolheu(true);
-                Options.updateText(Player2.getNome()+", PICK YOUR COLOUR", getWorld().getObjects(Texto.class).get(0), 60, new Color(255,255,255));
+                Options.updateText(Player2.getNome()+",\nescolhe a tua cor", getWorld().getObjects(Texto.class).get(0), 60, new Color(255,255,255));
                 getWorld().removeObject(this);
             }
             else{

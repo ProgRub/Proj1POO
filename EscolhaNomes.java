@@ -80,7 +80,7 @@ public class EscolhaNomes extends World
         if (key.equals("enter") || nome.length()>=10)
         {
             Options.updateText(nome,displayNome,40, new Color(0,255,0));
-            Greenfoot.delay(50);
+            Greenfoot.delay(25);
             if(!recebeuNomeP1)
             {
                 Player1.setNome(nome);

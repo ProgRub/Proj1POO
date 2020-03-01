@@ -20,6 +20,7 @@ public class MenuInicial extends World
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
         prepare();
+        Greenfoot.setSpeed(50);
     }
 
     private void prepare()

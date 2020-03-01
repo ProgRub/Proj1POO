@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -8,8 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Jogo1 extends World
 {
-    GameOver gameOver;
-    Restart restart;
     private Máquina máquina;
     private boolean control,stop;
     private int tempo=120;
@@ -17,13 +16,10 @@ public class Jogo1 extends World
     private String escreverClock = "2:00";
     private Texto scoreP1;
     private Texto scoreP2;
-
-    VidaMáquina vidaMáquina;
     private Player1 P1;
     private Player2 P2;
     private static GreenfootSound somAmbiente = new GreenfootSound("winter.mp3");
     private static GreenfootSound somChuva = new GreenfootSound("rain.mp3");
-    private int wait;
     private int contador;
     private final int midway=máquina.getVida()/2;
 
@@ -38,8 +34,6 @@ public class Jogo1 extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 700, 1);
         prepare();
-        gameOver = new GameOver();
-        restart = new Restart();
         control =false;
         stop =false;
         contador=0;
@@ -59,10 +53,6 @@ public class Jogo1 extends World
         fundo8 = new GreenfootImage("jogo1_backgrounds/jogo1_background_40.jpg");
         fundo9 = new GreenfootImage("jogo1_backgrounds/jogo1_background_45.jpg");
 
-    }
-
-    public  VidaMáquina getVidaMáquina(){
-        return vidaMáquina;
     }
 
     private void prepare()
@@ -114,9 +104,9 @@ public class Jogo1 extends World
     }
 
     private void gameOver(int vidaJogador1, int vidaJogador2){
-        if (((vidaJogador1 <=0 && vidaJogador2 <= 0) || tempo==0) && control == false ){
-            addObject(gameOver,getWidth()/2,getHeight()/2);
-            addObject(restart,getWidth()/2,getHeight()/2 +150);
+        if ((vidaJogador1 <=0 && vidaJogador2 <= 0) && control == false ){
+            addObject(new GameOver(),getWidth()/2,getHeight()/2);
+            addObject(new Restart(),getWidth()/2,getHeight()/2 +150);
             stop =true;
             if (stop == true){
                 Greenfoot.playSound("gameOver.mp3");
@@ -151,9 +141,14 @@ public class Jogo1 extends World
             else
             {
                 escreverClock = "" + tempo/60 + ":" + tempo%60;
-            }
-        }        
-        Options.updateText(escreverClock,clock,TAMANHOTEXTO, clock.getCor());
+            }        
+            Options.updateText(escreverClock,clock,TAMANHOTEXTO, clock.getCor());
+        }
+        if(tempo==0)
+        {
+            Greenfoot.setWorld(new Stage1Complete());
+        }
+
     }
 
     public void invocaTarget() 
@@ -270,6 +265,7 @@ public class Jogo1 extends World
             if (auxFundo==96)
             {
                 setBackground(fundo9);
+
             }
 
             auxFundo++;

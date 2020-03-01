@@ -84,9 +84,13 @@ public class Jogo2 extends World
             else
             {
                 escreverClock = "" + tempo/60 + ":" + tempo%60;
-            }
-        }        
-        Options.updateText(escreverClock,clock,TAMANHOTEXTO, clock.getCor());
+            }        
+            Options.updateText(escreverClock,clock,TAMANHOTEXTO, clock.getCor());
+        }
+        if(tempo==0)
+        {
+            Greenfoot.setWorld(new Stage2Complete());
+        }
     }
 
     public void libertarGases() 
@@ -105,7 +109,6 @@ public class Jogo2 extends World
         }
     }
 
-    
     public void disparaMissil(){
         int random = Greenfoot.getRandomNumber(400);
         if (random<2)

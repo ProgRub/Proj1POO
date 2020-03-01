@@ -30,7 +30,7 @@ public class Players extends Actor
         if(P1.getNumeroVidas()>0){
             if(isTouching(Granizo.class))
             {
-                P1.adicionaNumeroVidas(-1); 
+                P1.adicionaNumeroVidas(0); 
                 P1.adicionaScore(-5);
                 removeTouching(Granizo.class);
             }
