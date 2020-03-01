@@ -46,10 +46,10 @@ public class EscolhaNomes extends World
         displayNome = new Texto();
         displayNome.getImage().clear();
         addObject(displayNome, getWidth()/2, 3*getHeight()/4);
-        header=new Texto("Player 1,\nescreve o teu nome",60, new Color(255,255,0));
+        header=new Texto("Player 1,\nwrite your name",60, new Color(255,255,0));
         addObject(header, getWidth()/2, getHeight()/2);
-        addObject(new Texto("Tamanho máximo de 10 carateres",30, new Color(255,0,0)),getWidth()/2,3*getHeight()/4-40);
-        addObject(new Texto("Carrega enter para submeter",30, new Color(255,0,0)),getWidth()/2,3*getHeight()/4+40);
+        addObject(new Texto("Max size of 10 characters",30, new Color(255,0,0)),getWidth()/2,3*getHeight()/4-40);
+        addObject(new Texto("Press enter to submit",30, new Color(255,0,0)),getWidth()/2,3*getHeight()/4+40);
     }
 
     public void act()
@@ -84,7 +84,7 @@ public class EscolhaNomes extends World
             if(!recebeuNomeP1)
             {
                 Player1.setNome(nome);
-                Options.updateText("Player 2,\nescreve o teu nome", header,60, new Color(255,255,0));
+                Options.updateText("Player 2,\nwrite your name", header,60, new Color(255,255,0));
                 nome="";
                 recebeuNomeP1=true;
             }
