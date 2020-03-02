@@ -7,7 +7,7 @@ public class Esquimó1 extends Player1
     private int indice=0;
     private final int GRAVIDADE =15;
     private int tempoJump=GRAVIDADE;
-    private int tempoQueda=GRAVIDADE;
+    private int tempoQueda=0;
     private boolean podeSaltar=false;
     private boolean saltou=false;
     private boolean andandoParaEsquerda;
@@ -78,13 +78,27 @@ public class Esquimó1 extends Player1
     }
 
     protected void queda(){
-        if (!isTouching(PlataformaGelo.class) && !saltou){
+        Actor plat = getOneObjectAtOffset(getImage().getWidth(), 15, PlataformaGelo.class);
+        if(plat==null)
+        {
+            plat = getOneObjectAtOffset(0,tempoQueda+getImage().getHeight()/2, PlataformaGelo.class);
+        }
+        //PlataformaGelo platIni =(Plataforma_Inicial)getOneObjectAtOffset(0, tempoQueda, Plataforma_Inicial.class);
+        if (plat==null  && !saltou){
             setLocation(getX(),getY()+tempoQueda);
             tempoQueda++;
         }
         else{
+            if(plat!=null)
+            {
+                setLocation(getX(),plat.getY()- plat.getImage().getHeight()/2-getImage().getHeight()/2);
+            }
+            // else if(platIni!=null)
+            // {
+            // setLocation(getX(),platIni.getY()- platIni.getImage().getHeight()/2);
+            // }
             tempoQueda=0;
-            if(isTouching(PlataformaGelo.class)){
+            if(plat!=null){
                 podeSaltar=true;
             }
         }
