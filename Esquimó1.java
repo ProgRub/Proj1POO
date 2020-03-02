@@ -1,22 +1,100 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-
 public class Esquimó1 extends Player1
 {
-    private GreenfootImage[] animacao=new GreenfootImage[6];
+    private GreenfootImage[] animacao=new GreenfootImage[5];
     private int contador;
     private int indice=0;
-    
+    private final int GRAVIDADE =15;
+    private int tempoJump=GRAVIDADE;
+    private int tempoQueda=GRAVIDADE;
+    private boolean podeSaltar=false;
+    private boolean saltou=false;
+    private boolean andandoParaEsquerda;
+
+    public Esquimó1()
+    {
+        animacao[0] = new GreenfootImage(cor+"/Jogo3/1.png");
+        animacao[1] = new GreenfootImage(cor+"/Jogo3/2.png");
+        animacao[2] = new GreenfootImage(cor+"/Jogo3/3.png");
+        animacao[3] = new GreenfootImage(cor+"/Jogo3/4.png");
+        animacao[4] = new GreenfootImage(cor+"/Jogo3/5.png");
+    }
+
     public void act() 
     {
-        animacao[0] = new GreenfootImage(cor+"");
+        queda();
+        move();
+    }
+
+    protected void move()
+    {
+        if(numeroVidas >0){
+            if (Greenfoot.isKeyDown(up) && podeSaltar){
+                saltou=true;
+                podeSaltar=false;
+            }
+            if(saltou){
+                jump();
+            }
+            if (Greenfoot.isKeyDown(left)){
+                if (!andandoParaEsquerda){
+                    for (int i=0; i < animacao.length;i++)
+                    {
+                        animacao[i].mirrorHorizontally();
+                    }
+                }
+                setLocation(getX()-3, getY());
+                andandoParaEsquerda=true;
+                animarMove();
+            }
+            else if (Greenfoot.isKeyDown(right) ){
+                if (andandoParaEsquerda){
+                    for (int i=0; i < animacao.length;i++)
+                    {
+                        animacao[i].mirrorHorizontally();
+                    }
+                }
+                setLocation(getX()+3, getY());
+                andandoParaEsquerda=false;
+                animarMove();
+            }
+            if (!Greenfoot.isKeyDown(right) && !Greenfoot.isKeyDown(up) && !Greenfoot.isKeyDown(left)){
+                indice=0;
+                setImage(animacao[indice]);
+            }
+        }
+    }
+
+    protected void jump(){
+        if (tempoJump>0){
+            setLocation(getX(),getY()-tempoJump);
+            tempoJump--;
+        }
+        else{
+            tempoJump=GRAVIDADE;
+            saltou=false;
+        }
+    }
+
+    protected void queda(){
+        if (!isTouching(PlataformaGelo.class) && !saltou){
+            setLocation(getX(),getY()+tempoQueda);
+            tempoQueda++;
+        }
+        else{
+            tempoQueda=0;
+            if(isTouching(PlataformaGelo.class)){
+                podeSaltar=true;
+            }
+        }
     }  
 
     private void animarMove(){
-        contador++;
-        if (contador==4){
-            if (numeroVidas >0){
-                if(indice<6)
+        if (numeroVidas >0){
+            contador++;
+            if (contador==4){
+                if(indice<animacao.length-1)
                 {
                     indice++;
                 }
@@ -25,16 +103,16 @@ public class Esquimó1 extends Player1
                     indice=1;
                 }
                 setImage(animacao[indice]);
+                contador=0;
             }
-            contador=0;
         }
-    
-       emCimaPlataforma();
+
+        emCimaPlataforma();
     }    
-    
+
     public void emCimaPlataforma(){
         if (isTouching(PlataformaGelo.class)){
-            
+
         }
     }
 }

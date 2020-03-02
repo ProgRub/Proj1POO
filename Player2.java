@@ -28,9 +28,8 @@ public class Player2 extends Players
     private boolean saltou=false;
     private boolean andandoParaEsquerda;
     private int controlBala=0;
-    private static int numeroVidas=10;
+    protected static int numeroVidas=10;
     private int auxDEATH;
-
 
     public Player2()
     {
@@ -156,7 +155,7 @@ public class Player2 extends Players
         }
     } 
 
-    public void move()
+    protected void move()
     {
         if(numeroVidas >0){
             if (Greenfoot.isKeyDown(up) && podeSaltar){
@@ -195,7 +194,7 @@ public class Player2 extends Players
         }
     }
 
-    public void jump(){
+    protected void jump(){
         if (tempoJump>0){
             setLocation(getX(),getY()-tempoJump);
             tempoJump--;
@@ -206,7 +205,7 @@ public class Player2 extends Players
         }
     }
 
-    public void queda(){
+    protected void queda(){
         if (!isTouching(Chão.class) &&!saltou){
             setLocation(getX(),getY()+tempoQueda);
             tempoQueda++;
@@ -219,11 +218,11 @@ public class Player2 extends Players
         }
     }
 
-    public void animarMove(){
-        contador++;
-        if (contador==4){
-            if (numeroVidas >0){
-                if(indice<6)
+    private void animarMove(){
+        if (numeroVidas >0){
+            contador++;
+            if (contador==4){
+                if(indice<animacao.length-1)
                 {
                     indice++;
                 }
@@ -232,8 +231,8 @@ public class Player2 extends Players
                     indice=1;
                 }
                 setImage(animacao[indice]);
+                contador=0;
             }
-            contador=0;
         }
     }
 
@@ -261,7 +260,6 @@ public class Player2 extends Players
             auxDEATH++;
         }
     }
-
 
     public void disparar(){
         if(numeroVidas >0){

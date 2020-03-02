@@ -1,9 +1,17 @@
 #BlueJ class context
 comment0.target=Esquim\u00F31
 comment1.params=
-comment1.target=void\ act()
+comment1.target=Esquim\u00F31()
 comment2.params=
-comment2.target=void\ animarMove()
+comment2.target=void\ act()
 comment3.params=
-comment3.target=void\ emCimaPlataforma()
-numComments=4
+comment3.target=void\ move()
+comment4.params=
+comment4.target=void\ jump()
+comment5.params=
+comment5.target=void\ queda()
+comment6.params=
+comment6.target=void\ animarMove()
+comment7.params=
+comment7.target=void\ emCimaPlataforma()
+numComments=8

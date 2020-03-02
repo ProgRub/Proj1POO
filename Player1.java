@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.List;
+
 
 /**
  * Write a description of class Player1 here.
@@ -23,7 +23,7 @@ public class Player1 extends Players
     private int indiceDeath=0;
     private int contador1;
     protected static int score=0;
-    protected final int GRAVIDADE =15;
+    private final int GRAVIDADE =15;
     private int tempoJump=GRAVIDADE;
     private int tempoQueda=GRAVIDADE;
     private boolean podeSaltar=false;
@@ -229,10 +229,10 @@ public class Player1 extends Players
     }
 
     private void animarMove(){
-        contador++;
-        if (contador==4){
-            if (numeroVidas >0){
-                if(indice<6)
+        if (numeroVidas >0){
+            contador++;
+            if (contador==4){
+                if(indice<animacao.length-1)
                 {
                     indice++;
                 }
@@ -241,8 +241,8 @@ public class Player1 extends Players
                     indice=1;
                 }
                 setImage(animacao[indice]);
+                contador=0;
             }
-            contador=0;
         }
     }
 
@@ -274,10 +274,10 @@ public class Player1 extends Players
     private void disparar(){
         controlBala++;
         if(numeroVidas >0){
-        if (controlBala >20 && Greenfoot.isKeyDown(shoot)){
-            getWorld().addObject(new Bala(this), getX(),getY()-5);
-            controlBala = 0;
-           }
+            if (controlBala >20 && Greenfoot.isKeyDown(shoot)){
+                getWorld().addObject(new Bala(this), getX(),getY()-5);
+                controlBala = 0;
+            }
         }
     }
 
