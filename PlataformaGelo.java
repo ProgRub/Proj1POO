@@ -32,8 +32,10 @@ public class PlataformaGelo extends Jogos
             imagemAtual.setTransparency(150);
         }else if (getX() == 240){
             imagemAtual.setTransparency(110);
-        }else if (getX() == 30){
+        }else if (getX() <= 40){
             imagemAtual.setTransparency(70);
+            turn(-1);
+            setLocation(getX(), getY()+10);
         }
         setImage(imagemAtual);
        
@@ -53,7 +55,8 @@ public class PlataformaGelo extends Jogos
         }
     }
     public void desaparecer(){
-        if (getX() == 0){
+        if (getX() == 0 || getY() == getWorld().getHeight()-1){
+            Greenfoot.playSound("splash.mp3");
             getWorld().removeObject(this);
         }
     }
