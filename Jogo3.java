@@ -9,8 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Jogo3 extends World
 {
     private int contadorMar, contador;
-    private final int ALTURA1=200;
-    private final int ALTURA2=350;
+    private final int ALTURA1=300;
+    private final int ALTURA2=400;
     private final int ALTURA3=500;
     private int tempo=120;
     private Texto clock;
@@ -38,8 +38,8 @@ public class Jogo3 extends World
         addObject(mar,603,getHeight() -30);
         Mar mar2 = new Mar();
         addObject(mar2,1012,getHeight() -30);
-        addObject(new Esquimó1(),390,310);
-        addObject(new Esquimó2(),410,310);
+        addObject(new Esquimó1(),390,200);
+        addObject(new Esquimó2(),410,200);
 
         addObject(new Vida_player1(), 285/2, 125);
         addObject(new Vida_player2(), getWidth()-285/2, 125);
@@ -52,7 +52,7 @@ public class Jogo3 extends World
         addObject(new Texto(Player1.getNome(),TAMANHOTEXTO, new Color(0,0,0)),285/2,80);
         addObject(new Texto(Player2.getNome(),TAMANHOTEXTO, new Color(0,0,0)),getWidth()-285/2,80);
         
-        addObject(new Plataforma_Inicial(),400,304);
+        addObject(new Plataforma_Inicial(),400,ALTURA2);
         
     }
 
