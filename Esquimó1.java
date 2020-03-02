@@ -11,6 +11,7 @@ public class Esquimó1 extends Player1
     private boolean podeSaltar=false;
     private boolean saltou=false;
     private boolean andandoParaEsquerda;
+    private int transparencia;
 
     public Esquimó1()
     {
@@ -19,12 +20,15 @@ public class Esquimó1 extends Player1
         animacao[2] = new GreenfootImage(cor+"/Jogo3/3.png");
         animacao[3] = new GreenfootImage(cor+"/Jogo3/4.png");
         animacao[4] = new GreenfootImage(cor+"/Jogo3/5.png");
+        transparencia = 255;
     }
 
     public void act() 
     {
         queda();
         move();
+        salvarPinguim();
+        cair();
     }
 
     protected void move()
@@ -107,13 +111,21 @@ public class Esquimó1 extends Player1
                 contador=0;
             }
         }
-
-        emCimaPlataforma();
-    }    
-
-    public void emCimaPlataforma(){
-        if (isTouching(PlataformaGelo.class)){
-
+    }  
+    
+    public void cair(){
+        
+        if (getY() == getWorld().getHeight() - 1){
+            numeroVidas -= 2;
+            transparencia -= 51;
+            for (int i=0; i<5; i++){
+                animacao[i].setTransparency(transparencia);
+            }
+            setLocation(getX(), 0);
+        }
+        
+        if(transparencia <=0){
+            getWorld().removeObject(this);
         }
     }
 }

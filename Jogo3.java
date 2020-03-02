@@ -60,6 +60,8 @@ public class Jogo3 extends World
         invocarPlataformas();
         invocarMar();
         atualizaRelogio();
+        Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
+        Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
     }
 
     public void invocarPlataformas() 

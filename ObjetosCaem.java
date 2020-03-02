@@ -18,7 +18,7 @@ public class ObjetosCaem extends Jogos
     } 
     
     protected void ultrapassaLimite(){
-        if(isTouching(Chão.class)){
+        if(isTouching(Chão.class) || getY() == getWorld().getHeight() -1){
             getWorld().removeObject(this);
         }
     }
