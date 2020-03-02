@@ -689,13 +689,8 @@ editor.fx.0.height=737
 editor.fx.0.width=814
 editor.fx.0.x=360
 editor.fx.0.y=28
-<<<<<<< Updated upstream
-height=838
-package.numDependencies=212
-=======
 height=830
 package.numDependencies=213
->>>>>>> Stashed changes
 package.numTargets=70
 project.charset=UTF-8
 publish.hasSource=false
@@ -1203,6 +1198,6 @@ target9.x=0
 target9.y=0
 version=3.0.0
 width=1550
-world.lastInstantiated=Jogo3
+world.lastInstantiated=MenuInicial
 xPosition=0
 yPosition=0

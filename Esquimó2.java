@@ -123,7 +123,7 @@ public class Esquimó2 extends Player2
     
     public void cair(){
         
-        if (getY() == getWorld().getHeight() - 1){
+        if (getY() == getWorld().getHeight()- 1){
             numeroVidas -= 2;
             transparencia -= 51;
             for (int i=0; i<5; i++){
