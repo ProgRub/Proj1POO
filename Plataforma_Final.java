@@ -13,12 +13,14 @@ public class Plataforma_Final extends PlataformaGelo
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    
+    GreenfootImage image;
     private int contador;
     
     public Plataforma_Final()
     {
         contador =0;
+        image = new GreenfootImage("plat_final.png");
+        setImage(image);
     }
     
     public void act() 
