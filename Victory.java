@@ -14,7 +14,7 @@ public class Victory extends World
     
     public void prepare(){
         finalScore = Player1.getScore() + Player2.getScore();
-        score = new Texto("FINAL SCORE: "+finalScore,40, new Color(255, 255, 255));
-        addObject(score, getWidth()/2 , getHeight()/2 +100);
+        score = new Texto("FINAL SCORE: "+finalScore,60, new Color(0, 255, 255));
+        addObject(score, getWidth()/2 , getHeight()/2 +150);
     }
 }
