@@ -4,14 +4,14 @@ public class Esquimó1 extends Player1
 {
     private GreenfootImage[] animacao=new GreenfootImage[5];
     private int contador;
-    private int indice=0;
+    private int indice;
     private final int GRAVIDADE =15;
     private int tempoJump=GRAVIDADE;
     private int tempoQueda=0;
     private boolean podeSaltar=false;
     private boolean saltou=false;
     private boolean andandoParaEsquerda;
-    private int transparencia;
+    private static boolean P2morreu=false;
 
     public Esquimó1()
     {
@@ -20,7 +20,8 @@ public class Esquimó1 extends Player1
         animacao[2] = new GreenfootImage(cor+"/Jogo3/3.png");
         animacao[3] = new GreenfootImage(cor+"/Jogo3/4.png");
         animacao[4] = new GreenfootImage(cor+"/Jogo3/5.png");
-        transparencia = 255;
+        contador=0;
+        indice=0;
     }
 
     public void act() 
@@ -33,7 +34,7 @@ public class Esquimó1 extends Player1
 
     protected void move()
     {
-        if(numeroVidas >0){
+        if(numeroVidas >0 &&!P2morreu){
             if (Greenfoot.isKeyDown(up) && podeSaltar){
                 saltou=true;
                 podeSaltar=false;
@@ -92,7 +93,6 @@ public class Esquimó1 extends Player1
             tempoQueda=0;
             podeSaltar=true;
         }
-        
         plat=null;
     }  
 
@@ -114,18 +114,20 @@ public class Esquimó1 extends Player1
         }
     }  
     
+    public static void setP2Morreu(boolean x)
+    {
+        P2morreu = x;
+    }
+    
     public void cair(){
-        
         if (intersects(getWorld().getObjects(Mar.class).get(0))){
             numeroVidas -= 10;
+            Esquimó2.setP1Morreu(true);
             saltou=true;
-            transparencia -=5;
-            for (int i=0; i<5; i++){
-                animacao[i].setTransparency(transparencia);
-            }
+            animacao[indice].setTransparency(animacao[indice].getTransparency()-5);
         }
         
-        if(transparencia <=0){
+        if(animacao[indice].getTransparency() <=0){
             getWorld().removeObject(this);
         }
     }
