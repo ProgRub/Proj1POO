@@ -13,13 +13,15 @@ public class Jogo3 extends World
     private final int ALTURA2=400;
     private final int ALTURA3=500;
     private int tempo=120;
-    private Texto clock;
-    private String escreverClock = "2:00";
+    //private Texto clock;
+    //private String escreverClock = "2:00";
     private Texto scoreP1;
     private Texto scoreP2;
     private final int TAMANHOTEXTO=45;
     private int CONTADOR;
     private int altura_anterior;
+    private int conta_plataformas;
+    
     
     public Jogo3()
     {    
@@ -28,6 +30,8 @@ public class Jogo3 extends World
         prepare();
         CONTADOR = 150;
         altura_anterior=0; //o valor 0 não interfere com a escolha da altura na primeira interação, apenas serve para inicializar a variável
+        conta_plataformas=0;
+        
     }
     
     private void prepare()
@@ -38,13 +42,17 @@ public class Jogo3 extends World
         addObject(mar,603,getHeight() -30);
         Mar mar2 = new Mar();
         addObject(mar2,1012,getHeight() -30);
-        addObject(new Esquimó1(),390,200);
-        addObject(new Esquimó2(),410,200);
+
+        
+
+        addObject(new Esquimó1(),390,300);
+        addObject(new Esquimó2(),410,300);
+
 
         addObject(new Vida_player1(), 285/2, 125);
         addObject(new Vida_player2(), getWidth()-285/2, 125);
-        clock = new Texto(escreverClock,TAMANHOTEXTO, new Color(0,0,0));
-        addObject(clock, getWidth()/2,125);
+        //clock = new Texto(escreverClock,TAMANHOTEXTO, new Color(0,0,0));
+        //addObject(clock, getWidth()/2,125);
         scoreP1 = new Texto(""+Player1.getScore(),TAMANHOTEXTO, new Color(0,0,0));
         addObject(scoreP1, 285/2,175);
         scoreP2 = new Texto(""+Player2.getScore(),TAMANHOTEXTO, new Color(0,0,0));
@@ -52,21 +60,25 @@ public class Jogo3 extends World
         addObject(new Texto(Player1.getNome(),TAMANHOTEXTO, new Color(0,0,0)),285/2,80);
         addObject(new Texto(Player2.getNome(),TAMANHOTEXTO, new Color(0,0,0)),getWidth()-285/2,80);
         
+
         addObject(new Plataforma_Inicial(),400,ALTURA2);
+
+        addObject(new Bandeira_Start(),400,348);
+
         
     }
 
     public void act(){
         invocarPlataformas();
         invocarMar();
-        atualizaRelogio();
+        //atualizaRelogio();
     }
 
     public void invocarPlataformas() 
     {
         int random =Greenfoot.getRandomNumber(3);
         int random2 =Greenfoot.getRandomNumber(2);
-        if (CONTADOR%150==0)
+        if (CONTADOR%150==0 && conta_plataformas<34)
         {
             if (random==0 && altura_anterior !=2)
             {
@@ -99,13 +111,24 @@ public class Jogo3 extends World
                 addObject(new PlataformaGelo(),getWidth()-1,ALTURA3);
                 altura_anterior = random;
             }
-            
+       
+            conta_plataformas++;
         }
+        
+        
+        
+        if(CONTADOR%150==0 && conta_plataformas==30)
+        {
+                addObject(new Plataforma_Final(),getWidth()-1,640);
+                addObject(new Bandeira_Finish(),getWidth()-1,530);
+                
+        }
+       
         CONTADOR++;
         
     }
 
-    private void atualizaRelogio()
+    /*private void atualizaRelogio()
     {
         contador++;        
         if(contador%61==0)
@@ -121,7 +144,8 @@ public class Jogo3 extends World
             }
         }        
         Options.updateText(escreverClock,clock,TAMANHOTEXTO, clock.getCor());
-    }
+    }*/
+    
 
     public void invocarMar(){
         contadorMar++;
