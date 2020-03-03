@@ -21,8 +21,6 @@ public class Jogo3 extends World
     private int CONTADOR;
     private int altura_anterior;
     private int conta_plataformas;
-    
-    
     public Jogo3()
     {    
         super(1200, 700, 1); 
@@ -33,10 +31,10 @@ public class Jogo3 extends World
         conta_plataformas=0;
         
     }
-    
+
     private void prepare()
     {
-        
+
         setPaintOrder(Texto.class, GameOver.class, Restart.class, Player1.class, Player2.class, Pinguim.class, PlataformaGelo.class);
         Mar mar = new Mar();
         addObject(mar,603,getHeight() -30);
@@ -59,25 +57,17 @@ public class Jogo3 extends World
         addObject(scoreP2, getWidth()-285/2,175);
         addObject(new Texto(Player1.getNome(),TAMANHOTEXTO, new Color(0,0,0)),285/2,80);
         addObject(new Texto(Player2.getNome(),TAMANHOTEXTO, new Color(0,0,0)),getWidth()-285/2,80);
-        
 
         addObject(new Plataforma_Inicial(),400,ALTURA2);
 
         addObject(new Bandeira_Start(),400,348);
-
-        
     }
 
     public void act(){
         invocarPlataformas();
         invocarMar();
-<<<<<<< HEAD
-        //atualizaRelogio();
-=======
-        atualizaRelogio();
         Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
         Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
->>>>>>> 6455072b89ae272b7936c9f43a673d8a908a41a6
     }
 
     public void invocarPlataformas() 
@@ -86,39 +76,55 @@ public class Jogo3 extends World
         int random2 =Greenfoot.getRandomNumber(2);
         if (CONTADOR%150==0 && conta_plataformas<34)
         {
-            if (random==0 && altura_anterior !=2)
+            while(altura_anterior==2 && random ==0)
             {
+                random = Greenfoot.getRandomNumber(3);
+            }
+            switch (random)
+            {
+                case 0:
                 addObject(new PlataformaGelo(),getWidth()-1,ALTURA1);
-                altura_anterior = random;
-            }
-            
-            if (random==0 && altura_anterior ==2)
-            {
-                if(random2==0)
-                {
-                    addObject(new PlataformaGelo(),getWidth()-1,ALTURA2);
-                }
-                
-                else
-                {
-                    addObject(new PlataformaGelo(),getWidth()-1,ALTURA3);
-                }
-                altura_anterior = random2+1;
-            }
-            
-            if (random==1)
-            {
+                break;
+                case 1:
                 addObject(new PlataformaGelo(),getWidth()-1,ALTURA2);
-                altura_anterior = random;
-            }
-            
-            if (random==2)
-            {
+                break;
+                case 2:
                 addObject(new PlataformaGelo(),getWidth()-1,ALTURA3);
-                altura_anterior = random;
-            }
-       
+                break;
+            }       
             conta_plataformas++;
+            altura_anterior=random;
+            // if (random==0 && altura_anterior !=2)
+            // {
+            // addObject(new PlataformaGelo(),getWidth()-1,ALTURA1);
+            // altura_anterior = random;
+            // }
+
+            // if (random==0 && altura_anterior ==2)
+            // {
+            // if(random2==0)
+            // {
+            // addObject(new PlataformaGelo(),getWidth()-1,ALTURA2);
+            // }
+
+            // else
+            // {
+            // addObject(new PlataformaGelo(),getWidth()-1,ALTURA3);
+            // }
+            // altura_anterior = random2+1;
+            // }
+
+            // if (random==1)
+            // {
+            // addObject(new PlataformaGelo(),getWidth()-1,ALTURA2);
+            // altura_anterior = random;
+            // }
+
+            // if (random==2)
+            // {
+            // addObject(new PlataformaGelo(),getWidth()-1,ALTURA3);
+            // altura_anterior = random;
+            // }
         }
         
         
@@ -131,7 +137,7 @@ public class Jogo3 extends World
         }
        
         CONTADOR++;
-        
+
     }
 
     /*private void atualizaRelogio()
