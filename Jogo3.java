@@ -72,7 +72,7 @@ public class Jogo3 extends World
     {
         int random =Greenfoot.getRandomNumber(3);
         int random2 =Greenfoot.getRandomNumber(2);
-        if (CONTADOR%150==0 && conta_plataformas<34)
+        if (CONTADOR%150==0 && conta_plataformas<31)
         {
             while(altura_anterior==2 && random ==0)
             {
@@ -95,7 +95,7 @@ public class Jogo3 extends World
         }       
         
         
-        if(CONTADOR%150==0 && conta_plataformas==40)
+        if(CONTADOR%150==0 && conta_plataformas==30)
         {
                 addObject(new Plataforma_Final(),getWidth()-1,640);                
         }
