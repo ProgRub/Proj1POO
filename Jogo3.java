@@ -21,7 +21,7 @@ public class Jogo3 extends World
     private int conta_plataformas;
     private boolean control, stop;
     private static boolean P1Chegou, P2Chegou;
-    private final int NUMPLATAFORMASPARAGANHAR=30;
+    private final int NUMPLATAFORMASPARAGANHAR=20;
     public Jogo3()
     {    
         super(1200, 700, 1); 
@@ -143,7 +143,7 @@ public class Jogo3 extends World
     {
         if(P1chegou && P2chegou)
         {
-            Greenfoot.setWorld(new MenuInicial(false));   
+            Greenfoot.setWorld(new Victory());   
         }
     }
 }

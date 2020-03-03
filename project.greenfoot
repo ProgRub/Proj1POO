@@ -185,7 +185,7 @@ dependency139.from=NextLevel
 dependency139.to=Jogo2
 dependency139.type=UsesDependency
 dependency14.from=Jogo3
-dependency14.to=MenuInicial
+dependency14.to=Victory
 dependency14.type=UsesDependency
 dependency140.from=NextLevel
 dependency140.to=Stage2Complete
@@ -723,13 +723,8 @@ editor.fx.0.width=812
 editor.fx.0.x=524
 editor.fx.0.y=76
 height=838
-<<<<<<< Updated upstream
-package.numDependencies=220
-package.numTargets=73
-=======
 package.numDependencies=223
-package.numTargets=72
->>>>>>> Stashed changes
+package.numTargets=73
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -1257,6 +1252,6 @@ target9.x=0
 target9.y=0
 version=3.0.0
 width=1550
-world.lastInstantiated=Jogo3
+world.lastInstantiated=MenuInicial
 xPosition=0
 yPosition=0
