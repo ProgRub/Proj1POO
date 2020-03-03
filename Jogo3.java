@@ -49,12 +49,12 @@ public class Jogo3 extends World
         addObject(new Esquimó1(),390,300);
         addObject(new Esquimó2(),410,300);
 
-        addObject(new Vida_player1(), 285/2, 125);
-        addObject(new Vida_player2(), getWidth()-285/2, 125);
+        //addObject(new Vida_player1(), 285/2, 125);
+        //addObject(new Vida_player2(), getWidth()-285/2, 125);
         scoreP1 = new Texto(""+Player1.getScore(),TAMANHOTEXTO, new Color(0,0,0));
-        addObject(scoreP1, 285/2,175);
+        addObject(scoreP1, 285/2, 125);
         scoreP2 = new Texto(""+Player2.getScore(),TAMANHOTEXTO, new Color(0,0,0));
-        addObject(scoreP2, getWidth()-285/2,175);
+        addObject(scoreP2, getWidth()-285/2, 125);
         addObject(new Texto(Player1.getNome(),TAMANHOTEXTO, new Color(0,0,0)),285/2,80);
         addObject(new Texto(Player2.getNome(),TAMANHOTEXTO, new Color(0,0,0)),getWidth()-285/2,80);
 
