@@ -1,21 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Victory here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Victory extends World
 {
-
-    /**
-     * Constructor for objects of class Victory.
-     * 
-     */
+    private int finalScore;
+    private Texto score;
+    
     public Victory()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+    {   
         super(1200, 700, 1); 
+        Greenfoot.playSound("victory.mp3");
+        prepare();
+    }
+    
+    public void prepare(){
+        finalScore = Player1.getScore() + Player2.getScore();
+        score = new Texto("FINAL SCORE: "+finalScore,40, new Color(255, 255, 255));
+        addObject(score, getWidth()/2 , getHeight()/2 +100);
     }
 }
