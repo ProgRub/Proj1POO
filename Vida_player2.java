@@ -14,7 +14,6 @@ public class Vida_player2 extends Player2
      */
     private GreenfootImage dez, nove, oito, sete, seis, cinco, quatro, tres, dois, um;
     private Player2 P2=null;
-    private Nave2 N2=null;
 
     public Vida_player2()
     {

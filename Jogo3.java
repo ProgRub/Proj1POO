@@ -13,8 +13,6 @@ public class Jogo3 extends World
     private final int ALTURA2=400;
     private final int ALTURA3=500;
     private int tempo=120;
-    //private Texto clock;
-    //private String escreverClock = "2:00";
     private Texto scoreP1;
     private Texto scoreP2;
     private final int TAMANHOTEXTO=45;
@@ -22,6 +20,8 @@ public class Jogo3 extends World
     private int altura_anterior;
     private int conta_plataformas;
     private boolean control, stop;
+    private static boolean P1Chegou, P2Chegou;
+    private final int NUMPLATAFORMASPARAGANHAR=30;
     public Jogo3()
     {    
         super(1200, 700, 1); 
@@ -32,6 +32,8 @@ public class Jogo3 extends World
         conta_plataformas=0;
         control = false;
         stop = false;
+        P1Chegou=false;
+        P2Chegou=false;
     }
 
     private void prepare()
@@ -43,11 +45,9 @@ public class Jogo3 extends World
         Mar mar2 = new Mar();
         addObject(mar2,1012,getHeight() -30);
 
-        
 
         addObject(new Esquimó1(),390,300);
         addObject(new Esquimó2(),410,300);
-
 
         addObject(new Vida_player1(), 285/2, 125);
         addObject(new Vida_player2(), getWidth()-285/2, 125);
@@ -69,13 +69,24 @@ public class Jogo3 extends World
         gameOver(Player1.getNumeroVidas(), Player2.getNumeroVidas());
         Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
         Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
+        vitoria(P1Chegou,P2Chegou);
+    }
+
+    public static void setP1Chegou(boolean x)
+    {
+        P1Chegou=x;
+    }
+
+    public static void setP2Chegou(boolean x)
+    {
+        P2Chegou=x;
     }
 
     public void invocarPlataformas() 
     {
         int random =Greenfoot.getRandomNumber(3);
         int random2 =Greenfoot.getRandomNumber(2);
-        if (CONTADOR%150==0 && conta_plataformas<31)
+        if (CONTADOR%150==0 && conta_plataformas<NUMPLATAFORMASPARAGANHAR+1)
         {
             while(altura_anterior==2 && random ==0)
             {
@@ -96,18 +107,16 @@ public class Jogo3 extends World
             conta_plataformas++;
             altura_anterior=random;
         }       
-        
-        
-        if(CONTADOR%150==0 && conta_plataformas==30)
+
+        if(CONTADOR%150==0 && conta_plataformas==NUMPLATAFORMASPARAGANHAR)
         {
-                addObject(new Plataforma_Final(),getWidth()-1,640);   
-                addObject(new Bandeira_Finish(),getWidth()-1,530);
+            addObject(new Plataforma_Final(),getWidth()-1,640);   
+            addObject(new Bandeira_Finish(),getWidth()-1,530);
         }
-       
+
         CONTADOR++;
 
     }
-    
 
     public void invocarMar(){
         contadorMar++;
@@ -127,6 +136,14 @@ public class Jogo3 extends World
                 control =true;
                 stop =false;
             }
+        }
+    }
+
+    private void vitoria(boolean P1chegou, boolean P2chegou)
+    {
+        if(P1chegou && P2chegou)
+        {
+            Greenfoot.setWorld(new MenuInicial(false));   
         }
     }
 }

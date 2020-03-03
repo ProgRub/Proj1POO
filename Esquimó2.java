@@ -17,7 +17,7 @@ public class Esquimó2 extends Player2
     private boolean podeSaltar=false;
     private boolean saltou=false;
     private boolean andandoParaEsquerda;
-    private static boolean P1morreu=false;
+    private static boolean P1morreu;
     
     public Esquimó2()
     {
@@ -26,6 +26,7 @@ public class Esquimó2 extends Player2
         animacao[2] = new GreenfootImage(cor+"/Jogo3/3.png");
         animacao[3] = new GreenfootImage(cor+"/Jogo3/4.png");
         animacao[4] = new GreenfootImage(cor+"/Jogo3/5.png");
+        P1morreu=false;
         contador=0;
         indice=0;
     }
@@ -55,7 +56,7 @@ public class Esquimó2 extends Player2
                         animacao[i].mirrorHorizontally();
                     }
                 }
-                setLocation(getX()-2, getY());
+                setLocation(getX()-3, getY());
                 andandoParaEsquerda=true;
                 animarMove();
             }
@@ -66,7 +67,7 @@ public class Esquimó2 extends Player2
                         animacao[i].mirrorHorizontally();
                     }
                 }
-                setLocation(getX()+2, getY());
+                setLocation(getX()+3, getY());
                 andandoParaEsquerda=false;
                 animarMove();
             }
@@ -98,6 +99,10 @@ public class Esquimó2 extends Player2
             setLocation(getX(),plat.getY()- plat.getImage().getHeight()/2-getImage().getHeight()/2);
             tempoQueda=0;
             podeSaltar=true;
+            if (plat instanceof Plataforma_Final)
+            {
+                Jogo3.setP2Chegou(true);
+            }
         }
         plat=null;
     }  

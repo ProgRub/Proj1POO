@@ -11,7 +11,7 @@ public class Esquimó1 extends Player1
     private boolean podeSaltar=false;
     private boolean saltou=false;
     private boolean andandoParaEsquerda;
-    private static boolean P2morreu=false;
+    private static boolean P2morreu;
 
     public Esquimó1()
     {
@@ -20,6 +20,7 @@ public class Esquimó1 extends Player1
         animacao[2] = new GreenfootImage(cor+"/Jogo3/3.png");
         animacao[3] = new GreenfootImage(cor+"/Jogo3/4.png");
         animacao[4] = new GreenfootImage(cor+"/Jogo3/5.png");
+        P2morreu=false;
         contador=0;
         indice=0;
     }
@@ -84,14 +85,18 @@ public class Esquimó1 extends Player1
 
     protected void queda(){
         Actor plat = getOneObjectAtOffset(0,tempoQueda+getImage().getHeight()/2, PlataformaGelo.class);
-        if (plat==null   && !saltou){
+        if (plat==null  && !saltou){
             setLocation(getX(),getY()+tempoQueda);
             tempoQueda++;
         }
-        else if (plat!=null ){
+        else if (plat!=null){
             setLocation(getX(),plat.getY()- plat.getImage().getHeight()/2-getImage().getHeight()/2);
             tempoQueda=0;
             podeSaltar=true;
+            if (plat instanceof Plataforma_Final)
+            {
+                Jogo3.setP1Chegou(true);
+            }
         }
         plat=null;
     }  
@@ -113,12 +118,12 @@ public class Esquimó1 extends Player1
             }
         }
     }  
-    
+
     public static void setP2Morreu(boolean x)
     {
         P2morreu = x;
     }
-    
+
     public void cair(){
         if (intersects(getWorld().getObjects(Mar.class).get(0))){
             numeroVidas -= 10;
@@ -126,7 +131,7 @@ public class Esquimó1 extends Player1
             saltou=true;
             animacao[indice].setTransparency(animacao[indice].getTransparency()-5);
         }
-        
+
         if(animacao[indice].getTransparency() <=0){
             getWorld().removeObject(this);
         }
