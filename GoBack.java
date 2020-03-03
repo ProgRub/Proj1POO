@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GoBack extends Stage
 {
-    GreenfootImage image1,image2;
+    private GreenfootImage image1,image2;
     
     public GoBack(){
         image1 = new GreenfootImage("goBack1.png"); //sem brilho
@@ -27,7 +27,7 @@ public class GoBack extends Stage
                 Greenfoot.setWorld(new Stage1Complete());
             }
             else{
-            Greenfoot.setWorld(new Stage2Complete());
+                Greenfoot.setWorld(new Stage2Complete());
         }
     }
     }  

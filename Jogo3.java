@@ -21,6 +21,7 @@ public class Jogo3 extends World
     private int CONTADOR;
     private int altura_anterior;
     private int conta_plataformas;
+    private boolean control, stop;
     public Jogo3()
     {    
         super(1200, 700, 1); 
@@ -29,7 +30,8 @@ public class Jogo3 extends World
         CONTADOR = 150;
         altura_anterior=0; //o valor 0 não interfere com a escolha da altura na primeira interação, apenas serve para inicializar a variável
         conta_plataformas=0;
-        
+        control = false;
+        stop = false;
     }
 
     private void prepare()
@@ -64,6 +66,7 @@ public class Jogo3 extends World
     public void act(){
         invocarPlataformas();
         invocarMar();
+        gameOver(Player1.getNumeroVidas(), Player2.getNumeroVidas());
         Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
         Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
     }
@@ -97,7 +100,8 @@ public class Jogo3 extends World
         
         if(CONTADOR%150==0 && conta_plataformas==30)
         {
-                addObject(new Plataforma_Final(),getWidth()-1,640);                
+                addObject(new Plataforma_Final(),getWidth()-1,640);   
+                addObject(new Bandeira_Finish(),getWidth()-1,530);
         }
        
         CONTADOR++;
@@ -113,5 +117,17 @@ public class Jogo3 extends World
         }
     }
 
+    private void gameOver(int vidaJogador1, int vidaJogador2){
+        if ((vidaJogador1 <=0 || vidaJogador2 <= 0) && control == false ){
+            addObject(new GameOver(),getWidth()/2,getHeight()/2);
+            addObject(new Restart(),getWidth()/2,getHeight()/2 +150);
+            stop =true;
+            if (stop == true){
+                Greenfoot.playSound("gameOver.mp3");
+                control =true;
+                stop =false;
+            }
+        }
+    }
 }
 

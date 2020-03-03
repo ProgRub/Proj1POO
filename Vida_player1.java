@@ -12,7 +12,7 @@ public class Vida_player1 extends Player1
      * Act - do whatever the Vida_player1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    GreenfootImage dez, nove, oito, sete, seis, cinco, quatro, tres, dois, um;
+    private GreenfootImage dez, nove, oito, sete, seis, cinco, quatro, tres, dois, um;
     private Player1 P1=null;
     private Nave1 N1=null;
 

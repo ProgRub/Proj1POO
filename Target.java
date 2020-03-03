@@ -11,7 +11,7 @@ public class Target extends Jogos
     private int count;
     private final int TIMER;
     private int count2;
-    GreenfootImage semBrilho,comBrilho;
+    private GreenfootImage semBrilho,comBrilho;
     
     private int contador;
     public Target(){

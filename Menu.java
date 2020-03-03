@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Menu extends Stage
 {
-    GreenfootImage image1,image2;
+    private GreenfootImage image1,image2;
     
     public Menu(){
         image1 = new GreenfootImage("close1.png"); //sem brilho

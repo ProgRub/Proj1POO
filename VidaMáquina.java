@@ -2,10 +2,10 @@ import greenfoot.*;   //(World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class VidaMáquina extends Máquina
 {
-   int health=Máquina.getVida();
-   int healthBarComprimento = 1000;
-   int healthBarAltura = 15;
-   final int percentagemDeVida = (int)healthBarComprimento/health;
+   private int health=Máquina.getVida();
+   private int healthBarComprimento = 1000;
+   private int healthBarAltura = 15;
+   private final int percentagemDeVida = (int)healthBarComprimento/health;
    
    public VidaMáquina(){
        atualiza();

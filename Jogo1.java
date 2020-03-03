@@ -28,7 +28,7 @@ public class Jogo1 extends World
 
         auxNuvem = 0;
         auxNuvem2 = 0;
-        setPaintOrder(Texto.class,GameOver.class, Restart.class,VidaMáquina.class,Nuvem.class,Relâmpago.class, Gas.class,Gota.class );
+        setPaintOrder(Texto.class,GameOver.class, Restart.class,VidaMáquina.class,Nuvem.class,Relâmpago.class, Máquina.class, Gas.class,Gota.class );
 
         auxFundo = -1;
         fundo1 = new GreenfootImage("jogo1_backgrounds/jogo1_background_5.jpg");

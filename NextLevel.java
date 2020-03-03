@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class NextLevel extends Stage
 {
-    GreenfootImage image1,image2;
+    private GreenfootImage image1,image2;
     
     public NextLevel(){
         image1 = new GreenfootImage("nextLevel1.png"); //sem brilho

@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class PlayersScore extends Stage
 {
-    GreenfootImage image1,image2;
+    private GreenfootImage image1,image2;
     
     public PlayersScore(){
         image1 = new GreenfootImage("playersScore1.png"); //sem brilho
