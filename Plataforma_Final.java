@@ -19,8 +19,7 @@ public class Plataforma_Final extends PlataformaGelo
     public Plataforma_Final()
     {
         contador =0;
-        image = new GreenfootImage("plat_final.png");
-        setImage(image);
+        setImage("plat_final.png");
     }
     
     public void act() 

@@ -9,64 +9,66 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Pinguim extends Jogos
 {
     private static int contador;
-    GreenfootImage pinguim1,pinguim2,pinguim3,pinguimCaindo;
+    private GreenfootImage[] animacao;
     private boolean caindo =false;
+    private int indice;
     public Pinguim(){
-        pinguim1 = new GreenfootImage("pinguim1.png");
-        pinguim2 = new GreenfootImage("pinguim2.png");
-        pinguim3 = new GreenfootImage("pinguim3.png");
-        pinguimCaindo = new GreenfootImage("pinguimCaindo.png");
-        setImage(pinguim1);
+        animacao = new GreenfootImage[4];
+        indice=0;
+        animacao[0] = new GreenfootImage("pinguim1.png");
+        animacao[1] = new GreenfootImage("pinguim2.png");
+        animacao[2] = new GreenfootImage("pinguim3.png");
+        animacao[3] = new GreenfootImage("pinguimCaindo.png");
+        setImage(animacao[indice]);
         contador=0;
         Greenfoot.playSound("penguin.mp3");
         caindo = false;
     }
+
     public void act() 
     {
-       move(-1);
-       animar();
-       emCimaPlataforma();
-       desaparece();
-       caindo();
+        move(-1);
+        animar();
+        emCimaPlataforma();
+        desaparece();
+        caindo();
     } 
-    
+
     public void animar(){
-        if(caindo == false){
+        if(!caindo){
             contador++;
             if (contador%10==0){
-            if(getImage() == pinguim1){
-                setImage(pinguim2);
+                indice++;
+                if (indice>animacao.length-2)
+                {
+                    indice=0;
+                }
+                setImage(animacao[indice]);
+                contador=0;
             }
-            else if (getImage() == pinguim2){
-                setImage(pinguim3);
-            }
-            else if (getImage() == pinguim3){
-                setImage(pinguim2);
-            }else if (getImage() == pinguimCaindo){
-                setRotation(0);
-                setImage(pinguim1);
-            }
-        contador=0;
+        }
     }
-    }
-}
-    
+
     public void emCimaPlataforma(){
-        if (!isTouching(PlataformaGelo.class)){
+        if (!isTouching(PlataformaGelo.class))
+        {
             setLocation(getX(), getY() +4);
             caindo=true;
-        }else if (isTouching(PlataformaGelo.class) && caindo){
+        }
+        else if (isTouching(PlataformaGelo.class) && caindo)
+        {
             caindo=false;
         }
     }
-    
+
     public void caindo(){
         if(caindo){
-            setImage(pinguimCaindo);
+            indice=3;
+            setImage(animacao[indice]);
             turn(10);
+        }
     }
-    }
-    
+
     public void desaparece(){
         if (getY() == getWorld().getHeight()-1){
             getWorld().removeObject(this);

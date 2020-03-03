@@ -92,6 +92,7 @@ public class Esquimó1 extends Player1
             tempoQueda=0;
             podeSaltar=true;
         }
+        
         plat=null;
     }  
 
@@ -115,13 +116,13 @@ public class Esquimó1 extends Player1
     
     public void cair(){
         
-        if (getY() == getWorld().getHeight() - 1){
-            numeroVidas -= 2;
-            transparencia -= 51;
+        if (intersects(getWorld().getObjects(Mar.class).get(0))){
+            numeroVidas -= 10;
+            saltou=true;
+            transparencia -=5;
             for (int i=0; i<5; i++){
                 animacao[i].setTransparency(transparencia);
             }
-            setLocation(getX(), 0);
         }
         
         if(transparencia <=0){

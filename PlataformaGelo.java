@@ -18,27 +18,22 @@ public class PlataformaGelo extends Jogos
         desaparecer();
         invocaPinguim();
     }    
-    
-        public void derreter(){
+
+    public void derreter(){
         if (Greenfoot.getRandomNumber(100)<=1){
             getWorld().addObject(new Gota(), getX() + Greenfoot.getRandomNumber(50)-50, getY());
         }
-        
-        if (getX() == 960){
-            imagemAtual.setTransparency(240);
-        }else if (getX() == 720){
-            imagemAtual.setTransparency(200);
-        }else if (getX() == 480){
-            imagemAtual.setTransparency(150);
-        }else if (getX() == 240){
-            imagemAtual.setTransparency(110);
-        }else if (getX() <= 40){
+        if(getX()%75==0)
+        {
+            imagemAtual.setTransparency(imagemAtual.getTransparency()-10);
+        }
+        else if(getX()<40)
+        {
             imagemAtual.setTransparency(70);
-            turn(-1);
-            setLocation(getX(), getY()+10);
+            turn(-2);
+            setLocation(getX(), getY()+8);
         }
         setImage(imagemAtual);
-       
     }
 
     public void podeCriarPinguim(){
@@ -48,12 +43,16 @@ public class PlataformaGelo extends Jogos
             pinguim=false;
         }
     }
+
     public void invocaPinguim(){
         if (pinguim == true){
-            getWorld().addObject(new Pinguim(), getX() + Greenfoot.getRandomNumber(50)-50, getY()-getImage().getHeight());
+            Pinguim peng = new Pinguim();
+            getWorld().addObject(peng, getX() + Greenfoot.getRandomNumber(50)-50, getY()-getImage().getHeight()/2 - peng.getImage().getHeight()/2);
             pinguim = false;
+            peng=null;
         }
     }
+
     public void desaparecer(){
         if (getX() == 0 || getY() == getWorld().getHeight()-1){
             Greenfoot.playSound("splash.mp3");

@@ -49,8 +49,6 @@ public class Jogo3 extends World
 
         addObject(new Vida_player1(), 285/2, 125);
         addObject(new Vida_player2(), getWidth()-285/2, 125);
-        //clock = new Texto(escreverClock,TAMANHOTEXTO, new Color(0,0,0));
-        //addObject(clock, getWidth()/2,125);
         scoreP1 = new Texto(""+Player1.getScore(),TAMANHOTEXTO, new Color(0,0,0));
         addObject(scoreP1, 285/2,175);
         scoreP2 = new Texto(""+Player2.getScore(),TAMANHOTEXTO, new Color(0,0,0));
@@ -94,69 +92,17 @@ public class Jogo3 extends World
             }       
             conta_plataformas++;
             altura_anterior=random;
-            // if (random==0 && altura_anterior !=2)
-            // {
-            // addObject(new PlataformaGelo(),getWidth()-1,ALTURA1);
-            // altura_anterior = random;
-            // }
-
-            // if (random==0 && altura_anterior ==2)
-            // {
-            // if(random2==0)
-            // {
-            // addObject(new PlataformaGelo(),getWidth()-1,ALTURA2);
-            // }
-
-            // else
-            // {
-            // addObject(new PlataformaGelo(),getWidth()-1,ALTURA3);
-            // }
-            // altura_anterior = random2+1;
-            // }
-
-            // if (random==1)
-            // {
-            // addObject(new PlataformaGelo(),getWidth()-1,ALTURA2);
-            // altura_anterior = random;
-            // }
-
-            // if (random==2)
-            // {
-            // addObject(new PlataformaGelo(),getWidth()-1,ALTURA3);
-            // altura_anterior = random;
-            // }
-        }
+        }       
         
         
-        
-        if(CONTADOR%150==0 && conta_plataformas==30)
+        if(CONTADOR%150==0 && conta_plataformas==40)
         {
-                addObject(new Plataforma_Final(),getWidth()-1,640);
-                addObject(new Bandeira_Finish(),getWidth()-1,530);
-                
+                addObject(new Plataforma_Final(),getWidth()-1,640);                
         }
        
         CONTADOR++;
 
     }
-
-    /*private void atualizaRelogio()
-    {
-        contador++;        
-        if(contador%61==0)
-        {
-            tempo--;
-            if(tempo%60<10)
-            {
-                escreverClock = "" + tempo/60 + ":0" + tempo%60;
-            }
-            else
-            {
-                escreverClock = "" + tempo/60 + ":" + tempo%60;
-            }
-        }        
-        Options.updateText(escreverClock,clock,TAMANHOTEXTO, clock.getCor());
-    }*/
     
 
     public void invocarMar(){

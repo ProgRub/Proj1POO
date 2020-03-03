@@ -11,5 +11,4 @@ comment4.params=
 comment4.target=void\ invocarPlataformas()
 comment5.params=
 comment5.target=void\ invocarMar()
-comment5.text=private\ void\ atualizaRelogio()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ contador++;\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ if(contador%61\=\=0)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ tempo--;\r\n\ \ \ \ \ \ \ \ \ \ \ \ if(tempo%60<10)\r\n\ \ \ \ \ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ escreverClock\ \=\ ""\ +\ tempo/60\ +\ "\:0"\ +\ tempo%60;\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ \ \ \ else\r\n\ \ \ \ \ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ escreverClock\ \=\ ""\ +\ tempo/60\ +\ "\:"\ +\ tempo%60;\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ }\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ Options.updateText(escreverClock,clock,TAMANHOTEXTO,\ clock.getCor());\r\n}
 numComments=6

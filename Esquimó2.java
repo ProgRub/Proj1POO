@@ -123,13 +123,13 @@ public class Esquimó2 extends Player2
     
     public void cair(){
         
-        if (getY() == getWorld().getHeight()- 1){
-            numeroVidas -= 2;
-            transparencia -= 51;
+        if (isTouching(Mar.class)){
+            numeroVidas -= 10;
+            saltou=true;
+            transparencia -=5;
             for (int i=0; i<5; i++){
                 animacao[i].setTransparency(transparencia);
             }
-            setLocation(getX(), 0);
         }
         
         if(transparencia <=0){
