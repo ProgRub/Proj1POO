@@ -12,9 +12,9 @@ public class Pinguim extends Jogos
     GreenfootImage pinguim1,pinguim2,pinguim3,pinguimCaindo;
     private boolean caindo =false;
     public Pinguim(){
-        pinguim1 = new GreenfootImage("pinguim11.png");
-        pinguim2 = new GreenfootImage("pinguim12.png");
-        pinguim3 = new GreenfootImage("pinguim13.png");
+        pinguim1 = new GreenfootImage("pinguim1.png");
+        pinguim2 = new GreenfootImage("pinguim2.png");
+        pinguim3 = new GreenfootImage("pinguim3.png");
         pinguimCaindo = new GreenfootImage("pinguimCaindo.png");
         setImage(pinguim1);
         contador=0;

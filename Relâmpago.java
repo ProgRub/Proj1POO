@@ -42,7 +42,6 @@ public class Relâmpago extends Target
     public void act() 
     {
         switchImage();
-        //removerRelampago();
     }
 
     public void switchImage()

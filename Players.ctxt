@@ -15,4 +15,6 @@ comment6.params=N2
 comment6.target=void\ perdeVidas(Nave2)
 comment7.params=P1Controls\ P2Controls\ key
 comment7.target=boolean\ podeMudar(java.lang.String[],\ java.lang.String[],\ java.lang.String)
-numComments=8
+comment8.params=
+comment8.target=void\ salvarPinguim()
+numComments=9

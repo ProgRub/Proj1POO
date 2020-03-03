@@ -71,7 +71,13 @@ public class Jogo3 extends World
     public void act(){
         invocarPlataformas();
         invocarMar();
+<<<<<<< HEAD
         //atualizaRelogio();
+=======
+        atualizaRelogio();
+        Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
+        Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
+>>>>>>> 6455072b89ae272b7936c9f43a673d8a908a41a6
     }
 
     public void invocarPlataformas() 
