@@ -136,4 +136,13 @@ public class Esquimó1 extends Player1
             getWorld().removeObject(this);
         }
     }
+    
+    public void salvarPinguim()
+    {
+        if (isTouching(Pinguim.class))
+        {
+            Player1.adicionaScore(50);
+            removeTouching(Pinguim.class);
+        }
+    }
 }

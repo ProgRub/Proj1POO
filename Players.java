@@ -129,13 +129,5 @@ public class Players extends Actor
         return true;
     }
     
-    public void salvarPinguim()
-    {
-        if (isTouching(Pinguim.class))
-        {
-            Player1.adicionaScore(50);
-            removeTouching(Pinguim.class);
-        }
-    }
 }
 
