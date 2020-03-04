@@ -16,7 +16,7 @@ public class Máquina extends Jogos
 
     private GreenfootImage explosion1,explosion2,explosion3,explosion4,explosion5,explosion6,explosion7,explosion8,explosion9,explosion10,explosion11,explosion12,explosion13;
     public Máquina(){
-        vida=1000;
+        vida=500;
         score=0;
         explosion1 = new GreenfootImage("ExplosionMáquina/1.png");
         explosion2 = new GreenfootImage("ExplosionMáquina/2.png");
