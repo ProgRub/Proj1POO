@@ -19,7 +19,7 @@ public class CamadaOzono extends Jogos
     public CamadaOzono(){
         imageCamada= getImage();
         aux=0;
-        vida=250;
+        vida=125;
     }
     
     public void act() 
