@@ -1,6 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-
 public class Jogo1 extends World
 {
     private Máquina máquina;
@@ -15,6 +14,8 @@ public class Jogo1 extends World
     private int contador, midway, auxNuvem, auxNuvem2, auxFundo;
     GreenfootImage fundo1, fundo2, fundo3, fundo4, fundo5, fundo6, fundo7, fundo8,fundo9;
     private final int TAMANHOTEXTO=45;
+    private GreenfootImage[] fundos;
+    private int indice;
 
     public Jogo1()
     {    
@@ -30,16 +31,12 @@ public class Jogo1 extends World
         setPaintOrder(Texto.class,GameOver.class, Restart.class,VidaMáquina.class,Nuvem.class,Relâmpago.class, Máquina.class, Gas.class,Gota.class );
 
         auxFundo = -1;
-        fundo1 = new GreenfootImage("jogo1_backgrounds/jogo1_background_5.jpg");
-        fundo2 = new GreenfootImage("jogo1_backgrounds/jogo1_background_10.jpg");
-        fundo3 = new GreenfootImage("jogo1_backgrounds/jogo1_background_15.jpg");
-        fundo4 = new GreenfootImage("jogo1_backgrounds/jogo1_background_20.jpg");
-        fundo5 = new GreenfootImage("jogo1_backgrounds/jogo1_background_25.jpg");
-        fundo6 = new GreenfootImage("jogo1_backgrounds/jogo1_background_30.jpg");
-        fundo7 = new GreenfootImage("jogo1_backgrounds/jogo1_background_35.jpg");
-        fundo8 = new GreenfootImage("jogo1_backgrounds/jogo1_background_40.jpg");
-        fundo9 = new GreenfootImage("jogo1_backgrounds/jogo1_background_45.jpg");
-
+        fundos= new GreenfootImage[9];
+        for(int i=0; i <fundos.length;i++)
+        {
+            fundos[i]=new GreenfootImage("jogo1_backgrounds/jogo1_background_"+(i+1)*5+".jpg");
+        }
+        indice=0;
     }
 
     private void prepare()
@@ -213,52 +210,11 @@ public class Jogo1 extends World
     {
         if (máquina.getVida() <= midway)
         {
-            if (auxFundo==0)
+            if (auxFundo%12==0 && auxFundo <=96)
             {
-                setBackground(fundo1);
+                setBackground(fundos[indice]);
+                indice++;
             }
-
-            if (auxFundo==12)
-            {
-                setBackground(fundo2);
-            }
-
-            if (auxFundo==24)
-            {
-                setBackground(fundo3);
-            }
-
-            if (auxFundo==36)
-            {
-                setBackground(fundo4);
-            }
-
-            if (auxFundo==48)
-            {
-                setBackground(fundo5);
-            }
-
-            if (auxFundo==60)
-            {
-                setBackground(fundo6);
-            }
-
-            if (auxFundo==72)
-            {
-                setBackground(fundo7);
-            }
-
-            if (auxFundo==84)
-            {
-                setBackground(fundo8);
-            }
-
-            if (auxFundo==96)
-            {
-                setBackground(fundo9);
-
-            }
-
             auxFundo++;
         }
     }
