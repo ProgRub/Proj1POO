@@ -84,7 +84,6 @@ public class Bala extends Players
                 P2Disparou.adicionaScore(10);
             }
             getWorld().getObjects(Máquina.class).get(0).tiraVida(1);
-            getWorldOfType(Jogo1.class).getObjects(VidaMáquina.class).get(0).perdeVida();
             return true;
         }
         return false;

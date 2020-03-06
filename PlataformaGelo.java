@@ -8,6 +8,8 @@ public class PlataformaGelo extends Jogos
     public PlataformaGelo(){
         podeCriarPinguim();
         imagemAtual = new GreenfootImage("platf1.png");
+        System.out.println(250-CamadaOzono.getVida());
+        imagemAtual.scale(imagemAtual.getWidth()-(250-CamadaOzono.getVida())/5, imagemAtual.getHeight());
         setImage(imagemAtual);
     }
 

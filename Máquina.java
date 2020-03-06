@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Máquina extends Jogos
 {           
-    private static int vida=500;
+    private static int vida;
     private static int score;
     private static int contador;
     private GreenfootImage explosao[] = new GreenfootImage[13];
@@ -18,19 +18,10 @@ public class Máquina extends Jogos
     public Máquina(){
         vida=500;
         score=0;
-        explosion1 = new GreenfootImage("ExplosionMáquina/1.png");
-        explosion2 = new GreenfootImage("ExplosionMáquina/2.png");
-        explosion3 = new GreenfootImage("ExplosionMáquina/3.png");
-        explosion4 = new GreenfootImage("ExplosionMáquina/4.png");
-        explosion5 = new GreenfootImage("ExplosionMáquina/5.png");
-        explosion6 = new GreenfootImage("ExplosionMáquina/6.png");
-        explosion7 = new GreenfootImage("ExplosionMáquina/7.png");
-        explosion8 = new GreenfootImage("ExplosionMáquina/8.png");
-        explosion9 = new GreenfootImage("ExplosionMáquina/9.png");
-        explosion10 = new GreenfootImage("ExplosionMáquina/10.png");
-        explosion11= new GreenfootImage("ExplosionMáquina/11.png");
-        explosion12 = new GreenfootImage("ExplosionMáquina/12.png");
-        explosion13 = new GreenfootImage("ExplosionMáquina/13.png");
+        for (int i=0; i< explosao.length; i++)
+        {
+            explosao[i] = new GreenfootImage("ExplosionMáquina/"+(i+1)+".png");
+        }
         contador=0;
     }
 

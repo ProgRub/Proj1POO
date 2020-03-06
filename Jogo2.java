@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Jogo2 extends World
 {
     private int LIMITE=200;
-    private int tempo=120;
+    private int tempo=10;
     private Texto clock;
     private Texto scoreP1;
     private Texto scoreP2;
@@ -19,7 +19,8 @@ public class Jogo2 extends World
     private boolean control,stop;
     private Nave1 nave1;
     private Nave2 nave2;
-    CamadaOzono camadaOzono;
+    private CamadaOzono camadaOzono;
+    private int quantoGas;
 
     public Jogo2()
     {    
@@ -29,6 +30,7 @@ public class Jogo2 extends World
         control =false;
         stop =false;
         contador =0;
+        quantoGas = Máquina.getVida()/20;
     }
 
     private void prepare()
@@ -99,7 +101,7 @@ public class Jogo2 extends World
 
     public void libertarGases() 
     {
-        if (Greenfoot.getRandomNumber(100)<3)
+        if (Greenfoot.getRandomNumber(100-quantoGas)<3)
         {
             addObject(new Gas(), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
         }
