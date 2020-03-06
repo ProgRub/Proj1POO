@@ -17,6 +17,8 @@ public class Bandeira_Start extends Jogos
     public Bandeira_Start()
     {
         contador =0;
+        GreenfootImage imagemAtual=getImage();
+        imagemAtual.scale(imagemAtual.getWidth()-(250-CamadaOzono.getVida())/5, imagemAtual.getHeight());
     }
     
     public void act() 

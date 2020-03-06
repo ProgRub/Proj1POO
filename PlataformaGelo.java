@@ -8,7 +8,6 @@ public class PlataformaGelo extends Jogos
     public PlataformaGelo(){
         podeCriarPinguim();
         imagemAtual = new GreenfootImage("platf1.png");
-        System.out.println(250-CamadaOzono.getVida());
         imagemAtual.scale(imagemAtual.getWidth()-(250-CamadaOzono.getVida())/5, imagemAtual.getHeight());
         setImage(imagemAtual);
     }
@@ -49,7 +48,7 @@ public class PlataformaGelo extends Jogos
     public void invocaPinguim(){
         if (pinguim == true){
             Pinguim peng = new Pinguim();
-            getWorld().addObject(peng, getX() + Greenfoot.getRandomNumber(50)-50, getY()-getImage().getHeight()/2 - peng.getImage().getHeight()/2);
+            getWorld().addObject(peng, getX() + Greenfoot.getRandomNumber(getImage().getWidth())-getImage().getWidth(), getY()-getImage().getHeight()/2 - peng.getImage().getHeight()/2);
             pinguim = false;
             peng=null;
         }
