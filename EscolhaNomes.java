@@ -19,6 +19,8 @@ public class EscolhaNomes extends World
     private String nome="";
     private boolean flag=true;
     private boolean recebeuNomeP1=false;
+    
+    
     public EscolhaNomes()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -26,7 +28,7 @@ public class EscolhaNomes extends World
         GreenfootImage bg = new GreenfootImage("chooseName.png");
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
-        prepare(); 
+        prepare();
     }
 
     /**

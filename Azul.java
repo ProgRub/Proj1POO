@@ -35,7 +35,7 @@ public class Azul extends Cor
             else{
                 Player2.setColor("Blue");
                 MenuInicial.getMusica().stop();
-                Greenfoot.setWorld(new Jogo1());
+                Greenfoot.setWorld(new HowToPlay());
             }
         }
     }    

@@ -35,7 +35,7 @@ public class Preto extends Cor
             else{
                 Player2.setColor("Black");
                 MenuInicial.getMusica().stop();
-                Greenfoot.setWorld(new Jogo1());
+                Greenfoot.setWorld(new HowToPlay());
             }
         }
     }   

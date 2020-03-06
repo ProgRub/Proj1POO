@@ -20,6 +20,7 @@ public class EscolherCor extends World
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
         prepare(); 
+        HowToPlay.mudarJogo(1);
     }
     
     

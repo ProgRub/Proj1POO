@@ -13,6 +13,7 @@ public class Stage2Complete extends World
         setBackground(bg);
         prepare();
         IndividualScore.jogo1 = false;
+        HowToPlay.mudarJogo(3);
     }
     
     private void prepare()
