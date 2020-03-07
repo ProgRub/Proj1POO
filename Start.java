@@ -24,11 +24,11 @@ public class Start extends Stage
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
             if (getWorld() instanceof HowToPlay){
-                if(HowToPlay.jogoAtual() == "1"){
+                if(HowToPlay.jogoAtual() == 1){
                     Greenfoot.setWorld(new Jogo1());
-                }else if(HowToPlay.jogoAtual() == "2"){
+                }else if(HowToPlay.jogoAtual() == 2){
                     Greenfoot.setWorld(new Jogo2());
-                }else if(HowToPlay.jogoAtual() == "3"){
+                }else if(HowToPlay.jogoAtual() == 3){
                     Greenfoot.setWorld(new Jogo3());
                 }
             } 

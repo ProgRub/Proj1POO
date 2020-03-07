@@ -4,7 +4,7 @@ public class Jogo1 extends World
 {
     private Máquina máquina;
     private boolean control,stop;
-    private int tempo=120;
+    private int tempo=10;
     private String escreverClock = "2:00";
     private Texto scoreP1, scoreP2, clock;
     private Player1 P1;
