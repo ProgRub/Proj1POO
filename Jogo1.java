@@ -2,7 +2,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Jogo1 extends World
 {
-    private Máquina máquina;
     private boolean control;
     private int tempo = 120;
     private String escreverClock = "2:00";
@@ -46,7 +45,7 @@ public class Jogo1 extends World
         somChuva.setVolume(60);
         Chão chao= new Chão();
         addObject(chao,getWidth()/2,getHeight()-chao.getImage().getHeight()/2);
-        máquina = new Máquina();
+        Máquina máquina = new Máquina();
         addObject(máquina,getWidth()/2,getHeight()-chao.getImage().getHeight()-máquina.getImage().getHeight()/2);
         P1 = new Player1();
         addObject(P1,getWidth()/10,getHeight()-chao.getImage().getHeight()-P1.getImage().getHeight()/2+2);
@@ -140,7 +139,7 @@ public class Jogo1 extends World
      */
     private void cairGranizo() 
     {
-        if (máquina.getVida() > midway )
+        if (Máquina.getVida() > midway )
         {
             if (Greenfoot.getRandomNumber(100)<3)
             {
@@ -152,7 +151,7 @@ public class Jogo1 extends World
 
     private void cairNeve() 
     {
-        if (máquina.getVida() > midway ){
+        if (Máquina.getVida() > midway ){
             if (Greenfoot.getRandomNumber(100)<10)
             {
                 addObject(new Neve(), Greenfoot.getRandomNumber(getWidth()-1),0);
@@ -166,7 +165,7 @@ public class Jogo1 extends World
      */
     private void invocaTarget() 
     {   
-        if(máquina.getVida() <=midway)
+        if(Máquina.getVida() <=midway)
         {
             somAmbiente.stop();
             somChuva.play();
@@ -186,7 +185,7 @@ public class Jogo1 extends World
     }
 
     private void cairChuva(){
-        if (máquina.getVida() <= midway ){
+        if (Máquina.getVida() <= midway ){
             if (Greenfoot.getRandomNumber(100)<20)
             {
                 addObject(new Gota(), Greenfoot.getRandomNumber(getWidth()-1),0);
@@ -211,7 +210,7 @@ public class Jogo1 extends World
      * Métodos que sinalizam que a máquina perdeu metade da sua vida e a "fase" dos relâmpagos começará
      */
     private void aparecerNuvens(){
-        if (máquina.getVida() <= midway && auxNuvem == 0){
+        if (Máquina.getVida() <= midway && auxNuvem == 0){
             //3 objetos para a nuvem ficar mais escura
             addObject(new Nuvem(1), 0,2);
             addObject(new Nuvem(1), 0,2);
@@ -225,7 +224,7 @@ public class Jogo1 extends World
 
     private void trocaFundo()
     {
-        if (máquina.getVida() <= midway)
+        if (Máquina.getVida() <= midway)
         {
             if (auxFundo%12==0 && auxFundo <=96)
             {

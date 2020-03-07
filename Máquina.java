@@ -40,14 +40,20 @@ public class Máquina extends Jogos
     {
         vida-=valor;
     }
-
+    
+    /**
+     * Método que invoca objetos da classe Gas, de modo a mostrar que a máquina está a poluir a atmosfera
+     */
     private void libertaGas(){
         if (Greenfoot.getRandomNumber(100)>97 && vida > 0){
             Máquina maq = getWorld().getObjects(Máquina.class).get(0);
             getWorld().addObject(new Gas(),maq.getX()+Greenfoot.getRandomNumber(40)-10, maq.getY() - maq.getImage().getHeight()/2);
         }
     }
-
+    
+    /**
+     * Método que anima a explosão que acontece quando a máquina é destruída, toca o som da explosão e avança o mundo para mostrar o score
+     */
     private void maquinaDestruida(){
         if (vida <= 0 && contador%3==0){
             Jogo1.getSomChuva().stop();
