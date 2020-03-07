@@ -10,7 +10,7 @@ public class Pinguim extends Jogos
 {
     private static int contador;
     private GreenfootImage[] animacao;
-    private boolean caindo =false;
+    private boolean caindo;
     private int indice;
     public Pinguim(){
         animacao = new GreenfootImage[4];
@@ -37,11 +37,11 @@ public class Pinguim extends Jogos
     public void animar(){
         if(!caindo){
             contador++;
-            if (contador%10==0){
+            if (contador%8==0){
                 indice++;
                 if (indice>animacao.length-2)
                 {
-                    indice=0;
+                    indice=1;
                 }
                 setImage(animacao[indice]);
                 contador=0;

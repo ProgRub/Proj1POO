@@ -48,7 +48,7 @@ public class PlataformaGelo extends Jogos
     public void invocaPinguim(){
         if (pinguim == true){
             Pinguim peng = new Pinguim();
-            getWorld().addObject(peng, getX() + Greenfoot.getRandomNumber(getImage().getWidth())-getImage().getWidth(), getY()-getImage().getHeight()/2 - peng.getImage().getHeight()/2);
+            getWorld().addObject(peng, getX() - Greenfoot.getRandomNumber(getImage().getWidth()/2), getY()-getImage().getHeight()/2 - peng.getImage().getHeight()/2);
             pinguim = false;
             peng=null;
         }
