@@ -10,8 +10,8 @@ public class Start extends Stage
 {
     private GreenfootImage image1,image2;
     public Start(){
-        image1 = new GreenfootImage("START.png"); //sem brilho
-        image2 = new GreenfootImage("START (1).png"); //com brilho
+        image1 = new GreenfootImage("StartSemBrilho.png");
+        image2 = new GreenfootImage("StartComBrilho.png");
         setImage(image1);
     }
     
