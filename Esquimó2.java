@@ -17,16 +17,18 @@ public class Esquimó2 extends Player2
     private boolean podeSaltar=false;
     private boolean saltou=false;
     private boolean andandoParaEsquerda;
-    private static boolean P1morreu;
     
     public Esquimó2()
-    {
-        animacao[0] = new GreenfootImage(cor+"/Jogo3/1.png");
-        animacao[1] = new GreenfootImage(cor+"/Jogo3/2.png");
-        animacao[2] = new GreenfootImage(cor+"/Jogo3/3.png");
-        animacao[3] = new GreenfootImage(cor+"/Jogo3/4.png");
-        animacao[4] = new GreenfootImage(cor+"/Jogo3/5.png");
-        P1morreu=false;
+    {      
+        for(int i=0; i <animacao.length;i++)
+        {
+            animacao[i]=new GreenfootImage(cor+"/Jogo3/"+(i+1)+".png");
+        }
+        // animacao[0] = new GreenfootImage(cor+"/Jogo3/1.png");
+        // animacao[1] = new GreenfootImage(cor+"/Jogo3/2.png");
+        // animacao[2] = new GreenfootImage(cor+"/Jogo3/3.png");
+        // animacao[3] = new GreenfootImage(cor+"/Jogo3/4.png");
+        // animacao[4] = new GreenfootImage(cor+"/Jogo3/5.png");
         contador=0;
         indice=0;
     }
@@ -41,7 +43,7 @@ public class Esquimó2 extends Player2
 
     protected void move()
     {
-        if(numeroVidas >0 && !P1morreu){
+        if(numeroVidas > 0 && !P1morreu){
             if (Greenfoot.isKeyDown(up) && podeSaltar){
                 saltou=true;
                 podeSaltar=false;
@@ -136,7 +138,7 @@ public class Esquimó2 extends Player2
         if (isTouching(Mar.class)){
             numeroVidas -= 10;
             saltou=true;
-            Esquimó1.setP2Morreu(true);
+            Player1.setP2Morreu(true);
             animacao[indice].setTransparency(animacao[indice].getTransparency()-5);
         }
         

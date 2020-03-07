@@ -35,22 +35,11 @@ public class Missil extends Jogos
             setImage(Player1.getColor()+"/Missil.png");
         }
         Nave2EAlvo=alvoENave2;
-        getImage().scale(getImage().getWidth()/8, getImage().getHeight()/8);   
-        animaExplosao[0] = new GreenfootImage("ExplosionMisseis/1.png");
-        animaExplosao[1] = new GreenfootImage("ExplosionMisseis/2.png");
-        animaExplosao[2] = new GreenfootImage("ExplosionMisseis/3.png");
-        animaExplosao[3] = new GreenfootImage("ExplosionMisseis/4.png");
-        animaExplosao[4] = new GreenfootImage("ExplosionMisseis/5.png");
-        animaExplosao[5] = new GreenfootImage("ExplosionMisseis/6.png");
-        animaExplosao[6] = new GreenfootImage("ExplosionMisseis/7.png");
-        animaExplosao[7] = new GreenfootImage("ExplosionMisseis/8.png");
-        animaExplosao[8] = new GreenfootImage("ExplosionMisseis/9.png");
-        animaExplosao[9] = new GreenfootImage("ExplosionMisseis/10.png");
-        animaExplosao[10]= new GreenfootImage("ExplosionMisseis/11.png");
-        animaExplosao[11] = new GreenfootImage("ExplosionMisseis/12.png");
-        animaExplosao[12] = new GreenfootImage("ExplosionMisseis/13.png");
-        animaExplosao[13] = new GreenfootImage("ExplosionMisseis/14.png");
-        animaExplosao[14] = new GreenfootImage("ExplosionMisseis/15.png");
+        getImage().scale(getImage().getWidth()/8, getImage().getHeight()/8);
+        for (int i=0; i < animaExplosao.length; i++)
+        {
+            animaExplosao[i] = new GreenfootImage("ExplosionMisseis/"+(i+1)+".png");
+        }
         contador=0;
     }
 

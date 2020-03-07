@@ -1,6 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-
 /**
  * Write a description of class Player1 here.
  * 
@@ -21,7 +20,6 @@ public class Player1 extends Players
     private int contador;
     private int indice=0;
     private int indiceDeath=0;
-    private int contador1;
     protected static int score=0;
     private final int GRAVIDADE =15;
     private int tempoJump=GRAVIDADE;
@@ -32,34 +30,29 @@ public class Player1 extends Players
     private int controlBala;
     protected static int numeroVidas=10;
     private int auxDEATH;
+    protected static boolean P2morreu;
 
     public Player1()
     {
         contador=0;
-        contador1=0;
         controlBala=0;
 
         //animação movimento jogador:
-        animacao[0] = new GreenfootImage(cor+"/Idle.png");
-        animacao[1] = new GreenfootImage(cor+"/1.png");
-        animacao[2] = new GreenfootImage(cor+"/2.png");
-        animacao[3] = new GreenfootImage(cor+"/4.png");
-        animacao[4] = new GreenfootImage(cor+"/4.png");
-        animacao[5] = new GreenfootImage(cor+"/5.png");
-        animacao[6] = new GreenfootImage(cor+"/6.png");
+        animacao[0] = new GreenfootImage(cor+"/Idle.png");      
+        for(int i=1; i <animacao.length;i++)
+        {
+            animacao[i]=new GreenfootImage(cor+"/"+i+".png");
+        }
         setImage(animacao[indice]);
         andandoParaEsquerda = false;
 
-        //animação do jogador a "morrer"
-        animacaoDeath[0] = new GreenfootImage(cor+"/Death/1.png");
-        animacaoDeath[1] = new GreenfootImage(cor+"/Death/2.png");
-        animacaoDeath[2] = new GreenfootImage(cor+"/Death/3.png");
-        animacaoDeath[3] = new GreenfootImage(cor+"/Death/4.png");
-        animacaoDeath[4] = new GreenfootImage(cor+"/Death/5.png");
-        animacaoDeath[5] = new GreenfootImage(cor+"/Death/6.png");
-        animacaoDeath[6] = new GreenfootImage(cor+"/Death/7.png");
-        animacaoDeath[7] = new GreenfootImage(cor+"/Death/8.png");
+        //animação do jogador a "morrer"        
+        for(int i=0; i <animacaoDeath.length;i++)
+        {
+            animacaoDeath[i]=new GreenfootImage(cor+"/Death/"+(i+1)+".png");
+        }
         auxDEATH = 0;
+        P2morreu=false;
 
     }
 
@@ -70,6 +63,11 @@ public class Player1 extends Players
         disparar();        
         perdeVidas(this);
         animarMorte();
+    }
+
+    public static void setP2Morreu(boolean x)
+    {
+        P2morreu = x;
     }
 
     public static String getNome()
@@ -167,7 +165,7 @@ public class Player1 extends Players
 
     protected void move()
     {
-        if(numeroVidas >0){
+        if(numeroVidas > 0 &&!P2morreu){
             if (Greenfoot.isKeyDown(up) && podeSaltar){
                 saltou=true;
                 podeSaltar=false;
@@ -260,6 +258,7 @@ public class Player1 extends Players
             }
             if(auxDEATH%10==0)
             {
+                Player2.setP1Morreu(true);
                 setImage(animacaoDeath[indiceDeath]);
                 indiceDeath++;
                 if (indiceDeath>=animacaoDeath.length)

@@ -28,10 +28,10 @@ public class Relâmpago extends Target
     public Relâmpago()
     {
         somRelampago = new GreenfootSound ("relampago.mp3");
-        relampago[0] = new GreenfootImage("Lightning/1.png");
-        relampago[1] = new GreenfootImage("Lightning/2.png");
-        relampago[2] = new GreenfootImage("Lightning/3.png");
-        relampago[3] = new GreenfootImage("Lightning/4.png");
+        for (int i=0; i < relampago.length; i++)
+        {
+            relampago[i] = new GreenfootImage("Lightning/"+(i+1)+".png");
+        }
         setImage(relampago[indice]);
         indice++;
         somRelampago.play();

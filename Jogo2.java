@@ -9,14 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Jogo2 extends World
 {
     private int LIMITE=200;
-    private int tempo=120;
+    private int tempo=10;
     private Texto clock;
     private Texto scoreP1;
     private Texto scoreP2;
     private String escreverClock = "2:00";
     private final int TAMANHOTEXTO=45;
     private int contador;
-    private boolean control,stop;
+    private boolean control;
     private Nave1 nave1;
     private Nave2 nave2;
     private CamadaOzono camadaOzono;
@@ -28,7 +28,6 @@ public class Jogo2 extends World
         super(1200,700, 1); 
         prepare();
         control =false;
-        stop =false;
         contador =0;
         quantoGas = Máquina.getVida()/20;
     }
@@ -56,7 +55,7 @@ public class Jogo2 extends World
         addObject(scoreP2, getWidth()-285/2,645);
         addObject(new Texto(Player1.getNome(),TAMANHOTEXTO-10, new Color(255,255,255)),285/2,555);
         addObject(new Texto(Player2.getNome(),TAMANHOTEXTO-10, new Color(255,255,255)),getWidth()-285/2,555);
-        
+
     }
 
     public void act()
@@ -72,30 +71,33 @@ public class Jogo2 extends World
 
     private void atualizaRelogio()
     {
-        contador++;        
-        if(contador%61==0)
+        if (!control)
         {
-            tempo--;
-            if(tempo%60<10)
+            contador++;        
+            if(contador%61==0)
             {
-                escreverClock = "" + tempo/60 + ":0" + tempo%60;
+                tempo--;
+                if(tempo%60<10)
+                {
+                    escreverClock = "" + tempo/60 + ":0" + tempo%60;
+                }
+                else
+                {
+                    escreverClock = "" + tempo/60 + ":" + tempo%60;
+                }        
+            }
+            if (tempo <=10 && contador%61<30)
+            {
+                Options.updateText(escreverClock,clock,TAMANHOTEXTO, Color.RED);
             }
             else
             {
-                escreverClock = "" + tempo/60 + ":" + tempo%60;
-            }        
-        }
-        if (tempo <=10 && contador%61<30)
-        {
-            Options.updateText(escreverClock,clock,TAMANHOTEXTO, Color.RED);
-        }
-        else
-        {
-            Options.updateText(escreverClock,clock,TAMANHOTEXTO, Color.WHITE);
-        }
-        if(tempo==0)
-        {
-            Greenfoot.setWorld(new Stage2Complete());
+                Options.updateText(escreverClock,clock,TAMANHOTEXTO, Color.WHITE);
+            }
+            if(tempo==0)
+            {
+                Greenfoot.setWorld(new Stage2Complete());
+            }
         }
     }
 
@@ -131,15 +133,11 @@ public class Jogo2 extends World
     }
 
     private void gameOver(int vidaCamada, int vidaNave1, int vidaNave2){
-        if ( ((vidaNave1 <=0 && vidaNave2 <= 0 ) || vidaCamada <=0 || tempo == 0) && control == false){
+        if ( ((vidaNave1 <=0 || vidaNave2 <= 0 ) || vidaCamada <=0) && control == false){
             addObject(new GameOver(),getWidth()/2,getHeight()/2);
             addObject(new Restart(),getWidth()/2,getHeight()/2 +150);
-            stop =true;
-            if (stop == true){
-                Greenfoot.playSound("gameOver.mp3");
-                control =true;
-                stop =false;
-            }
+            Greenfoot.playSound("gameOver.mp3");
+            control =true;
         }
 
     }

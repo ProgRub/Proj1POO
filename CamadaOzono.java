@@ -13,13 +13,12 @@ public class CamadaOzono extends Jogos
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private GreenfootImage imageCamada;
-    private int aux;
     private static int vida;
     
     public CamadaOzono(){
         imageCamada= getImage();
-        aux=0;
         vida=125;
+        imageCamada.setTransparency(2*vida+5);
     }
     
     public void act() 
@@ -34,37 +33,8 @@ public class CamadaOzono extends Jogos
     {
         if (isTouching(Gas.class))
         {
-            if ( aux >= 5 && aux < 10)
-            {
-                imageCamada.setTransparency(200);
-            }
-            
-            if ( aux >= 10 && aux < 15)
-            {
-                imageCamada.setTransparency(150);
-                
-            }
-            
-            if ( aux >= 15 && aux < 20)
-            {
-                imageCamada.setTransparency(100);
-               
-            }
-            
-            if ( aux >= 20 && aux < 25)
-            {
-                imageCamada.setTransparency(50);
-                
-            }
-            
-            if ( aux >= 25)
-            {
-               imageCamada.setTransparency(0); 
-               
-            }
-            vida--;
-            aux++;
-            
+            imageCamada.setTransparency(2*vida+5);
+            vida--;           
             removeTouching(Gas.class);
             
         }

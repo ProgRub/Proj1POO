@@ -13,7 +13,7 @@ public class Players extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
 
-    private int aux;
+    protected boolean tocandoRelampago;
 
     public void act() 
     {
@@ -21,7 +21,7 @@ public class Players extends Actor
 
     public Players()
     {
-        aux = 15; 
+        tocandoRelampago = false;
     }
 
     protected void perdeVidas(Player1 P1)
@@ -29,23 +29,23 @@ public class Players extends Actor
         if(P1.getNumeroVidas()>0){
             if(isTouching(Granizo.class))
             {
-                P1.adicionaNumeroVidas(-1); 
+                P1.adicionaNumeroVidas(-10); 
                 P1.adicionaScore(-5);
                 removeTouching(Granizo.class);
             }
 
             if(isTouching(Relâmpago.class))
             {
-                if (aux==0)
+                if (!tocandoRelampago)
                 {
                     P1.adicionaNumeroVidas(-2);
                     P1.adicionaScore(-10);
-                    aux = 15;
+                    tocandoRelampago = true;
                 }
-                else
-                {
-                    aux--;
-                }
+            }
+            else
+            {
+                tocandoRelampago = false;
             }
 
             if(isTouching(Vida.class) )
@@ -68,21 +68,19 @@ public class Players extends Actor
                 P2.adicionaScore(-5);
                 removeTouching(Granizo.class);
             }
-
             if(isTouching(Relâmpago.class))
             {
-                if (aux==0)
+                if (!tocandoRelampago)
                 {
-                    P2.adicionaNumeroVidas(-2); 
+                    P2.adicionaNumeroVidas(-2);
                     P2.adicionaScore(-10);
-                    aux = 20;
-                }
-                else
-                {
-                    aux--;
+                    tocandoRelampago = true;
                 }
             }
-
+            else
+            {
+                tocandoRelampago = false;
+            }
             if(isTouching(Vida.class))
             {
                 P2.adicionaNumeroVidas(2); 
@@ -96,7 +94,6 @@ public class Players extends Actor
     {
         if(N1.getNumeroVidas()>0)
         {
-
             if(isTouching(Vida_jogo2.class))
             {
                 N1.adicionaNumeroVidas(2);
@@ -112,7 +109,7 @@ public class Players extends Actor
         {
             if(isTouching(Vida_jogo2.class))
             {
-                N2.adicionaNumeroVidas(1); 
+                N2.adicionaNumeroVidas(2); 
                 removeTouching(Vida_jogo2.class);
             }
 
@@ -128,6 +125,6 @@ public class Players extends Actor
         }
         return true;
     }
-    
+
 }
 
