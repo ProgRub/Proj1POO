@@ -6,4 +6,5 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ atualiza()
+comment3.text=\r\n\ M\u00E9todo\ que\ atualiza\ a\ healthbar\ que\ mostra\ ao\ jogador\ quanta\ vida\ a\ camada\ de\ ozono\ tem\r\n
 numComments=4

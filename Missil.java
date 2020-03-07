@@ -21,6 +21,10 @@ public class Missil extends Jogos
     private int indice=0;
     private boolean explosao=false;
 
+    /**
+     * Construtor que define qual o alvo do missil e este é "pintado" de acordo com a cor do alvo e
+     * define a altura limite depois da qual o missil já não é teleguiado
+     */
     public Missil(int valor,boolean alvoENave2, Nave1 N1, Nave2 N2)
     {
         limite=valor;
@@ -73,7 +77,10 @@ public class Missil extends Jogos
 
     }   
 
-    public void teleguiado(Nave2 alvo){
+    /**
+     * Métodos que vão teleguiar o míssil consoante a posição do alvo
+     */
+    private void teleguiado(Nave2 alvo){
         if(getY()>limite)
         {
             if (!getWorld().getObjects(Nave2.class).isEmpty())
@@ -84,7 +91,7 @@ public class Missil extends Jogos
         move(2);
     }    
 
-    public void teleguiado(Nave1 alvo){
+    private void teleguiado(Nave1 alvo){
         if(getY()>limite)
         {
             if (!getWorld().getObjects(Nave1.class).isEmpty())
@@ -95,14 +102,20 @@ public class Missil extends Jogos
         move(2);
     }
 
-    public void chegouAoFim(){
+    /**
+     * Método que verifica que este chegou a um limite do mundo
+     */
+    private void chegouAoFim(){
         if(isAtEdge())
         {
             explosao=true;
         }
     }
 
-    public void atingiuAlvo(Nave1 alvo)
+    /**
+     * Métodos que registam que o míssil atingiu uma das naves, retirando ao jogador cuja nave foi atingida vida e pontuação
+     */
+    private void atingiuAlvo(Nave1 alvo)
     {
         if (isTouching(Nave1.class))
         {
@@ -110,10 +123,11 @@ public class Missil extends Jogos
             Player1.adicionaScore(-5);
             setLocation(getX(), getY()-getImage().getHeight());
             explosao=true;
+            getImage().clear();
         }
     }
 
-    public void atingiuAlvo(Nave2 alvo)
+    private void atingiuAlvo(Nave2 alvo)
     {
         if (isTouching(Nave2.class))
         {
@@ -121,14 +135,17 @@ public class Missil extends Jogos
             Player2.adicionaScore(-5);
             setLocation(getX(), getY()-getImage().getHeight());
             explosao=true;
+            getImage().clear();
         }
     }
 
-    public void animaExplosao()
+    /**
+     * Método que anima a explosão do míssil quando este atinge uma nave
+     */
+    private void animaExplosao()
     {
         if (contador%3==0)
         {
-            getImage().clear();
             if(indice==0)
             {
                 Greenfoot.playSound("explosion.wav");

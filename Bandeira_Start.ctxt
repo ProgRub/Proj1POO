@@ -7,6 +7,7 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ permanecerParado()
+comment3.text=\r\n\ M\u00E9todo\ que\ move\ a\ bandeira\ de\ acordo\ com\ o\ movimento\ da\ plataforma\ inicial,\ onde\ a\ bandeira\ est\u00E1\r\n
 comment4.params=
 comment4.target=void\ desaparecer()
 numComments=5

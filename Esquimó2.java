@@ -24,11 +24,6 @@ public class Esquimó2 extends Player2
         {
             animacao[i]=new GreenfootImage(cor+"/Jogo3/"+(i+1)+".png");
         }
-        // animacao[0] = new GreenfootImage(cor+"/Jogo3/1.png");
-        // animacao[1] = new GreenfootImage(cor+"/Jogo3/2.png");
-        // animacao[2] = new GreenfootImage(cor+"/Jogo3/3.png");
-        // animacao[3] = new GreenfootImage(cor+"/Jogo3/4.png");
-        // animacao[4] = new GreenfootImage(cor+"/Jogo3/5.png");
         contador=0;
         indice=0;
     }

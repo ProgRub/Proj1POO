@@ -8,12 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bandeira_Finish extends Jogos
 {
-    /**
-     * Act - do whatever the Bandeira_Finish wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
-    
     private int contador;
     
     public Bandeira_Finish()
@@ -23,11 +17,13 @@ public class Bandeira_Finish extends Jogos
     
     public void act() 
     {
-        
         permanecerParado();
     } 
     
-    public void permanecerParado()
+    /**
+     * Método que move a bandeira de acordo com o movimento da plataforma final, que é onde esta bandeira estará
+     */
+    private void permanecerParado()
     {
         if (contador<100)
         {

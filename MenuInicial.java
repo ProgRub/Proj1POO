@@ -11,6 +11,10 @@ public class MenuInicial extends World
 
     private static GreenfootSound musica;
     private boolean reset;
+    
+    /**
+     * Construtor usado durante a simulação, que evita os controlos dos jogadores serem redefinidos depois de eles mudarem
+     */
     public MenuInicial(boolean resetControlos)
     {    
         super(1200,700, 1); 
@@ -23,6 +27,10 @@ public class MenuInicial extends World
         prepare();
         Greenfoot.setSpeed(50);
     }
+    
+    /**
+     * Construtor só usado no inicio da simulação, para definir os controlos que os jogadores podem mudar
+     */
     public MenuInicial()
     {    
         super(1200,700, 1); 
@@ -44,6 +52,9 @@ public class MenuInicial extends World
         resetStaticVariables();
     }
 
+    /**
+     * Método que faz um reset às variáveis static, nomeadamente aquelas relacionadas com os jogadores como os seus controlos, score e número de vidas
+     */
     private void resetStaticVariables(){
         if(reset)
         {

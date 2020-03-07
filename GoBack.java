@@ -9,26 +9,29 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class GoBack extends Stage
 {
     private GreenfootImage image1,image2;
-    
+
     public GoBack(){
         image1 = new GreenfootImage("goBack1.png"); //sem brilho
         image2 = new GreenfootImage("goBack2.png"); //com brilho
         setImage(image1);
     }
+
     public void act() 
     {
-       moveMouse(image2,image1);
-       clickMouse();
+        moveMouse(image2,image1);
+        clickMouse();
     }   
 
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
-            if(IndividualScore.jogo1){
+            if(IndividualScore.jogo1)
+            {
                 Greenfoot.setWorld(new Stage1Complete());
             }
-            else{
+            else
+            {
                 Greenfoot.setWorld(new Stage2Complete());
+            }
         }
-    }
     }  
 }

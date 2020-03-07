@@ -8,10 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CamadaOzono extends Jogos
 {
-    /**
-     * Act - do whatever the CamadaOzono wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     private GreenfootImage imageCamada;
     private static int vida;
     
@@ -29,14 +25,17 @@ public class CamadaOzono extends Jogos
     public static int getVida(){
         return vida;
     }
-    public void mudarTransparencia()
+    
+    /**
+     * Método que regista a perda de vida da camada de ozono e torna esta mais transparente de acordo com a vida que tem
+     */
+    private void mudarTransparencia()
     {
         if (isTouching(Gas.class))
         {
             imageCamada.setTransparency(2*vida+5);
             vida--;           
-            removeTouching(Gas.class);
-            
+            removeTouching(Gas.class);            
         }
     }
     

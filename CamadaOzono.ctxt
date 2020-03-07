@@ -9,4 +9,5 @@ comment3.params=
 comment3.target=int\ getVida()
 comment4.params=
 comment4.target=void\ mudarTransparencia()
+comment4.text=\r\n\ M\u00E9todo\ que\ regista\ a\ perda\ de\ vida\ da\ camada\ de\ ozono\ e\ torna\ esta\ mais\ transparente\ de\ acordo\ com\ a\ vida\ que\ tem\r\n
 numComments=5

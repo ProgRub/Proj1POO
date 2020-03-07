@@ -15,10 +15,10 @@ public class Mar extends Jogos
     public void act() 
     {
         move(-1);
-        invocar();
+        remove();
     }  
     
-    public void invocar(){
+    private void remove(){
         if (isAtEdge()){
             getWorld().removeObject(this);
     }

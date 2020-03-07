@@ -16,7 +16,10 @@ public class VidaCamadaOzono extends CamadaOzono
         atualiza();
     }    
     
-   public void atualiza(){
+   /**
+    * Método que atualiza a healthbar que mostra ao jogador quanta vida a camada de ozono tem
+    */
+   private void atualiza(){
        setImage(new GreenfootImage(healthBarComprimento + 2, healthBarAltura + 2));
        GreenfootImage myImage = getImage();
        health=CamadaOzono.getVida();

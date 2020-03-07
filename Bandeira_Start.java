@@ -8,10 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bandeira_Start extends Jogos
 {
-    /**
-     * Act - do whatever the Bandeira_Start wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     private int contador;
     
     public Bandeira_Start()
@@ -27,7 +23,10 @@ public class Bandeira_Start extends Jogos
         permanecerParado();
     } 
     
-    public void permanecerParado()
+    /**
+     * Método que move a bandeira de acordo com o movimento da plataforma inicial, onde a bandeira está
+     */
+    private void permanecerParado()
     {
         if (contador >650)
         {
@@ -37,7 +36,7 @@ public class Bandeira_Start extends Jogos
         
     }
     
-    public void desaparecer(){
+    private void desaparecer(){
         if (getX() == 0){
             getWorld().removeObject(this);
         }

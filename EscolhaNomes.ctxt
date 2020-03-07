@@ -10,4 +10,5 @@ comment3.params=
 comment3.target=void\ act()
 comment4.params=
 comment4.target=void\ escritaNome()
+comment4.text=\r\n\ M\u00E9todo\ que\ vai\ receber\ as\ teclas\ introduzidas\ pelo\ utilizador,\ construindo\ o\ nome\ do\ jogador\ e\ mostrando-o\ visualmente\r\n
 numComments=5

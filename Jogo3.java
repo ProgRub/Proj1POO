@@ -8,18 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Jogo3 extends World
 {
-    private int contadorMar, contador;
+    private int contadorMar;
     private final int ALTURA1=300;
     private final int ALTURA2=400;
     private final int ALTURA3=500;
-    private int tempo=120;
     private Texto scoreP1;
     private Texto scoreP2;
     private final int TAMANHOTEXTO=45;
-    private int CONTADOR;
+    private int contador;
     private int altura_anterior;
     private int conta_plataformas;
-    private boolean control, stop;
+    private boolean control;
     private static boolean P1Chegou, P2Chegou;
     private final int NUMPLATAFORMASPARAGANHAR=20;
     public Jogo3()
@@ -27,11 +26,10 @@ public class Jogo3 extends World
         super(1200, 700, 1); 
         contadorMar=0;
         prepare();
-        CONTADOR = 150;
+        contador = 150;
         altura_anterior=0; //o valor 0 não interfere com a escolha da altura na primeira interação, apenas serve para inicializar a variável
         conta_plataformas=0;
         control = false;
-        stop = false;
         P1Chegou=false;
         P2Chegou=false;
     }
@@ -45,12 +43,9 @@ public class Jogo3 extends World
         Mar mar2 = new Mar();
         addObject(mar2,1012,getHeight() -30);
 
-
         addObject(new Esquimó1(),390,300);
         addObject(new Esquimó2(),410,300);
 
-        //addObject(new Vida_player1(), 285/2, 125);
-        //addObject(new Vida_player2(), getWidth()-285/2, 125);
         scoreP1 = new Texto(""+Player1.getScore(),TAMANHOTEXTO, new Color(0,0,0));
         addObject(scoreP1, 285/2, 125);
         scoreP2 = new Texto(""+Player2.getScore(),TAMANHOTEXTO, new Color(0,0,0));
@@ -64,14 +59,20 @@ public class Jogo3 extends World
     }
 
     public void act(){
-        invocarPlataformas();
+        if(!control)
+        {
+            invocarPlataformas();
+            vitoria(P1Chegou,P2Chegou);
+        }
         invocarMar();
         gameOver(Player1.getNumeroVidas(), Player2.getNumeroVidas());
         Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
         Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
-        vitoria(P1Chegou,P2Chegou);
     }
 
+    /**
+     * Métodos que permitem na classe de Esquimó1 e 2 registar que estes chegaram à plataforma final
+     */
     public static void setP1Chegou(boolean x)
     {
         P1Chegou=x;
@@ -82,11 +83,13 @@ public class Jogo3 extends World
         P2Chegou=x;
     }
 
+    /**
+     * Método que permite invocar as plataformas de gelo que os jogadores utilizarão para chegar ao fim
+     */
     public void invocarPlataformas() 
     {
         int random =Greenfoot.getRandomNumber(3);
-        int random2 =Greenfoot.getRandomNumber(2);
-        if (CONTADOR%150==0 && conta_plataformas<NUMPLATAFORMASPARAGANHAR+1)
+        if (contador%150==0 && conta_plataformas<NUMPLATAFORMASPARAGANHAR+1)
         {
             while(altura_anterior==2 && random ==0)
             {
@@ -108,16 +111,14 @@ public class Jogo3 extends World
             altura_anterior=random;
         }       
 
-        if(CONTADOR%150==0 && conta_plataformas==NUMPLATAFORMASPARAGANHAR)
+        if(contador%150==0 && conta_plataformas==NUMPLATAFORMASPARAGANHAR)
         {
             addObject(new Plataforma_Final(),getWidth()-1,640);   
             addObject(new Bandeira_Finish(),getWidth()-1,530);
         }
-
-        CONTADOR++;
-
+        contador++;
     }
-
+    
     public void invocarMar(){
         contadorMar++;
         if(contadorMar == 200){
@@ -126,19 +127,21 @@ public class Jogo3 extends World
         }
     }
 
+    /**
+     * Método que verifica se um dos jogadores caiu e morreu, o que indica que ambos os jogadores, como equipa, perderam o jogo
+     */
     private void gameOver(int vidaJogador1, int vidaJogador2){
-        if ((vidaJogador1 <=0 || vidaJogador2 <= 0) && control == false ){
+        if ((vidaJogador1 <=0 || vidaJogador2 <= 0) && !control ){
             addObject(new GameOver(),getWidth()/2,getHeight()/2);
             addObject(new Restart(),getWidth()/2,getHeight()/2 +150);
-            stop =true;
-            if (stop == true){
-                Greenfoot.playSound("gameOver.mp3");
-                control =true;
-                stop =false;
-            }
+            Greenfoot.playSound("gameOver.mp3");
+            control =true;
         }
     }
 
+    /**
+     * Método que verifica se ambos os jogadores chegaram à plataforma final, o que indica que GANHARAM!!
+     */
     private void vitoria(boolean P1chegou, boolean P2chegou)
     {
         if(P1chegou && P2chegou)

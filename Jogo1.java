@@ -4,7 +4,7 @@ public class Jogo1 extends World
 {
     private Máquina máquina;
     private boolean control;
-    private int tempo=10;
+    private int tempo = 10;
     private String escreverClock = "2:00";
     private Texto scoreP1, scoreP2, clock;
     private Player1 P1;
@@ -19,8 +19,7 @@ public class Jogo1 extends World
 
     public Jogo1()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1200, 700, 1);
+        super(1200, 700, 1); 
         prepare();
         control =false;
         contador=0;
@@ -71,16 +70,19 @@ public class Jogo1 extends World
 
     public void act(){
         gameOver(P1.getNumeroVidas(),P2.getNumeroVidas()); 
-        cairGranizo();
-        cairNeve();
-        invocaTarget();
-        cairVida();
-        cairChuva();
-        aparecerNuvens();
+        if (!control)
+        {
+            cairGranizo();
+            cairNeve();
+            invocaTarget();
+            cairVida();
+            cairChuva();
+            aparecerNuvens();
+            atualizaRelogio();  
+        }
         trocaFundo();
         Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
         Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
-        atualizaRelogio();
     }
 
     public static GreenfootSound getSomChuva()
@@ -88,8 +90,11 @@ public class Jogo1 extends World
         return somChuva;
     }
 
+    /**
+     * Método que verifica se um dos jogadores morreu, se isto acontecer, os jogadores perderam o jogo
+     */
     private void gameOver(int vidaJogador1, int vidaJogador2){
-        if ((vidaJogador1 <=0 || vidaJogador2 <= 0) && control == false ){
+        if ((vidaJogador1 <=0 || vidaJogador2 <= 0) && !control ){
             addObject(new GameOver(),getWidth()/2,getHeight()/2);
             addObject(new Restart(),getWidth()/2,getHeight()/2 +150);
             Greenfoot.playSound("gameOver.mp3");
@@ -97,9 +102,45 @@ public class Jogo1 extends World
         }
     }
 
-    public void cairGranizo() 
+    /**
+     * Método que atualiza o tempo que falta para o nível acabar e, quando o tempo acaba,
+     * avança para o mundo onde os jogadore podem ver o score total e individual
+     */
+    private void atualizaRelogio()
     {
-        if (máquina.getVida() >midway )
+        contador++;        
+        if(contador%61==0)
+        {
+            tempo--;
+            if(tempo%60<10)
+            {
+                escreverClock = "" + tempo/60 + ":0" + tempo%60;
+            }
+            else
+            {
+                escreverClock = "" + tempo/60 + ":" + tempo%60;
+            }
+        }
+        if (tempo <=10 && contador%61<30)
+        {
+            Options.updateText(escreverClock,clock,TAMANHOTEXTO, Color.RED);
+        }
+        else
+        {
+            Options.updateText(escreverClock,clock,TAMANHOTEXTO, Color.WHITE);
+        }
+        if(tempo==0)
+        {
+            Greenfoot.setWorld(new Stage1Complete());
+        }
+    }
+    
+    /**
+     * Métodos que criam granizo e neve, respetivamente, enquanto a máquina tem mais de metade da sua vida inicial
+     */
+    private void cairGranizo() 
+    {
+        if (máquina.getVida() > midway )
         {
             if (Greenfoot.getRandomNumber(100)<3)
             {
@@ -109,47 +150,28 @@ public class Jogo1 extends World
 
     }
 
-    private void atualizaRelogio()
+    private void cairNeve() 
     {
-        if (!control)
-        {
-            contador++;        
-            if(contador%61==0)
+        if (máquina.getVida() > midway ){
+            if (Greenfoot.getRandomNumber(100)<10)
             {
-                tempo--;
-                if(tempo%60<10)
-                {
-                    escreverClock = "" + tempo/60 + ":0" + tempo%60;
-                }
-                else
-                {
-                    escreverClock = "" + tempo/60 + ":" + tempo%60;
-                }
-            }
-            if (tempo <=10 && contador%61<30)
-            {
-                Options.updateText(escreverClock,clock,TAMANHOTEXTO, Color.RED);
-            }
-            else
-            {
-                Options.updateText(escreverClock,clock,TAMANHOTEXTO, Color.WHITE);
-            }
-            if(tempo==0)
-            {
-                Greenfoot.setWorld(new Stage1Complete());
+                addObject(new Neve(), Greenfoot.getRandomNumber(getWidth()-1),0);
             }
         }
-
     }
-
-    public void invocaTarget() 
+    
+    /**
+     * Métodos que criam o alvo onde o relampago cairá e a chuva, respetivamente, após a máquina ter perdido metade da sua vida.
+     * Os relâmpagos cairão na posição atual do jogador para incentivar o movimento e dificultar o jogo
+     */
+    private void invocaTarget() 
     {   
         if(máquina.getVida() <=midway)
         {
             somAmbiente.stop();
             somChuva.play();
             int prob = Greenfoot.getRandomNumber(2);
-            if (Greenfoot.getRandomNumber(500)<3){
+            if (Greenfoot.getRandomNumber(400)<3){
                 Target target = new Target();
                 if (prob == 1 && !getObjects(Player1.class).isEmpty())
                 {
@@ -163,17 +185,7 @@ public class Jogo1 extends World
         }
     }
 
-    public void cairNeve() 
-    {
-        if (máquina.getVida() > midway ){
-            if (Greenfoot.getRandomNumber(100)<10)
-            {
-                addObject(new Neve(), Greenfoot.getRandomNumber(getWidth()-1),0);
-            }
-        }
-    }
-
-    public void cairChuva(){
+    private void cairChuva(){
         if (máquina.getVida() <= midway ){
             if (Greenfoot.getRandomNumber(100)<20)
             {
@@ -181,8 +193,12 @@ public class Jogo1 extends World
             }
         }
     }
+    
+    /**
+     * Método que cria corações que os jogadores podem apanhar para recuperarem vida que possam ter perdido
+     */
 
-    public void cairVida() 
+    private void cairVida() 
     {
         if (Greenfoot.getRandomNumber(500)<1)
         {
@@ -191,9 +207,12 @@ public class Jogo1 extends World
 
     }
 
-    public void aparecerNuvens(){
+    /**
+     * Métodos que sinalizam que a máquina perdeu metade da sua vida e a "fase" dos relâmpagos começará
+     */
+    private void aparecerNuvens(){
         if (máquina.getVida() <= midway && auxNuvem == 0){
-            //acrescentei 3 objetos para a nuvem ficar mais escura
+            //3 objetos para a nuvem ficar mais escura
             addObject(new Nuvem(1), 0,2);
             addObject(new Nuvem(1), 0,2);
             addObject(new Nuvem(1), 0,2);
@@ -204,7 +223,7 @@ public class Jogo1 extends World
         }
     }
 
-    public void trocaFundo()
+    private void trocaFundo()
     {
         if (máquina.getVida() <= midway)
         {

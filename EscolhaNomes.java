@@ -19,8 +19,7 @@ public class EscolhaNomes extends World
     private String nome="";
     private boolean flag=true;
     private boolean recebeuNomeP1=false;
-    
-    
+
     public EscolhaNomes()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -42,13 +41,15 @@ public class EscolhaNomes extends World
         int alt=getHeight();
         caixa=new Texto();
         caixa.setImage(new GreenfootImage(500, 50));
-        caixa.getImage().setColor(Color.WHITE);
+        caixa.getImage().setColor(Color.BLACK);
         caixa.getImage().fillRect(0,0,500, 50);
+        caixa.getImage().setColor(Color.WHITE);
+        caixa.getImage().fillRect(2,2,496, 46);
         addObject(caixa, getWidth()/2, 3*getHeight()/4);
         displayNome = new Texto();
         displayNome.getImage().clear();
         addObject(displayNome, getWidth()/2, 3*getHeight()/4);
-        
+
         header=new Texto("Player 1,\nwrite your name",50, new Color(255,255,255));
         addObject(header, getWidth()/2, getHeight()/2);
         addObject(new Texto("Max size of 10 characters",30, new Color(255,0,0)),getWidth()/2,3*getHeight()/4-40);
@@ -59,18 +60,20 @@ public class EscolhaNomes extends World
     public void act()
     {
         escritaNome();
-        Options.updateText(nome, displayNome, 40, Color.BLACK);
     }
-
+    
+    /**
+     * Método que vai receber as teclas introduzidas pelo utilizador, construindo o nome do jogador e mostrando-o visualmente
+     */
     private void escritaNome()
     {
-        Greenfoot.getKey();
+        Greenfoot.getKey(); //discarda a última tecla pressionada
         String key=null;
         while (flag)
         {
-            key =Greenfoot.getKey();
+            key = Greenfoot.getKey(); 
             if (key!=null){
-                if(key.length()<2)
+                if(key.length()<2) //certifica que nao escreve "shift" ou "control"
                 {
                     nome+=key;
                 }
@@ -105,6 +108,7 @@ public class EscolhaNomes extends World
                 nome=nome.substring(0, nome.length()-1);
             }
         }
+        Options.updateText(nome, displayNome, 40, Color.BLACK);
         flag=true;
     }
 }
