@@ -9,15 +9,38 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Players extends Actor
 {
     protected boolean tocandoRelampago;
-
-    public void act() 
-    {
-    }  
+    protected int contador;
+    protected int indice;
+    private int auxDeath;
+    private int indiceDeath;
+    private boolean control;
+    protected final int GRAVIDADE =15;
+    protected int tempoJump;
+    protected int tempoQueda;
+    protected boolean podeSaltar;
+    protected boolean saltou;
+    protected boolean andandoParaEsquerda;
+    protected int controlBala;
 
     public Players()
     {
         tocandoRelampago = false;
+        contador=0;
+        indice=0;
+        auxDeath=0;
+        indiceDeath=0;
+        control=true;
+        tempoJump=GRAVIDADE;
+        tempoQueda=GRAVIDADE;
+        podeSaltar=false;
+        saltou=false;
+        andandoParaEsquerda=false;
+        controlBala=0;
     }
+
+    public void act() 
+    {
+    } 
 
     /**
      * Métodos que registam a perda, ou ganho, de vidas consoante o objeto que os jogadores tocam no primeiro jogo
@@ -27,7 +50,7 @@ public class Players extends Actor
         if(P1.getNumeroVidas()>0){
             if(isTouching(Granizo.class))
             {
-                P1.adicionaNumeroVidas(-1); 
+                P1.adicionaNumeroVidas(-10); 
                 P1.adicionaScore(-5);
                 removeTouching(Granizo.class);
             }
@@ -62,7 +85,7 @@ public class Players extends Actor
         if(P2.getNumeroVidas()>0){
             if(isTouching(Granizo.class))
             {
-                P2.adicionaNumeroVidas(-1); 
+                P2.adicionaNumeroVidas(-10); 
                 P2.adicionaScore(-5);
                 removeTouching(Granizo.class);
             }
@@ -116,6 +139,102 @@ public class Players extends Actor
 
         }
 
+    }
+
+    /**
+     * Método que trata da animação do movimento do jogador
+     */
+    protected void animarMove(GreenfootImage[] animacao){
+        contador++;
+        if (contador==4){
+            if(indice<animacao.length-1)
+            {
+                indice++;
+            }
+            else
+            {
+                indice=1;
+            }
+            setImage(animacao[indice]);
+            contador=0;
+        }
+    }
+
+    /**
+     * Método que trata da animação da morte do jogador
+     */
+    protected void animarMorte(GreenfootImage[] animacaoDeath, boolean andandoParaEsquerda)
+    {
+        if(andandoParaEsquerda && control)
+        {
+            for (int i=0; i < animacaoDeath.length;i++)
+            {
+                animacaoDeath[i].mirrorHorizontally();
+            }
+            control=false;
+        }
+        if(auxDeath%10==0)
+        {
+            Player1.setP2Morreu(true);
+            Player2.setP1Morreu(true);
+            setImage(animacaoDeath[indiceDeath]);
+            indiceDeath++;
+            if (indiceDeath>=animacaoDeath.length)
+            {
+                getWorld().removeObject(this);
+            }
+        }
+        auxDeath++;
+    }    
+
+    /**
+     * Método que anima a explosão quando a nave é destruída
+     */
+    protected void naveDestruida(GreenfootImage[] explosao){
+        if (contador%3==0){
+            Player1.setP2Morreu(true);
+            Player2.setP1Morreu(true);
+            if(indice==0)
+            {
+                Greenfoot.playSound("explosion.wav");
+            }
+            setImage(explosao[indice]);
+            indice++;
+            if(indice>=explosao.length)
+            {
+                getWorld().removeObject(this);
+            }
+        }
+        contador++;
+    }
+    
+    /**
+     * Métodos que registam que o esquimó caiu ao mar
+     */
+    protected void cair(Esquimó1 morto, GreenfootImage[] animacao){
+        if (isTouching(Mar.class)){
+            morto.adicionaNumeroVidas(-10);
+            Player2.setP1Morreu(true);
+            Player1.setP2Morreu(true);
+            animacao[indice].setTransparency(animacao[indice].getTransparency()-5);
+        }
+
+        if(animacao[indice].getTransparency() <=0){
+            getWorld().removeObject(this);
+        }
+    }
+    
+    protected void cair(Esquimó2 morto, GreenfootImage[] animacao){
+        if (isTouching(Mar.class)){
+            morto.adicionaNumeroVidas(-10);
+            Player2.setP1Morreu(true);
+            Player1.setP2Morreu(true);
+            animacao[indice].setTransparency(animacao[indice].getTransparency()-5);
+        }
+
+        if(animacao[indice].getTransparency() <=0){
+            getWorld().removeObject(this);
+        }
     }
 
     /**

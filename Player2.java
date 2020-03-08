@@ -15,42 +15,28 @@ public class Player2 extends Players
     private static String[] controlos= {up,left,right,shoot};
     protected static String cor;
     protected static String nome;
-    private GreenfootImage[] animacao=new GreenfootImage[7];
-    private GreenfootImage[] animacaoDeath=new GreenfootImage[8];
-    private int contador;
-    private int indice=0;
-    private int indiceDeath=0;
-    protected static int score=0;
-    private final int GRAVIDADE =15;
-    private int tempoJump=GRAVIDADE;
-    private int tempoQueda=GRAVIDADE;
-    private boolean podeSaltar=false;
-    private boolean saltou=false;
-    private boolean andandoParaEsquerda;
-    private int controlBala;
+    private GreenfootImage[] animacao;
+    private GreenfootImage[] animacaoDeath;
     protected static int numeroVidas=10;
-    private int auxDEATH;
+    protected static int score=0;
     protected static boolean P1morreu;
 
     public Player2()
     {
-        contador=0;
-        controlBala=0;
         //animação movimento jogador:
+        animacao=new GreenfootImage[7];
         animacao[0] = new GreenfootImage(cor+"/Idle.png");      
         for(int i=1; i <animacao.length;i++)
         {
             animacao[i]=new GreenfootImage(cor+"/"+i+".png");
         }
         setImage(animacao[indice]);
-        andandoParaEsquerda = false;
-
-        //animação do jogador a "morrer"        
+        //animação do jogador a "morrer" 
+        animacaoDeath = new GreenfootImage[8];
         for(int i=0; i <animacaoDeath.length;i++)
         {
             animacaoDeath[i]=new GreenfootImage(cor+"/Death/"+(i+1)+".png");
         }
-        auxDEATH = 0;
         P1morreu=false;
     }
 
@@ -60,7 +46,10 @@ public class Player2 extends Players
         move();
         disparar();
         perdeVidas(this);
-        animarMorte();
+        if(numeroVidas<=0)
+        {
+            animarMorte(animacaoDeath,andandoParaEsquerda);
+        }
     } 
 
     public static void setP1Morreu(boolean x)
@@ -91,11 +80,6 @@ public class Player2 extends Players
     public static void resetScore()
     {
         score=0;
-    }
-
-    public static void resetNumVidas()
-    {
-        numeroVidas=10;
     }
 
     public static void adicionaScore(int valor)
@@ -143,6 +127,11 @@ public class Player2 extends Players
         return numeroVidas;
     }
 
+    public static void resetNumVidas()
+    {
+        numeroVidas=10;
+    }
+
     public static void adicionaNumeroVidas(int valor)
     {
         if (valor<0 || (valor > 0 && numeroVidas<9))
@@ -180,7 +169,7 @@ public class Player2 extends Players
                 }
                 setLocation(getX()-2, getY());
                 andandoParaEsquerda=true;
-                animarMove();
+                animarMove(animacao);
             }
             else if (Greenfoot.isKeyDown(right)){
                 if (andandoParaEsquerda){
@@ -191,7 +180,7 @@ public class Player2 extends Players
                 }
                 setLocation(getX()+2, getY());
                 andandoParaEsquerda=false;
-                animarMove();
+                animarMove(animacao);
             }
             if (!Greenfoot.isKeyDown(right) && !Greenfoot.isKeyDown(up) && !Greenfoot.isKeyDown(left)){
                 indice=0;
@@ -231,61 +220,11 @@ public class Player2 extends Players
     }
 
     /**
-     * Método que trata da animação do movimento do jogador
-     */
-    private void animarMove(){
-        if (numeroVidas >0){
-            contador++;
-            if (contador==4){
-                if(indice<animacao.length-1)
-                {
-                    indice++;
-                }
-                else
-                {
-                    indice=1;
-                }
-                setImage(animacao[indice]);
-                contador=0;
-            }
-        }
-    }
-
-    /**
-     * Método que trata da animação da morte do jogador
-     */
-    public void animarMorte()
-    {
-        if(numeroVidas <=0)
-        {
-            if(andandoParaEsquerda)
-            {
-                for (int i=0; i < animacaoDeath.length;i++)
-                {
-                    animacaoDeath[i].mirrorHorizontally();
-                }
-                andandoParaEsquerda=false;
-            }
-            if(auxDEATH%10==0)
-            {
-                Player1.setP2Morreu(true);
-                setImage(animacaoDeath[indiceDeath]);
-                indiceDeath++;
-                if (indiceDeath>=animacaoDeath.length)
-                {
-                    getWorld().removeObject(this);
-                }
-            }
-            auxDEATH++;
-        }
-    }
-
-    /**
      * Método que trata do disparo
      */
     public void disparar(){
         controlBala++;
-        if(numeroVidas >0){
+        if(numeroVidas > 0 && !P1morreu){
             int sentido;
             if(andandoParaEsquerda)
             {

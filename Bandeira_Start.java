@@ -8,18 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bandeira_Start extends Jogos
 {
-
-   
     private int contador;
-    
-    
     public Bandeira_Start()
     {
         contador =0;  
         
         GreenfootImage imagemAtual=getImage(); 
         
-        imagemAtual.scale(imagemAtual.getWidth()-(250-CamadaOzono.getVida())/5, imagemAtual.getHeight()); 
+        imagemAtual.scale(imagemAtual.getWidth()-(125-CamadaOzono.getVida())/5, imagemAtual.getHeight()); 
 
     }
     

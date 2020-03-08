@@ -8,14 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Nave2 extends Player2
 {
-    private GreenfootImage explosao[] = new GreenfootImage[13];
-    private int contador;
-    private int indice=0;
+    private GreenfootImage[] explosao;
 
     public Nave2()
     {
         setImage(getColor()+"/Nave.png");
-        getImage().scale(getImage().getWidth()/2,getImage().getHeight()/2);;      
+        getImage().scale(getImage().getWidth()/2,getImage().getHeight()/2);
+        explosao = new GreenfootImage[13];    
         for(int i=0; i <explosao.length;i++)
         {
             explosao[i]=new GreenfootImage("ExplosionMáquina/"+(i+1)+".png");
@@ -28,7 +27,10 @@ public class Nave2 extends Player2
         moveNave();
         removeGas();
         perdeVidas(this);
-        naveDestruida();
+        if(numeroVidas<=0)
+        {
+            naveDestruida(explosao);
+        }
     }    
 
     /**
@@ -57,25 +59,5 @@ public class Nave2 extends Player2
             removeTouching (Gas.class);
 
         }
-    }
-
-    /**
-     * Método que regista que a nave foi destruída e anima a explosão
-     */
-    private void naveDestruida(){
-        if (numeroVidas <= 0 && contador%3==0){
-            if(indice==0)
-            {
-                Greenfoot.playSound("explosion.wav");
-            }
-            Player1.setP2Morreu(true);
-            setImage(explosao[indice]);
-            indice++;
-            if(indice>=explosao.length)
-            {
-                getWorld().removeObject(this);
-            }
-        }
-        contador++;
     }
 }

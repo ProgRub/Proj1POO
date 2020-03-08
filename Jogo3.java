@@ -21,6 +21,8 @@ public class Jogo3 extends World
     private boolean control;
     private static boolean P1Chegou, P2Chegou;
     private final int NUMPLATAFORMASPARAGANHAR=20;
+    private Esquimó1 esq1;
+    private Esquimó2 esq2;
     public Jogo3()
     {    
         super(1200, 700, 1); 
@@ -43,8 +45,10 @@ public class Jogo3 extends World
         Mar mar2 = new Mar();
         addObject(mar2,1012,getHeight() -30);
 
-        addObject(new Esquimó1(),390,300);
-        addObject(new Esquimó2(),410,300);
+        esq1 = new Esquimó1();
+        addObject(esq1,390,300);
+        esq2 = new Esquimó2();
+        addObject(esq2,410,300);
 
         scoreP1 = new Texto(""+Player1.getScore(),TAMANHOTEXTO, new Color(0,0,0));
         addObject(scoreP1, 285/2, 125);
@@ -65,7 +69,7 @@ public class Jogo3 extends World
             vitoria(P1Chegou,P2Chegou);
         }
         invocarMar();
-        gameOver(Player1.getNumeroVidas(), Player2.getNumeroVidas());
+        gameOver(esq1.getNumeroVidas(), esq2.getNumeroVidas());
         Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
         Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
     }

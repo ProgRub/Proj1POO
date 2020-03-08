@@ -8,24 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Esquimó2 extends Player2
 {
-    private GreenfootImage[] animacao=new GreenfootImage[5];
-    private int contador;
-    private int indice;
-    private final int GRAVIDADE =15;
-    private int tempoJump=GRAVIDADE;
-    private int tempoQueda=GRAVIDADE;
-    private boolean podeSaltar=false;
-    private boolean saltou=false;
-    private boolean andandoParaEsquerda;
+    private GreenfootImage[] animacao;
     
     public Esquimó2()
     {      
+        animacao=new GreenfootImage[5];
         for(int i=0; i <animacao.length;i++)
         {
             animacao[i]=new GreenfootImage(cor+"/Jogo3/"+(i+1)+".png");
         }
-        contador=0;
-        indice=0;
     }
 
     public void act() 
@@ -33,7 +24,7 @@ public class Esquimó2 extends Player2
         queda();
         move();
         salvarPinguim();
-        cair();
+        cair(this, animacao);
     }
     
     /**
@@ -58,7 +49,7 @@ public class Esquimó2 extends Player2
                 }
                 setLocation(getX()-3, getY());
                 andandoParaEsquerda=true;
-                animarMove();
+                animarMove(animacao);
             }
             else if (Greenfoot.isKeyDown(right)){
                 if (andandoParaEsquerda){
@@ -69,7 +60,7 @@ public class Esquimó2 extends Player2
                 }
                 setLocation(getX()+3, getY());
                 andandoParaEsquerda=false;
-                animarMove();
+                animarMove(animacao);
             }
             if (!Greenfoot.isKeyDown(right) && !Greenfoot.isKeyDown(up) && !Greenfoot.isKeyDown(left)){
                 indice=0;
@@ -111,28 +102,6 @@ public class Esquimó2 extends Player2
             }
         }
         plat=null;
-    }  
-
-    /**
-     * Método que trata da animação do movimento do esquimó
-     */
-    private void animarMove(){
-        if (numeroVidas >0){
-            contador++;
-            if (contador==4){
-                if(indice<animacao.length-1)
-                {
-                    indice++;
-                }
-                else
-                {
-                    indice=1;
-                }
-                setImage(animacao[indice]);
-                contador=0;
-            }
-        }
-
     } 
     
     public static void setP1Morreu(boolean x)
@@ -140,21 +109,21 @@ public class Esquimó2 extends Player2
         P1morreu = x;
     }   
 
-    /**
-     * Método que regista que o esquimó caiu ao mar
-     */
-    private void cair(){
-        if (isTouching(Mar.class)){
-            numeroVidas -= 10;
-            saltou=true;
-            Player1.setP2Morreu(true);
-            animacao[indice].setTransparency(animacao[indice].getTransparency()-5);
-        }
+    // /**
+     // * Método que regista que o esquimó caiu ao mar
+     // */
+    // private void cair(){
+        // if (isTouching(Mar.class)){
+            // numeroVidas -= 10;
+            // saltou=true;
+            // Player1.setP2Morreu(true);
+            // animacao[indice].setTransparency(animacao[indice].getTransparency()-5);
+        // }
         
-        if(animacao[indice].getTransparency() <=0){
-            getWorld().removeObject(this);
-        }
-    }
+        // if(animacao[indice].getTransparency() <=0){
+            // getWorld().removeObject(this);
+        // }
+    // }
     
     /**
      * Método que regista que o esquimó "salvou" o pinguim, dando-lhe 50 de pontuação

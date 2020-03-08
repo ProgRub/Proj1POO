@@ -131,7 +131,7 @@ public class Missil extends Jogos
     {
         if (isTouching(Nave2.class))
         {
-            Player2.adicionaNumeroVidas(-1);
+            Player2.adicionaNumeroVidas(-10);
             Player2.adicionaScore(-5);
             setLocation(getX(), getY()-getImage().getHeight());
             explosao=true;
