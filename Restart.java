@@ -11,8 +11,8 @@ public class Restart extends Menus
     private GreenfootImage image1, image2;
     public Restart()
     {
-        image1 = new GreenfootImage("RESTART.png");
-        image2 = new GreenfootImage("RESTART (1).png");
+        image1 = new GreenfootImage("RESTART (1).png");
+        image2 = new GreenfootImage("RESTART.png");
     }
     public void act() 
     {

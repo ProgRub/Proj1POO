@@ -1,20 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class MenuInicial here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class MenuInicial extends World
 {
-
     private static GreenfootSound musica;
     private boolean reset;
     
-    /**
-     * Construtor usado durante a simulação, que evita os controlos dos jogadores serem redefinidos depois de eles mudarem
-     */
     public MenuInicial(boolean resetControlos)
     {    
         super(1200,700, 1); 

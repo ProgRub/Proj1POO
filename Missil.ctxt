@@ -1,6 +1,5 @@
 #BlueJ class context
 comment0.target=Missil
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Missil\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=valor\ alvoENave2\ N1\ N2
 comment1.target=Missil(int,\ boolean,\ Nave1,\ Nave2)
 comment1.text=\r\n\ Construtor\ que\ define\ qual\ o\ alvo\ do\ missil\ e\ este\ \u00E9\ "pintado"\ de\ acordo\ com\ a\ cor\ do\ alvo\ e\r\n\ define\ a\ altura\ limite\ depois\ da\ qual\ o\ missil\ j\u00E1\ n\u00E3o\ \u00E9\ teleguiado\r\n

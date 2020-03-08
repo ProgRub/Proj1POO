@@ -1,17 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Missil here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Missil extends Jogos
 {
-    /**
-     * Act - do whatever the Missil wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     private int limite;
     private Nave2 nave2=null;
     private Nave1 nave1=null;

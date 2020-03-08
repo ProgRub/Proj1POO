@@ -1,11 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Bandeira_Finish here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Bandeira_Finish extends Jogos
 {
     private int contador; 

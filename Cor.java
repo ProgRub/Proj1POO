@@ -9,9 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Cor extends Menus
 {
     private static boolean P1escolheu;
-    public void act() 
-    {
-    } 
     
     public static boolean getP1escolheu(){
         return P1escolheu;

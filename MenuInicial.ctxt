@@ -1,9 +1,7 @@
 #BlueJ class context
 comment0.target=MenuInicial
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ MenuInicial\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=resetControlos
 comment1.target=MenuInicial(boolean)
-comment1.text=\r\n\ Construtor\ usado\ durante\ a\ simula\u00E7\u00E3o,\ que\ evita\ os\ controlos\ dos\ jogadores\ serem\ redefinidos\ depois\ de\ eles\ mudarem\r\n
 comment2.params=
 comment2.target=MenuInicial()
 comment2.text=\r\n\ Construtor\ s\u00F3\ usado\ no\ inicio\ da\ simula\u00E7\u00E3o,\ para\ definir\ os\ controlos\ que\ os\ jogadores\ podem\ mudar\r\n
