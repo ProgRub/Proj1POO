@@ -2,10 +2,9 @@
 comment0.target=Back
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Back\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
-comment1.target=void\ act()
+comment1.target=Back()
 comment2.params=
-comment2.target=void\ moveMouse()
-comment2.text=\r\n\ M\u00E9todo\ para\ alterar\ a\ imagem\ consoante\ o\ rato\ passa\ por\ cima\ do\ bot\u00E3o\r\n
+comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ clickMouse()
 comment3.text=\r\n\ M\u00E9todo\ que\ regista\ que\ o\ rato\ clicou\ no\ bot\u00E3o\ e,\ neste\ caso,\ cria\ um\ mundo\ MenuInicial\ sem\ fazer\ reset\ dos\ controlos\r\n

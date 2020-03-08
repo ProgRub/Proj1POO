@@ -8,20 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Play extends Menus
 {
-
+    private GreenfootImage image1, image2;
+    public Play()
+    {
+        image1 = new GreenfootImage("Play1.png");
+        image2 = new GreenfootImage("Play2.png");
+    }
+    
     public void act() 
     {
-        moveMouse();
+        moveMouse(image2,image1);
         clickMouse();
-    }   
-
-    public void moveMouse(){
-        if(Greenfoot.mouseMoved(this)){
-            setImage("Play2.png");
-        }
-        if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)){
-            setImage("Play1.png");
-        }
     }
 
     private void clickMouse(){

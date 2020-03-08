@@ -8,22 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Options extends Menus
 {
-
+    private GreenfootImage image1, image2;
+    public Options()
+    {
+        image1 = new GreenfootImage("Options2.png");
+        image2 = new GreenfootImage("OptionsComBrilho.png");
+    }
+    
     public void act() 
     {
-        moveMouse();
+        moveMouse(image2,image1);
         clickMouse();
     }
-
-    public void moveMouse(){
-        if(Greenfoot.mouseMoved(this)){
-            setImage("OptionsComBrilho.png");
-        }
-        if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)){
-            setImage("Options2.png");
-        }
-    }
-
+    
     public void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
             MenuInicial start=getWorldOfType(MenuInicial.class);

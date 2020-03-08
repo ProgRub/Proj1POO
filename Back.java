@@ -8,22 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Back extends Menus
 {
+    private GreenfootImage image1, image2;
+    public Back()
+    {
+        image1 = new GreenfootImage("BackSemBrilho.png");
+        image2 = new GreenfootImage("BackComBrilho.png");
+    }
     public void act() 
     {
-        moveMouse();
+        moveMouse(image2,image1);
         clickMouse();
-    }   
-
-    /**
-     * Método para alterar a imagem consoante o rato passa por cima do botão
-     */
-    private void moveMouse(){
-        if(Greenfoot.mouseMoved(this)){
-            setImage("BackComBrilho.png");
-        }
-        if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)){
-            setImage("BackSemBrilho.png");
-        }
     }
 
     /**

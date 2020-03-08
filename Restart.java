@@ -8,22 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Restart extends Menus
 {
-    
+    private GreenfootImage image1, image2;
+    public Restart()
+    {
+        image1 = new GreenfootImage("RESTART.png");
+        image2 = new GreenfootImage("RESTART (1).png");
+    }
     public void act() 
     {
-        moveMouse();
+        moveMouse(image1,image2);
         clickMouse();
     }   
-
-    public void moveMouse(){
-        if(Greenfoot.mouseMoved(this)){
-            setImage("RESTART (1).png");
-        }
-        if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)){
-            setImage("RESTART.png");
-        }
-    }
-
+    
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
             Greenfoot.setWorld(new MenuInicial(false));

@@ -11,19 +11,4 @@ public class Stage extends Menus
     public void act() 
     {
     }   
-
-    public void moveMouse(GreenfootImage image1, GreenfootImage image2){
-        if(Greenfoot.mouseMoved(this)){
-            setImage(image1);
-        }
-        if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)){
-            setImage(image2);
-        }
-    }
-
-    private void clickMouse(){
-        if (Greenfoot.mouseClicked(this)){
-            Greenfoot.setWorld(new EscolherCor());
-        }
-    }  
 }
