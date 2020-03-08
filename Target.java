@@ -45,6 +45,11 @@ public class Target extends Jogos
         }  
         count2++;     
     }
+    
+    /**
+     * Método que faz a contagem para remover o objeto do mundo e adicionar um novo objeto da classe "Relâmpago"
+     * (permite "dar tempo" aos jogadores para se afastarem do relâmpago)
+     */
     private void conta(Target target)
     {  
         contador++;

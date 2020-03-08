@@ -14,15 +14,26 @@ public class Vida_jogo2 extends Vida
      */
     public void act() 
     {
-        movimentoVida();
+        movimentoVida(); // para o jogo 2
         ultrapassaLimite();
     } 
     
-    public void movimentoVida(){
+    /**
+     * "Overriding" do método movimentoVida() herdado da classe "Vida"
+     * Método que define o movimento (ascendente) da vida
+     */
+    public void movimentoVida() 
+    {
         setLocation(getX(), getY() - 3);
     }   
     
-    protected void ultrapassaLimite(){
+    
+    /**
+     * "Overriding" do método ultrapassaLimite() herdado da classe "ObjetosCaem"
+     * Método que remove o objeto quando toca nos limites do mundo
+     */
+    protected void ultrapassaLimite()
+    {
         if(isAtEdge()){
             getWorld().removeObject(this);
         }

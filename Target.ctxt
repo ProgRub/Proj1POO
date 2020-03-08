@@ -9,4 +9,5 @@ comment3.params=
 comment3.target=void\ switchImage()
 comment4.params=target
 comment4.target=void\ conta(Target)
+comment4.text=\r\n\ M\u00E9todo\ que\ faz\ a\ contagem\ para\ remover\ o\ objeto\ do\ mundo\ e\ adicionar\ um\ novo\ objeto\ da\ classe\ "Rel\u00E2mpago"\r\n\ (permite\ "dar\ tempo"\ aos\ jogadores\ para\ se\ afastarem\ do\ rel\u00E2mpago)\r\n
 numComments=5

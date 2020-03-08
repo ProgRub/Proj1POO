@@ -21,7 +21,8 @@ public class GameOver extends Jogos
     public void act() 
     {
         pisca();
-    }  
+    }
+    
     
     private void pisca(){
         contador++;

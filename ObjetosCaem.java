@@ -17,13 +17,19 @@ public class ObjetosCaem extends Jogos
         // Add your action code here.
     } 
     
+    
+    /**
+     * Método que remove o objeto quando toca no "Chão"
+     */
     protected void ultrapassaLimite(){
         if(isTouching(Chão.class) || getY() == getWorld().getHeight() -1){
             getWorld().removeObject(this);
         }
     }
+   
 
-    protected  void movimento(){
+    protected  void movimento() // movimento descendente
+    {
         setLocation(getX()-1, getY() + 8);
     }   
 }

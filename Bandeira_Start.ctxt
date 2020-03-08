@@ -10,4 +10,5 @@ comment3.target=void\ permanecerParado()
 comment3.text=\r\n\ M\u00E9todo\ que\ move\ a\ bandeira\ de\ acordo\ com\ o\ movimento\ da\ plataforma\ inicial,\ onde\ a\ bandeira\ est\u00E1\r\n
 comment4.params=
 comment4.target=void\ desaparecer()
+comment4.text=\r\n\ M\u00E9todo\ que\ faz\ com\ que\ a\ bandeira\ desapare\u00E7a\ do\ mundo,\ assim\ que\ esta\ toque\ no\ limite\ esquerdo\ do\ mundo\ (X\=0)\r\n
 numComments=5

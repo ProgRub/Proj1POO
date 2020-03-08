@@ -19,7 +19,11 @@ public class PlataformaGelo extends Jogos
         desaparecer();
         invocaPinguim();
     }    
-
+    
+    /**
+     * Método para simular que as plataformas de Gelo estam a derreter, para alterar a tranparência do objeto quando estiver quase alcançando o
+     * limite esquerdo do mundo, e fazer com que a plataforma pareça que está a cair quando toca no limite esquerdo do mundo
+     */
     public void derreter(){
         if (Greenfoot.getRandomNumber(100)<=1){
             getWorld().addObject(new Gota(), getX() + Greenfoot.getRandomNumber(50)-50, getY());
@@ -37,6 +41,7 @@ public class PlataformaGelo extends Jogos
         setImage(imagemAtual);
     }
 
+    
     public void podeCriarPinguim(){
         if (Greenfoot.getRandomNumber(100)<=20){
             pinguim=true;
@@ -45,6 +50,9 @@ public class PlataformaGelo extends Jogos
         }
     }
 
+    /**
+     * Método para adicionar objetos da classe "Pinguim" em cima das plataformas
+     */
     public void invocaPinguim(){
         if (pinguim == true){
             Pinguim peng = new Pinguim();

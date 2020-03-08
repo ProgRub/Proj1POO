@@ -48,6 +48,11 @@ public class Pinguim extends Jogos
             }
         }
     }
+    
+    /**
+     * Método para alterar a posição do objeto (para parecer que está a cair) quando deixa de estar em contacto com uma plataforma de gelo
+     * Incrementa também a variável "caindo", para depois ser utilizada no método caindo() e alterar a animação do objeto
+     */
 
     public void emCimaPlataforma(){
         if (!isTouching(PlataformaGelo.class))
@@ -61,6 +66,9 @@ public class Pinguim extends Jogos
         }
     }
 
+    /**
+     * Método para alterar a animação do objeto quando está a "cair" (quando a variável caindo é igual a true)
+     */
     public void caindo(){
         if(caindo){
             indice=3;
@@ -68,7 +76,10 @@ public class Pinguim extends Jogos
             turn(10);
         }
     }
-
+    
+    /**
+     * Método para remover o objeto quando toca no limite inferior do mundo
+     */
     public void desaparece(){
         if (getY() == getWorld().getHeight()-1){
             getWorld().removeObject(this);

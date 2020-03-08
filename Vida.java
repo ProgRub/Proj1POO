@@ -23,11 +23,12 @@ public class Vida extends ObjetosCaem
     
     public void act() 
     {
-        movimentoVida();
+        movimentoVida(); //para o jogo 1
         ultrapassaLimite();
     }   
 
-    private void movimentoVida(){ 
+    private void movimentoVida()  //A "Vida" tem um movimento descendente mais lento que os restantes "ObjetosCaem"
+    { 
         setLocation(getX(), getY() + 4);
     }      
 }
