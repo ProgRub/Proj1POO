@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Pinguim extends Jogos
 {
-    private static int contador;
+    private int contador;
     private GreenfootImage[] animacao;
     private boolean caindo;
     private int indice;
