@@ -35,7 +35,10 @@ public class Esquimó2 extends Player2
         salvarPinguim();
         cair();
     }
-
+    
+    /**
+     * Método que trata do movimento do esquimó
+     */
     protected void move()
     {
         if(numeroVidas > 0 && !P1morreu){
@@ -75,6 +78,9 @@ public class Esquimó2 extends Player2
         }
     }
 
+    /**
+     * Método que trata da parte da subida do salto
+     */
     protected void jump(){
         if (tempoJump>0){
             setLocation(getX(),getY()-tempoJump);
@@ -85,7 +91,10 @@ public class Esquimó2 extends Player2
             saltou=false;
         }
     }
-
+    
+    /**
+     * Método que trata da parte da descida do salto, evita que os jogadores fiquem a meio do bloco e regista se chegou à plataforma final
+     */
     protected void queda(){
         Actor plat = getOneObjectAtOffset(0,tempoQueda+getImage().getHeight()/2, PlataformaGelo.class);
         if (plat==null   && !saltou){
@@ -104,6 +113,9 @@ public class Esquimó2 extends Player2
         plat=null;
     }  
 
+    /**
+     * Método que trata da animação do movimento do esquimó
+     */
     private void animarMove(){
         if (numeroVidas >0){
             contador++;
@@ -127,9 +139,11 @@ public class Esquimó2 extends Player2
     {
         P1morreu = x;
     }   
-   
-    
-    public void cair(){
+
+    /**
+     * Método que regista que o esquimó caiu ao mar
+     */
+    private void cair(){
         if (isTouching(Mar.class)){
             numeroVidas -= 10;
             saltou=true;
@@ -142,7 +156,10 @@ public class Esquimó2 extends Player2
         }
     }
     
-    public void salvarPinguim()
+    /**
+     * Método que regista que o esquimó "salvou" o pinguim, dando-lhe 50 de pontuação
+     */
+    private void salvarPinguim()
     {
         if (isTouching(Pinguim.class))
         {

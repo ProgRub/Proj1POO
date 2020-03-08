@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bala extends Players
 {
-    private GreenfootImage imagem, original;
-    private boolean moveEsquerda;
+    private GreenfootImage original;
+    private boolean moveEsquerda, mudaOrientacao;
     private final int VELOCIDADE;
     private Player1 P1Disparou;
     private Player2 P2Disparou;
@@ -25,6 +25,7 @@ public class Bala extends Players
         disparo.play();
         VELOCIDADE=8;
         P1Disparou = P1;
+        mudaOrientacao = false;
     }
 
     public Bala(Player2 P2){
@@ -36,6 +37,7 @@ public class Bala extends Players
         disparo.play();
         VELOCIDADE=8;
         P2Disparou = P2;
+        mudaOrientacao = false;
     }
 
     public void act() 
@@ -47,20 +49,30 @@ public class Bala extends Players
         }
     } 
 
+    /**
+     * Método que movimenta a bala
+     */
     private void disparo(){
-        if (moveEsquerda){
-            imagem = getImage();
-            imagem.mirrorHorizontally();
-            setImage(imagem);
+        if(!mudaOrientacao)
+        {
+            if (moveEsquerda){
+                original = getImage();
+                original.mirrorHorizontally();
+                setImage(original);
+                mudaOrientacao = true;
+            }
+            else{
+                setImage(original);
+                mudaOrientacao = true;
+            }
         }
         else{
-            setImage(original);
-        }
-        if (moveEsquerda){
-            move(-VELOCIDADE);
-        }
-        else{
-            move(VELOCIDADE);
+            if (moveEsquerda){
+                move(-VELOCIDADE);
+            }
+            else{
+                move(VELOCIDADE);
+            }
         }
     }
 
@@ -71,6 +83,9 @@ public class Bala extends Players
         return false;
     }
 
+    /**
+     * Método que regista que a bala atingiu a máquina e adiciona score ao jogador que disparou 
+     */
     private boolean atingiuMáquina()
     {
         if (isTouching(Máquina.class) && getWorld().getObjects(Máquina.class).get(0).getVida()>0)

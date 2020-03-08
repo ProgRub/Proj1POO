@@ -53,7 +53,6 @@ public class Player1 extends Players
         }
         auxDEATH = 0;
         P2morreu=false;
-
     }
 
     public void act() 
@@ -163,6 +162,9 @@ public class Player1 extends Players
         }
     }
 
+    /**
+     * Método para o movimento do jogador
+     */
     protected void move()
     {
         if(numeroVidas > 0 &&!P2morreu){
@@ -202,6 +204,9 @@ public class Player1 extends Players
         }
     }
 
+    /**
+     * Método que trata da parte da subida do salto
+     */
     protected void jump(){
         if (tempoJump>0){
             setLocation(getX(),getY()-tempoJump);
@@ -213,6 +218,9 @@ public class Player1 extends Players
         }
     }
 
+    /**
+     * Método que trata da parte da queda depois da parte da subida do salto ter sido efetuada
+     */
     protected void queda(){
         if (!isTouching(Chão.class) && !saltou){
             setLocation(getX(),getY()+tempoQueda);
@@ -226,6 +234,9 @@ public class Player1 extends Players
         }
     }
 
+    /**
+     * Método que trata da animação do movimento do jogador
+     */
     private void animarMove(){
         if (numeroVidas >0){
             contador++;
@@ -244,6 +255,9 @@ public class Player1 extends Players
         }
     }
 
+    /**
+     * Método que trata da animação da morte do jogador
+     */
     private void animarMorte()
     {
         if(numeroVidas <=0)
@@ -270,11 +284,23 @@ public class Player1 extends Players
         }
     }
 
+    /**
+     * Método que trata do disparo
+     */
     private void disparar(){
         controlBala++;
         if(numeroVidas >0){
-            if (controlBala >20 && Greenfoot.isKeyDown(shoot)){
-                getWorld().addObject(new Bala(this), getX(),getY()-5);
+            int sentido;
+            if(andandoParaEsquerda)
+            {
+                sentido=-1;
+            }
+            else
+            {
+                sentido=1;
+            }
+            if (controlBala >15 && Greenfoot.isKeyDown(shoot)){
+                getWorld().addObject(new Bala(this), getX()+sentido*(2*getImage().getWidth()/3),getY());
                 controlBala = 0;
             }
         }

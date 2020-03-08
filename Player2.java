@@ -27,7 +27,7 @@ public class Player2 extends Players
     private boolean podeSaltar=false;
     private boolean saltou=false;
     private boolean andandoParaEsquerda;
-    private int controlBala=0;
+    private int controlBala;
     protected static int numeroVidas=10;
     private int auxDEATH;
     protected static boolean P1morreu;
@@ -35,6 +35,7 @@ public class Player2 extends Players
     public Player2()
     {
         contador=0;
+        controlBala=0;
         //animação movimento jogador:
         animacao[0] = new GreenfootImage(cor+"/Idle.png");      
         for(int i=1; i <animacao.length;i++)
@@ -157,6 +158,9 @@ public class Player2 extends Players
         }
     } 
 
+    /**
+     * Método para o movimento do jogador
+     */
     protected void move()
     {
         if(numeroVidas > 0 && !P1morreu){
@@ -196,6 +200,9 @@ public class Player2 extends Players
         }
     }
 
+    /**
+     * Método que trata da parte da subida do salto
+     */
     protected void jump(){
         if (tempoJump>0){
             setLocation(getX(),getY()-tempoJump);
@@ -207,6 +214,9 @@ public class Player2 extends Players
         }
     }
 
+    /**
+     * Método que trata da parte da queda depois da parte da subida do salto ter sido efetuada
+     */
     protected void queda(){
         if (!isTouching(Chão.class) &&!saltou){
             setLocation(getX(),getY()+tempoQueda);
@@ -220,6 +230,9 @@ public class Player2 extends Players
         }
     }
 
+    /**
+     * Método que trata da animação do movimento do jogador
+     */
     private void animarMove(){
         if (numeroVidas >0){
             contador++;
@@ -238,6 +251,9 @@ public class Player2 extends Players
         }
     }
 
+    /**
+     * Método que trata da animação da morte do jogador
+     */
     public void animarMorte()
     {
         if(numeroVidas <=0)
@@ -264,11 +280,23 @@ public class Player2 extends Players
         }
     }
 
+    /**
+     * Método que trata do disparo
+     */
     public void disparar(){
+        controlBala++;
         if(numeroVidas >0){
-            controlBala++;
-            if (controlBala >20 && Greenfoot.isKeyDown(shoot)){
-                getWorld().addObject(new Bala(this), getX(),getY()-5);
+            int sentido;
+            if(andandoParaEsquerda)
+            {
+                sentido=-1;
+            }
+            else
+            {
+                sentido=1;
+            }
+            if (controlBala >15 && Greenfoot.isKeyDown(shoot)){
+                getWorld().addObject(new Bala(this), getX()+sentido*(2*getImage().getWidth()/3),getY());
                 controlBala = 0;
             }
         }

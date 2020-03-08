@@ -8,11 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Players extends Actor
 {
-    /**
-     * Act - do whatever the Players wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-
     protected boolean tocandoRelampago;
 
     public void act() 
@@ -24,6 +19,9 @@ public class Players extends Actor
         tocandoRelampago = false;
     }
 
+    /**
+     * Métodos que registam a perda, ou ganho, de vidas consoante o objeto que os jogadores tocam no primeiro jogo
+     */
     protected void perdeVidas(Player1 P1)
     {
         if(P1.getNumeroVidas()>0){
@@ -90,6 +88,9 @@ public class Players extends Actor
         }
     }
 
+    /**
+     * Métodos que registam que as naves apanharam vida no segundo jogo
+     */
     protected void perdeVidas(Nave1 N1)
     {
         if(N1.getNumeroVidas()>0)
@@ -117,6 +118,9 @@ public class Players extends Actor
 
     }
 
+    /**
+     * Método usado na mudança dos controlos, verifica se a tecla inserida não causa conflito com os outros controlos
+     */
     public static boolean podeMudar(String[] P1Controls, String[] P2Controls, String key){
         for (int i=0; i<4;i++){
             if (key.equals(P1Controls[i]) || key.equals(P2Controls[i])){

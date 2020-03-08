@@ -18,11 +18,6 @@ public class Esquimó1 extends Player1
         {
             animacao[i]=new GreenfootImage(cor+"/Jogo3/"+(i+1)+".png");
         }
-        // animacao[0] = new GreenfootImage(cor+"/Jogo3/1.png");
-        // animacao[1] = new GreenfootImage(cor+"/Jogo3/2.png");
-        // animacao[2] = new GreenfootImage(cor+"/Jogo3/3.png");
-        // animacao[3] = new GreenfootImage(cor+"/Jogo3/4.png");
-        // animacao[4] = new GreenfootImage(cor+"/Jogo3/5.png");
         contador=0;
         indice=0;
     }
@@ -34,7 +29,10 @@ public class Esquimó1 extends Player1
         salvarPinguim();
         cair();
     }
-
+    
+    /**
+     * Método que trata do movimento do esquimó
+     */
     protected void move()
     {
         if(numeroVidas > 0 &&!P2morreu){
@@ -74,6 +72,9 @@ public class Esquimó1 extends Player1
         }
     }
 
+    /**
+     * Método que trata da parte da subida do salto
+     */
     protected void jump(){
         if (tempoJump>0){
             setLocation(getX(),getY()-tempoJump);
@@ -84,7 +85,10 @@ public class Esquimó1 extends Player1
             saltou=false;
         }
     }
-
+    
+    /**
+     * Método que trata da parte da descida do salto, evita que os jogadores fiquem a meio do bloco e regista se chegou à plataforma final
+     */
     protected void queda(){
         Actor plat = getOneObjectAtOffset(0,tempoQueda+getImage().getHeight()/2, PlataformaGelo.class);
         if (plat==null  && !saltou){
@@ -101,8 +105,11 @@ public class Esquimó1 extends Player1
             }
         }
         plat=null;
-    }  
+    }   
 
+    /**
+     * Método que trata da animação do movimento do esquimó
+     */
     private void animarMove(){
         if (numeroVidas >0){
             contador++;
@@ -126,7 +133,10 @@ public class Esquimó1 extends Player1
         P2morreu = x;
     }
 
-    public void cair(){
+    /**
+     * Método que regista que o esquimó caiu ao mar
+     */
+    private void cair(){
         if (intersects(getWorld().getObjects(Mar.class).get(0))){
             numeroVidas -= 10;
             Player2.setP1Morreu(true);
@@ -139,7 +149,10 @@ public class Esquimó1 extends Player1
         }
     }
     
-    public void salvarPinguim()
+    /**
+     * Método que regista que o esquimó "salvou" o pinguim, dando-lhe 50 de pontuação
+     */
+    private void salvarPinguim()
     {
         if (isTouching(Pinguim.class))
         {

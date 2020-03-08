@@ -8,12 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Vida_player1 extends Player1
 {
-    /**
-     * Act - do whatever the Vida_player1 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     private GreenfootImage[] vidas;
-    private Player1 P1=null;
 
     public Vida_player1()
     {
@@ -24,17 +19,16 @@ public class Vida_player1 extends Player1
         }
     }
 
-
     public void act() 
     {
-            vidaPlayer1(P1);
+        vidaPlayer1();
     }   
 
-    public void vidaPlayer1(Player1 P1)
+    public void vidaPlayer1()
     {
-        if (P1.getNumeroVidas() >0)
+        if (Player1.getNumeroVidas() >0)
         {
-            setImage(vidas[P1.getNumeroVidas()-1]);
+            setImage(vidas[Player1.getNumeroVidas()-1]);
         }
         else {
             getWorld().removeObject(this);

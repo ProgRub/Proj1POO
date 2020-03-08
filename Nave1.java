@@ -1,4 +1,3 @@
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -32,7 +31,10 @@ public class Nave1 extends Player1
         naveDestruida();
     } 
 
-    public void moveNave(){
+    /**
+     * Método que trata do movimento da nave
+     */
+    private void moveNave(){
         if (numeroVidas > 0 && !P2morreu)
         {
             if (Greenfoot.isKeyDown(left)){
@@ -44,7 +46,10 @@ public class Nave1 extends Player1
         }
     }
 
-    public void removeGas()
+    /**
+     * Método que trata de registar que a nave "apanhou" o gás, dando ao jogador 10 de pontuação
+     */
+    private void removeGas()
     {
         if (isTouching(Gas.class))
         {
@@ -54,6 +59,9 @@ public class Nave1 extends Player1
         }
     }
 
+    /**
+     * Método que regista que a nave foi destruída e anima a explosão
+     */
     private void naveDestruida(){
         if (numeroVidas <= 0 && contador%3==0){
             Player2.setP1Morreu(true);
