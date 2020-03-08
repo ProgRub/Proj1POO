@@ -141,7 +141,7 @@ public class Jogo1 extends World
     {
         if (Máquina.getVida() > midway )
         {
-            if (Greenfoot.getRandomNumber(100)<3)
+            if (Greenfoot.getRandomNumber(100)<5)
             {
                 addObject(new Granizo(), Greenfoot.getRandomNumber(getWidth()-1),0);
             }
@@ -170,7 +170,7 @@ public class Jogo1 extends World
             somAmbiente.stop();
             somChuva.play();
             int prob = Greenfoot.getRandomNumber(2);
-            if (Greenfoot.getRandomNumber(400)<3){
+            if (Greenfoot.getRandomNumber(250)<4){
                 Target target = new Target();
                 if (prob == 1 && !getObjects(Player1.class).isEmpty())
                 {

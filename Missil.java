@@ -54,8 +54,7 @@ public class Missil extends Jogos
             if (Nave2EAlvo)
             {
                 teleguiado(nave2);
-                atingiuAlvo(nave2);
-                atingiuAlvo(nave1);
+                atingiuAlvo();
                 if(!explosao){
                     chegouAoFim();
                 }
@@ -63,8 +62,7 @@ public class Missil extends Jogos
             else
             {
                 teleguiado(nave1);
-                atingiuAlvo(nave1);
-                atingiuAlvo(nave2);
+                atingiuAlvo();
                 if(!explosao){
                     chegouAoFim();
                 }
@@ -115,24 +113,20 @@ public class Missil extends Jogos
     /**
      * Métodos que registam que o míssil atingiu uma das naves, retirando ao jogador cuja nave foi atingida vida e pontuação
      */
-    private void atingiuAlvo(Nave1 alvo)
+    private void atingiuAlvo()
     {
-        if (isTouching(Nave1.class))
+        if (isTouching(Nave2.class))
         {
-            Player1.adicionaNumeroVidas(-1);
-            Player1.adicionaScore(-5);
+            Player2.adicionaNumeroVidas(-1);
+            Player2.adicionaScore(-5);
             setLocation(getX(), getY()-getImage().getHeight());
             explosao=true;
             getImage().clear();
         }
-    }
-
-    private void atingiuAlvo(Nave2 alvo)
-    {
-        if (isTouching(Nave2.class))
+        else if (isTouching(Nave1.class))
         {
-            Player2.adicionaNumeroVidas(-10);
-            Player2.adicionaScore(-5);
+            Player1.adicionaNumeroVidas(-1);
+            Player1.adicionaScore(-5);
             setLocation(getX(), getY()-getImage().getHeight());
             explosao=true;
             getImage().clear();

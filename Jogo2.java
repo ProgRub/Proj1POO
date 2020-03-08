@@ -131,7 +131,7 @@ public class Jogo2 extends World
      * Método que cria os misseís teleguiados aos jogadores
      */
     private void disparaMissil(){
-        int random = Greenfoot.getRandomNumber(400);
+        int random = Greenfoot.getRandomNumber(300);
         if (random<2)
         {
             if(random==1)

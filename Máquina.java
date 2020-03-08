@@ -11,13 +11,14 @@ public class Máquina extends Jogos
     private static int vida;
     private static int score;
     private static int contador;
-    private GreenfootImage explosao[] = new GreenfootImage[13];
+    private GreenfootImage[] explosao;
     private int indice=0;
 
     private GreenfootImage explosion1,explosion2,explosion3,explosion4,explosion5,explosion6,explosion7,explosion8,explosion9,explosion10,explosion11,explosion12,explosion13;
     public Máquina(){
-        vida=1000;
+        vida=500;
         score=0;
+        explosao = new GreenfootImage[13];
         for (int i=0; i< explosao.length; i++)
         {
             explosao[i] = new GreenfootImage("ExplosionMáquina/"+(i+1)+".png");
