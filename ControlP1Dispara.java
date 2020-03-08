@@ -21,8 +21,8 @@ public class ControlP1Dispara extends Options
         getImage().scale((int)(1.5*getWorld().getWidth()/9), getWorld().getHeight()/9);
         moveMouseBotaoControlos();
         clickMouse();
-    }    
-
+    }
+    
     public void clickMouse(){
         if (Greenfoot.mouseClicked(this) || Greenfoot.mouseClicked(text)){
             Greenfoot.getKey();

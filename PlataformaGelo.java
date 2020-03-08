@@ -8,6 +8,7 @@ public class PlataformaGelo extends Jogos
     public PlataformaGelo(){
         podeCriarPinguim();
         imagemAtual = new GreenfootImage("platf1.png");
+        //A largura das plataformas será tanto maior quanto menor foi o dano à camada de ozono no jogo 2
         imagemAtual.scale(imagemAtual.getWidth()-(125-CamadaOzono.getVida())/5, imagemAtual.getHeight());
         setImage(imagemAtual);
     }
@@ -21,8 +22,8 @@ public class PlataformaGelo extends Jogos
     }    
     
     /**
-     * Método para simular que as plataformas de Gelo estam a derreter, para alterar a tranparência do objeto quando estiver quase alcançando o
-     * limite esquerdo do mundo, e fazer com que a plataforma pareça que está a cair quando toca no limite esquerdo do mundo
+     * Método para simular que as plataformas de Gelo estão a derreter, para alterar a tranparência do objeto quando estiver quase alcançando o
+     * limite esquerdo do mundo, e fazer com que a plataforma pareça que está a cair quando aproxima o limite esquerdo do mundo
      */
     public void derreter(){
         if (Greenfoot.getRandomNumber(100)<=1){

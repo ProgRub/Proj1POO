@@ -16,6 +16,9 @@ public class VidaMáquina extends Máquina
         atualiza();
     }    
     
+   /**
+    * Método que atualiza a barra de vida que informa os jogadores quanta vida a máquina tem
+    */
    public void atualiza(){
        setImage(new GreenfootImage(healthBarComprimento + 2, healthBarAltura + 2));
        GreenfootImage myImage = getImage();

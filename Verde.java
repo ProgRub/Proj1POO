@@ -7,16 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Verde extends Cor
-{
-    /**
-     * Act - do whatever the Verde wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        clickMouse();
-    }   
-    
+{  
     public Verde(){
         GreenfootImage image = new GreenfootImage(125,125);
         image.setColor(new Color(107,175,87));
@@ -24,6 +15,14 @@ public class Verde extends Cor
         this.setImage(image);
     }
     
+    public void act() 
+    {
+        clickMouse();
+    } 
+    
+    /**
+     * Método que regista a cor que os jogadores escolheram e atualiza as variáveis e o mundo de acordo
+     */    
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
             if(!Cor.getP1escolheu()){

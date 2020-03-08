@@ -20,7 +20,6 @@ public class Texto extends Options
 
     public void act()
     {
-
     }
 
     public Color getCor()

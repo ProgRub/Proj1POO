@@ -28,6 +28,9 @@ public class Nuvem extends Jogos
         movimentoNuvem(sentido);
     }  
     
+    /**
+     * Método que movimenta a nuvem
+     */
     private void movimentoNuvem(int sentido){
         if (aux<105)
         {

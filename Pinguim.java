@@ -34,6 +34,9 @@ public class Pinguim extends Jogos
         caindo();
     } 
 
+    /**
+     * Método para animar o pinguim quando este está em cima de uma plataforma de gelo, acenando aos jogadores
+     */
     public void animar(){
         if(!caindo){
             contador++;
@@ -51,7 +54,7 @@ public class Pinguim extends Jogos
     
     /**
      * Método para alterar a posição do objeto (para parecer que está a cair) quando deixa de estar em contacto com uma plataforma de gelo
-     * Incrementa também a variável "caindo", para depois ser utilizada no método caindo() e alterar a animação do objeto
+     * Altera também a variável "caindo", para depois ser utilizada no método caindo() e alterar a animação do objeto
      */
 
     public void emCimaPlataforma(){

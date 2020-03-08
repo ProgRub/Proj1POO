@@ -5,4 +5,5 @@ comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=void\ clickMouse()
+comment2.text=\r\n\ M\u00E9todo\ que\ regista\ que\ o\ utilizador\ clicou\ no\ bot\u00E3o\ para\ mudar\ o\ controlo\ escolhido\ e\ espera\ que\ o\ mesmo\ d\u00EA\ uma\ tecla\ v\u00E1lida,\r\n\ n\u00E3o\ pode\ escolher\ uma\ tecla\ que\ esteja\ ocupada\ para\ outro\ controlo,\ quer\ do\ player\ 1\ quer\ do\ player\ 2\r\n
 numComments=3

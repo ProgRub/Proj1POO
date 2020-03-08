@@ -7,4 +7,5 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=sentido
 comment3.target=void\ movimentoNuvem(int)
+comment3.text=\r\n\ M\u00E9todo\ que\ movimenta\ a\ nuvem\r\n
 numComments=4

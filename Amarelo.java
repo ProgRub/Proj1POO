@@ -7,16 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Amarelo extends Cor
-{
-    /**
-     * Act - do whatever the Amarelo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        clickMouse();
-    }   
-    
+{ 
     public Amarelo(){
         GreenfootImage image = new GreenfootImage(125,125);
         image.setColor(new Color(190,187,41));
@@ -24,6 +15,14 @@ public class Amarelo extends Cor
         this.setImage(image);
     }
     
+    public void act() 
+    {
+        clickMouse();
+    }
+    
+    /**
+     * Método que regista a cor que os jogadores escolheram e atualiza as variáveis e o mundo de acordo
+     */
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
             if(!Cor.getP1escolheu()){

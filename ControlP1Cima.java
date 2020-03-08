@@ -21,8 +21,12 @@ public class ControlP1Cima extends Options
         getImage().scale((int)(1.5*getWorld().getWidth()/9), getWorld().getHeight()/9);
         moveMouseBotaoControlos();
         clickMouse();
-    }
-
+    }    
+    
+    /**
+     * Método que regista que o utilizador clicou no botão para mudar o controlo escolhido e espera que o mesmo dê uma tecla válida,
+     * não pode escolher uma tecla que esteja ocupada para outro controlo, quer do player 1 quer do player 2
+     */
     public void clickMouse(){
         if (Greenfoot.mouseClicked(this) || Greenfoot.mouseClicked(text)){
             Greenfoot.getKey();

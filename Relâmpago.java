@@ -8,22 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Relâmpago extends Target
 {
-    /**
-     * Act - do whatever the Relâmpago wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-
-    private GreenfootImage image1;
-    private GreenfootImage image2;
-    private GreenfootImage image3;
-    private GreenfootImage image4;
     private GreenfootImage[] relampago= new GreenfootImage[4];
     private int indice=0;
-
     private int count;
     private final int TIMER;
-    private int count2;
-    private int wait;
     private GreenfootSound somRelampago;
     public Relâmpago()
     {
@@ -44,24 +32,26 @@ public class Relâmpago extends Target
         switchImage();
     }
 
+    /**
+     * Método que anima o relâmpago
+     */
     public void switchImage()
     {
         if (count%TIMER==0){
-            setImage(relampago[indice]);
-            indice++;
-            if (indice >= relampago.length)
+            if (count < TIMER*relampago.length)
+            {
+                setImage(relampago[indice]);
+                indice++;
+                if (indice >= relampago.length)
+                {
+                    indice=0;
+                }
+            }
+            else
             {
                 getWorld().removeObject(this);
             }
         }  
         count++;     
-    }
-    
-    public void removerRelampago(){
-
-        if(count <= 0){
-            getWorld().removeObject(this);
-        }
-        count--;
     }
 }

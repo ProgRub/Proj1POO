@@ -31,6 +31,9 @@ public class Options extends Menus
         }
     }
     
+    /**
+     * Método para as subclasses desta classe, para os botões relacionados com a mudança de controlos
+     */
     public void moveMouseBotaoControlos(){
         if(Greenfoot.mouseMoved(this)){
             setImage("BotaoControlos2.png");
@@ -42,6 +45,9 @@ public class Options extends Menus
         }
     }
     
+    /**
+     * Método para atualizar o texto mostrado pela classe Texto
+     */
     public static void updateText(String texto, Actor text, int size, Color cor){
         GreenfootImage image = new GreenfootImage(texto.toUpperCase(),size, cor, new Color(0,0,0,0));
         text.setImage(image);

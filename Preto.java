@@ -7,23 +7,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Preto extends Cor
-{
-    /**
-     * Act - do whatever the Preto wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        clickMouse();
-    }    
-    
+{    
     public Preto(){
         GreenfootImage image = new GreenfootImage(125,125);
         image.setColor(new Color(88,88,88));
         image.fillOval(0, 0, 125, 125);
         this.setImage(image);
-    }    
+    } 
     
+    public void act() 
+    {
+        clickMouse();
+    }
+    
+    /**
+     * Método que regista a cor que os jogadores escolheram e atualiza as variáveis e o mundo de acordo
+     */   
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
             if(!Cor.getP1escolheu()){

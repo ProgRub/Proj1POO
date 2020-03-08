@@ -14,6 +14,9 @@ public class Back extends Menus
         clickMouse();
     }   
 
+    /**
+     * Método para alterar a imagem consoante o rato passa por cima do botão
+     */
     private void moveMouse(){
         if(Greenfoot.mouseMoved(this)){
             setImage("BackComBrilho.png");
@@ -23,6 +26,9 @@ public class Back extends Menus
         }
     }
 
+    /**
+     * Método que regista que o rato clicou no botão e, neste caso, cria um mundo MenuInicial sem fazer reset dos controlos
+     */
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
             Greenfoot.setWorld(new MenuInicial(false));
