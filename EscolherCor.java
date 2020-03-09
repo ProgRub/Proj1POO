@@ -34,5 +34,6 @@ public class EscolherCor extends World
         Cor.setP1escolheu(false);
         Texto text =new Texto(Player1.getNome()+",\npick your colour",60, new Color(255,255,255));
         addObject(text,larg/2,alt/3);
+        addObject(new Back(), larg-100, alt-50);
     }
 }

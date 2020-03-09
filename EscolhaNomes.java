@@ -47,7 +47,7 @@ public class EscolhaNomes extends World
         addObject(header, getWidth()/2, getHeight()/2);
         addObject(new Texto("Max size of 10 characters",25, new Color(255,255,255)),getWidth()/2,3*getHeight()/4-40);
         addObject(new Texto("Press enter to submit",30, new Color(96, 17, 150)),getWidth()/2,3*getHeight()/4+60);
-
+        addObject(new Back(), larg-100, alt-50);
     }
 
     public void act()
@@ -100,6 +100,10 @@ public class EscolhaNomes extends World
             {
                 nome=nome.substring(0, nome.length()-1);
             }
+        }
+        else if (key.equals("escape"))
+        {
+            getObjects(Back.class).get(0).clickMouse(key);
         }
         Options.updateText(nome, displayNome, 40, Color.BLACK);
         flag=true;

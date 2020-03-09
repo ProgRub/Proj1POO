@@ -121,6 +121,7 @@ public class Players extends Actor
             if(isTouching(Vida_jogo2.class))
             {
                 N1.adicionaNumeroVidas(2);
+                N1.adicionaScore(5);
                 removeTouching(Vida_jogo2.class);
             }
         }
@@ -134,6 +135,7 @@ public class Players extends Actor
             if(isTouching(Vida_jogo2.class))
             {
                 N2.adicionaNumeroVidas(2); 
+                N2.adicionaScore(5);
                 removeTouching(Vida_jogo2.class);
             }
 
@@ -196,7 +198,7 @@ public class Players extends Actor
             Player2.setP1Morreu(true);
             if(indice==0)
             {
-                Greenfoot.playSound("explosion.wav");
+                Greenfoot.playSound("explosion.mp3");
             }
             setImage(explosao[indice]);
             indice++;

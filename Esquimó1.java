@@ -102,22 +102,6 @@ public class Esquimó1 extends Player1
     {
         P2morreu = x;
     }
-
-    // /**
-     // * Método que regista que o esquimó caiu ao mar
-     // */
-    // private void cair(){
-        // if (isTouching(Mar.class)){
-            // numeroVidas -= 10;
-            // Player2.setP1Morreu(true);
-            // saltou=true;
-            // animacao[indice].setTransparency(animacao[indice].getTransparency()-5);
-        // }
-
-        // if(animacao[indice].getTransparency() <=0){
-            // getWorld().removeObject(this);
-        // }
-    // }
     
     /**
      * Método que regista que o esquimó "salvou" o pinguim, dando-lhe 50 de pontuação

@@ -11,7 +11,7 @@ public class Options extends Menus
     private GreenfootImage image1, image2;
     public Options()
     {
-        image1 = new GreenfootImage("Options2.png");
+        image1 = new GreenfootImage("OptionsSemBrilho.png");
         image2 = new GreenfootImage("OptionsComBrilho.png");
     }
     

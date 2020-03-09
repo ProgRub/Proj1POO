@@ -22,8 +22,11 @@ public class Exit extends Menus
     }
 
     private void clickMouse(){
-        if (Greenfoot.mouseClicked(this)){
+        String key = Greenfoot.getKey();
+        if (Greenfoot.mouseClicked(this) || (key!=null && key.equals("escape"))){
+            MenuInicial.getMusica().stop();
             Greenfoot.stop();
         }
+        key=null;
     }
 }

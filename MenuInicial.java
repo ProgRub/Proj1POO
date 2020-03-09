@@ -4,20 +4,19 @@ public class MenuInicial extends World
 {
     private static GreenfootSound musica;
     private boolean reset;
-    
+
     public MenuInicial(boolean resetControlos)
     {    
         super(1200,700, 1); 
         reset=resetControlos;
         GreenfootImage bg = new GreenfootImage("Earth.png");
         musica = new GreenfootSound("music.mp3");
-        musica.play();
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
         prepare();
-        Greenfoot.setSpeed(50);
+        Greenfoot.setSpeed(50);        
     }
-    
+
     /**
      * Construtor só usado no inicio da simulação, para definir os controlos que os jogadores podem mudar
      */
@@ -27,7 +26,6 @@ public class MenuInicial extends World
         reset=true;
         GreenfootImage bg = new GreenfootImage("Earth.png");
         musica = new GreenfootSound("music.mp3");
-        musica.play();
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
         prepare();
@@ -61,6 +59,14 @@ public class MenuInicial extends World
         Player2.resetScore();
         Player1.resetNumVidas();
         Player2.resetNumVidas();
+    }
+
+    /**
+     * Método que certifica que a música só toca quando o jogo está a ser executado e não repete
+     */
+    public void started()
+    {
+        musica.playLoop();
     }
 
     public static GreenfootSound getMusica(){

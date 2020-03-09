@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Jogo1 extends World
 {
     private boolean control;
-    private int tempo = 120;
+    private int tempo = 12;
     private String escreverClock = "2:00";
     private Texto scoreP1, scoreP2, clock;
     private Player1 P1;
@@ -130,6 +130,8 @@ public class Jogo1 extends World
         }
         if(tempo==0)
         {
+            somAmbiente.stop();
+            somChuva.stop();
             Greenfoot.setWorld(new Stage1Complete());
         }
     }

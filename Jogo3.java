@@ -14,7 +14,7 @@ public class Jogo3 extends World
     private int conta_plataformas;
     private boolean control;
     private static boolean P1Chegou, P2Chegou;
-    private final int NUMPLATAFORMASPARAGANHAR=20;
+    private final int NUMPLATAFORMASPARAGANHAR=4;
     private Esquimó1 esq1;
     private Esquimó2 esq2;
     public Jogo3()

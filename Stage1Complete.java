@@ -12,7 +12,7 @@ public class Stage1Complete extends World
         setBackground(bg);
         prepare();
         IndividualScore.jogo1 = true;
-        MenuInicial.getMusica().play(); 
+        MenuInicial.getMusica().playLoop(); 
         HowToPlay.mudarJogo(2);
     }
 

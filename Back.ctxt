@@ -8,4 +8,6 @@ comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ clickMouse()
 comment3.text=\r\n\ M\u00E9todo\ que\ regista\ que\ o\ rato\ clicou\ no\ bot\u00E3o\ e,\ neste\ caso,\ cria\ um\ mundo\ MenuInicial\ sem\ fazer\ reset\ dos\ controlos\r\n
-numComments=4
+comment4.params=key
+comment4.target=void\ clickMouse(java.lang.String)
+numComments=5
