@@ -18,7 +18,7 @@ public class Player2 extends Players
     private GreenfootImage[] animacao;
     private GreenfootImage[] animacaoDeath;
     private static int numeroVidas=10;
-    protected static int score=0;
+    private static int score=0;
     private static boolean P1morreu;
 
     public Player2()

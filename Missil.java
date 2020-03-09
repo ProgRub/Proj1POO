@@ -134,7 +134,9 @@ public class Missil extends Jogos
         {
             if(indice==0)
             {
-                Greenfoot.playSound("explosion.mp3");
+                GreenfootSound som = new GreenfootSound("explosion.mp3");
+                som.play();
+                som.setVolume(15);
             }
             setImage(animaExplosao[indice]);
             indice++;

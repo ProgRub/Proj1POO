@@ -20,7 +20,7 @@ public class Jogo1 extends World
         super(1200, 700, 1); 
         control =false;
         contador=0;
-        tempo = 120;
+        tempo = 12;
         escreverClock = "2:00";
 
         auxNuvem = 0;
@@ -40,9 +40,8 @@ public class Jogo1 extends World
     {
         somAmbiente = new GreenfootSound("winter.mp3");
         somChuva = new GreenfootSound("rain.mp3");
-        somAmbiente.setVolume(60);
-        somAmbiente.play();
-        somChuva.setVolume(60);
+        somAmbiente.playLoop();
+        somAmbiente.setVolume(40);
         Chão chao= new Chão();
         addObject(chao,getWidth()/2,getHeight()-chao.getImage().getHeight()/2);
         Máquina máquina = new Máquina();
@@ -135,7 +134,7 @@ public class Jogo1 extends World
             Greenfoot.setWorld(new Stage1Complete());
         }
     }
-    
+
     /**
      * Métodos que criam granizo e neve, respetivamente, enquanto a máquina tem mais de metade da sua vida inicial
      */
@@ -160,7 +159,7 @@ public class Jogo1 extends World
             }
         }
     }
-    
+
     /**
      * Métodos que criam o alvo onde o relampago cairá e a chuva, respetivamente, após a máquina ter perdido metade da sua vida.
      * Os relâmpagos cairão na posição atual do jogador para incentivar o movimento e dificultar o jogo
@@ -170,7 +169,11 @@ public class Jogo1 extends World
         if(Máquina.getVida() <=midway)
         {
             somAmbiente.stop();
-            somChuva.play();
+            if(!somChuva.isPlaying())
+            {
+                somChuva.playLoop();
+                somChuva.setVolume(40);
+            }
             int prob = Greenfoot.getRandomNumber(2);
             if (Greenfoot.getRandomNumber(250)<4){
                 Target target = new Target();
@@ -194,7 +197,7 @@ public class Jogo1 extends World
             }
         }
     }
-    
+
     /**
      * Método que cria corações que os jogadores podem apanhar para recuperarem vida que possam ter perdido
      */

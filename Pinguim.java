@@ -15,7 +15,9 @@ public class Pinguim extends Jogos
         animacao[3] = new GreenfootImage("pinguimCaindo.png");
         setImage(animacao[indice]);
         contador=0;
-        Greenfoot.playSound("penguin.mp3");
+        GreenfootSound som = new GreenfootSound("penguin.mp3");
+        som.play();
+        som.setVolume(15);
         caindo = false;
     }
 

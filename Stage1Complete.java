@@ -11,7 +11,7 @@ public class Stage1Complete extends World
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
         prepare();
-        IndividualScore.jogo1 = true;
+        IndividualScore.setJogo1(true);
         MenuInicial.getMusica().playLoop(); 
         HowToPlay.mudarJogo(2);
     }

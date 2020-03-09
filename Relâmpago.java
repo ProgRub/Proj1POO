@@ -24,6 +24,7 @@ public class Relâmpago extends Target
         setImage(relampago[indice]);
         indice++;
         somRelampago.play();
+        somRelampago.setVolume(50);
         TIMER=8;
         count = 0;
     }

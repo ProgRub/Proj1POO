@@ -21,8 +21,8 @@ public class Bala extends Players
         original = getImage();
         setImage(original);
         moveEsquerda= P1.getAndandoParaEsquerda();
-        disparo.setVolume(35);
         disparo.play();
+        disparo.setVolume(15);
         VELOCIDADE=8;
         P1Disparou = P1;
         mudaOrientacao = false;
@@ -33,8 +33,8 @@ public class Bala extends Players
         original = getImage();
         setImage(original);
         moveEsquerda= P2.getAndandoParaEsquerda();
-        disparo.setVolume(35);
         disparo.play();
+        disparo.setVolume(15);
         VELOCIDADE=8;
         P2Disparou = P2;
         mudaOrientacao = false;

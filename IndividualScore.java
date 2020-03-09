@@ -5,7 +5,7 @@ public class IndividualScore extends World
     private Texto scoreP1;
     private Texto scoreP2;
     private GoBack back;
-    protected static boolean jogo1;
+    private static boolean jogo1;
     public IndividualScore()
     {    
         super(1200, 700, 1); 
@@ -23,5 +23,15 @@ public class IndividualScore extends World
 
         back = new GoBack();
         addObject(back,getWidth()/2,468);
+    }
+    
+    public static boolean getJogo1()
+    {
+        return jogo1;
+    }
+    
+    public static void setJogo1(boolean x)
+    {
+        jogo1=x;
     }
 }
