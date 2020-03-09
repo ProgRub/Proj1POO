@@ -11,7 +11,7 @@ public class Jogo1 extends World
     private static GreenfootSound somAmbiente;
     private static GreenfootSound somChuva;
     private int contador, midway, auxNuvem, auxNuvem2, auxFundo;
-    GreenfootImage fundo1, fundo2, fundo3, fundo4, fundo5, fundo6, fundo7, fundo8,fundo9;
+    private GreenfootImage fundo1, fundo2, fundo3, fundo4, fundo5, fundo6, fundo7, fundo8,fundo9;
     private final int TAMANHOTEXTO=45;
     private GreenfootImage[] fundos;
     private int indice;
