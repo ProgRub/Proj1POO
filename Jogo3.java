@@ -17,6 +17,7 @@ public class Jogo3 extends World
     private final int NUMPLATAFORMASPARAGANHAR=25;
     private Esquimó1 esq1;
     private Esquimó2 esq2;
+    private static GreenfootSound somAmbiente;
     public Jogo3()
     {    
         super(1200, 700, 1); 
@@ -54,6 +55,9 @@ public class Jogo3 extends World
         addObject(new Plataforma_Inicial(),400,ALTURA2);
 
         addObject(new Bandeira_Start(),400,348);
+        somAmbiente = new GreenfootSound("snowField.mp3");
+        somAmbiente.playLoop();
+        somAmbiente.setVolume(30);
     }
 
     public void act(){
