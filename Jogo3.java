@@ -14,7 +14,7 @@ public class Jogo3 extends World
     private int conta_plataformas;
     private boolean control;
     private static boolean P1Chegou, P2Chegou;
-    private final int NUMPLATAFORMASPARAGANHAR=4;
+    private final int NUMPLATAFORMASPARAGANHAR=25;
     private Esquimó1 esq1;
     private Esquimó2 esq2;
     public Jogo3()
@@ -96,13 +96,13 @@ public class Jogo3 extends World
             switch (random)
             {
                 case 0:
-                addObject(new PlataformaGelo(),getWidth()-1,ALTURA1);
+                addObject(new PlataformaGelo(-conta_plataformas),getWidth()-1,ALTURA1);
                 break;
                 case 1:
-                addObject(new PlataformaGelo(),getWidth()-1,ALTURA2);
+                addObject(new PlataformaGelo(-conta_plataformas),getWidth()-1,ALTURA2);
                 break;
                 case 2:
-                addObject(new PlataformaGelo(),getWidth()-1,ALTURA3);
+                addObject(new PlataformaGelo(-conta_plataformas),getWidth()-1,ALTURA3);
                 break;
             }       
             conta_plataformas++;

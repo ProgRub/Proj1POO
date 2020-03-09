@@ -5,12 +5,15 @@ public class PlataformaGelo extends Jogos
     private boolean pinguim;
     private int comprimentoMundo;
     private GreenfootImage imagemAtual;
-    public PlataformaGelo(){
+    public PlataformaGelo(int subtrair){
         podeCriarPinguim();
         imagemAtual = new GreenfootImage("platf1.png");
         //A largura das plataformas será tanto maior quanto menor foi o dano à camada de ozono no jogo 2
-        imagemAtual.scale(imagemAtual.getWidth()-(125-CamadaOzono.getVida())/5, imagemAtual.getHeight());
+        imagemAtual.scale(imagemAtual.getWidth()-(125-CamadaOzono.getVida())/5+subtrair, imagemAtual.getHeight());
         setImage(imagemAtual);
+    }
+    
+    public PlataformaGelo(){
     }
 
     public void act() 

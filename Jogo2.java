@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Jogo2 extends World
 {
     private int LIMITE=200;
-    private int tempo=12;
+    private int tempo=120;
     private Texto clock;
     private Texto scoreP1;
     private Texto scoreP2;
