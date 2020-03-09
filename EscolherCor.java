@@ -2,11 +2,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class EscolherCor extends World
 {
-
-    /**
-     * Constructor for objects of class EscolherJogo.
-     * 
-     */
     public EscolherCor()
     {    
         super(1200, 700, 1); 
@@ -17,11 +12,6 @@ public class EscolherCor extends World
         HowToPlay.mudarJogo(1);
     }
     
-    
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
     private void prepare()
     {
         int larg=getWidth();

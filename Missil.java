@@ -3,13 +3,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Missil extends Jogos
 {
     private int limite;
-    private Nave2 nave2=null;
-    private Nave1 nave1=null;
+    private Nave2 nave2;
+    private Nave1 nave1;
     private boolean Nave2EAlvo;
     private int contador;
-    private GreenfootImage[] animaExplosao = new GreenfootImage[15];
+    private GreenfootImage[] animaExplosao;
     private int indice=0;
-    private boolean explosao=false;
+    private boolean explosao;
 
     /**
      * Construtor que define qual o alvo do missil e este é "pintado" de acordo com a cor do alvo e
@@ -20,6 +20,7 @@ public class Missil extends Jogos
         limite=valor;
         nave2=N2;
         nave1=N1;
+        explosao=false;
         if (alvoENave2)
         {
             setImage(Player2.getColor()+"/Missil.png");
@@ -29,6 +30,7 @@ public class Missil extends Jogos
             setImage(Player1.getColor()+"/Missil.png");
         }
         Nave2EAlvo=alvoENave2;
+        animaExplosao = new GreenfootImage[15];
         getImage().scale(getImage().getWidth()/8, getImage().getHeight()/8);
         for (int i=0; i < animaExplosao.length; i++)
         {

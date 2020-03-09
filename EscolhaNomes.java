@@ -9,9 +9,9 @@ public class EscolhaNomes extends World
     private Texto caixa;
     private Texto displayNome;
     private Texto header;
-    private String nome="";
-    private boolean flag=true;
-    private boolean recebeuNomeP1=false;
+    private String nome;
+    private boolean flag;
+    private boolean recebeuNomeP1;
 
     public EscolhaNomes()
     {    
@@ -20,6 +20,9 @@ public class EscolhaNomes extends World
         GreenfootImage bg = new GreenfootImage("chooseName.png");
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
+        nome="";
+        flag=true;
+        recebeuNomeP1=false;
         prepare();
     }
 

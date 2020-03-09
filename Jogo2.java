@@ -2,12 +2,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Jogo2 extends World
 {
-    private int LIMITE=200;
-    private int tempo=120;
+    private final int LIMITE=200;
+    private int tempo;
     private Texto clock;
     private Texto scoreP1;
     private Texto scoreP2;
-    private String escreverClock = "2:00";
+    private String escreverClock;
     private final int TAMANHOTEXTO=45;
     private int contador;
     private boolean control;
@@ -19,10 +19,12 @@ public class Jogo2 extends World
     public Jogo2()
     {    
         super(1200, 700, 1); 
-        prepare();
+        tempo=120;
+        escreverClock = "2:00";
         control =false;
         contador = 0;
         quantoGas = Máquina.getVida()/20; //variável que determinará a quantidade de gás criado dependendo da quantidade de dano efetuado à máquina no nível anterior
+        prepare();
     }
 
     private void prepare()

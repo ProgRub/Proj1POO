@@ -6,9 +6,8 @@ public class Máquina extends Jogos
     private static int score;
     private static int contador;
     private GreenfootImage[] explosao;
-    private int indice=0;
+    private int indice;
 
-    private GreenfootImage explosion1,explosion2,explosion3,explosion4,explosion5,explosion6,explosion7,explosion8,explosion9,explosion10,explosion11,explosion12,explosion13;
     public Máquina(){
         vida=500;
         score=0;
@@ -18,6 +17,7 @@ public class Máquina extends Jogos
             explosao[i] = new GreenfootImage("ExplosionMáquina/"+(i+1)+".png");
         }
         contador=0;
+        indice=0;
     }
 
     public void act() 

@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Relâmpago extends Target
 {
-    private GreenfootImage[] relampago= new GreenfootImage[4];
+    private GreenfootImage[] relampago;
     private int indice=0;
     private int count;
     private final int TIMER;
@@ -16,6 +16,7 @@ public class Relâmpago extends Target
     public Relâmpago()
     {
         somRelampago = new GreenfootSound ("relampago.mp3");
+        relampago= new GreenfootImage[4];
         for (int i=0; i < relampago.length; i++)
         {
             relampago[i] = new GreenfootImage("Lightning/"+(i+1)+".png");

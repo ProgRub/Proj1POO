@@ -3,15 +3,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Jogo1 extends World
 {
     private boolean control;
-    private int tempo = 120;
-    private String escreverClock = "2:00";
+    private int tempo;
+    private String escreverClock;
     private Texto scoreP1, scoreP2, clock;
     private Player1 P1;
     private Player2 P2;
     private static GreenfootSound somAmbiente;
     private static GreenfootSound somChuva;
-    private int contador, midway, auxNuvem, auxNuvem2, auxFundo;
-    private GreenfootImage fundo1, fundo2, fundo3, fundo4, fundo5, fundo6, fundo7, fundo8,fundo9;
+    private int contador, midway, auxNuvem, auxFundo;
     private final int TAMANHOTEXTO=45;
     private GreenfootImage[] fundos;
     private int indice;
@@ -19,13 +18,13 @@ public class Jogo1 extends World
     public Jogo1()
     {    
         super(1200, 700, 1); 
-        prepare();
         control =false;
         contador=0;
+        tempo = 120;
+        escreverClock = "2:00";
 
         auxNuvem = 0;
-        auxNuvem2 = 0;
-        setPaintOrder(Texto.class,GameOver.class, Restart.class,VidaMáquina.class,Nuvem.class,Relâmpago.class, Máquina.class, Gas.class,Gota.class );
+        setPaintOrder(Texto.class,GameOver.class, Restart.class,VidaMáquina.class,Vida_player1.class,Vida_player2.class,Nuvem.class,Relâmpago.class, Máquina.class, Gas.class,Gota.class );
 
         auxFundo = -1;
         fundos= new GreenfootImage[9];
@@ -34,6 +33,7 @@ public class Jogo1 extends World
             fundos[i]=new GreenfootImage("jogo1_backgrounds/jogo1_background_"+(i+1)*5+".jpg");
         }
         indice=0;
+        prepare();
     }
 
     private void prepare()
