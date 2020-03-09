@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Players extends Actor
 {
-    protected boolean tocandoRelampago;
-    protected int contador;
+    private boolean tocandoRelampago;
+    private int contador;
     protected int indice;
     private int auxDeath;
     private int indiceDeath;
@@ -41,7 +41,6 @@ public class Players extends Actor
     public void act() 
     {
     } 
-
     /**
      * Métodos que registam a perda, ou ganho, de vidas consoante o objeto que os jogadores tocam no primeiro jogo
      */

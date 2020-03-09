@@ -9,7 +9,7 @@ public class Esquimó1 extends Player1
         animacao=new GreenfootImage[5];
         for(int i=0; i <animacao.length;i++)
         {
-            animacao[i]=new GreenfootImage(cor+"/Jogo3/"+(i+1)+".png");
+            animacao[i]=new GreenfootImage(getColor()+"/Jogo3/"+(i+1)+".png");
         }
     }
 
@@ -26,7 +26,7 @@ public class Esquimó1 extends Player1
      */
     protected void move()
     {
-        if(numeroVidas > 0 &&!P2morreu){
+        if(getNumeroVidas() > 0 && !getP2Morreu()){
             if (Greenfoot.isKeyDown(up) && podeSaltar){
                 saltou=true;
                 podeSaltar=false;
@@ -96,12 +96,7 @@ public class Esquimó1 extends Player1
             }
         }
         plat=null;
-    }   
-    
-    public static void setP2Morreu(boolean x)
-    {
-        P2morreu = x;
-    }
+    }  
     
     /**
      * Método que regista que o esquimó "salvou" o pinguim, dando-lhe 50 de pontuação

@@ -19,7 +19,6 @@ public class Nave2 extends Player2
         {
             explosao[i]=new GreenfootImage("ExplosionMáquina/"+(i+1)+".png");
         }
-        contador=0;
     }
 
     public void act() 
@@ -27,7 +26,7 @@ public class Nave2 extends Player2
         moveNave();
         removeGas();
         perdeVidas(this);
-        if(numeroVidas<=0)
+        if(getNumeroVidas()<=0)
         {
             naveDestruida(explosao);
         }
@@ -37,7 +36,7 @@ public class Nave2 extends Player2
      * Método que trata do movimento da nave
      */
     private void moveNave(){
-        if (numeroVidas > 0 && !P1morreu)
+        if (getNumeroVidas() > 0 && !getP1Morreu())
         {
             if (Greenfoot.isKeyDown(left)){
                 setLocation(getX()-3, getY());

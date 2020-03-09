@@ -13,13 +13,13 @@ public class Player2 extends Players
     protected static String right;
     protected static String shoot;
     private static String[] controlos= {up,left,right,shoot};
-    protected static String cor;
-    protected static String nome;
+    private static String cor;
+    private static String nome;
     private GreenfootImage[] animacao;
     private GreenfootImage[] animacaoDeath;
-    protected static int numeroVidas=10;
+    private static int numeroVidas=10;
     protected static int score=0;
-    protected static boolean P1morreu;
+    private static boolean P1morreu;
 
     public Player2()
     {
@@ -51,6 +51,11 @@ public class Player2 extends Players
             animarMorte(animacaoDeath,andandoParaEsquerda);
         }
     } 
+
+    public static boolean getP1Morreu()
+    {
+        return P1morreu;
+    }  
 
     public static void setP1Morreu(boolean x)
     {
