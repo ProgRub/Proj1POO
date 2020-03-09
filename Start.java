@@ -14,13 +14,13 @@ public class Start extends Stage
         image2 = new GreenfootImage("StartComBrilho.png");
         setImage(image1);
     }
-    
+
     public void act() 
     {
         moveMouse(image2,image1);
         clickMouse();
     }  
-    
+
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
             if (getWorld() instanceof HowToPlay){
@@ -31,7 +31,8 @@ public class Start extends Stage
                 }else if(HowToPlay.jogoAtual() == 3){
                     Greenfoot.setWorld(new Jogo3());
                 }
-            } 
+            }
+            MenuInicial.getMusica().stop(); 
         }
     } 
 }

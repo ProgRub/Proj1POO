@@ -33,7 +33,6 @@ public class Amarelo extends Cor
             }
             else{
                 Player2.setColor("Yellow");
-                MenuInicial.getMusica().stop();
                 Greenfoot.setWorld(new HowToPlay());
             }
         }

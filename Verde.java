@@ -33,7 +33,6 @@ public class Verde extends Cor
             }
             else{
                 Player2.setColor("Green");
-                MenuInicial.getMusica().stop();
                 Greenfoot.setWorld(new HowToPlay());
             }
         }

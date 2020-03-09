@@ -13,6 +13,7 @@ public class Stage2Complete extends World
         setBackground(bg);
         prepare();
         IndividualScore.jogo1 = false;
+        MenuInicial.getMusica().play(); 
         HowToPlay.mudarJogo(3);
     }
     
