@@ -10,7 +10,7 @@ public class Vermelho extends Cor
 {  
     public Vermelho(){
         GreenfootImage image = new GreenfootImage(125,125);
-        image.setColor(new Color(174,87,87));
+        image.setColor(new Color(149,19,23));
         image.fillOval(0, 0, 125, 125);
         this.setImage(image);
     }

@@ -54,7 +54,7 @@ public class Máquina extends Jogos
             Jogo1.getSomChuva().stop();
             if(indice==0)
             {
-                Greenfoot.playSound("explosion.wav");
+                Greenfoot.playSound("explosion.mp3");
             }
             setImage(explosao[indice]);
             indice++;

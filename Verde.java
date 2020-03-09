@@ -10,7 +10,7 @@ public class Verde extends Cor
 {  
     public Verde(){
         GreenfootImage image = new GreenfootImage(125,125);
-        image.setColor(new Color(107,175,87));
+        image.setColor(new Color(54,182,73));
         image.fillOval(0, 0, 125, 125);
         this.setImage(image);
     }

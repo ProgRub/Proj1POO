@@ -17,7 +17,7 @@ public class Bala extends Players
     private GreenfootSound disparo;
 
     public Bala(Player1 P1){
-        disparo = new GreenfootSound("gun.wav");
+        disparo = new GreenfootSound("gun.mp3");
         original = getImage();
         setImage(original);
         moveEsquerda= P1.getAndandoParaEsquerda();
@@ -29,7 +29,7 @@ public class Bala extends Players
     }
 
     public Bala(Player2 P2){
-        disparo = new GreenfootSound("gun.wav");
+        disparo = new GreenfootSound("gun.mp3");
         original = getImage();
         setImage(original);
         moveEsquerda= P2.getAndandoParaEsquerda();

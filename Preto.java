@@ -10,7 +10,7 @@ public class Preto extends Cor
 {    
     public Preto(){
         GreenfootImage image = new GreenfootImage(125,125);
-        image.setColor(new Color(88,88,88));
+        image.setColor(new Color(55,55,57));
         image.fillOval(0, 0, 125, 125);
         this.setImage(image);
     } 

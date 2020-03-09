@@ -11,7 +11,7 @@ public class Azul extends Cor
     
     public Azul(){
         GreenfootImage image = new GreenfootImage(125,125);
-        image.setColor(new Color(78,117,196));
+        image.setColor(new Color(6,118,189));
         image.fillOval(0, 0, 125, 125);
         this.setImage(image);
     }
