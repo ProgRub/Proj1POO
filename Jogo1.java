@@ -20,13 +20,8 @@ public class Jogo1 extends World
         super(1200, 700, 1); 
         control =false;
         contador=0;
-<<<<<<< Updated upstream
-        tempo = 2;
-        escreverClock = "2:00";
-=======
         tempo = 90;
         escreverClock = "1:30";
->>>>>>> Stashed changes
 
         auxNuvem = 0;
         setPaintOrder(Texto.class,GameOver.class, Restart.class,VidaMáquina.class,Vida_player1.class,Vida_player2.class,Nuvem.class,Relâmpago.class, Máquina.class, Gas.class,Gota.class );
