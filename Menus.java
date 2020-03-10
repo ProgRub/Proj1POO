@@ -10,8 +10,7 @@ public class Menus extends Objetos
 {
     public void act() 
     {
-    }    
-
+    } 
     /**
      * Método para alterar a imagem consoante o rato passa por cima do botão
      */

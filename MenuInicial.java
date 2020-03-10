@@ -72,4 +72,9 @@ public class MenuInicial extends World
     public static GreenfootSound getMusica(){
         return musica;
     }
+    
+    public void stopped()
+    {
+        musica.stop();
+    }
 }

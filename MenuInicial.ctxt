@@ -15,4 +15,6 @@ comment5.target=void\ started()
 comment5.text=\r\n\ M\u00E9todo\ que\ certifica\ que\ a\ m\u00FAsica\ s\u00F3\ toca\ quando\ o\ jogo\ est\u00E1\ a\ ser\ executado\ e\ n\u00E3o\ repete\r\n
 comment6.params=
 comment6.target=greenfoot.GreenfootSound\ getMusica()
-numComments=7
+comment7.params=
+comment7.target=void\ stopped()
+numComments=8

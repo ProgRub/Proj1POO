@@ -26,14 +26,7 @@ public class Opções extends World
         addObject(new Texto("Left",TAMANHOTEXTO, new Color(255,255,255)), larg/8, 3*comp/6);
         addObject(new Texto("Right",TAMANHOTEXTO, new Color(255,255,255)), larg/8, 4*comp/6);
         addObject(new Texto("Shoot",TAMANHOTEXTO, new Color(255,255,255)), larg/8, 5*comp/6);
-        // addObject(new ControlP1Cima(), larg/3, (2*comp)/6);
-        // addObject(new ControlP1Esq(), larg/3, (3*comp)/6);
-        // addObject(new ControlP1Dir(), larg/3, (4*comp)/6);
-        // addObject(new ControlP1Dispara(), larg/3, (5*comp)/6);
-        // addObject(new ControlP2Cima(), (2*larg)/3, (2*comp)/6);
-        // addObject(new ControlP2Esq(), (2*larg)/3, (3*comp)/6);
-        // addObject(new ControlP2Dir(), (2*larg)/3, (4*comp)/6);
-        // addObject(new ControlP2Dispara(), (2*larg)/3, (5*comp)/6);
+
         addObject(new Controlos(1,0), larg/3, (2*comp)/6);
         addObject(new Controlos(1,1), larg/3, (3*comp)/6);
         addObject(new Controlos(1,2), larg/3, (4*comp)/6);
