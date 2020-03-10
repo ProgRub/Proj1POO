@@ -14,7 +14,7 @@ public class Players extends Actor
     private int auxDeath;
     private int indiceDeath;
     private boolean control;
-    protected final int GRAVIDADE =15;
+    protected static final int GRAVIDADE =15;
     protected int tempoJump;
     protected int tempoQueda;
     protected boolean podeSaltar;

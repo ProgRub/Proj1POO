@@ -9,7 +9,7 @@ public class Máquina extends Jogos
     private int indice;
 
     public Máquina(){
-        vida=2;
+        vida=500;
         score=0;
         explosao = new GreenfootImage[13];
         for (int i=0; i< explosao.length; i++)
