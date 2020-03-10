@@ -98,7 +98,8 @@ public class Missil extends Jogos
     private void chegouAoFim(){
         if(isAtEdge())
         {
-            explosao=true;
+            explosao=false;
+            getWorld().removeObject(this);
         }
     }
 
