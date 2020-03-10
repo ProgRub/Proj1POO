@@ -70,7 +70,7 @@ public class PlataformaGelo extends Jogos
         if (getX() == 0 || getY() == getWorld().getHeight()-1){
             GreenfootSound som = new GreenfootSound("splash.mp3");
             som.play();
-            som.setVolume(20);
+            som.setVolume(30);
             getWorld().removeObject(this);
         }
     }

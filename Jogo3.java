@@ -136,6 +136,7 @@ public class Jogo3 extends World
         if ((vidaJogador1 <=0 || vidaJogador2 <= 0) && !control ){
             addObject(new GameOver(),getWidth()/2,getHeight()/2);
             addObject(new Restart(),getWidth()/2,getHeight()/2 +150);
+            somAmbiente.stop();
             Greenfoot.playSound("gameOver.mp3");
             control =true;
         }
@@ -148,6 +149,7 @@ public class Jogo3 extends World
     {
         if(P1chegou && P2chegou)
         {
+            somAmbiente.stop();
             Greenfoot.setWorld(new Victory());   
         }
     }

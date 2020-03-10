@@ -20,7 +20,7 @@ public class Jogo1 extends World
         super(1200, 700, 1); 
         control =false;
         contador=0;
-        tempo = 12;
+        tempo = 120;
         escreverClock = "2:00";
 
         auxNuvem = 0;
@@ -95,6 +95,8 @@ public class Jogo1 extends World
         if ((vidaJogador1 <=0 || vidaJogador2 <= 0) && !control ){
             addObject(new GameOver(),getWidth()/2,getHeight()/2);
             addObject(new Restart(),getWidth()/2,getHeight()/2 +150);
+            somAmbiente.stop();
+            somChuva.stop();
             Greenfoot.playSound("gameOver.mp3");
             control =true;
         }

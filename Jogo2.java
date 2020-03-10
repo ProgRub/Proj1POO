@@ -19,7 +19,7 @@ public class Jogo2 extends World
     public Jogo2()
     {    
         super(1200, 700, 1); 
-        tempo=12;
+        tempo=120;
         escreverClock = "2:00";
         control =false;
         contador = 0;
