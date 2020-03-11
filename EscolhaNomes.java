@@ -44,8 +44,8 @@ public class EscolhaNomes extends World
 
         header=new Texto("Player 1,\nwrite your name",50, new Color(255,255,255));
         addObject(header, getWidth()/2, getHeight()/2);
-        addObject(new Texto("Max size of 10 characters",25, new Color(255,255,255)),getWidth()/2,3*getHeight()/4-40);
-        addObject(new Texto("Press enter to submit",30, new Color(96, 17, 150)),getWidth()/2,3*getHeight()/4+60);
+        addObject(new Texto("Max size of 10 characters",30, new Color(222, 18, 195)),getWidth()/2,3*getHeight()/4-40);
+        addObject(new Texto("Press enter to submit",30, new Color(222, 18, 195)),getWidth()/2,3*getHeight()/4+60);
     }
 
     public void act()
