@@ -52,7 +52,7 @@ public class EscolhaNomes extends World
     {
         escritaNome();
     }
-    
+
     /**
      * Método que vai receber as teclas introduzidas pelo utilizador, construindo o nome do jogador e mostrando-o visualmente
      */
@@ -74,16 +74,16 @@ public class EscolhaNomes extends World
                 }
                 flag=false;
             }
-            
+
         }
         if (key.equals("enter") || nome.length()>=10)
         {
-            Options.updateText(nome,displayNome,40, new Color(0,255,0));
+            displayNome.updateText(nome,displayNome,40, new Color(0,255,0));
             Greenfoot.delay(25);
             if(!recebeuNomeP1)
             {
                 Player1.setNome(nome);
-                Options.updateText("Player 2,\nwrite your name", header,50, new Color(255,255,255));
+                displayNome.updateText("Player 2,\nwrite your name", header,50, new Color(255,255,255));
                 nome="";
                 recebeuNomeP1=true;
             }
@@ -100,7 +100,7 @@ public class EscolhaNomes extends World
                 nome=nome.substring(0, nome.length()-1);
             }
         }
-        Options.updateText(nome, displayNome, 40, Color.BLACK);
+        displayNome.updateText(nome, displayNome, 40, Color.BLACK);
         flag=true;
     }
 }

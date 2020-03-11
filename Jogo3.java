@@ -6,8 +6,7 @@ public class Jogo3 extends World
     private final int ALTURA1=300;
     private final int ALTURA2=400;
     private final int ALTURA3=500;
-    private Texto scoreP1;
-    private Texto scoreP2;
+    private Texto scoreP1, scoreP2;
     private final int TAMANHOTEXTO=45;
     private int contador;
     private int altura_anterior;
@@ -68,8 +67,8 @@ public class Jogo3 extends World
         }
         invocarMar();
         gameOver(esq1.getNumeroVidas(), esq2.getNumeroVidas());
-        Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
-        Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
+        scoreP1.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
+        scoreP2.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
     }
 
     /**

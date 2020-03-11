@@ -79,8 +79,8 @@ public class Jogo1 extends World
             atualizaRelogio();  
         }
         trocaFundo();
-        Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
-        Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
+        scoreP1.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
+        scoreP2.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
     }
 
     public static GreenfootSound getSomChuva()
@@ -123,11 +123,11 @@ public class Jogo1 extends World
         }
         if (tempo <=10 && contador%61<30)
         {
-            Options.updateText(escreverClock,clock,TAMANHOTEXTO, Color.RED);
+            clock.updateText(escreverClock,clock,TAMANHOTEXTO, Color.RED);
         }
         else
         {
-            Options.updateText(escreverClock,clock,TAMANHOTEXTO, Color.WHITE);
+            clock.updateText(escreverClock,clock,TAMANHOTEXTO, Color.WHITE);
         }
         if(tempo==0)
         {

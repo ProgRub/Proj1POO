@@ -253,7 +253,7 @@ public class Players extends Actor
     public void playAtingido()
     {
         atingido.play();
-        atingido.setVolume(30);
+        atingido.setVolume(50);
     }
 
     /**

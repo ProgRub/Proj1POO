@@ -30,7 +30,7 @@ public class Azul extends Cor
             if(!Cor.getP1escolheu()){
                 Player1.setColor("Blue");
                 Cor.setP1escolheu(true);
-                Options.updateText(Player2.getNome()+",\npick your colour", getWorld().getObjects(Texto.class).get(0), 60, new Color(255,255,255));
+                Texto.updateText(Player2.getNome()+",\npick your colour", getWorld().getObjects(Texto.class).get(0), 60, new Color(255,255,255));
                 getWorld().removeObject(this);
             }
             else{

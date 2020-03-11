@@ -26,5 +26,12 @@ public class Texto extends Options
     {
         return Cor;
     }
+    /**
+     * Método para atualizar o texto mostrado pela classe Texto
+     */
+    public static void updateText(String texto, Actor text, int size, Color cor){
+        GreenfootImage image = new GreenfootImage(texto.toUpperCase(),size, cor, new Color(0,0,0,0));
+        text.setImage(image);
+    }
 
 }

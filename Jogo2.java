@@ -5,8 +5,7 @@ public class Jogo2 extends World
     private final int LIMITE=200;
     private int tempo;
     private Texto clock;
-    private Texto scoreP1;
-    private Texto scoreP2;
+    private Texto scoreP1,scoreP2;
     private String escreverClock;
     private final int TAMANHOTEXTO=45;
     private int contador;
@@ -67,8 +66,8 @@ public class Jogo2 extends World
             atualizaRelogio();
         }
         gameOver(camadaOzono.getVida(), nave1.getNumeroVidas(), nave2.getNumeroVidas());
-        Options.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
-        Options.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
+        scoreP1.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
+        scoreP2.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
     }
 
     /**
@@ -92,11 +91,11 @@ public class Jogo2 extends World
         }
         if (tempo <=10 && contador%61<30)
         {
-            Options.updateText(escreverClock,clock,TAMANHOTEXTO, Color.RED);
+            clock.updateText(escreverClock,clock,TAMANHOTEXTO, Color.RED);
         }
         else
         {
-            Options.updateText(escreverClock,clock,TAMANHOTEXTO, Color.WHITE);
+            clock.updateText(escreverClock,clock,TAMANHOTEXTO, Color.WHITE);
         }
         if(tempo==0)
         {

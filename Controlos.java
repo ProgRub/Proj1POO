@@ -12,7 +12,7 @@ public class Controlos extends Options
     private Boolean prepara;
     private int player;
     private int controlo;
-    private Actor text;
+    private Texto text;
     private GreenfootImage image1, image2;
     public Controlos (int player, int controlo)
     {
@@ -32,11 +32,11 @@ public class Controlos extends Options
             getWorld().addObject(text, getX(), getY());
             if (player == 1)
             {
-                updateText(Player1.getControls()[controlo],text,40, new Color(255,255,255));
+                text.updateText(Player1.getControls()[controlo],text,40, new Color(255,255,255));
             }
             else
             {
-                updateText(Player2.getControls()[controlo],text,40, new Color(255,255,255));
+                text.updateText(Player2.getControls()[controlo],text,40, new Color(255,255,255));
             }
             prepara=false;
             image1.scale((int)(1.5*getWorld().getWidth()/9), getWorld().getHeight()/9);
@@ -54,7 +54,7 @@ public class Controlos extends Options
         if (Greenfoot.mouseClicked(this) || Greenfoot.mouseClicked(text)){
             playClick();
             Greenfoot.getKey();
-            updateText("Press any key",text,30, new Color(255,255,255));
+            text.updateText("Press any key",text,30, new Color(255,255,255));
             Greenfoot.delay(1);
             while (flag){
                 String key= Greenfoot.getKey();
@@ -72,11 +72,11 @@ public class Controlos extends Options
                     if(!flag){
                         if (player == 1)
                         {
-                            updateText(Player1.getControls()[controlo],text,40, new Color(255,255,255));
+                            text.updateText(Player1.getControls()[controlo],text,40, new Color(255,255,255));
                         }
                         else
                         {
-                            updateText(Player2.getControls()[controlo],text,40, new Color(255,255,255));
+                            text.updateText(Player2.getControls()[controlo],text,40, new Color(255,255,255));
                         }
                     }
                 }
