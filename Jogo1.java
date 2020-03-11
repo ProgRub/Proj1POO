@@ -20,7 +20,7 @@ public class Jogo1 extends World
         super(1200, 700, 1); 
         control =false;
         contador=0;
-        tempo = 90;
+        tempo = 5;
         escreverClock = "1:30";
 
         auxNuvem = 0;

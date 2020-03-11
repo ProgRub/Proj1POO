@@ -23,37 +23,15 @@ public class Back extends Menus
     }
 
     /**
-     * Método que regista que o rato clicou no botão e, neste caso, cria um mundo MenuInicial sem fazer reset dos controlos
+     * Métodos que registam que o rato clicou no botão ou o utilizador carregou no Esc e, neste caso, volta ao mundo anterior
      */
     private void clickMouse(){
         String key =Greenfoot.getKey();
         World mundo = getWorld();
         if (Greenfoot.mouseClicked(this) || (key!=null && key.equals("escape"))){
-            if (mundo instanceof Opções || mundo instanceof EscolhaNomes)
-            {
-                Greenfoot.setWorld(new MenuInicial(false));
-            }
-            else if (mundo instanceof EscolherCor)
-            {
-                Greenfoot.setWorld(new EscolhaNomes());
-            }
+            Greenfoot.setWorld(new MenuInicial(false));
         }
         key = null;
         mundo = null;
-    } 
-    public void clickMouse(String key){
-        World mundo = getWorld();
-        if (Greenfoot.mouseClicked(this) || (key.equals("escape"))){
-            if (mundo instanceof Opções || mundo instanceof EscolhaNomes)
-            {
-                Greenfoot.setWorld(new MenuInicial(false));
-            }
-            else if (mundo instanceof EscolherCor)
-            {
-                Greenfoot.setWorld(new EscolhaNomes());
-            }
-        }
-        key = null;
-        mundo = null;
-    }   
+    }  
 }

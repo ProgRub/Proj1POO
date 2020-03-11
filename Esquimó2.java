@@ -23,7 +23,7 @@ public class Esquimó2 extends Player2
     {
         queda();
         move();
-        salvarPinguim();
+        // salvarPinguim();
         cair(this, animacao);
     }
     
@@ -103,15 +103,15 @@ public class Esquimó2 extends Player2
         }
         plat=null;
     } 
-    /**
-     * Método que regista que o esquimó "salvou" o pinguim, dando-lhe 50 de pontuação
-     */
-    private void salvarPinguim()
-    {
-        if (isTouching(Pinguim.class))
-        {
-            Player2.adicionaScore(50);
-            removeTouching(Pinguim.class);
-        }
-    }
+    // /**
+     // * Método que regista que o esquimó "salvou" o pinguim, dando-lhe 50 de pontuação
+     // */
+    // private void salvarPinguim()
+    // {
+        // if (isTouching(Pinguim.class))
+        // {
+            // Player2.adicionaScore(50);
+            // removeTouching(Pinguim.class);
+        // }
+    // }
 }

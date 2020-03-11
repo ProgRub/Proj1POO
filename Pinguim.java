@@ -28,6 +28,7 @@ public class Pinguim extends Jogos
         emCimaPlataforma();
         desaparece();
         caindo();
+        salvado();
     } 
 
     /**
@@ -45,6 +46,19 @@ public class Pinguim extends Jogos
                 setImage(animacao[indice]);
                 contador=0;
             }
+        }
+    }     
+    
+    /**
+     * Método que regista que pinguim foi salvo pelos esquimós
+     */
+    private void salvado()
+    {
+        if (isTouching(Esquimó1.class) && isTouching(Esquimó2.class))
+        {
+            Player1.adicionaScore(25);
+            Player2.adicionaScore(25);
+            getWorld().removeObject(this);
         }
     }
     
@@ -64,6 +78,7 @@ public class Pinguim extends Jogos
             caindo=false;
         }
     }
+    
 
     /**
      * Método para alterar a animação do objeto quando está a "cair" (quando a variável caindo é igual a true)
