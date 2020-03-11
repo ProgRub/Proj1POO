@@ -29,6 +29,7 @@ public class Back extends Menus
         String key =Greenfoot.getKey();
         World mundo = getWorld();
         if (Greenfoot.mouseClicked(this) || (key!=null && key.equals("escape"))){
+            playClick();
             Greenfoot.setWorld(new MenuInicial(false));
         }
         key = null;

@@ -15,14 +15,17 @@ public class Jogo2 extends World
     private Nave2 nave2;
     private CamadaOzono camadaOzono;
     private int quantoGas;
+    private GreenfootSound ambiente;
 
     public Jogo2()
     {    
         super(1200, 700, 1); 
-        tempo=5;
+        tempo=120;
         escreverClock = "2:00";
         control =false;
         contador = 0;
+        ambiente = new GreenfootSound("music2.mp3");
+        ambiente.play();
         quantoGas = Máquina.getVida()/20; //variável que determinará a quantidade de gás criado dependendo da quantidade de dano efetuado à máquina no nível anterior
         prepare();
     }
@@ -97,6 +100,7 @@ public class Jogo2 extends World
         }
         if(tempo==0)
         {
+            ambiente.stop();
             Greenfoot.setWorld(new Stage2Complete());
         }
     }
@@ -146,6 +150,7 @@ public class Jogo2 extends World
      */
     private void gameOver(int vidaCamada, int vidaNave1, int vidaNave2){
         if ( ((vidaNave1 <=0 || vidaNave2 <= 0 ) || vidaCamada <=0) && !control){
+            ambiente.stop();
             addObject(new GameOver(),getWidth()/2,getHeight()/2);
             addObject(new Restart(),getWidth()/2,getHeight()/2 +150);
             Greenfoot.playSound("gameOver.mp3");

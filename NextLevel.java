@@ -23,6 +23,7 @@ public class NextLevel extends Stage
 
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
+            playClick();
           Greenfoot.setWorld(new HowToPlay());
         }
     }    

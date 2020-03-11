@@ -8,6 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Menus extends Objetos
 {
+    private GreenfootSound click;
+    public Menus()
+    {
+        click = new GreenfootSound("click.mp3");
+    }
     public void act() 
     {
     } 
@@ -21,5 +26,14 @@ public class Menus extends Objetos
         if (Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)){
             setImage(image2);
         }
-    }    
+    }  
+    
+    /** 
+     * Método para tocar um som de "click" quando os botões são pressionados
+     */
+    protected void playClick()
+    {
+        click.play();
+        click.setVolume(90);
+    }
 }

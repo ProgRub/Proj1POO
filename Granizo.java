@@ -12,14 +12,11 @@ public class Granizo extends ObjetosCaem
     {
         imageGranizo = getImage();
         imageGranizo.scale(imageGranizo.getWidth()/3, imageGranizo.getHeight()/3);
-
     }
 
     public void act() 
     {
         movimento();
         ultrapassaLimite();
-    }   
-
-    
+    }  
 }

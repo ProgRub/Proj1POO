@@ -24,6 +24,7 @@ public class GoBack extends Stage
 
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
+            playClick();
             if(IndividualScore.getJogo1())
             {
                 Greenfoot.setWorld(new Stage1Complete());

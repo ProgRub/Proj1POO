@@ -20,7 +20,7 @@ public class Jogo1 extends World
         super(1200, 700, 1); 
         control =false;
         contador=0;
-        tempo = 5;
+        tempo = 90;
         escreverClock = "1:30";
 
         auxNuvem = 0;
@@ -41,7 +41,7 @@ public class Jogo1 extends World
         somAmbiente = new GreenfootSound("winter.mp3");
         somChuva = new GreenfootSound("rain.mp3");
         somAmbiente.playLoop();
-        somAmbiente.setVolume(40);
+        somAmbiente.setVolume(30);
         Chão chao= new Chão();
         addObject(chao,getWidth()/2,getHeight()-chao.getImage().getHeight()/2);
         Máquina máquina = new Máquina();

@@ -52,6 +52,7 @@ public class Controlos extends Options
      */
     public void clickMouse(int player, int controlo){
         if (Greenfoot.mouseClicked(this) || Greenfoot.mouseClicked(text)){
+            playClick();
             Greenfoot.getKey();
             updateText("Press any key",text,30, new Color(255,255,255));
             Greenfoot.delay(1);

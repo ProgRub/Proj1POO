@@ -21,6 +21,7 @@ public class Players extends Actor
     protected boolean saltou;
     protected boolean andandoParaEsquerda;
     protected int controlBala;
+    private GreenfootSound atingido, apanhouVida;
 
     public Players()
     {
@@ -36,6 +37,8 @@ public class Players extends Actor
         saltou=false;
         andandoParaEsquerda=false;
         controlBala=0;
+        atingido = new GreenfootSound("PlayerHit.mp3");
+        apanhouVida = new GreenfootSound("getsHealth.mp3");
     }
 
     public void act() 
@@ -49,6 +52,7 @@ public class Players extends Actor
         if(P1.getNumeroVidas()>0){
             if(isTouching(Granizo.class))
             {
+                playAtingido();
                 P1.adicionaNumeroVidas(-1); 
                 P1.adicionaScore(-5);
                 removeTouching(Granizo.class);
@@ -70,6 +74,7 @@ public class Players extends Actor
 
             if(isTouching(Vida.class) )
             {
+                playVida();
                 P1.adicionaNumeroVidas(2);
                 P1.adicionaScore(5);
                 removeTouching(Vida.class);
@@ -84,6 +89,7 @@ public class Players extends Actor
         if(P2.getNumeroVidas()>0){
             if(isTouching(Granizo.class))
             {
+                playAtingido();
                 P2.adicionaNumeroVidas(-1); 
                 P2.adicionaScore(-5);
                 removeTouching(Granizo.class);
@@ -103,6 +109,7 @@ public class Players extends Actor
             }
             if(isTouching(Vida.class))
             {
+                playVida();
                 P2.adicionaNumeroVidas(2); 
                 P2.adicionaScore(5);
                 removeTouching(Vida.class);
@@ -119,6 +126,7 @@ public class Players extends Actor
         {
             if(isTouching(Vida_jogo2.class))
             {
+                playVida();
                 N1.adicionaNumeroVidas(2);
                 N1.adicionaScore(5);
                 removeTouching(Vida_jogo2.class);
@@ -133,6 +141,7 @@ public class Players extends Actor
         {
             if(isTouching(Vida_jogo2.class))
             {
+                playVida();
                 N2.adicionaNumeroVidas(2); 
                 N2.adicionaScore(5);
                 removeTouching(Vida_jogo2.class);
@@ -236,6 +245,24 @@ public class Players extends Actor
         if(animacao[indice].getTransparency() <=0){
             getWorld().removeObject(this);
         }
+    } 
+
+    /**
+     * Método que toca um som quando o jogador é atingido por uma bola de granizo
+     */
+    public void playAtingido()
+    {
+        atingido.play();
+        atingido.setVolume(30);
+    }
+
+    /**
+     * Método que toca um som quando o jogador apanha um coração de vida
+     */
+    public void playVida()
+    {
+        apanhouVida.play();
+        apanhouVida.setVolume(30);
     }
 
     /**

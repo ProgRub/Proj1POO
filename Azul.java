@@ -26,6 +26,7 @@ public class Azul extends Cor
      */    
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
+            playClick();
             if(!Cor.getP1escolheu()){
                 Player1.setColor("Blue");
                 Cor.setP1escolheu(true);

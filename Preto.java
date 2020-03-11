@@ -25,6 +25,7 @@ public class Preto extends Cor
      */   
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
+            playClick();
             if(!Cor.getP1escolheu()){
                 Player1.setColor("Black");
                 Cor.setP1escolheu(true);
