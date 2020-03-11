@@ -1,7 +1,10 @@
 #BlueJ class context
 comment0.target=Cor
-comment1.params=
-comment1.target=boolean\ getP1escolheu()
-comment2.params=x
-comment2.target=void\ setP1escolheu(boolean)
-numComments=3
+comment1.params=valor
+comment1.target=Cor(int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ clickMouse()
+comment3.text=\r\n\ M\u00E9todo\ que\ regista\ a\ cor\ que\ os\ jogadores\ escolheram\ e\ atualiza\ as\ vari\u00E1veis\ e\ o\ mundo\ de\ acordo\r\n
+numComments=4

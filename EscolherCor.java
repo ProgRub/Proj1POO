@@ -16,12 +16,11 @@ public class EscolherCor extends World
     {
         int larg=getWidth();
         int alt=getHeight();
-        addObject(new Vermelho(),larg/6,2*alt/3);
-        addObject(new Preto(),2*larg/6,2*alt/3);
-        addObject(new Verde(),3*larg/6,2*alt/3);
-        addObject(new Amarelo(),4*larg/6,2*alt/3); 
-        addObject(new Azul(),5*larg/6,2*alt/3);       
-        Cor.setP1escolheu(false);
+        addObject(new Cor(0),larg/6,2*alt/3);
+        addObject(new Cor(1),2*larg/6,2*alt/3);
+        addObject(new Cor(2),3*larg/6,2*alt/3);
+        addObject(new Cor(3),4*larg/6,2*alt/3); 
+        addObject(new Cor(4),5*larg/6,2*alt/3);
         Texto text =new Texto(Player1.getNome()+",\npick your colour",60, new Color(255,255,255));
         addObject(text,larg/2,alt/3);
         addObject(new Back(), larg-100, alt-50);
