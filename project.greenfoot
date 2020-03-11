@@ -605,11 +605,19 @@ dependency98.type=UsesDependency
 dependency99.from=Stage2Complete
 dependency99.to=Player1
 dependency99.type=UsesDependency
+<<<<<<< Updated upstream
 editor.fx.0.height=830
 editor.fx.0.width=780
 editor.fx.0.x=761
 editor.fx.0.y=0
 height=27
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+height=838
+>>>>>>> Stashed changes
 package.numDependencies=188
 package.numTargets=68
 project.charset=UTF-8
