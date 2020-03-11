@@ -20,7 +20,7 @@ public class Jogo1 extends World
         super(1200, 700, 1); 
         control =false;
         contador=0;
-        tempo = 5;
+        tempo = 90;
         escreverClock = "1:30";
 
         auxNuvem = 0;
@@ -42,27 +42,33 @@ public class Jogo1 extends World
         somChuva = new GreenfootSound("rain.mp3");
         somAmbiente.playLoop();
         somAmbiente.setVolume(30);
+        
         Chão chao= new Chão();
         addObject(chao,getWidth()/2,getHeight()-chao.getImage().getHeight()/2);
+        
         Máquina máquina = new Máquina();
         addObject(máquina,getWidth()/2,getHeight()-chao.getImage().getHeight()-máquina.getImage().getHeight()/2);
+        
         P1 = new Player1();
         addObject(P1,getWidth()/10,getHeight()-chao.getImage().getHeight()-P1.getImage().getHeight()/2+2);
         P2 = new Player2();
         addObject(P2,9*getWidth()/10,getHeight()-chao.getImage().getHeight()-P2.getImage().getHeight()/2+2);
 
         addObject(new VidaMáquina(),getWidth()/2,40);
-
         addObject(new Vida_player1(), 285/2, 125);
         addObject(new Vida_player2(), getWidth()-285/2, 125);
+        
         clock = new Texto(escreverClock,TAMANHOTEXTO, new Color(255,255,255));
         addObject(clock, getWidth()/2,125);
+        
         scoreP1 = new Texto(""+Player1.getScore(),TAMANHOTEXTO, new Color(255,255,255));
         addObject(scoreP1, 285/2,175);
         scoreP2 = new Texto(""+Player2.getScore(),TAMANHOTEXTO, new Color(255,255,255));
         addObject(scoreP2, getWidth()-285/2,175);
+        
         addObject(new Texto(Player1.getNome(),TAMANHOTEXTO-10, new Color(255,255,255)),285/2,80);
         addObject(new Texto(Player2.getNome(),TAMANHOTEXTO-10, new Color(255,255,255)),getWidth()-285/2,80);
+        
         midway=máquina.getVida()/2;
     }
 
