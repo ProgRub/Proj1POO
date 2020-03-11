@@ -28,6 +28,15 @@ public class Controlos extends Options
 
     public void act() 
     {
+        inicio();
+        moveMouse(image2,image1);
+        clickMouse(player,controlo);
+    }    
+    
+    /**
+     * Método que insere o texto que demonstra qual o controlo atual.
+     */
+    private void inicio(){
         if (prepara){
             getWorld().addObject(text, getX(), getY());
             if (player == 1)
@@ -42,15 +51,13 @@ public class Controlos extends Options
             image1.scale((int)(1.5*getWorld().getWidth()/9), getWorld().getHeight()/9);
             image2.scale((int)(1.5*getWorld().getWidth()/9), getWorld().getHeight()/9);
         }
-        moveMouse(image2,image1);
-        clickMouse(player,controlo);
-    }    
+    }
 
     /**
      * Método que regista que o utilizador clicou no botão para mudar o controlo escolhido e espera que o mesmo dê uma tecla válida,
      * não pode escolher uma tecla que esteja ocupada para outro controlo, quer do player 1 quer do player 2
      */
-    public void clickMouse(int player, int controlo){
+    private void clickMouse(int player, int controlo){
         if (Greenfoot.mouseClicked(this) || Greenfoot.mouseClicked(text)){
             playClick();
             Greenfoot.getKey();

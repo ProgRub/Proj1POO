@@ -68,6 +68,11 @@ public class Jogo1 extends World
 
     public void act(){
         gameOver(P1.getNumeroVidas(),P2.getNumeroVidas()); 
+        geral();
+        trocaFundo();
+    }
+    
+    public void geral(){
         if (!control)
         {
             cairGranizo();
@@ -76,9 +81,8 @@ public class Jogo1 extends World
             cairVida();
             cairChuva();
             aparecerNuvens();
-            atualizaRelogio();  
+            atualizaRelogio();
         }
-        trocaFundo();
         scoreP1.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
         scoreP2.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
     }
