@@ -6,6 +6,7 @@ public class Pinguim extends Jogos
     private GreenfootImage[] animacao;
     private boolean caindo;
     private int indice;
+    private GreenfootSound salvo;
     public Pinguim(){
         animacao = new GreenfootImage[4];
         indice=0;
@@ -18,6 +19,7 @@ public class Pinguim extends Jogos
         GreenfootSound som = new GreenfootSound("penguin.mp3");
         som.play();
         som.setVolume(20);
+        this.salvo= new GreenfootSound("getsHealth.mp3");
         caindo = false;
     }
 
@@ -56,6 +58,8 @@ public class Pinguim extends Jogos
     {
         if (isTouching(Esquimó1.class) && isTouching(Esquimó2.class))
         {
+            salvo.play();
+            salvo.setVolume(30);
             Player1.adicionaScore(25);
             Player2.adicionaScore(25);
             Jogo3.incrementarPinguimSalvo();
