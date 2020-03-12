@@ -97,6 +97,8 @@ public class Pinguim extends Jogos
      */
     public void desaparece(){
         if (getY() == getWorld().getHeight()-1){
+            Player1.adicionaScore(-100);
+            Player2.adicionaScore(-100);            
             getWorld().removeObject(this);
         }
     }
