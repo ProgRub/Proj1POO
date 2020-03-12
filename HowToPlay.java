@@ -16,7 +16,7 @@ public class HowToPlay extends World
     /**
      *  Métodos que permitem determinar qual explicação mostrar aos jogadores dependendo do jogo que vão jogar
      */
-    
+
     public static void mudarJogo(int aux){
         jogo = aux;
     }
@@ -24,7 +24,7 @@ public class HowToPlay extends World
     public static int jogoAtual(){
         return jogo;
     }
-    
+
     public void prepare(){
         switch (jogo)
         {
@@ -38,9 +38,9 @@ public class HowToPlay extends World
             info = new Texto("𝐅𝐨𝐫 𝐭𝐡𝐢𝐬 𝐟𝐢𝐧𝐚𝐥 𝐬𝐭𝐚𝐠𝐞 𝐚𝐥𝐥 𝐲𝐨𝐮 𝐧𝐞𝐞𝐝 𝐭𝐨 𝐝𝐨 𝐢𝐬 𝐧𝐚𝐯𝐢𝐠𝐚𝐭𝐞 𝐭𝐡𝐫𝐨𝐮𝐠𝐡 𝐭𝐡𝐞 𝐢𝐜𝐞 \n𝐩𝐥𝐚𝐭𝐟𝐨𝐫𝐦𝐬 𝐟𝐫𝐨𝐦 𝐬𝐭𝐚𝐫𝐭 𝐭𝐨 𝐟𝐢𝐧𝐢𝐬𝐡 𝐚𝐧𝐝 𝐬𝐚𝐯𝐞 𝐭𝐡𝐞 𝐩𝐞𝐧𝐠𝐮𝐢𝐧𝐬 𝐟𝐨𝐫 \n𝐛𝐨𝐧𝐮𝐬 𝐬𝐜𝐨𝐫𝐞, 𝐛𝐮𝐭 𝐛𝐞 𝐜𝐚𝐫𝐞𝐟𝐮𝐥 𝐛𝐞𝐜𝐚𝐮𝐬𝐞 \n𝐨𝐧𝐞 𝐰𝐫𝐨𝐧𝐠 𝐦𝐨𝐯𝐞 𝐚𝐧𝐝 𝐚𝐥𝐥 𝐭𝐡𝐞 𝐰𝐨𝐫𝐤 𝐰𝐢𝐥𝐥 𝐠𝐨 𝐭𝐨 𝐰𝐚𝐬𝐭𝐞!",45, new Color(222, 18, 195));
             break;
         }
-            addObject(info, getWidth()/2, getHeight()/2);
-            Start startGame = new Start();
-            addObject(startGame, getWidth()/2,516);
+        addObject(info, getWidth()/2, getHeight()/2);
+        Start startGame = new Start();
+        addObject(startGame, getWidth()/2,516);
 
-        }
     }
+}

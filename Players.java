@@ -54,7 +54,7 @@ public class Players extends Actor
             {
                 playAtingido();
                 P1.adicionaNumeroVidas(-1); 
-                P1.adicionaScore(-5);
+                P1.adicionaScore(-50);
                 removeTouching(Granizo.class);
             }
 
@@ -63,7 +63,7 @@ public class Players extends Actor
                 if (!tocandoRelampago)
                 {
                     P1.adicionaNumeroVidas(-2);
-                    P1.adicionaScore(-10);
+                    P1.adicionaScore(-100);
                     tocandoRelampago = true;
                 }
             }
@@ -76,7 +76,7 @@ public class Players extends Actor
             {
                 playVida();
                 P1.adicionaNumeroVidas(2);
-                P1.adicionaScore(5);
+                P1.adicionaScore(25);
                 removeTouching(Vida.class);
 
             }
@@ -91,7 +91,7 @@ public class Players extends Actor
             {
                 playAtingido();
                 P2.adicionaNumeroVidas(-1); 
-                P2.adicionaScore(-5);
+                P2.adicionaScore(-50);
                 removeTouching(Granizo.class);
             }
             if(isTouching(Relâmpago.class))
@@ -99,7 +99,7 @@ public class Players extends Actor
                 if (!tocandoRelampago)
                 {
                     P2.adicionaNumeroVidas(-2);
-                    P2.adicionaScore(-10);
+                    P2.adicionaScore(-100);
                     tocandoRelampago = true;
                 }
             }
@@ -111,7 +111,7 @@ public class Players extends Actor
             {
                 playVida();
                 P2.adicionaNumeroVidas(2); 
-                P2.adicionaScore(5);
+                P2.adicionaScore(25);
                 removeTouching(Vida.class);
             }
         }
@@ -128,7 +128,7 @@ public class Players extends Actor
             {
                 playVida();
                 N1.adicionaNumeroVidas(2);
-                N1.adicionaScore(5);
+                N1.adicionaScore(25);
                 removeTouching(Vida_jogo2.class);
             }
         }
@@ -143,7 +143,7 @@ public class Players extends Actor
             {
                 playVida();
                 N2.adicionaNumeroVidas(2); 
-                N2.adicionaScore(5);
+                N2.adicionaScore(25);
                 removeTouching(Vida_jogo2.class);
             }
 
