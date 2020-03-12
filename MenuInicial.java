@@ -59,6 +59,7 @@ public class MenuInicial extends World
         Player2.resetScore();
         Player1.resetNumVidas();
         Player2.resetNumVidas();
+        Jogo3.resetPinguimSalvo();
     }
 
     /**

@@ -55,7 +55,9 @@ public class Jogo3 extends World
 
         addObject(new Plataforma_Inicial(),400,ALTURA2);
         
-        addObject(new ContarPinguins(), getWidth()/2 - 20, 90);
+        Texto desenhoPinguim = new Texto();
+        desenhoPinguim.setImage("penguinImage.png");
+        addObject(desenhoPinguim, getWidth()/2 - 20, 90);
         pinguins = new Texto(""+pinguinsSalvos,TAMANHOTEXTO, new Color(0,0,0));
         addObject(pinguins,getWidth()/2 +20, 90); 
         
@@ -88,6 +90,13 @@ public class Jogo3 extends World
      */
     public static void incrementarPinguimSalvo(){
         pinguinsSalvos++;
+    }
+    
+    /**
+     * Métodos que faz reset ao contador de pinguins salvos
+     */
+    public static void resetPinguimSalvo(){
+        pinguinsSalvos = 0;
     }
 
     /**
