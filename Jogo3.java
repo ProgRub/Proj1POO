@@ -3,10 +3,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Jogo3 extends World
 {
     private int contadorMar;
+    private static int pinguinsSalvos;
     private final int ALTURA1=300;
     private final int ALTURA2=400;
     private final int ALTURA3=500;
-    private Texto scoreP1, scoreP2;
+    private Texto scoreP1, scoreP2,pinguins;
     private final int TAMANHOTEXTO=45;
     private int contador;
     private int altura_anterior;
@@ -28,6 +29,7 @@ public class Jogo3 extends World
         control = false;
         P1Chegou=false;
         P2Chegou=false;
+        pinguinsSalvos = 0;
     }
 
     private void prepare()
@@ -52,7 +54,11 @@ public class Jogo3 extends World
         addObject(new Texto(Player2.getNome(),TAMANHOTEXTO, new Color(0,0,0)),getWidth()-285/2,80);
 
         addObject(new Plataforma_Inicial(),400,ALTURA2);
-
+        
+        addObject(new ContarPinguins(), getWidth()/2 - 20, 90);
+        pinguins = new Texto(""+pinguinsSalvos,TAMANHOTEXTO, new Color(0,0,0));
+        addObject(pinguins,getWidth()/2 +20, 90); 
+        
         addObject(new Bandeira_Start(),400,348);
         somAmbiente = new GreenfootSound("snowField.mp3");
         somAmbiente.playLoop();
@@ -60,15 +66,28 @@ public class Jogo3 extends World
     }
 
     public void act(){
+        geral();
+        invocarMar();
+        
+    }
+    
+    public void geral(){
         if(!control)
         {
             invocarPlataformas();
             vitoria(P1Chegou,P2Chegou);
         }
-        invocarMar();
         gameOver(esq1.getNumeroVidas(), esq2.getNumeroVidas());
+        pinguins.updateText(""+pinguinsSalvos,pinguins,TAMANHOTEXTO, pinguins.getCor());
         scoreP1.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
         scoreP2.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
+    }
+    
+    /**
+     * Métodos que incrementa o contador de pinguins salvos
+     */
+    public static void incrementarPinguimSalvo(){
+        pinguinsSalvos++;
     }
 
     /**

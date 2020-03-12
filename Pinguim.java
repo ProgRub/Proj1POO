@@ -58,6 +58,7 @@ public class Pinguim extends Jogos
         {
             Player1.adicionaScore(25);
             Player2.adicionaScore(25);
+            Jogo3.incrementarPinguimSalvo();
             getWorld().removeObject(this);
         }
     }
