@@ -24,6 +24,7 @@ public class Start extends Stage
     private void clickMouse(){
         if (Greenfoot.mouseClicked(this)){
             playClick();
+            MenuInicial.getMusica().stop(); 
             if (getWorld() instanceof HowToPlay){
                 if(HowToPlay.jogoAtual() == 1){
                     Greenfoot.setWorld(new Jogo1());
@@ -33,7 +34,6 @@ public class Start extends Stage
                     Greenfoot.setWorld(new Jogo3());
                 }
             }
-            MenuInicial.getMusica().stop(); 
         }
     } 
 }

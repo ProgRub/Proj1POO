@@ -25,7 +25,7 @@ public class Jogo2 extends World
         contador = 0;
         ambiente = new GreenfootSound("music2.mp3");
         ambiente.play();
-        quantoGas = Máquina.getVida()/20; //variável que determinará a quantidade de gás criado dependendo da quantidade de dano efetuado à máquina no nível anterior
+        quantoGas = Máquina.getVida()/5; //variável que determinará a quantidade de gás criado dependendo da quantidade de dano efetuado à máquina no nível anterior
         prepare();
     }
 
