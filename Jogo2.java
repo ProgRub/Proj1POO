@@ -58,6 +58,12 @@ public class Jogo2 extends World
 
     public void act()
     {
+        geral();
+        gameOver(camadaOzono.getVida(), nave1.getNumeroVidas(), nave2.getNumeroVidas());
+    }
+    
+    private void geral()
+    {
         if(!control)
         {
             libertarGases();        
@@ -65,7 +71,6 @@ public class Jogo2 extends World
             vidas();
             atualizaRelogio();
         }
-        gameOver(camadaOzono.getVida(), nave1.getNumeroVidas(), nave2.getNumeroVidas());
         scoreP1.updateText(""+Player1.getScore(), scoreP1, TAMANHOTEXTO, scoreP1.getCor());
         scoreP2.updateText(""+Player2.getScore(), scoreP2, TAMANHOTEXTO, scoreP2.getCor());
     }

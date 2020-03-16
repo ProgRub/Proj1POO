@@ -27,8 +27,8 @@ public class CamadaOzono extends Jogos
     {
         if (isTouching(Gas.class))
         {
-            imageCamada.setTransparency(2*vida+5);
-            vida--;           
+            vida--;
+            imageCamada.setTransparency(2*vida+5);         
             removeTouching(Gas.class);            
         }
     }
