@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Relâmpago extends Target
+public class Relâmpago extends Jogos
 {
     private GreenfootImage[] relampago;
     private int indice=0;
