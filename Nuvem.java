@@ -26,9 +26,8 @@ public class Nuvem extends Jogos
             move(sentido*3);
            
         }
-        if (Greenfoot.getRandomNumber(100)<2 && aux>19){
+        if (Greenfoot.getRandomNumber(100)<2 && aux>=105){
             setLocation(getX()+ Greenfoot.getRandomNumber(20)-10, getY());
-            
         }
         aux++;
           

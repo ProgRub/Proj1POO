@@ -1,10 +1,8 @@
 #BlueJ class context
 comment0.target=Vida
 comment1.params=
-comment1.target=Vida()
+comment1.target=void\ act()
 comment2.params=
-comment2.target=void\ act()
-comment3.params=
-comment3.target=void\ movimentoVida()
-comment3.text=\r\n\ A\ "Vida"\ tem\ um\ movimento\ descendente\ mais\ lento\ que\ os\ restantes\ "ObjetosCaem",\ para\ o\ jogo\ 1\r\n
-numComments=4
+comment2.target=void\ movimentoVida()
+comment2.text=\r\n\ A\ "Vida"\ tem\ um\ movimento\ descendente\ mais\ lento\ que\ os\ restantes\ "ObjetosCaem",\ para\ o\ jogo\ 1\r\n
+numComments=3

@@ -2,13 +2,13 @@ import greenfoot.*;   //(World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class VidaMáquina extends Máquina
 {
-   private int health=Máquina.getVida();
+   private int health = Máquina.getVida();
    private final int HEALTHBARCOMPRIMENTO = 1000;
    private final int HEALTHBARALTURA = 15;
    private final int percentagemDeVida = (int)HEALTHBARCOMPRIMENTO/health;
    
    public VidaMáquina(){
-       atualiza();
+       //atualiza();
     }
     
    public void act() 
@@ -26,6 +26,6 @@ public class VidaMáquina extends Máquina
        myImage.setColor(Color.WHITE);
        myImage.drawRect(0,0,HEALTHBARCOMPRIMENTO +1, HEALTHBARALTURA +1);
        myImage.setColor(new Color(109, 16, 120));
-       myImage.fillRect(1,1,health*percentagemDeVida, HEALTHBARALTURA);
+       myImage.fillRect(1,1,health * percentagemDeVida, HEALTHBARALTURA);
     }
 }
