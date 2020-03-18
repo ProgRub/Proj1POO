@@ -4,22 +4,22 @@ public class CamadaOzono extends Jogos
 {
     private GreenfootImage imageCamada;
     private static int vida;
-    
+
     public CamadaOzono(){
         imageCamada= getImage();
         vida=125;
         imageCamada.setTransparency(2*vida+5);
     }
-    
+
     public void act() 
     {
         mudarTransparencia();
     }  
-        
+
     public static int getVida(){
         return vida;
     }
-    
+
     /**
      * Método que regista a perda de vida da camada de ozono e torna esta mais transparente de acordo com a vida que tem
      */
@@ -28,9 +28,17 @@ public class CamadaOzono extends Jogos
         if (isTouching(Gas.class))
         {
             vida--;
-            imageCamada.setTransparency(2*vida+5);         
-            removeTouching(Gas.class);            
+            if(vida<=0)
+            {
+                getWorld().removeObject(this);
+            }
+            else
+            {
+                imageCamada.setTransparency(2*vida+5);
+                removeTouching(Gas.class);            
+            }
+
         }
     }
-    
+
 }

@@ -548,19 +548,11 @@ dependency98.type=UsesDependency
 dependency99.from=Players
 dependency99.to=Nave1
 dependency99.type=UsesDependency
-<<<<<<< Updated upstream
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
-height=1056
-=======
 editor.fx.0.height=737
 editor.fx.0.width=814
 editor.fx.0.x=360
 editor.fx.0.y=28
 height=838
->>>>>>> Stashed changes
 package.numDependencies=169
 package.numTargets=63
 project.charset=UTF-8
@@ -1019,11 +1011,7 @@ target9.width=110
 target9.x=0
 target9.y=0
 version=3.0.0
-<<<<<<< Updated upstream
-width=1936
-=======
 width=1550
->>>>>>> Stashed changes
 world.lastInstantiated=MenuInicial
 xPosition=0
 yPosition=0
