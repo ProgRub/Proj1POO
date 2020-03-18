@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Target extends Jogos
 {
-    private int count;
     private final int TIMER;
     private int count2;
     private GreenfootImage semBrilho,comBrilho;
@@ -19,7 +18,6 @@ public class Target extends Jogos
         comBrilho = new GreenfootImage("target8.png");
         setImage(semBrilho);
         TIMER=5;
-        //count = TIMER*4;
         count2 = 0;
         contador=0;
     }
