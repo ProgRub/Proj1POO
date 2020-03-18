@@ -3,14 +3,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Máquina extends Jogos
 {           
     private static int vida;
-    private static int score;
     private static int contador;
     private GreenfootImage[] explosao;
     private int indice;
 
     public Máquina(){
         vida=500;
-        score=0;
         explosao = new GreenfootImage[13];
         for (int i=0; i< explosao.length; i++)
         {
