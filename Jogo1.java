@@ -154,7 +154,7 @@ public class Jogo1 extends World
     {
         if (Máquina.getVida() > midway )
         {
-            if (Greenfoot.getRandomNumber(100)<5)
+            if (Greenfoot.getRandomNumber(100)<7)
             {
                 addObject(new Granizo(), Greenfoot.getRandomNumber(getWidth()-1),0);
             }

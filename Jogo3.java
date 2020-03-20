@@ -161,6 +161,8 @@ public class Jogo3 extends World
      */
     private void gameOver(int vidaJogador1, int vidaJogador2){
         if ((vidaJogador1 <=0 || vidaJogador2 <= 0) && !control ){
+            P1Chegou = false;
+            P2Chegou = false;
             addObject(new GameOver(),getWidth()/2,getHeight()/2);
             addObject(new Restart(),getWidth()/2,getHeight()/2 +150);
             somAmbiente.stop();
