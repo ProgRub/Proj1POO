@@ -34,6 +34,6 @@ public class Menus extends Objetos
     protected void playClick()
     {
         click.play();
-        click.setVolume(70);
+        click.setVolume(50);
     }
 }

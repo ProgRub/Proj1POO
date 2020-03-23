@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Relâmpago extends Jogos
 {
     private GreenfootImage[] relampago;
-    private int indice=0;
+    private int indice;
     private int count;
     private final int TIMER;
     private GreenfootSound somRelampago;
@@ -23,6 +23,7 @@ public class Relâmpago extends Jogos
             relampago[i].scale(3*relampago[i].getWidth()/4,relampago[i].getHeight());
         }
         setImage(relampago[indice]);
+        indice=0;
         indice++;
         somRelampago.play();
         somRelampago.setVolume(35);

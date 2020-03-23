@@ -7,7 +7,7 @@ public class Cor extends Menus
 
     public Cor(int valor)
     {
-        GreenfootImage image = new GreenfootImage(125,125);
+        GreenfootImage image = new GreenfootImage(150,150);
         switch (valor)
         {
             case 0:
@@ -31,7 +31,7 @@ public class Cor extends Menus
             cor = "Blue";
             break;
         }
-        image.fillOval(0, 0, 125, 125);
+        image.fillOval(0, 0, 150, 150);
         this.setImage(image);
         P1escolheu=false;
     }

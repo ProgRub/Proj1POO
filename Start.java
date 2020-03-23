@@ -1,12 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Continue here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Start extends Stage
+public class Start extends Menus
 {
     private GreenfootImage image1,image2;
     public Start(){

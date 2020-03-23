@@ -3,7 +3,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PlataformaGelo extends Jogos
 {
     private boolean pinguim;
-    private int comprimentoMundo;
     private GreenfootImage imagemAtual;
     public PlataformaGelo(int subtrair){
         podeCriarPinguim();

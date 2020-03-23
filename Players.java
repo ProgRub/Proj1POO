@@ -226,6 +226,7 @@ public class Players extends Actor
             morto.adicionaNumeroVidas(-10);
             Player2.setP1Morreu(true);
             Player1.setP2Morreu(true);
+            Jogo3.setP1Chegou(false);
             animacao[indice].setTransparency(animacao[indice].getTransparency()-5);
         }
 
@@ -239,6 +240,7 @@ public class Players extends Actor
             morto.adicionaNumeroVidas(-10);
             Player2.setP1Morreu(true);
             Player1.setP2Morreu(true);
+            Jogo3.setP2Chegou(false);
             animacao[indice].setTransparency(animacao[indice].getTransparency()-5);
         }
 

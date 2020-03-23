@@ -39,8 +39,7 @@ public class HowToPlay extends World
             break;
         }
         addObject(info, getWidth()/2, getHeight()/2);
-        Start startGame = new Start();
-        addObject(startGame, getWidth()/2,516);
+        addObject(new Start(), getWidth()/2,516);
 
     }
 }

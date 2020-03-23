@@ -3,8 +3,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Opções extends World
 {
-
-    private static MenuInicial referencia;
     private final int TAMANHOTEXTO=50;
     public Opções()
     {    

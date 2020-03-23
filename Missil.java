@@ -8,7 +8,7 @@ public class Missil extends Jogos
     private boolean Nave2EAlvo;
     private int contador;
     private GreenfootImage[] animaExplosao;
-    private int indice=0;
+    private int indice;
     private boolean explosao;
 
     /**
@@ -37,6 +37,7 @@ public class Missil extends Jogos
             animaExplosao[i] = new GreenfootImage("ExplosionMisseis/"+(i+1)+".png");
         }
         contador=0;
+        indice=0;
     }
 
     public void act() 
