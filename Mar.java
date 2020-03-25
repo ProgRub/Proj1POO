@@ -7,7 +7,7 @@ public class Mar extends Jogos
         move(-1);
         remove();
     }  
-    
+
     /**
      * Método que remove o objeto quando chega ao limite do mundo
      */
@@ -15,6 +15,6 @@ public class Mar extends Jogos
     {
         if (isAtEdge()){
             getWorld().removeObject(this);
+        }
     }
-}
 }

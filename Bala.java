@@ -23,7 +23,7 @@ public class Bala extends Players
         moveEsquerda= P1.getAndandoParaEsquerda();
         disparo.play();
         disparo.setVolume(15);
-        VELOCIDADE=8;
+        VELOCIDADE=7;
         P1Disparou = P1;
         mudaOrientacao = false;
     }
@@ -35,7 +35,7 @@ public class Bala extends Players
         moveEsquerda= P2.getAndandoParaEsquerda();
         disparo.play();
         disparo.setVolume(15);
-        VELOCIDADE=8;
+        VELOCIDADE=7;
         P2Disparou = P2;
         mudaOrientacao = false;
     }
@@ -59,12 +59,8 @@ public class Bala extends Players
                 original = getImage();
                 original.mirrorHorizontally();
                 setImage(original);
-                mudaOrientacao = true;
             }
-            else{
-                setImage(original);
-                mudaOrientacao = true;
-            }
+            mudaOrientacao = true;
         }
         else{
             if (moveEsquerda){
@@ -102,15 +98,5 @@ public class Bala extends Players
             return true;
         }
         return false;
-    }
-
-    public Player1 getP1Disparou()
-    {
-        return P1Disparou;
-    }
-
-    public Player2 getP2Disparou()
-    {
-        return P2Disparou;
     }
 }

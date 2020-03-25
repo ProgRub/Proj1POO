@@ -39,7 +39,7 @@ public class Jogo2 extends World
         addObject(new Vida_player1(),285/2,600);
         addObject(new Vida_player2(),getWidth()-285/2,600);
 
-        camadaOzono= new CamadaOzono();
+        camadaOzono = new CamadaOzono();
         addObject(camadaOzono,getWidth()/2, 20);
         addObject(new VidaCamadaOzono(), getWidth()/2, 600);
 
@@ -64,7 +64,7 @@ public class Jogo2 extends World
     
     private void geral()
     {
-        if(!control)
+        if(!control) //como no jogo 1, se os jogadores perderam estes métodos param de ser chamados
         {
             libertarGases();        
             disparaMissil();
@@ -138,11 +138,11 @@ public class Jogo2 extends World
         int random = Greenfoot.getRandomNumber(300);
         if (random<2)
         {
-            if(random==1)
+            if(random==1) //o alvo é a nave do 2º jogador
             {
                 addObject(new Missil(nave2.getY()+LIMITE,true,nave1,nave2), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
             }
-            else if(random==0)
+            else if(random==0) //o alvo é a nave do 1º jogador
             {
                 addObject(new Missil(nave1.getY()+LIMITE,false,nave1,nave2), Greenfoot.getRandomNumber(getWidth()+1),getHeight());
             }

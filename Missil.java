@@ -21,7 +21,7 @@ public class Missil extends Jogos
         nave2=N2;
         nave1=N1;
         explosao=false;
-        if (alvoENave2)
+        if (alvoENave2) //o missil fica com a cor do alvo
         {
             setImage(Player2.getColor()+"/Missil.png");
         }
@@ -41,32 +41,35 @@ public class Missil extends Jogos
     }
 
     public void act() 
+    {      
+        geral();
+    }   
+
+    /**
+     * Método responsável por fazer as ações do missil
+     */
+    private void geral()
     {
         if(!explosao)
         {
             if (Nave2EAlvo)
             {
                 teleguiado(nave2);
-                atingiuAlvo();
-                if(!explosao){
-                    chegouAoFim();
-                }
             }
             else
             {
                 teleguiado(nave1);
-                atingiuAlvo();
-                if(!explosao){
-                    chegouAoFim();
-                }
+            }
+            atingiuAlvo();
+            if(!explosao){
+                chegouAoFim();
             }
         }
         else
         {
             animaExplosao();
-        }       
-
-    }   
+        } 
+    }
 
     /**
      * Métodos que vão teleguiar o míssil consoante a posição do alvo
@@ -74,7 +77,7 @@ public class Missil extends Jogos
     private void teleguiado(Nave2 alvo){
         if(getY()>limite)
         {
-            if (!getWorld().getObjects(Nave2.class).isEmpty())
+            if (!getWorld().getObjects(Nave2.class).isEmpty()) //se a nave for destruida antes deste missil sair do mundo, este if evita que se va buscar a localização
             {
                 turnTowards(alvo.getX(), alvo.getY());
             }
@@ -85,7 +88,7 @@ public class Missil extends Jogos
     private void teleguiado(Nave1 alvo){
         if(getY()>limite)
         {
-            if (!getWorld().getObjects(Nave1.class).isEmpty())
+            if (!getWorld().getObjects(Nave1.class).isEmpty()) //se a nave for destruida antes deste missil sair do mundo, este if evita que se va buscar a localização
             {
                 turnTowards(alvo.getX(), alvo.getY());
             }
@@ -113,7 +116,7 @@ public class Missil extends Jogos
         {
             Player2.adicionaNumeroVidas(-1);
             Player2.adicionaScore(-100);
-            setLocation(getX(), getY()-getImage().getHeight());
+            setLocation(getX(), getY()-getImage().getHeight()); // poe a explosao do missil mais para cima, para parecer que é na nave
             explosao=true;
             getImage().clear();
         }
@@ -121,7 +124,7 @@ public class Missil extends Jogos
         {
             Player1.adicionaNumeroVidas(-1);
             Player1.adicionaScore(-100);
-            setLocation(getX(), getY()-getImage().getHeight());
+            setLocation(getX(), getY()-getImage().getHeight());// poe a explosao do missil mais para cima, para parecer que é na nave
             explosao=true;
             getImage().clear();
         }

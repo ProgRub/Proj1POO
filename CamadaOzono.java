@@ -28,7 +28,7 @@ public class CamadaOzono extends Jogos
         if (isTouching(Gas.class))
         {
             vida--;
-            if(vida<=0)
+            if(vida<=0) //este if evita que a transparencia seja um valor negativo, o que gera erro de compilação
             {
                 getWorld().removeObject(this);
             }

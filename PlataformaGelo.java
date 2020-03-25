@@ -43,7 +43,6 @@ public class PlataformaGelo extends Jogos
         }
         setImage(imagemAtual);
     }
-
     
     public void podeCriarPinguim(){
         if (Greenfoot.getRandomNumber(100)<=20){

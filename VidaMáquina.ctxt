@@ -1,10 +1,8 @@
 #BlueJ class context
 comment0.target=VidaM\u00E1quina
 comment1.params=
-comment1.target=VidaM\u00E1quina()
+comment1.target=void\ act()
 comment2.params=
-comment2.target=void\ act()
-comment3.params=
-comment3.target=void\ atualiza()
-comment3.text=\r\n\ M\u00E9todo\ que\ atualiza\ a\ barra\ de\ vida\ que\ informa\ os\ jogadores\ quanta\ vida\ a\ m\u00E1quina\ tem\r\n
-numComments=4
+comment2.target=void\ atualiza()
+comment2.text=\r\n\ M\u00E9todo\ que\ atualiza\ a\ barra\ de\ vida\ que\ informa\ os\ jogadores\ quanta\ vida\ a\ m\u00E1quina\ tem\r\n
+numComments=3

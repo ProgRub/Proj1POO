@@ -63,11 +63,11 @@ public class EscolhaNomes extends World
         {
             key = Greenfoot.getKey(); 
             if (key!=null){
-                if(key.length()<2) //certifica que nao escreve "shift" ou "control"
+                if(key.length()<2) //certifica que nao escreve "shift" ou "control" ou outra tecla não alfa-numerica
                 {
                     nome+=key;
                 }
-                else if (key.equals("space"))
+                else if (key.equals("space")) //meter espaço no nome
                 {
                     nome+=" ";
                 }
@@ -75,24 +75,24 @@ public class EscolhaNomes extends World
             }
 
         }
-        if (key.equals("enter") || nome.length()>=10)
+        if (key.equals("enter") || nome.length()>=10) //o utilizador finaliza o seu nome pressionando o enter ou se o tamanho do nome for igual (ou superior) a 10 carateres
         {
             displayNome.updateText(nome,displayNome,40, new Color(0,255,0));
             Greenfoot.delay(25);
-            if(!recebeuNomeP1)
+            if(!recebeuNomeP1) //define o nome do primeiro jogador e permite receber o do segundo jogador
             {
                 Player1.setNome(nome);
                 displayNome.updateText("Player 2,\nwrite your name", header,50, new Color(255,255,255));
                 nome="";
                 recebeuNomeP1=true;
             }
-            else
+            else //define o nome do segundo jogador e muda o mundo para escolher as cores dos jogadores
             {
                 Player2.setNome(nome);
                 Greenfoot.setWorld(new EscolherCor());
             }
         }
-        else if (key.equals("backspace"))
+        else if (key.equals("backspace")) //permite apagar uma letra do nome
         {
             if(nome.length()>0)
             {

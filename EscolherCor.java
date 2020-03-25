@@ -9,7 +9,7 @@ public class EscolherCor extends World
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
         prepare(); 
-        HowToPlay.mudarJogo(1);
+        HowToPlay.mudarJogo(1); //indica que é para indicar as instruções relevantes à primeira fase
     }
     
     private void prepare()

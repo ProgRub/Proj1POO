@@ -6,7 +6,6 @@ public class Opções extends World
     private final int TAMANHOTEXTO=50;
     public Opções()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200,700, 1); 
         GreenfootImage bg = new GreenfootImage("Earth.png");
         bg.scale(getWidth(), getHeight());

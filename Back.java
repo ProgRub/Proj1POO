@@ -20,7 +20,7 @@ public class Back extends Menus
      * Métodos que registam que o rato clicou no botão ou o utilizador carregou no Esc e, neste caso, volta ao mundo anterior
      */
     private void clickMouse(){
-        String key =Greenfoot.getKey();
+        String key = Greenfoot.getKey();
         World mundo = getWorld();
         if (Greenfoot.mouseClicked(this) || (key!=null && key.equals("escape"))){
             playClick();

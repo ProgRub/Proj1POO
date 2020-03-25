@@ -26,7 +26,7 @@ public class Esquimó1 extends Player1
     protected void move()
     {
         if(getNumeroVidas() > 0 && !getP2Morreu()){
-            if (Greenfoot.isKeyDown(up) && podeSaltar){
+            if (Greenfoot.isKeyDown(up) && podeSaltar){//certifica que so pode saltar se estiver na plataforma de gelo
                 saltou=true;
                 podeSaltar=false;
             }
@@ -34,7 +34,7 @@ public class Esquimó1 extends Player1
                 jump();
             }
             if (Greenfoot.isKeyDown(left)){
-                if (!andandoParaEsquerda){
+                if (!andandoParaEsquerda){//reflete as imagens,se necessário
                     for (int i=0; i < animacao.length;i++)
                     {
                         animacao[i].mirrorHorizontally();
@@ -45,7 +45,7 @@ public class Esquimó1 extends Player1
                 animarMove(animacao);
             }
             else if (Greenfoot.isKeyDown(right) ){
-                if (andandoParaEsquerda){
+                if (andandoParaEsquerda){//reflete as imagens,se necessário
                     for (int i=0; i < animacao.length;i++)
                     {
                         animacao[i].mirrorHorizontally();
@@ -80,13 +80,13 @@ public class Esquimó1 extends Player1
      * Método que trata da parte da descida do salto, evita que os jogadores fiquem a meio do bloco e regista se chegou à plataforma final
      */
     protected void queda(){
-        Actor plat = getOneObjectAtOffset(0,tempoQueda+getImage().getHeight()/2, PlataformaGelo.class);
+        Actor plat = getOneObjectAtOffset(0,tempoQueda+getImage().getHeight()/2, PlataformaGelo.class); //verifica se, após a queda, o jogador estara em cima ou "dentro" da plataforma
         if (plat==null  && !saltou){
             setLocation(getX(),getY()+tempoQueda);
             tempoQueda++;
         }
         else if (plat!=null){
-            setLocation(getX(),plat.getY()- plat.getImage().getHeight()/2-getImage().getHeight()/2);
+            setLocation(getX(),plat.getY()- plat.getImage().getHeight()/2-getImage().getHeight()/2);//mete os jogadores mesmo em cima da plataforma
             tempoQueda=0;
             podeSaltar=true;
             if (plat instanceof Plataforma_Final)
@@ -95,6 +95,5 @@ public class Esquimó1 extends Player1
             }
         }
         plat=null;
-    }  
-    
+    }      
 }

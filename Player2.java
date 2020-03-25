@@ -158,7 +158,7 @@ public class Player2 extends Players
     protected void move()
     {
         if(numeroVidas > 0 && !P1morreu){
-            if (Greenfoot.isKeyDown(up) && podeSaltar){
+            if (Greenfoot.isKeyDown(up) && podeSaltar){//certifica que so pode saltar se estiver no chao
                 saltou=true;
                 podeSaltar=false;
             }
@@ -166,7 +166,7 @@ public class Player2 extends Players
                 jump();
             }
             if (Greenfoot.isKeyDown(left) && !isTouching(Máquina.class)){
-                if (!andandoParaEsquerda){
+                if (!andandoParaEsquerda){//reflete as imagens,se necessário
                     for (int i=0; i < animacao.length;i++)
                     {
                         animacao[i].mirrorHorizontally();
@@ -177,7 +177,7 @@ public class Player2 extends Players
                 animarMove(animacao);
             }
             else if (Greenfoot.isKeyDown(right)){
-                if (andandoParaEsquerda){
+                if (andandoParaEsquerda){//reflete as imagens,se necessário
                     for (int i=0; i < animacao.length;i++)
                     {
                         animacao[i].mirrorHorizontally();
@@ -245,6 +245,4 @@ public class Player2 extends Players
             }
         }
     }
-
 }
-

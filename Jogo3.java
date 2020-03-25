@@ -74,7 +74,7 @@ public class Jogo3 extends World
     }
     
     public void geral(){
-        if(!control)
+        if(!control) //como anteriormente, se um dos jogadores morre, estes métodos param de ser chamados
         {
             invocarPlataformas();
             vitoria(P1Chegou,P2Chegou);
@@ -120,7 +120,7 @@ public class Jogo3 extends World
         int random =Greenfoot.getRandomNumber(3);
         if (contador%150==0 && conta_plataformas<NUMPLATAFORMASPARAGANHAR+1)
         {
-            while(altura_anterior==2 && random ==0)
+            while(altura_anterior==2 && random ==0) //evita que os jogadores estejam na plataforma mais baixa e apareca uma na altura mais alta, o que é um salto impossivel para os jogadores
             {
                 random = Greenfoot.getRandomNumber(3);
             }
@@ -140,13 +140,17 @@ public class Jogo3 extends World
             altura_anterior=random;
         }       
 
-        if(contador%150==0 && conta_plataformas==NUMPLATAFORMASPARAGANHAR)
+        if(contador%150==0 && conta_plataformas==NUMPLATAFORMASPARAGANHAR) //verifica que os jogadores ja percorreram plataformas suficientes
         {
             addObject(new Plataforma_Final(),getWidth()-1,640);   
             addObject(new Bandeira_Finish(),getWidth()-1,530);
         }
         contador++;
     }
+    
+    /**
+     * Método que inicia os objetos da classe mar que dão a aparência de side scrolling
+     */
     
     public void invocarMar(){
         contadorMar++;

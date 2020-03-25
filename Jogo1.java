@@ -78,7 +78,7 @@ public class Jogo1 extends World
     }
     
     private void geral(){
-        if (!control)
+        if (!control) //quando um dos jogadores morrerem, o jogo acaba e já não efetua estes métodos
         {
             cairGranizo();
             cairNeve();
@@ -181,7 +181,7 @@ public class Jogo1 extends World
         if(Máquina.getVida() <=midway)
         {
             somAmbiente.stop();
-            if(!somChuva.isPlaying())
+            if(!somChuva.isPlaying()) //evita que o som se repita
             {
                 somChuva.playLoop();
                 somChuva.setVolume(40);
@@ -191,11 +191,11 @@ public class Jogo1 extends World
                 Target target = new Target();
                 if (prob == 1 && !getObjects(Player1.class).isEmpty())
                 {
-                    addObject(target, P1.getX(), 620);      
+                    addObject(target, P1.getX(), 620); //o x é o do jogador para o jogador não ficar parado
                 }
                 else if (prob == 0 && !getObjects(Player2.class).isEmpty())
                 {
-                    addObject(target, P2.getX(), 620);            
+                    addObject(target, P2.getX(), 620); //o x é o do jogador para o jogador não ficar parado
                 }                     
             } 
         }
@@ -228,7 +228,7 @@ public class Jogo1 extends World
      */
     private void aparecerNuvens(){
         if (Máquina.getVida() <= midway && auxNuvem == 0){
-            //3 objetos para a nuvem ficar mais escura
+            //3 objetos de cada lado para as nuvens ficarem mais escuras
             addObject(new Nuvem(1), 0,2);
             addObject(new Nuvem(1), 0,2);
             addObject(new Nuvem(1), 0,2);
@@ -239,6 +239,9 @@ public class Jogo1 extends World
         }
     }
 
+    /**
+     * Método que escurece o fundo quando a máquina perdeu metade da sua vida
+     */
     private void trocaFundo()
     {
         if (Máquina.getVida() <= midway)
@@ -252,4 +255,3 @@ public class Jogo1 extends World
         }
     }
 }
-
