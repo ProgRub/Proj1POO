@@ -93,6 +93,7 @@ public class Jogo1 extends World
         trocaFundo();
     }
 
+    
     public static GreenfootSound getSomChuva()
     {
         return somChuva;
@@ -173,7 +174,7 @@ public class Jogo1 extends World
     }
 
     /**
-     * Métodos que criam o alvo onde o relampago cairá e a chuva, respetivamente, após a máquina ter perdido metade da sua vida.
+     * Método que cria o alvo onde o relampago cairá e a chuva, respetivamente, após a máquina ter perdido metade da sua vida.
      * Os relâmpagos cairão na posição atual do jogador para incentivar o movimento e dificultar o jogo
      */
     private void invocaTarget() 
@@ -201,6 +202,9 @@ public class Jogo1 extends World
         }
     }
 
+    /**
+     * Método que faz com que caiam quando a máquina tem menos de metade da vida
+     */
     private void cairChuva(){
         if (Máquina.getVida() <= midway ){
             if (Greenfoot.getRandomNumber(100)<20)
@@ -224,7 +228,7 @@ public class Jogo1 extends World
     }
 
     /**
-     * Métodos que sinalizam que a máquina perdeu metade da sua vida e a "fase" dos relâmpagos começará
+     * Método que sinaliza que a máquina perdeu metade da sua vida e a "fase" dos relâmpagos começará
      */
     private void aparecerNuvens(){
         if (Máquina.getVida() <= midway && auxNuvem == 0){

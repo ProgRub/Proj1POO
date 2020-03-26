@@ -26,7 +26,7 @@ public class HowToPlay extends World
     }
 
     public void prepare(){
-        switch (jogo)
+        switch (jogo) //instruções fase do jogo (fase 1,2 ou 3) que será jogado 
         {
             case 1:
             info = new Texto("𝐈𝐧 𝐭𝐡𝐢𝐬 𝐬𝐭𝐚𝐠𝐞, 𝐲𝐨𝐮𝐫 𝐭𝐚𝐬𝐤 𝐢𝐬 𝐭𝐨 𝐝𝐞𝐬𝐭𝐫𝐨𝐲 𝐭𝐡𝐞 𝐦𝐚𝐜𝐡𝐢𝐧𝐞 \n𝐭𝐡𝐚𝐭 𝐢𝐬 𝐩𝐨𝐥𝐥𝐮𝐭𝐢𝐧𝐠 𝐭𝐡𝐞 𝐚𝐭𝐦𝐨𝐬𝐩𝐡𝐞𝐫𝐞, 𝐛𝐮𝐭 𝐛𝐞 𝐜𝐚𝐫𝐞𝐟𝐮𝐥! \n𝐃𝐨𝐝𝐠𝐞 𝐭𝐡𝐞 𝐟𝐚𝐥𝐥𝐢𝐧𝐠 𝐡𝐚𝐢𝐥 𝐚𝐧𝐝 𝐥𝐢𝐠𝐡𝐭𝐧𝐢𝐧𝐠 𝐨𝐫 𝐭𝐡𝐞 𝐠𝐚𝐦𝐞 𝐰𝐢𝐥𝐥 𝐛𝐞 𝐨𝐯𝐞𝐫!",45, new Color(222, 18, 195));

@@ -28,6 +28,7 @@ public class EscolhaNomes extends World
 
     private void prepare()
     {
+        //CRIA RETÂNGULO ONDE APARECE O NOME DO JOGADOR:
         int larg=getWidth();
         int alt=getHeight();
         caixa=new Texto();
@@ -37,10 +38,13 @@ public class EscolhaNomes extends World
         caixa.getImage().setColor(Color.WHITE);
         caixa.getImage().fillRect(2,2,496, 46);
         addObject(caixa, getWidth()/2, 3*getHeight()/4);
+        
+        //MOSTRA NOME A SER ESCRITO
         displayNome = new Texto();
         displayNome.getImage().clear();
         addObject(displayNome, getWidth()/2, 3*getHeight()/4);
 
+        //TEXTO INFORMATIVO
         header=new Texto("Player 1,\nwrite your name",50, new Color(255,255,255));
         addObject(header, getWidth()/2, getHeight()/2);
         addObject(new Texto("Max size of 10 characters",30, new Color(222, 18, 195)),getWidth()/2,3*getHeight()/4-40);

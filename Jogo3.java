@@ -93,7 +93,7 @@ public class Jogo3 extends World
     }
     
     /**
-     * Métodos que faz reset ao contador de pinguins salvos
+     * Método que faz reset ao contador de pinguins salvos
      */
     public static void resetPinguimSalvo(){
         pinguinsSalvos = 0;
