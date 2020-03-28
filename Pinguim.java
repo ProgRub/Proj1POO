@@ -19,7 +19,7 @@ public class Pinguim extends Jogos
         GreenfootSound som = new GreenfootSound("penguin.mp3");
         som.play();
         som.setVolume(20);
-        this.salvo= new GreenfootSound("getsHealth.mp3");
+        this.salvo = new GreenfootSound("getsHealth.mp3");
         caindo = false;
     }
 

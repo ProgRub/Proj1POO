@@ -6,5 +6,9 @@ public class Gota extends ObjetosCaem
     {
         movimento();
         ultrapassaLimite();
+        if (isAtEdge())
+        {
+            getWorld().removeObject(this);
+        }
     }    
 }
