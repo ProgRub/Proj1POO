@@ -2,10 +2,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class VidaCamadaOzono extends CamadaOzono
 {
-   private int health = CamadaOzono.getVida();
+   private int health = CamadaOzono.getVida(); //125
    private final int HEALTHBARCOMPRIMENTO = 250;
    private final int HEALTHBARALTURA = 10;
-   private final int percentagemDeVida = (int)HEALTHBARCOMPRIMENTO/health;
+   private final int percentagemDeVida = (int)HEALTHBARCOMPRIMENTO/health; //2
    
    public VidaCamadaOzono(){
        atualiza();
